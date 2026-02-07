@@ -1,0 +1,2256 @@
+{
+  "ABLE": {
+    "alias_for": "WORD-00384",
+    "biomechanical": true,
+    "description": "ASL sign for 'able' (WLASL ID 00384)",
+    "file": "WORD-00384.glb",
+    "region": "ASL",
+    "wlasl_id": "00384"
+  },
+  "ABOUT": {
+    "alias_for": "WORD-00426",
+    "biomechanical": true,
+    "description": "ASL sign for 'about' (WLASL ID 00426)",
+    "file": "WORD-00426.glb",
+    "region": "ASL",
+    "wlasl_id": "00426"
+  },
+  "ABOVE": {
+    "alias_for": "WORD-00435",
+    "biomechanical": true,
+    "description": "ASL sign for 'above' (WLASL ID 00435)",
+    "file": "WORD-00435.glb",
+    "region": "ASL",
+    "wlasl_id": "00435"
+  },
+  "ACCENT": {
+    "alias_for": "WORD-00587",
+    "biomechanical": true,
+    "description": "ASL sign for 'accent' (WLASL ID 00587)",
+    "file": "WORD-00587.glb",
+    "region": "ASL",
+    "wlasl_id": "00587"
+  },
+  "ACCEPT": {
+    "alias_for": "WORD-00602",
+    "biomechanical": true,
+    "description": "ASL sign for 'accept' (WLASL ID 00602)",
+    "file": "WORD-00602.glb",
+    "region": "ASL",
+    "wlasl_id": "00602"
+  },
+  "BFSG": {
+    "description": "Avatar introduces Germany's BFSG as the national law focusing on accessibility and German-language reporting.",
+    "file": "BFSG.glb",
+    "region": "IS"
+  },
+  "CANADIAN-PLUS": {
+    "description": "Avatar explains that Canada has improved the accessibility of the standard itself compared to the PDF-centric European publication.",
+    "file": "CANADIAN-PLUS.glb",
+    "region": "ASL"
+  },
+  "LEGAL-DIFFERENCE": {
+    "description": "Avatar explains that Canada mainly uses EN 301 549 for federal procurement while Europe embeds it directly into binding law.",
+    "file": "LEGAL-DIFFERENCE.glb",
+    "region": "ASL"
+  },
+  "MEMBER-STATES": {
+    "description": "Avatar explains that each EU Member State has its own national law implementing EN 301 549, such as RGAA and BFSG.",
+    "file": "MEMBER-STATES.glb",
+    "region": "IS"
+  },
+  "RGAA": {
+    "biomechanical": true,
+    "description": "Avatar introduces France's RGAA as a detailed referential for accessibility testing.",
+    "file": "RGAA.glb",
+    "hamnosys": "LSF notation for RGAA would be documented here",
+    "region": "LSF"
+  },
+  "SI-636-2023": {
+    "description": "Avatar introduces Ireland's S.I. No. 636/2023 with its emphasis on accessibility statements and feedback loops.",
+    "file": "SI-636-2023.glb",
+    "region": "IS"
+  },
+  "WORD-00295": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00295)",
+    "file": "WORD-00295.glb",
+    "region": "ASL"
+  },
+  "WORD-00333": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00333)",
+    "file": "WORD-00333.glb",
+    "region": "ASL"
+  },
+  "WORD-00335": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00335)",
+    "file": "WORD-00335.glb",
+    "region": "ASL"
+  },
+  "WORD-00336": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00336)",
+    "file": "WORD-00336.glb",
+    "region": "ASL"
+  },
+  "WORD-00337": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00337)",
+    "file": "WORD-00337.glb",
+    "region": "ASL"
+  },
+  "WORD-00338": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00338)",
+    "file": "WORD-00338.glb",
+    "region": "ASL"
+  },
+  "WORD-00339": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00339)",
+    "file": "WORD-00339.glb",
+    "region": "ASL"
+  },
+  "WORD-00340": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00340)",
+    "file": "WORD-00340.glb",
+    "region": "ASL"
+  },
+  "WORD-00341": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00341)",
+    "file": "WORD-00341.glb",
+    "region": "ASL"
+  },
+  "WORD-00374": {
+    "biomechanical": true,
+    "description": "Real ASL sign from WLASL dataset (ID 00374)",
+    "file": "WORD-00374.glb",
+    "region": "ASL"
+  },
+  "WORD-00376": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00376)",
+    "file": "WORD-00376.glb",
+    "region": "ASL"
+  },
+  "WORD-00377": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00377)",
+    "file": "WORD-00377.glb",
+    "region": "ASL"
+  },
+  "WORD-00378": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00378)",
+    "file": "WORD-00378.glb",
+    "region": "ASL"
+  },
+  "WORD-00381": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00381)",
+    "file": "WORD-00381.glb",
+    "region": "ASL"
+  },
+  "WORD-00383": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00383)",
+    "file": "WORD-00383.glb",
+    "region": "ASL"
+  },
+  "WORD-00384": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00384)",
+    "file": "WORD-00384.glb",
+    "region": "ASL"
+  },
+  "WORD-00412": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00412)",
+    "file": "WORD-00412.glb",
+    "region": "ASL"
+  },
+  "WORD-00414": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00414)",
+    "file": "WORD-00414.glb",
+    "region": "ASL"
+  },
+  "WORD-00415": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00415)",
+    "file": "WORD-00415.glb",
+    "region": "ASL"
+  },
+  "WORD-00416": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00416)",
+    "file": "WORD-00416.glb",
+    "region": "ASL"
+  },
+  "WORD-00419": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00419)",
+    "file": "WORD-00419.glb",
+    "region": "ASL"
+  },
+  "WORD-00421": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00421)",
+    "file": "WORD-00421.glb",
+    "region": "ASL"
+  },
+  "WORD-00422": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00422)",
+    "file": "WORD-00422.glb",
+    "region": "ASL"
+  },
+  "WORD-00423": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00423)",
+    "file": "WORD-00423.glb",
+    "region": "ASL"
+  },
+  "WORD-00424": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00424)",
+    "file": "WORD-00424.glb",
+    "region": "ASL"
+  },
+  "WORD-00425": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00425)",
+    "file": "WORD-00425.glb",
+    "region": "ASL"
+  },
+  "WORD-00426": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00426)",
+    "file": "WORD-00426.glb",
+    "region": "ASL"
+  },
+  "WORD-00429": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00429)",
+    "file": "WORD-00429.glb",
+    "region": "ASL"
+  },
+  "WORD-00430": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00430)",
+    "file": "WORD-00430.glb",
+    "region": "ASL"
+  },
+  "WORD-00431": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00431)",
+    "file": "WORD-00431.glb",
+    "region": "ASL"
+  },
+  "WORD-00432": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00432)",
+    "file": "WORD-00432.glb",
+    "region": "ASL"
+  },
+  "WORD-00433": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00433)",
+    "file": "WORD-00433.glb",
+    "region": "ASL"
+  },
+  "WORD-00434": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00434)",
+    "file": "WORD-00434.glb",
+    "region": "ASL"
+  },
+  "WORD-00435": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00435)",
+    "file": "WORD-00435.glb",
+    "region": "ASL"
+  },
+  "WORD-00581": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00581)",
+    "file": "WORD-00581.glb",
+    "region": "ASL"
+  },
+  "WORD-00583": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00583)",
+    "file": "WORD-00583.glb",
+    "region": "ASL"
+  },
+  "WORD-00584": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00584)",
+    "file": "WORD-00584.glb",
+    "region": "ASL"
+  },
+  "WORD-00585": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00585)",
+    "file": "WORD-00585.glb",
+    "region": "ASL"
+  },
+  "WORD-00586": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00586)",
+    "file": "WORD-00586.glb",
+    "region": "ASL"
+  },
+  "WORD-00587": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00587)",
+    "file": "WORD-00587.glb",
+    "region": "ASL"
+  },
+  "WORD-00592": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00592)",
+    "file": "WORD-00592.glb",
+    "region": "ASL"
+  },
+  "WORD-00593": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00593)",
+    "file": "WORD-00593.glb",
+    "region": "ASL"
+  },
+  "WORD-00594": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00594)",
+    "file": "WORD-00594.glb",
+    "region": "ASL"
+  },
+  "WORD-00597": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00597)",
+    "file": "WORD-00597.glb",
+    "region": "ASL"
+  },
+  "WORD-00598": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00598)",
+    "file": "WORD-00598.glb",
+    "region": "ASL"
+  },
+  "WORD-00599": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00599)",
+    "file": "WORD-00599.glb",
+    "region": "ASL"
+  },
+  "WORD-00600": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00600)",
+    "file": "WORD-00600.glb",
+    "region": "ASL"
+  },
+  "WORD-00601": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00601)",
+    "file": "WORD-00601.glb",
+    "region": "ASL"
+  },
+  "WORD-00602": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00602)",
+    "file": "WORD-00602.glb",
+    "region": "ASL"
+  },
+  "WORD-00618": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00618)",
+    "file": "WORD-00618.glb",
+    "region": "ASL"
+  },
+  "WORD-00623": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00623)",
+    "file": "WORD-00623.glb",
+    "region": "ASL"
+  },
+  "WORD-00624": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00624)",
+    "file": "WORD-00624.glb",
+    "region": "ASL"
+  },
+  "WORD-00625": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00625)",
+    "file": "WORD-00625.glb",
+    "region": "ASL"
+  },
+  "WORD-00626": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00626)",
+    "file": "WORD-00626.glb",
+    "region": "ASL"
+  },
+  "WORD-00627": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00627)",
+    "file": "WORD-00627.glb",
+    "region": "ASL"
+  },
+  "WORD-00628": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00628)",
+    "file": "WORD-00628.glb",
+    "region": "ASL"
+  },
+  "WORD-00629": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00629)",
+    "file": "WORD-00629.glb",
+    "region": "ASL"
+  },
+  "WORD-00630": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00630)",
+    "file": "WORD-00630.glb",
+    "region": "ASL"
+  },
+  "WORD-00631": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00631)",
+    "file": "WORD-00631.glb",
+    "region": "ASL"
+  },
+  "WORD-00632": {
+    "biomechanical": true,
+    "description": "ASL sign from WLASL dataset (ID 00632)",
+    "file": "WORD-00632.glb",
+    "region": "ASL"
+  },
+  "accessibility-standards-canada": {
+    "description": "Avatar introduces Accessibility Standards Canada and the release of EN 301 549 in accessible HTML and Word formats.",
+    "file": "accessibility-standards-canada.glb",
+    "region": "ASL"
+  },
+  "can-asc-en-301-549-2024": {
+    "biomechanical": true,
+    "description": "Avatar signs the Canadian designation CAN/ASC \u2013 EN 301 549:2024 as the national adoption of the standard.",
+    "file": "can-asc-en-301-549-2024.glb",
+    "region": "ASL"
+  },
+  "eaa": {
+    "description": "Avatar explains the European Accessibility Act as the framework for accessibility obligations on certain private services.",
+    "file": "eaa.glb",
+    "region": "IS"
+  },
+  "harmonized-standard": {
+    "description": "Avatar defines a harmonised standard and how it supports consistent implementation across EU Member States.",
+    "file": "harmonized-standard.glb",
+    "region": "IS"
+  },
+  "idle": {
+    "biomechanical": true,
+    "description": "Neutral SMPL-X standing pose with subtle breathing animation",
+    "file": "idle-neutral.glb",
+    "region": "Universal"
+  },
+  "pdf": {
+    "description": "Avatar explains that relying on PDF-only publications can reduce accessibility for screen reader users.",
+    "file": "pdf.glb",
+    "region": "ASL"
+  },
+  "test": {
+    "biomechanical": true,
+    "description": "Real ASL sign from SignAvatars dataset (file 00295)",
+    "file": "test-00295.glb",
+    "region": "ASL"
+  },
+  "wad": {
+    "description": "Avatar explains the Web Accessibility Directive as the EU legal instrument for public sector web accessibility.",
+    "file": "wad.glb",
+    "hamnosys": "Example: HamNoSys notation would go here for precise linguistic documentation",
+    "region": "IS"
+  },
+  "A": {
+    "alias_for": "WORD-01615",
+    "file": "WORD-01615.glb",
+    "description": "ASL sign for \"a\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01615"
+  },
+  "WORD-01615": {
+    "file": "WORD-01615.glb",
+    "description": "ASL sign for \"a\" (WLASL ID 01615)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01615"
+  },
+  "A LOT": {
+    "alias_for": "WORD-02131",
+    "file": "WORD-02131.glb",
+    "description": "ASL sign for \"a lot\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02131"
+  },
+  "WORD-02131": {
+    "file": "WORD-02131.glb",
+    "description": "ASL sign for \"a lot\" (WLASL ID 02131)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02131"
+  },
+  "ABDOMEN": {
+    "alias_for": "WORD-00341",
+    "file": "WORD-00341.glb",
+    "description": "ASL sign for \"abdomen\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00341"
+  },
+  "ACCIDENT": {
+    "alias_for": "WORD-00639",
+    "file": "WORD-00639.glb",
+    "description": "ASL sign for \"accident\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00639"
+  },
+  "WORD-00639": {
+    "file": "WORD-00639.glb",
+    "description": "ASL sign for \"accident\" (WLASL ID 00639)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00639"
+  },
+  "ACCOMPLISH": {
+    "alias_for": "WORD-00668",
+    "file": "WORD-00668.glb",
+    "description": "ASL sign for \"accomplish\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00668"
+  },
+  "WORD-00668": {
+    "file": "WORD-00668.glb",
+    "description": "ASL sign for \"accomplish\" (WLASL ID 00668)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00668"
+  },
+  "ACCOUNTANT": {
+    "alias_for": "WORD-00694",
+    "file": "WORD-00694.glb",
+    "description": "ASL sign for \"accountant\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00694"
+  },
+  "WORD-00694": {
+    "file": "WORD-00694.glb",
+    "description": "ASL sign for \"accountant\" (WLASL ID 00694)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00694"
+  },
+  "ACROSS": {
+    "alias_for": "WORD-00842",
+    "file": "WORD-00842.glb",
+    "description": "ASL sign for \"across\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00842"
+  },
+  "WORD-00842": {
+    "file": "WORD-00842.glb",
+    "description": "ASL sign for \"across\" (WLASL ID 00842)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00842"
+  },
+  "ACT": {
+    "alias_for": "WORD-00851",
+    "file": "WORD-00851.glb",
+    "description": "ASL sign for \"act\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00851"
+  },
+  "WORD-00851": {
+    "file": "WORD-00851.glb",
+    "description": "ASL sign for \"act\" (WLASL ID 00851)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00851"
+  },
+  "ACTION": {
+    "alias_for": "WORD-00858",
+    "file": "WORD-00858.glb",
+    "description": "ASL sign for \"action\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00858"
+  },
+  "WORD-00858": {
+    "file": "WORD-00858.glb",
+    "description": "ASL sign for \"action\" (WLASL ID 00858)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00858"
+  },
+  "ACTIVE": {
+    "alias_for": "WORD-00874",
+    "file": "WORD-00874.glb",
+    "description": "ASL sign for \"active\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00874"
+  },
+  "WORD-00874": {
+    "file": "WORD-00874.glb",
+    "description": "ASL sign for \"active\" (WLASL ID 00874)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00874"
+  },
+  "ACTIVITY": {
+    "alias_for": "WORD-00894",
+    "file": "WORD-00894.glb",
+    "description": "ASL sign for \"activity\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00894"
+  },
+  "WORD-00894": {
+    "file": "WORD-00894.glb",
+    "description": "ASL sign for \"activity\" (WLASL ID 00894)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00894"
+  },
+  "ACTOR": {
+    "alias_for": "WORD-00904",
+    "file": "WORD-00904.glb",
+    "description": "ASL sign for \"actor\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00904"
+  },
+  "WORD-00904": {
+    "file": "WORD-00904.glb",
+    "description": "ASL sign for \"actor\" (WLASL ID 00904)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00904"
+  },
+  "ADAPT": {
+    "alias_for": "WORD-00951",
+    "file": "WORD-00951.glb",
+    "description": "ASL sign for \"adapt\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00951"
+  },
+  "WORD-00951": {
+    "file": "WORD-00951.glb",
+    "description": "ASL sign for \"adapt\" (WLASL ID 00951)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00951"
+  },
+  "ADD": {
+    "alias_for": "WORD-00973",
+    "file": "WORD-00973.glb",
+    "description": "ASL sign for \"add\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00973"
+  },
+  "WORD-00973": {
+    "file": "WORD-00973.glb",
+    "description": "ASL sign for \"add\" (WLASL ID 00973)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "00973"
+  },
+  "ADDRESS": {
+    "alias_for": "WORD-01024",
+    "file": "WORD-01024.glb",
+    "description": "ASL sign for \"address\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01024"
+  },
+  "WORD-01024": {
+    "file": "WORD-01024.glb",
+    "description": "ASL sign for \"address\" (WLASL ID 01024)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01024"
+  },
+  "ADJECTIVE": {
+    "alias_for": "WORD-01069",
+    "file": "WORD-01069.glb",
+    "description": "ASL sign for \"adjective\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01069"
+  },
+  "WORD-01069": {
+    "file": "WORD-01069.glb",
+    "description": "ASL sign for \"adjective\" (WLASL ID 01069)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01069"
+  },
+  "ADJUST": {
+    "alias_for": "WORD-01079",
+    "file": "WORD-01079.glb",
+    "description": "ASL sign for \"adjust\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01079"
+  },
+  "WORD-01079": {
+    "file": "WORD-01079.glb",
+    "description": "ASL sign for \"adjust\" (WLASL ID 01079)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01079"
+  },
+  "ADMIRE": {
+    "alias_for": "WORD-01107",
+    "file": "WORD-01107.glb",
+    "description": "ASL sign for \"admire\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01107"
+  },
+  "WORD-01107": {
+    "file": "WORD-01107.glb",
+    "description": "ASL sign for \"admire\" (WLASL ID 01107)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01107"
+  },
+  "ADMIT": {
+    "alias_for": "WORD-01127",
+    "file": "WORD-01127.glb",
+    "description": "ASL sign for \"admit\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01127"
+  },
+  "WORD-01127": {
+    "file": "WORD-01127.glb",
+    "description": "ASL sign for \"admit\" (WLASL ID 01127)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01127"
+  },
+  "ADOPT": {
+    "alias_for": "WORD-01162",
+    "file": "WORD-01162.glb",
+    "description": "ASL sign for \"adopt\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01162"
+  },
+  "WORD-01162": {
+    "file": "WORD-01162.glb",
+    "description": "ASL sign for \"adopt\" (WLASL ID 01162)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01162"
+  },
+  "ADULT": {
+    "alias_for": "WORD-01217",
+    "file": "WORD-01217.glb",
+    "description": "ASL sign for \"adult\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01217"
+  },
+  "WORD-01217": {
+    "file": "WORD-01217.glb",
+    "description": "ASL sign for \"adult\" (WLASL ID 01217)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01217"
+  },
+  "ADVANCED": {
+    "alias_for": "WORD-01231",
+    "file": "WORD-01231.glb",
+    "description": "ASL sign for \"advanced\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01231"
+  },
+  "WORD-01231": {
+    "file": "WORD-01231.glb",
+    "description": "ASL sign for \"advanced\" (WLASL ID 01231)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01231"
+  },
+  "ADVANTAGE": {
+    "alias_for": "WORD-01252",
+    "file": "WORD-01252.glb",
+    "description": "ASL sign for \"advantage\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01252"
+  },
+  "WORD-01252": {
+    "file": "WORD-01252.glb",
+    "description": "ASL sign for \"advantage\" (WLASL ID 01252)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01252"
+  },
+  "ADVERB": {
+    "alias_for": "WORD-01269",
+    "file": "WORD-01269.glb",
+    "description": "ASL sign for \"adverb\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01269"
+  },
+  "WORD-01269": {
+    "file": "WORD-01269.glb",
+    "description": "ASL sign for \"adverb\" (WLASL ID 01269)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01269"
+  },
+  "AFFECT": {
+    "alias_for": "WORD-01327",
+    "file": "WORD-01327.glb",
+    "description": "ASL sign for \"affect\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01327"
+  },
+  "WORD-01327": {
+    "file": "WORD-01327.glb",
+    "description": "ASL sign for \"affect\" (WLASL ID 01327)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01327"
+  },
+  "AFRAID": {
+    "alias_for": "WORD-01381",
+    "file": "WORD-01381.glb",
+    "description": "ASL sign for \"afraid\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01381"
+  },
+  "WORD-01381": {
+    "file": "WORD-01381.glb",
+    "description": "ASL sign for \"afraid\" (WLASL ID 01381)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01381"
+  },
+  "AFRICA": {
+    "alias_for": "WORD-01398",
+    "file": "WORD-01398.glb",
+    "description": "ASL sign for \"africa\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01398"
+  },
+  "WORD-01398": {
+    "file": "WORD-01398.glb",
+    "description": "ASL sign for \"africa\" (WLASL ID 01398)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01398"
+  },
+  "AFTER": {
+    "alias_for": "WORD-01428",
+    "file": "WORD-01428.glb",
+    "description": "ASL sign for \"after\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01428"
+  },
+  "WORD-01428": {
+    "file": "WORD-01428.glb",
+    "description": "ASL sign for \"after\" (WLASL ID 01428)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01428"
+  },
+  "AFTERNOON": {
+    "alias_for": "WORD-01442",
+    "file": "WORD-01442.glb",
+    "description": "ASL sign for \"afternoon\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01442"
+  },
+  "WORD-01442": {
+    "file": "WORD-01442.glb",
+    "description": "ASL sign for \"afternoon\" (WLASL ID 01442)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01442"
+  },
+  "AGAIN": {
+    "alias_for": "WORD-01471",
+    "file": "WORD-01471.glb",
+    "description": "ASL sign for \"again\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01471"
+  },
+  "WORD-01471": {
+    "file": "WORD-01471.glb",
+    "description": "ASL sign for \"again\" (WLASL ID 01471)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01471"
+  },
+  "AGAINST": {
+    "alias_for": "WORD-01479",
+    "file": "WORD-01479.glb",
+    "description": "ASL sign for \"against\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01479"
+  },
+  "WORD-01479": {
+    "file": "WORD-01479.glb",
+    "description": "ASL sign for \"against\" (WLASL ID 01479)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01479"
+  },
+  "AGE": {
+    "alias_for": "WORD-01495",
+    "file": "WORD-01495.glb",
+    "description": "ASL sign for \"age\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01495"
+  },
+  "WORD-01495": {
+    "file": "WORD-01495.glb",
+    "description": "ASL sign for \"age\" (WLASL ID 01495)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01495"
+  },
+  "AGENDA": {
+    "alias_for": "WORD-01515",
+    "file": "WORD-01515.glb",
+    "description": "ASL sign for \"agenda\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01515"
+  },
+  "WORD-01515": {
+    "file": "WORD-01515.glb",
+    "description": "ASL sign for \"agenda\" (WLASL ID 01515)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01515"
+  },
+  "AGO": {
+    "alias_for": "WORD-01564",
+    "file": "WORD-01564.glb",
+    "description": "ASL sign for \"ago\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01564"
+  },
+  "WORD-01564": {
+    "file": "WORD-01564.glb",
+    "description": "ASL sign for \"ago\" (WLASL ID 01564)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01564"
+  },
+  "AGREE": {
+    "alias_for": "WORD-01581",
+    "file": "WORD-01581.glb",
+    "description": "ASL sign for \"agree\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01581"
+  },
+  "WORD-01581": {
+    "file": "WORD-01581.glb",
+    "description": "ASL sign for \"agree\" (WLASL ID 01581)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01581"
+  },
+  "AGREEMENT": {
+    "alias_for": "WORD-01587",
+    "file": "WORD-01587.glb",
+    "description": "ASL sign for \"agreement\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01587"
+  },
+  "WORD-01587": {
+    "file": "WORD-01587.glb",
+    "description": "ASL sign for \"agreement\" (WLASL ID 01587)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01587"
+  },
+  "AHEAD": {
+    "alias_for": "WORD-01605",
+    "file": "WORD-01605.glb",
+    "description": "ASL sign for \"ahead\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01605"
+  },
+  "WORD-01605": {
+    "file": "WORD-01605.glb",
+    "description": "ASL sign for \"ahead\" (WLASL ID 01605)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01605"
+  },
+  "AID": {
+    "alias_for": "WORD-01628",
+    "file": "WORD-01628.glb",
+    "description": "ASL sign for \"aid\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01628"
+  },
+  "WORD-01628": {
+    "file": "WORD-01628.glb",
+    "description": "ASL sign for \"aid\" (WLASL ID 01628)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01628"
+  },
+  "AIM": {
+    "alias_for": "WORD-01653",
+    "file": "WORD-01653.glb",
+    "description": "ASL sign for \"aim\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01653"
+  },
+  "WORD-01653": {
+    "file": "WORD-01653.glb",
+    "description": "ASL sign for \"aim\" (WLASL ID 01653)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01653"
+  },
+  "AIRPLANE": {
+    "alias_for": "WORD-01734",
+    "file": "WORD-01734.glb",
+    "description": "ASL sign for \"airplane\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01734"
+  },
+  "WORD-01734": {
+    "file": "WORD-01734.glb",
+    "description": "ASL sign for \"airplane\" (WLASL ID 01734)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01734"
+  },
+  "ALARM": {
+    "alias_for": "WORD-01808",
+    "file": "WORD-01808.glb",
+    "description": "ASL sign for \"alarm\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01808"
+  },
+  "WORD-01808": {
+    "file": "WORD-01808.glb",
+    "description": "ASL sign for \"alarm\" (WLASL ID 01808)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01808"
+  },
+  "ALCOHOL": {
+    "alias_for": "WORD-01839",
+    "file": "WORD-01839.glb",
+    "description": "ASL sign for \"alcohol\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01839"
+  },
+  "WORD-01839": {
+    "file": "WORD-01839.glb",
+    "description": "ASL sign for \"alcohol\" (WLASL ID 01839)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01839"
+  },
+  "ALGEBRA": {
+    "alias_for": "WORD-01880",
+    "file": "WORD-01880.glb",
+    "description": "ASL sign for \"algebra\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01880"
+  },
+  "WORD-01880": {
+    "file": "WORD-01880.glb",
+    "description": "ASL sign for \"algebra\" (WLASL ID 01880)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01880"
+  },
+  "ALL": {
+    "alias_for": "WORD-02002",
+    "file": "WORD-02002.glb",
+    "description": "ASL sign for \"all\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02002"
+  },
+  "WORD-02002": {
+    "file": "WORD-02002.glb",
+    "description": "ASL sign for \"all\" (WLASL ID 02002)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02002"
+  },
+  "ALL DAY": {
+    "alias_for": "WORD-01927",
+    "file": "WORD-01927.glb",
+    "description": "ASL sign for \"all day\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01927"
+  },
+  "WORD-01927": {
+    "file": "WORD-01927.glb",
+    "description": "ASL sign for \"all day\" (WLASL ID 01927)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01927"
+  },
+  "ALLERGY": {
+    "alias_for": "WORD-01965",
+    "file": "WORD-01965.glb",
+    "description": "ASL sign for \"allergy\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01965"
+  },
+  "WORD-01965": {
+    "file": "WORD-01965.glb",
+    "description": "ASL sign for \"allergy\" (WLASL ID 01965)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "01965"
+  },
+  "ALLIGATOR": {
+    "alias_for": "WORD-02014",
+    "file": "WORD-02014.glb",
+    "description": "ASL sign for \"alligator\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02014"
+  },
+  "WORD-02014": {
+    "file": "WORD-02014.glb",
+    "description": "ASL sign for \"alligator\" (WLASL ID 02014)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02014"
+  },
+  "ALLOW": {
+    "alias_for": "WORD-02052",
+    "file": "WORD-02052.glb",
+    "description": "ASL sign for \"allow\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02052"
+  },
+  "WORD-02052": {
+    "file": "WORD-02052.glb",
+    "description": "ASL sign for \"allow\" (WLASL ID 02052)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02052"
+  },
+  "ALMOST": {
+    "alias_for": "WORD-02098",
+    "file": "WORD-02098.glb",
+    "description": "ASL sign for \"almost\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02098"
+  },
+  "WORD-02098": {
+    "file": "WORD-02098.glb",
+    "description": "ASL sign for \"almost\" (WLASL ID 02098)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02098"
+  },
+  "ALONE": {
+    "alias_for": "WORD-02112",
+    "file": "WORD-02112.glb",
+    "description": "ASL sign for \"alone\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02112"
+  },
+  "WORD-02112": {
+    "file": "WORD-02112.glb",
+    "description": "ASL sign for \"alone\" (WLASL ID 02112)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02112"
+  },
+  "ALPHABET": {
+    "alias_for": "WORD-02151",
+    "file": "WORD-02151.glb",
+    "description": "ASL sign for \"alphabet\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02151"
+  },
+  "WORD-02151": {
+    "file": "WORD-02151.glb",
+    "description": "ASL sign for \"alphabet\" (WLASL ID 02151)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02151"
+  },
+  "ALREADY": {
+    "alias_for": "WORD-02168",
+    "file": "WORD-02168.glb",
+    "description": "ASL sign for \"already\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02168"
+  },
+  "WORD-02168": {
+    "file": "WORD-02168.glb",
+    "description": "ASL sign for \"already\" (WLASL ID 02168)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02168"
+  },
+  "ALSO": {
+    "alias_for": "WORD-02181",
+    "file": "WORD-02181.glb",
+    "description": "ASL sign for \"also\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02181"
+  },
+  "WORD-02181": {
+    "file": "WORD-02181.glb",
+    "description": "ASL sign for \"also\" (WLASL ID 02181)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02181"
+  },
+  "ALWAYS": {
+    "alias_for": "WORD-02238",
+    "file": "WORD-02238.glb",
+    "description": "ASL sign for \"always\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02238"
+  },
+  "WORD-02238": {
+    "file": "WORD-02238.glb",
+    "description": "ASL sign for \"always\" (WLASL ID 02238)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02238"
+  },
+  "AMAZING": {
+    "alias_for": "WORD-02284",
+    "file": "WORD-02284.glb",
+    "description": "ASL sign for \"amazing\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02284"
+  },
+  "WORD-02284": {
+    "file": "WORD-02284.glb",
+    "description": "ASL sign for \"amazing\" (WLASL ID 02284)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02284"
+  },
+  "AMERICA": {
+    "alias_for": "WORD-02356",
+    "file": "WORD-02356.glb",
+    "description": "ASL sign for \"america\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02356"
+  },
+  "WORD-02356": {
+    "file": "WORD-02356.glb",
+    "description": "ASL sign for \"america\" (WLASL ID 02356)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02356"
+  },
+  "AMPUTATE": {
+    "alias_for": "WORD-02435",
+    "file": "WORD-02435.glb",
+    "description": "ASL sign for \"amputate\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02435"
+  },
+  "WORD-02435": {
+    "file": "WORD-02435.glb",
+    "description": "ASL sign for \"amputate\" (WLASL ID 02435)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02435"
+  },
+  "ANALYZE": {
+    "alias_for": "WORD-02483",
+    "file": "WORD-02483.glb",
+    "description": "ASL sign for \"analyze\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02483"
+  },
+  "WORD-02483": {
+    "file": "WORD-02483.glb",
+    "description": "ASL sign for \"analyze\" (WLASL ID 02483)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02483"
+  },
+  "ANATOMY": {
+    "alias_for": "WORD-02492",
+    "file": "WORD-02492.glb",
+    "description": "ASL sign for \"anatomy\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02492"
+  },
+  "WORD-02492": {
+    "file": "WORD-02492.glb",
+    "description": "ASL sign for \"anatomy\" (WLASL ID 02492)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02492"
+  },
+  "AND": {
+    "alias_for": "WORD-02525",
+    "file": "WORD-02525.glb",
+    "description": "ASL sign for \"and\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02525"
+  },
+  "WORD-02525": {
+    "file": "WORD-02525.glb",
+    "description": "ASL sign for \"and\" (WLASL ID 02525)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02525"
+  },
+  "ANGEL": {
+    "alias_for": "WORD-02548",
+    "file": "WORD-02548.glb",
+    "description": "ASL sign for \"angel\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02548"
+  },
+  "WORD-02548": {
+    "file": "WORD-02548.glb",
+    "description": "ASL sign for \"angel\" (WLASL ID 02548)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02548"
+  },
+  "ANGLE": {
+    "alias_for": "WORD-02562",
+    "file": "WORD-02562.glb",
+    "description": "ASL sign for \"angle\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02562"
+  },
+  "WORD-02562": {
+    "file": "WORD-02562.glb",
+    "description": "ASL sign for \"angle\" (WLASL ID 02562)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02562"
+  },
+  "ANGRY": {
+    "alias_for": "WORD-02575",
+    "file": "WORD-02575.glb",
+    "description": "ASL sign for \"angry\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02575"
+  },
+  "WORD-02575": {
+    "file": "WORD-02575.glb",
+    "description": "ASL sign for \"angry\" (WLASL ID 02575)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02575"
+  },
+  "ANIMAL": {
+    "alias_for": "WORD-02592",
+    "file": "WORD-02592.glb",
+    "description": "ASL sign for \"animal\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02592"
+  },
+  "WORD-02592": {
+    "file": "WORD-02592.glb",
+    "description": "ASL sign for \"animal\" (WLASL ID 02592)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02592"
+  },
+  "ANNIVERSARY": {
+    "alias_for": "WORD-02616",
+    "file": "WORD-02616.glb",
+    "description": "ASL sign for \"anniversary\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02616"
+  },
+  "WORD-02616": {
+    "file": "WORD-02616.glb",
+    "description": "ASL sign for \"anniversary\" (WLASL ID 02616)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02616"
+  },
+  "ANNOUNCE": {
+    "alias_for": "WORD-02625",
+    "file": "WORD-02625.glb",
+    "description": "ASL sign for \"announce\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02625"
+  },
+  "WORD-02625": {
+    "file": "WORD-02625.glb",
+    "description": "ASL sign for \"announce\" (WLASL ID 02625)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02625"
+  },
+  "ANNOY": {
+    "alias_for": "WORD-02653",
+    "file": "WORD-02653.glb",
+    "description": "ASL sign for \"annoy\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02653"
+  },
+  "WORD-02653": {
+    "file": "WORD-02653.glb",
+    "description": "ASL sign for \"annoy\" (WLASL ID 02653)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02653"
+  },
+  "ANOTHER": {
+    "alias_for": "WORD-02706",
+    "file": "WORD-02706.glb",
+    "description": "ASL sign for \"another\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02706"
+  },
+  "WORD-02706": {
+    "file": "WORD-02706.glb",
+    "description": "ASL sign for \"another\" (WLASL ID 02706)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02706"
+  },
+  "ANSWER": {
+    "alias_for": "WORD-02718",
+    "file": "WORD-02718.glb",
+    "description": "ASL sign for \"answer\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02718"
+  },
+  "WORD-02718": {
+    "file": "WORD-02718.glb",
+    "description": "ASL sign for \"answer\" (WLASL ID 02718)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02718"
+  },
+  "ANY": {
+    "alias_for": "WORD-02833",
+    "file": "WORD-02833.glb",
+    "description": "ASL sign for \"any\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02833"
+  },
+  "WORD-02833": {
+    "file": "WORD-02833.glb",
+    "description": "ASL sign for \"any\" (WLASL ID 02833)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02833"
+  },
+  "ANYWAY": {
+    "alias_for": "WORD-02856",
+    "file": "WORD-02856.glb",
+    "description": "ASL sign for \"anyway\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02856"
+  },
+  "WORD-02856": {
+    "file": "WORD-02856.glb",
+    "description": "ASL sign for \"anyway\" (WLASL ID 02856)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02856"
+  },
+  "APART": {
+    "alias_for": "WORD-02870",
+    "file": "WORD-02870.glb",
+    "description": "ASL sign for \"apart\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02870"
+  },
+  "WORD-02870": {
+    "file": "WORD-02870.glb",
+    "description": "ASL sign for \"apart\" (WLASL ID 02870)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02870"
+  },
+  "APARTMENT": {
+    "alias_for": "WORD-02880",
+    "file": "WORD-02880.glb",
+    "description": "ASL sign for \"apartment\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02880"
+  },
+  "WORD-02880": {
+    "file": "WORD-02880.glb",
+    "description": "ASL sign for \"apartment\" (WLASL ID 02880)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02880"
+  },
+  "APOSTROPHE": {
+    "alias_for": "WORD-02916",
+    "file": "WORD-02916.glb",
+    "description": "ASL sign for \"apostrophe\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02916"
+  },
+  "WORD-02916": {
+    "file": "WORD-02916.glb",
+    "description": "ASL sign for \"apostrophe\" (WLASL ID 02916)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02916"
+  },
+  "APPEAR": {
+    "alias_for": "WORD-02961",
+    "file": "WORD-02961.glb",
+    "description": "ASL sign for \"appear\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02961"
+  },
+  "WORD-02961": {
+    "file": "WORD-02961.glb",
+    "description": "ASL sign for \"appear\" (WLASL ID 02961)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02961"
+  },
+  "APPETITE": {
+    "alias_for": "WORD-02975",
+    "file": "WORD-02975.glb",
+    "description": "ASL sign for \"appetite\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02975"
+  },
+  "WORD-02975": {
+    "file": "WORD-02975.glb",
+    "description": "ASL sign for \"appetite\" (WLASL ID 02975)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "02975"
+  },
+  "APPLE": {
+    "alias_for": "WORD-03008",
+    "file": "WORD-03008.glb",
+    "description": "ASL sign for \"apple\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03008"
+  },
+  "WORD-03008": {
+    "file": "WORD-03008.glb",
+    "description": "ASL sign for \"apple\" (WLASL ID 03008)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03008"
+  },
+  "APPOINTMENT": {
+    "alias_for": "WORD-03063",
+    "file": "WORD-03063.glb",
+    "description": "ASL sign for \"appointment\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03063"
+  },
+  "WORD-03063": {
+    "file": "WORD-03063.glb",
+    "description": "ASL sign for \"appointment\" (WLASL ID 03063)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03063"
+  },
+  "APPRECIATE": {
+    "alias_for": "WORD-03074",
+    "file": "WORD-03074.glb",
+    "description": "ASL sign for \"appreciate\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03074"
+  },
+  "WORD-03074": {
+    "file": "WORD-03074.glb",
+    "description": "ASL sign for \"appreciate\" (WLASL ID 03074)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03074"
+  },
+  "APPROACH": {
+    "alias_for": "WORD-03094",
+    "file": "WORD-03094.glb",
+    "description": "ASL sign for \"approach\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03094"
+  },
+  "WORD-03094": {
+    "file": "WORD-03094.glb",
+    "description": "ASL sign for \"approach\" (WLASL ID 03094)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03094"
+  },
+  "APPROPRIATE": {
+    "alias_for": "WORD-03108",
+    "file": "WORD-03108.glb",
+    "description": "ASL sign for \"appropriate\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03108"
+  },
+  "WORD-03108": {
+    "file": "WORD-03108.glb",
+    "description": "ASL sign for \"appropriate\" (WLASL ID 03108)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03108"
+  },
+  "APPROVE": {
+    "alias_for": "WORD-03131",
+    "file": "WORD-03131.glb",
+    "description": "ASL sign for \"approve\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03131"
+  },
+  "WORD-03131": {
+    "file": "WORD-03131.glb",
+    "description": "ASL sign for \"approve\" (WLASL ID 03131)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03131"
+  },
+  "APRIL": {
+    "alias_for": "WORD-03161",
+    "file": "WORD-03161.glb",
+    "description": "ASL sign for \"april\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03161"
+  },
+  "WORD-03161": {
+    "file": "WORD-03161.glb",
+    "description": "ASL sign for \"april\" (WLASL ID 03161)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03161"
+  },
+  "ARCHERY": {
+    "alias_for": "WORD-03207",
+    "file": "WORD-03207.glb",
+    "description": "ASL sign for \"archery\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03207"
+  },
+  "WORD-03207": {
+    "file": "WORD-03207.glb",
+    "description": "ASL sign for \"archery\" (WLASL ID 03207)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03207"
+  },
+  "AREA": {
+    "alias_for": "WORD-03246",
+    "file": "WORD-03246.glb",
+    "description": "ASL sign for \"area\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03246"
+  },
+  "WORD-03246": {
+    "file": "WORD-03246.glb",
+    "description": "ASL sign for \"area\" (WLASL ID 03246)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03246"
+  },
+  "ARGUE": {
+    "alias_for": "WORD-03282",
+    "file": "WORD-03282.glb",
+    "description": "ASL sign for \"argue\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03282"
+  },
+  "WORD-03282": {
+    "file": "WORD-03282.glb",
+    "description": "ASL sign for \"argue\" (WLASL ID 03282)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03282"
+  },
+  "ARIZONA": {
+    "alias_for": "WORD-03320",
+    "file": "WORD-03320.glb",
+    "description": "ASL sign for \"arizona\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03320"
+  },
+  "WORD-03320": {
+    "file": "WORD-03320.glb",
+    "description": "ASL sign for \"arizona\" (WLASL ID 03320)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03320"
+  },
+  "ARM": {
+    "alias_for": "WORD-03344",
+    "file": "WORD-03344.glb",
+    "description": "ASL sign for \"arm\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03344"
+  },
+  "WORD-03344": {
+    "file": "WORD-03344.glb",
+    "description": "ASL sign for \"arm\" (WLASL ID 03344)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03344"
+  },
+  "ARMY": {
+    "alias_for": "WORD-03368",
+    "file": "WORD-03368.glb",
+    "description": "ASL sign for \"army\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03368"
+  },
+  "WORD-03368": {
+    "file": "WORD-03368.glb",
+    "description": "ASL sign for \"army\" (WLASL ID 03368)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03368"
+  },
+  "AROUND": {
+    "alias_for": "WORD-03389",
+    "file": "WORD-03389.glb",
+    "description": "ASL sign for \"around\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03389"
+  },
+  "WORD-03389": {
+    "file": "WORD-03389.glb",
+    "description": "ASL sign for \"around\" (WLASL ID 03389)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03389"
+  },
+  "ARREST": {
+    "alias_for": "WORD-03430",
+    "file": "WORD-03430.glb",
+    "description": "ASL sign for \"arrest\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03430"
+  },
+  "WORD-03430": {
+    "file": "WORD-03430.glb",
+    "description": "ASL sign for \"arrest\" (WLASL ID 03430)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03430"
+  },
+  "ARRIVE": {
+    "alias_for": "WORD-03445",
+    "file": "WORD-03445.glb",
+    "description": "ASL sign for \"arrive\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03445"
+  },
+  "WORD-03445": {
+    "file": "WORD-03445.glb",
+    "description": "ASL sign for \"arrive\" (WLASL ID 03445)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03445"
+  },
+  "ARROGANT": {
+    "alias_for": "WORD-03457",
+    "file": "WORD-03457.glb",
+    "description": "ASL sign for \"arrogant\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03457"
+  },
+  "WORD-03457": {
+    "file": "WORD-03457.glb",
+    "description": "ASL sign for \"arrogant\" (WLASL ID 03457)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03457"
+  },
+  "ART": {
+    "alias_for": "WORD-03486",
+    "file": "WORD-03486.glb",
+    "description": "ASL sign for \"art\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03486"
+  },
+  "WORD-03486": {
+    "file": "WORD-03486.glb",
+    "description": "ASL sign for \"art\" (WLASL ID 03486)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03486"
+  },
+  "ARTICLE": {
+    "alias_for": "WORD-03495",
+    "file": "WORD-03495.glb",
+    "description": "ASL sign for \"article\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03495"
+  },
+  "WORD-03495": {
+    "file": "WORD-03495.glb",
+    "description": "ASL sign for \"article\" (WLASL ID 03495)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03495"
+  },
+  "ARTIST": {
+    "alias_for": "WORD-03522",
+    "file": "WORD-03522.glb",
+    "description": "ASL sign for \"artist\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03522"
+  },
+  "WORD-03522": {
+    "file": "WORD-03522.glb",
+    "description": "ASL sign for \"artist\" (WLASL ID 03522)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03522"
+  },
+  "ASIA": {
+    "alias_for": "WORD-03571",
+    "file": "WORD-03571.glb",
+    "description": "ASL sign for \"asia\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03571"
+  },
+  "WORD-03571": {
+    "file": "WORD-03571.glb",
+    "description": "ASL sign for \"asia\" (WLASL ID 03571)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03571"
+  },
+  "ASK": {
+    "alias_for": "WORD-03607",
+    "file": "WORD-03607.glb",
+    "description": "ASL sign for \"ask\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03607"
+  },
+  "WORD-03607": {
+    "file": "WORD-03607.glb",
+    "description": "ASL sign for \"ask\" (WLASL ID 03607)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03607"
+  },
+  "ASL": {
+    "alias_for": "WORD-03642",
+    "file": "WORD-03642.glb",
+    "description": "ASL sign for \"asl\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03642"
+  },
+  "WORD-03642": {
+    "file": "WORD-03642.glb",
+    "description": "ASL sign for \"asl\" (WLASL ID 03642)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03642"
+  },
+  "ASSIST": {
+    "alias_for": "WORD-03771",
+    "file": "WORD-03771.glb",
+    "description": "ASL sign for \"assist\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03771"
+  },
+  "WORD-03771": {
+    "file": "WORD-03771.glb",
+    "description": "ASL sign for \"assist\" (WLASL ID 03771)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03771"
+  },
+  "ASSISTANT": {
+    "alias_for": "WORD-03763",
+    "file": "WORD-03763.glb",
+    "description": "ASL sign for \"assistant\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03763"
+  },
+  "WORD-03763": {
+    "file": "WORD-03763.glb",
+    "description": "ASL sign for \"assistant\" (WLASL ID 03763)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03763"
+  },
+  "ASSUME": {
+    "alias_for": "WORD-03805",
+    "file": "WORD-03805.glb",
+    "description": "ASL sign for \"assume\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03805"
+  },
+  "WORD-03805": {
+    "file": "WORD-03805.glb",
+    "description": "ASL sign for \"assume\" (WLASL ID 03805)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "03805"
+  },
+  "ATTEND": {
+    "alias_for": "WORD-04007",
+    "file": "WORD-04007.glb",
+    "description": "ASL sign for \"attend\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04007"
+  },
+  "WORD-04007": {
+    "file": "WORD-04007.glb",
+    "description": "ASL sign for \"attend\" (WLASL ID 04007)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04007"
+  },
+  "ATTENTION": {
+    "alias_for": "WORD-04017",
+    "file": "WORD-04017.glb",
+    "description": "ASL sign for \"attention\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04017"
+  },
+  "WORD-04017": {
+    "file": "WORD-04017.glb",
+    "description": "ASL sign for \"attention\" (WLASL ID 04017)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04017"
+  },
+  "ATTITUDE": {
+    "alias_for": "WORD-04048",
+    "file": "WORD-04048.glb",
+    "description": "ASL sign for \"attitude\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04048"
+  },
+  "WORD-04048": {
+    "file": "WORD-04048.glb",
+    "description": "ASL sign for \"attitude\" (WLASL ID 04048)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04048"
+  },
+  "ATTORNEY": {
+    "alias_for": "WORD-04055",
+    "file": "WORD-04055.glb",
+    "description": "ASL sign for \"attorney\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04055"
+  },
+  "WORD-04055": {
+    "file": "WORD-04055.glb",
+    "description": "ASL sign for \"attorney\" (WLASL ID 04055)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04055"
+  },
+  "ATTRACT": {
+    "alias_for": "WORD-04075",
+    "file": "WORD-04075.glb",
+    "description": "ASL sign for \"attract\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04075"
+  },
+  "WORD-04075": {
+    "file": "WORD-04075.glb",
+    "description": "ASL sign for \"attract\" (WLASL ID 04075)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04075"
+  },
+  "AUCTION": {
+    "alias_for": "WORD-04106",
+    "file": "WORD-04106.glb",
+    "description": "ASL sign for \"auction\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04106"
+  },
+  "WORD-04106": {
+    "file": "WORD-04106.glb",
+    "description": "ASL sign for \"auction\" (WLASL ID 04106)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04106"
+  },
+  "AUDIENCE": {
+    "alias_for": "WORD-04123",
+    "file": "WORD-04123.glb",
+    "description": "ASL sign for \"audience\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04123"
+  },
+  "WORD-04123": {
+    "file": "WORD-04123.glb",
+    "description": "ASL sign for \"audience\" (WLASL ID 04123)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04123"
+  },
+  "AUDIOLOGIST": {
+    "alias_for": "WORD-04134",
+    "file": "WORD-04134.glb",
+    "description": "ASL sign for \"audiologist\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04134"
+  },
+  "WORD-04134": {
+    "file": "WORD-04134.glb",
+    "description": "ASL sign for \"audiologist\" (WLASL ID 04134)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04134"
+  },
+  "AUDIOLOGY": {
+    "alias_for": "WORD-04140",
+    "file": "WORD-04140.glb",
+    "description": "ASL sign for \"audiology\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04140"
+  },
+  "WORD-04140": {
+    "file": "WORD-04140.glb",
+    "description": "ASL sign for \"audiology\" (WLASL ID 04140)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04140"
+  },
+  "AUGUST": {
+    "alias_for": "WORD-04164",
+    "file": "WORD-04164.glb",
+    "description": "ASL sign for \"august\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04164"
+  },
+  "WORD-04164": {
+    "file": "WORD-04164.glb",
+    "description": "ASL sign for \"august\" (WLASL ID 04164)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04164"
+  },
+  "AUNT": {
+    "alias_for": "WORD-04175",
+    "file": "WORD-04175.glb",
+    "description": "ASL sign for \"aunt\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04175"
+  },
+  "WORD-04175": {
+    "file": "WORD-04175.glb",
+    "description": "ASL sign for \"aunt\" (WLASL ID 04175)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04175"
+  },
+  "AUSTRALIA": {
+    "alias_for": "WORD-04198",
+    "file": "WORD-04198.glb",
+    "description": "ASL sign for \"australia\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04198"
+  },
+  "WORD-04198": {
+    "file": "WORD-04198.glb",
+    "description": "ASL sign for \"australia\" (WLASL ID 04198)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04198"
+  },
+  "AUSTRIA": {
+    "alias_for": "WORD-04205",
+    "file": "WORD-04205.glb",
+    "description": "ASL sign for \"austria\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04205"
+  },
+  "WORD-04205": {
+    "file": "WORD-04205.glb",
+    "description": "ASL sign for \"austria\" (WLASL ID 04205)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04205"
+  },
+  "AUTHOR": {
+    "alias_for": "WORD-04223",
+    "file": "WORD-04223.glb",
+    "description": "ASL sign for \"author\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04223"
+  },
+  "WORD-04223": {
+    "file": "WORD-04223.glb",
+    "description": "ASL sign for \"author\" (WLASL ID 04223)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04223"
+  },
+  "AUTHORITY": {
+    "alias_for": "WORD-04231",
+    "file": "WORD-04231.glb",
+    "description": "ASL sign for \"authority\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04231"
+  },
+  "WORD-04231": {
+    "file": "WORD-04231.glb",
+    "description": "ASL sign for \"authority\" (WLASL ID 04231)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04231"
+  },
+  "AUTUMN": {
+    "alias_for": "WORD-04296",
+    "file": "WORD-04296.glb",
+    "description": "ASL sign for \"autumn\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04296"
+  },
+  "WORD-04296": {
+    "file": "WORD-04296.glb",
+    "description": "ASL sign for \"autumn\" (WLASL ID 04296)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04296"
+  },
+  "AVAILABLE": {
+    "alias_for": "WORD-04304",
+    "file": "WORD-04304.glb",
+    "description": "ASL sign for \"available\"",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04304"
+  },
+  "WORD-04304": {
+    "file": "WORD-04304.glb",
+    "description": "ASL sign for \"available\" (WLASL ID 04304)",
+    "region": "ASL",
+    "biomechanical": true,
+    "wlasl_id": "04304"
+  }
+}

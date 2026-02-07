@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Applying EN 301 549: Canada vs Europe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Sample EN 301 549 page comparing Canada and Europe with hooks for a sign language avatar."
+  />
+  <link rel="stylesheet" href="styles.css" />
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>Applying EN 301 549: Canada vs Europe</h1>
+      <p class="tagline">
+        A sample single‑page layout showing how EN 301 549 is applied in Canada and the European Union, with sign language hooks.
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content" class="layout" aria-label="Main content about applying EN 301 549 in Canada and Europe">
+    <aside
+      class="sign-sidecar"
+      aria-label="Sign language avatar panel"
+    >
+      <div class="avatar-container high-contrast">
+        <h2 class="avatar-heading">Sign Language Avatar</h2>
+
+        <canvas
+          id="signer-canvas"
+          class="signer-canvas"
+          role="img"
+          aria-label="Sign language avatar in idle state."
+        >
+          Your browser does not support the 3D sign language avatar. Please refer to the textual content above.
+        </canvas>
+
+        <p
+          id="avatar-status"
+          class="avatar-status"
+          aria-hidden="true"
+        >
+          Loading sign language avatar (VRM/GLB format). Biomechanical validation based on SignAvatars (ECCV 2024) standards.
+        </p>
+
+        <div class="avatar-controls">
+          <button
+            id="toggle-animation"
+            type="button"
+            aria-pressed="false"
+          >
+            Pause avatar
+          </button>
+        </div>
+
+        <div
+          id="sign-description"
+          class="sr-only"
+          role="status"
+          aria-live="polite"
+        >
+          Avatar is idle.
+        </div>
+
+        <details class="debug-panel" id="debug-panel">
+          <summary>Debug information</summary>
+          <div id="debug-log" class="debug-log" aria-live="polite"></div>
+        </details>
+      </div>
+    </aside>
+
+    <div class="content-column">
+    <!-- REAL SIGN LANGUAGE DEMOS -->
+    <section aria-labelledby="test-section" class="sign-paragraph" style="background: #e8f5e9; padding: 1.5rem; border-left: 4px solid #4caf50; margin-bottom: 2rem;">
+      <h2 id="test-section" style="color: #2e7d32;">🎉 ASL Sign Language Demo</h2>
+      <p><strong>Click any word to see its ASL sign:</strong></p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.5rem; margin: 1rem 0;">
+        <span class="sign-trigger" data-sign="ABLE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Able</span>
+        <span class="sign-trigger" data-sign="ABOUT" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">About</span>
+        <span class="sign-trigger" data-sign="ABOVE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Above</span>
+        <span class="sign-trigger" data-sign="ACCEPT" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Accept</span>
+        <span class="sign-trigger" data-sign="ACROSS" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Across</span>
+        <span class="sign-trigger" data-sign="ACT" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Act</span>
+        <span class="sign-trigger" data-sign="ACTION" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Action</span>
+        <span class="sign-trigger" data-sign="ACTIVE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Active</span>
+        <span class="sign-trigger" data-sign="ADAPT" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Adapt</span>
+        <span class="sign-trigger" data-sign="ADD" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Add</span>
+        <span class="sign-trigger" data-sign="ADMIT" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Admit</span>
+        <span class="sign-trigger" data-sign="ADOPT" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Adopt</span>
+        <span class="sign-trigger" data-sign="ADULT" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Adult</span>
+        <span class="sign-trigger" data-sign="ADVANCED" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Advanced</span>
+        <span class="sign-trigger" data-sign="AFRAID" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Afraid</span>
+        <span class="sign-trigger" data-sign="AFTER" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">After</span>
+        <span class="sign-trigger" data-sign="AFTERNOON" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Afternoon</span>
+        <span class="sign-trigger" data-sign="AGAIN" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Again</span>
+        <span class="sign-trigger" data-sign="AGAINST" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Against</span>
+        <span class="sign-trigger" data-sign="AGE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Age</span>
+        <span class="sign-trigger" data-sign="AGREE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Agree</span>
+        <span class="sign-trigger" data-sign="AID" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Aid</span>
+        <span class="sign-trigger" data-sign="AIM" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Aim</span>
+        <span class="sign-trigger" data-sign="AIRPLANE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Airplane</span>
+      </div>
+      
+      <p style="font-size: 0.85em; color: #555; margin-top: 1rem;">
+        ✅ 124 ASL words from WLASL dataset<br>
+        ✅ SMPL-X full-body motion with hands and facial expressions<br>
+        ✅ Biomechanically validated (SignAvatars, ECCV 2024)
+      </p>
+    </section>
+    
+    <section aria-labelledby="section-unified-standard" class="sign-paragraph" data-sign="ACCEPT">
+      <h2 id="section-unified-standard">1. Unified Standard, Diverse Implementation</h2>
+
+      <p>
+        While both Canada and the European Union (EU) use EN 301 549 v3.2.1 as their technical baseline, their legal frameworks
+        differ significantly in scope and enforcement.
+      </p>
+
+      <p>
+        <strong>Canada:</strong>
+        Adopted as
+        <span class="sign-trigger" data-sign="can-asc-en-301-549-2024">
+          CAN/ASC&nbsp;&ndash; EN&nbsp;301&nbsp;549:2024
+        </span>.
+        It is currently a voluntary national standard, but federal agencies are mandated to use it for ICT procurement to meet
+        the goals of the Accessible Canada Act.
+      </p>
+
+      <p>
+        <strong>European Union:</strong>
+        Enforced via the
+        <span class="sign-trigger" data-sign="wad">
+          Web Accessibility Directive (WAD)
+        </span>
+        for the public sector and the
+        <span class="sign-trigger" data-sign="eaa">
+          European Accessibility Act (EAA)
+        </span>
+        for the private sector.
+      </p>
+
+      <p>
+        <strong>Sign Trigger:</strong>
+        <span class="sign-trigger" data-sign="ACCEPT" role="button" tabindex="0">
+          ACCEPT
+        </span>
+        &mdash; Avatar demonstrates the ASL sign for &ldquo;accept&rdquo; (both Canada and Europe accept EN 301 549).
+      </p>
+    </section>
+
+    <section aria-labelledby="section-member-state-variance" class="content-column sign-paragraph" data-sign="MEMBER-STATES">
+      <h2 id="section-member-state-variance">2. The &ldquo;Member State&rdquo; Variance in the EU</h2>
+
+      <p>
+        In Europe, EN 301 549 is a
+        <span class="sign-trigger" data-sign="harmonized-standard">
+          harmonized standard
+        </span>,
+        but each EU Member State transposes EU Directives into their own national laws. This creates slight variations in
+        monitoring and reporting.
+      </p>
+
+      <table aria-label="Examples of national laws implementing EN 301 549 in EU Member States">
+        <thead>
+          <tr>
+            <th scope="col">Country</th>
+            <th scope="col">National Law</th>
+            <th scope="col">Key Variation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Germany</td>
+            <td>
+              <span class="sign-trigger" data-sign="BFSG" role="button" tabindex="0">
+                BFSG
+              </span>
+            </td>
+            <td>
+              High focus on &ldquo;Barrierefreiheit&rdquo; with specific German‑language reporting requirements.
+            </td>
+          </tr>
+          <tr>
+            <td>France</td>
+            <td>
+              <span class="sign-trigger" data-sign="RGAA" role="button" tabindex="0">
+                RGAA
+              </span>
+            </td>
+            <td>
+              Uses a specific &ldquo;Referential&rdquo; (RGAA) that interprets EN 301 549 through a rigorous testing methodology.
+            </td>
+          </tr>
+          <tr>
+            <td>Ireland</td>
+            <td>
+              <span class="sign-trigger" data-sign="SI-636-2023" role="button" tabindex="0">
+                S.I. No. 636/2023
+              </span>
+            </td>
+            <td>
+              Focuses heavily on the accessibility statement and feedback loop requirements.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <strong>Sign Trigger:</strong>
+        <span class="sign-trigger" data-sign="MEMBER-STATES" role="button" tabindex="0">
+          MEMBER‑STATES
+        </span>
+        &mdash; Avatar explains: &ldquo;Every country in Europe has its own specific version of the law, like RGAA in France or BFSG in Germany.&rdquo;
+      </p>
+    </section>
+
+    <section aria-labelledby="section-canadian-plus" class="content-column sign-paragraph" data-sign="CANADIAN-PLUS">
+      <h2 id="section-canadian-plus">3. Canadian &ldquo;Plus&rdquo; Features</h2>
+
+      <p>
+        Canada has actually surpassed Europe in the accessibility of the standard itself. While the European standard is
+        traditionally distributed as a
+        <span class="sign-trigger" data-sign="pdf" role="button" tabindex="0">
+          PDF
+        </span>
+        (which is notoriously difficult for screen readers to navigate),
+        <span class="sign-trigger" data-sign="accessibility-standards-canada" role="button" tabindex="0">
+          Accessibility Standards Canada
+        </span>
+        released the Canadian version in fully accessible HTML and MS Word formats, available for free in both English and
+        French.
+      </p>
+
+      <p>
+        This improves:
+      </p>
+      <ul>
+        <li>Navigability for screen reader and braille display users.</li>
+        <li>Searchability and deep linking to specific clauses and annexes.</li>
+        <li>Localization and translation workflows for bilingual publication.</li>
+      </ul>
+    </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      This page is a demonstrator for integrating a 3D sign language avatar with EN&nbsp;301&nbsp;549 compliance content in a
+      static GitHub Pages environment.
+    </p>
+  </footer>
+
+  <script type="module">
+    async function loadModules() {
+      const output = document.getElementById("avatar-status");
+      try {
+        output.textContent = "Loading Three.js...";
+        const THREE_MODULE = await import('https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js');
+        
+        // Create extensible object with all THREE exports
+        window.THREE = { ...THREE_MODULE };
+        
+        output.textContent = "Loading GLTFLoader...";
+        const { GLTFLoader } = await import('https://cdn.jsdelivr.net/npm/three@0.182.0/examples/jsm/loaders/GLTFLoader.js');
+        window.THREE.GLTFLoader = GLTFLoader;
+        
+        output.textContent = "Loading VRM support...";
+        const VRM = await import('https://cdn.jsdelivr.net/npm/@pixiv/three-vrm@3/lib/three-vrm.module.min.js');
+        window.VRM = VRM;
+        
+        output.textContent = "Loading application...";
+        await import('./app.js?v=' + Date.now());
+        
+      } catch (error) {
+        console.error("Module load error:", error);
+        output.textContent = `Error: ${error.message}`;
+      }
+    }
+    
+    loadModules();
+  </script>
+</body>
+</html>

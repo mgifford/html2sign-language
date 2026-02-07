@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Module Test</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #000; color: #0f0; }
+    .error { color: #f00; }
+    .success { color: #0f0; }
+  </style>
+</head>
+<body>
+  <h1>Module Loading Test</h1>
+  <div id="output"></div>
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.182.0/examples/jsm/"
+      }
+    }
+  </script>
+  
+  <script type="module">
+    const output = document.getElementById('output');
+    
+    function log(msg, isError = false) {
+      const div = document.createElement('div');
+      div.className = isError ? 'error' : 'success';
+      div.textContent = msg;
+      output.appendChild(div);
+      console.log(msg);
+    }
+    
+    async function test() {
+      try {
+        log('1. Testing Three.js import from CDN...');
+        const THREE = await import('three');
+        log(`   ✓ Three.js loaded: ${THREE.REVISION}`);
+        
+        log('2. Testing GLTFLoader from CDN...');
+        const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js');
+        log(`   ✓ GLTFLoader loaded: ${typeof GLTFLoader}`);
+        
+        log('3. Testing three-vrm from CDN...');
+        const VRM = await import('https://cdn.jsdelivr.net/npm/@pixiv/three-vrm@3/lib/three-vrm.module.min.js');
+        log(`   ✓ three-vrm loaded: ${typeof VRM.VRMLoaderPlugin}`);
+        
+        log('4. Testing local app.js...');
+        // Don't actually import app.js as it needs THREE global
+        log(`   ⚠ Skipped (requires THREE global)`);
+        
+        log('');
+        log('=== ALL MODULES LOADED SUCCESSFULLY ===');
+        
+      } catch (error) {
+        log(`✗ ERROR: ${error.message}`, true);
+        log(`  Stack: ${error.stack}`, true);
+      }
+    }
+    
+    test();
+  </script>
+</body>
+</html>

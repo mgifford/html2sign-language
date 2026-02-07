@@ -1,0 +1,299 @@
+* ,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: #111827;
+  color: #f9fafb;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  top: 1rem;
+}
+
+.site-header {
+  background: #111827;
+  color: #f9fafb;
+  padding: 1.5rem 1.25rem;
+}
+
+.site-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.site-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 60ch;
+  color: #e5e7eb;
+}
+
+.layout {
+  max-width: 1120px;
+  margin: 1.5rem auto;
+  padding: 0 1.25rem 2rem;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 2.6fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.content-column {
+  min-width: 0;
+}
+
+.content-column h2 {
+  margin-top: 1.75rem;
+}
+
+.sign-sidecar {
+  position: sticky;
+  top: 1.25rem;
+  align-self: flex-start;
+  max-height: calc(100vh - 2.5rem);
+}
+
+.avatar-container {
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.75rem 0.9rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.avatar-container.high-contrast {
+  background: #000000;
+  color: #f9fafb;
+}
+
+.avatar-heading {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.avatar-status {
+  margin: 0.35rem 0 0.5rem;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+.debug-panel {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+}
+
+.debug-panel > summary {
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+}
+
+.debug-log {
+  margin-top: 0.35rem;
+  max-height: 160px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.signer-canvas {
+  display: block;
+  width: 100%;
+  height: 260px;
+  background: radial-gradient(circle at 30% 20%, #1f2937 0, #020617 55%, #000000 100%);
+  border-radius: 0.5rem;
+}
+
+.avatar-controls {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.avatar-controls button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #f97316;
+  color: #111827;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(248, 113, 113, 0.4);
+}
+
+.avatar-controls button:hover {
+  background: #fb923c;
+}
+
+.avatar-controls button:active {
+  transform: translateY(1px);
+}
+
+.sign-trigger {
+  cursor: pointer;
+  padding: 0.05em 0.25em;
+  border-radius: 0.25em;
+  background: rgba(59, 130, 246, 0.08);
+  border-bottom: 2px solid rgba(59, 130, 246, 0.35);
+}
+
+.sign-trigger.is-active {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.7);
+}
+
+.sign-paragraph.is-in-view {
+  outline: 2px solid #a855f7;
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer {
+  border-top: 1px solid #d1d5db;
+  padding: 1.25rem 1.25rem 2rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+  background: #f9fafb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: #ffffff;
+}
+
+th,
+td {
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+th {
+  background: #e5e7eb;
+}
+
+/* Visual feedback for currently signed section */
+.sign-paragraph.is-signing {
+  background: linear-gradient(90deg, #dbeafe 0%, transparent 100%);
+  border-left: 4px solid #2563eb;
+  padding-left: 1rem;
+  margin-left: -1rem;
+  transition: all 0.3s ease;
+}
+
+.sign-paragraph.is-in-view {
+  border-left: 2px solid #93c5fd;
+  padding-left: 1rem;
+  margin-left: -1rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .signer-canvas {
+    height: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sign-sidecar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    max-height: none;
+  }
+
+  .avatar-container {
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+
+  .signer-canvas {
+    height: 210px;
+  }
+}
+
+@media (max-width: 520px) {
+  .layout {
+    display: block;
+  }
+
+  .sign-sidecar {
+    position: fixed;
+    inset: auto 0.75rem 0.75rem auto;
+    width: 48vw;
+    max-width: 220px;
+    z-index: 30;
+  }
+
+  .avatar-container {
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .avatar-heading {
+    font-size: 0.9rem;
+  }
+
+  .signer-canvas {
+    height: 160px;
+  }
+
+  .content-column {
+    padding-bottom: 8rem;
+  }
+}

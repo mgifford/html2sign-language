@@ -1,0 +1,746 @@
+{
+  "A": {
+    "file_id": "01615",
+    "gloss": "a",
+    "pkl_file": "01615.pkl",
+    "sign_key": "WORD-01615"
+  },
+  "A LOT": {
+    "file_id": "02131",
+    "gloss": "a lot",
+    "pkl_file": "02131.pkl",
+    "sign_key": "WORD-02131"
+  },
+  "ABDOMEN": {
+    "file_id": "00341",
+    "gloss": "abdomen",
+    "pkl_file": "00341.pkl",
+    "sign_key": "WORD-00341"
+  },
+  "ABLE": {
+    "file_id": "00384",
+    "gloss": "able",
+    "pkl_file": "00384.pkl",
+    "sign_key": "WORD-00384"
+  },
+  "ABOUT": {
+    "file_id": "00426",
+    "gloss": "about",
+    "pkl_file": "00426.pkl",
+    "sign_key": "WORD-00426"
+  },
+  "ABOVE": {
+    "file_id": "00435",
+    "gloss": "above",
+    "pkl_file": "00435.pkl",
+    "sign_key": "WORD-00435"
+  },
+  "ACCENT": {
+    "file_id": "00587",
+    "gloss": "accent",
+    "pkl_file": "00587.pkl",
+    "sign_key": "WORD-00587"
+  },
+  "ACCEPT": {
+    "file_id": "00602",
+    "gloss": "accept",
+    "pkl_file": "00602.pkl",
+    "sign_key": "WORD-00602"
+  },
+  "ACCIDENT": {
+    "file_id": "00639",
+    "gloss": "accident",
+    "pkl_file": "00639.pkl",
+    "sign_key": "WORD-00639"
+  },
+  "ACCOMPLISH": {
+    "file_id": "00668",
+    "gloss": "accomplish",
+    "pkl_file": "00668.pkl",
+    "sign_key": "WORD-00668"
+  },
+  "ACCOUNTANT": {
+    "file_id": "00694",
+    "gloss": "accountant",
+    "pkl_file": "00694.pkl",
+    "sign_key": "WORD-00694"
+  },
+  "ACROSS": {
+    "file_id": "00842",
+    "gloss": "across",
+    "pkl_file": "00842.pkl",
+    "sign_key": "WORD-00842"
+  },
+  "ACT": {
+    "file_id": "00851",
+    "gloss": "act",
+    "pkl_file": "00851.pkl",
+    "sign_key": "WORD-00851"
+  },
+  "ACTION": {
+    "file_id": "00858",
+    "gloss": "action",
+    "pkl_file": "00858.pkl",
+    "sign_key": "WORD-00858"
+  },
+  "ACTIVE": {
+    "file_id": "00874",
+    "gloss": "active",
+    "pkl_file": "00874.pkl",
+    "sign_key": "WORD-00874"
+  },
+  "ACTIVITY": {
+    "file_id": "00894",
+    "gloss": "activity",
+    "pkl_file": "00894.pkl",
+    "sign_key": "WORD-00894"
+  },
+  "ACTOR": {
+    "file_id": "00904",
+    "gloss": "actor",
+    "pkl_file": "00904.pkl",
+    "sign_key": "WORD-00904"
+  },
+  "ADAPT": {
+    "file_id": "00951",
+    "gloss": "adapt",
+    "pkl_file": "00951.pkl",
+    "sign_key": "WORD-00951"
+  },
+  "ADD": {
+    "file_id": "00973",
+    "gloss": "add",
+    "pkl_file": "00973.pkl",
+    "sign_key": "WORD-00973"
+  },
+  "ADDRESS": {
+    "file_id": "01024",
+    "gloss": "address",
+    "pkl_file": "01024.pkl",
+    "sign_key": "WORD-01024"
+  },
+  "ADJECTIVE": {
+    "file_id": "01069",
+    "gloss": "adjective",
+    "pkl_file": "01069.pkl",
+    "sign_key": "WORD-01069"
+  },
+  "ADJUST": {
+    "file_id": "01079",
+    "gloss": "adjust",
+    "pkl_file": "01079.pkl",
+    "sign_key": "WORD-01079"
+  },
+  "ADMIRE": {
+    "file_id": "01107",
+    "gloss": "admire",
+    "pkl_file": "01107.pkl",
+    "sign_key": "WORD-01107"
+  },
+  "ADMIT": {
+    "file_id": "01127",
+    "gloss": "admit",
+    "pkl_file": "01127.pkl",
+    "sign_key": "WORD-01127"
+  },
+  "ADOPT": {
+    "file_id": "01162",
+    "gloss": "adopt",
+    "pkl_file": "01162.pkl",
+    "sign_key": "WORD-01162"
+  },
+  "ADULT": {
+    "file_id": "01217",
+    "gloss": "adult",
+    "pkl_file": "01217.pkl",
+    "sign_key": "WORD-01217"
+  },
+  "ADVANCED": {
+    "file_id": "01231",
+    "gloss": "advanced",
+    "pkl_file": "01231.pkl",
+    "sign_key": "WORD-01231"
+  },
+  "ADVANTAGE": {
+    "file_id": "01252",
+    "gloss": "advantage",
+    "pkl_file": "01252.pkl",
+    "sign_key": "WORD-01252"
+  },
+  "ADVERB": {
+    "file_id": "01269",
+    "gloss": "adverb",
+    "pkl_file": "01269.pkl",
+    "sign_key": "WORD-01269"
+  },
+  "AFFECT": {
+    "file_id": "01327",
+    "gloss": "affect",
+    "pkl_file": "01327.pkl",
+    "sign_key": "WORD-01327"
+  },
+  "AFRAID": {
+    "file_id": "01381",
+    "gloss": "afraid",
+    "pkl_file": "01381.pkl",
+    "sign_key": "WORD-01381"
+  },
+  "AFRICA": {
+    "file_id": "01398",
+    "gloss": "africa",
+    "pkl_file": "01398.pkl",
+    "sign_key": "WORD-01398"
+  },
+  "AFTER": {
+    "file_id": "01428",
+    "gloss": "after",
+    "pkl_file": "01428.pkl",
+    "sign_key": "WORD-01428"
+  },
+  "AFTERNOON": {
+    "file_id": "01442",
+    "gloss": "afternoon",
+    "pkl_file": "01442.pkl",
+    "sign_key": "WORD-01442"
+  },
+  "AGAIN": {
+    "file_id": "01471",
+    "gloss": "again",
+    "pkl_file": "01471.pkl",
+    "sign_key": "WORD-01471"
+  },
+  "AGAINST": {
+    "file_id": "01479",
+    "gloss": "against",
+    "pkl_file": "01479.pkl",
+    "sign_key": "WORD-01479"
+  },
+  "AGE": {
+    "file_id": "01495",
+    "gloss": "age",
+    "pkl_file": "01495.pkl",
+    "sign_key": "WORD-01495"
+  },
+  "AGENDA": {
+    "file_id": "01515",
+    "gloss": "agenda",
+    "pkl_file": "01515.pkl",
+    "sign_key": "WORD-01515"
+  },
+  "AGO": {
+    "file_id": "01564",
+    "gloss": "ago",
+    "pkl_file": "01564.pkl",
+    "sign_key": "WORD-01564"
+  },
+  "AGREE": {
+    "file_id": "01581",
+    "gloss": "agree",
+    "pkl_file": "01581.pkl",
+    "sign_key": "WORD-01581"
+  },
+  "AGREEMENT": {
+    "file_id": "01587",
+    "gloss": "agreement",
+    "pkl_file": "01587.pkl",
+    "sign_key": "WORD-01587"
+  },
+  "AHEAD": {
+    "file_id": "01605",
+    "gloss": "ahead",
+    "pkl_file": "01605.pkl",
+    "sign_key": "WORD-01605"
+  },
+  "AID": {
+    "file_id": "01628",
+    "gloss": "aid",
+    "pkl_file": "01628.pkl",
+    "sign_key": "WORD-01628"
+  },
+  "AIM": {
+    "file_id": "01653",
+    "gloss": "aim",
+    "pkl_file": "01653.pkl",
+    "sign_key": "WORD-01653"
+  },
+  "AIRPLANE": {
+    "file_id": "01734",
+    "gloss": "airplane",
+    "pkl_file": "01734.pkl",
+    "sign_key": "WORD-01734"
+  },
+  "ALARM": {
+    "file_id": "01808",
+    "gloss": "alarm",
+    "pkl_file": "01808.pkl",
+    "sign_key": "WORD-01808"
+  },
+  "ALCOHOL": {
+    "file_id": "01839",
+    "gloss": "alcohol",
+    "pkl_file": "01839.pkl",
+    "sign_key": "WORD-01839"
+  },
+  "ALGEBRA": {
+    "file_id": "01880",
+    "gloss": "algebra",
+    "pkl_file": "01880.pkl",
+    "sign_key": "WORD-01880"
+  },
+  "ALL": {
+    "file_id": "02002",
+    "gloss": "all",
+    "pkl_file": "02002.pkl",
+    "sign_key": "WORD-02002"
+  },
+  "ALL DAY": {
+    "file_id": "01927",
+    "gloss": "all day",
+    "pkl_file": "01927.pkl",
+    "sign_key": "WORD-01927"
+  },
+  "ALLERGY": {
+    "file_id": "01965",
+    "gloss": "allergy",
+    "pkl_file": "01965.pkl",
+    "sign_key": "WORD-01965"
+  },
+  "ALLIGATOR": {
+    "file_id": "02014",
+    "gloss": "alligator",
+    "pkl_file": "02014.pkl",
+    "sign_key": "WORD-02014"
+  },
+  "ALLOW": {
+    "file_id": "02052",
+    "gloss": "allow",
+    "pkl_file": "02052.pkl",
+    "sign_key": "WORD-02052"
+  },
+  "ALMOST": {
+    "file_id": "02098",
+    "gloss": "almost",
+    "pkl_file": "02098.pkl",
+    "sign_key": "WORD-02098"
+  },
+  "ALONE": {
+    "file_id": "02112",
+    "gloss": "alone",
+    "pkl_file": "02112.pkl",
+    "sign_key": "WORD-02112"
+  },
+  "ALPHABET": {
+    "file_id": "02151",
+    "gloss": "alphabet",
+    "pkl_file": "02151.pkl",
+    "sign_key": "WORD-02151"
+  },
+  "ALREADY": {
+    "file_id": "02168",
+    "gloss": "already",
+    "pkl_file": "02168.pkl",
+    "sign_key": "WORD-02168"
+  },
+  "ALSO": {
+    "file_id": "02181",
+    "gloss": "also",
+    "pkl_file": "02181.pkl",
+    "sign_key": "WORD-02181"
+  },
+  "ALWAYS": {
+    "file_id": "02238",
+    "gloss": "always",
+    "pkl_file": "02238.pkl",
+    "sign_key": "WORD-02238"
+  },
+  "AMAZING": {
+    "file_id": "02284",
+    "gloss": "amazing",
+    "pkl_file": "02284.pkl",
+    "sign_key": "WORD-02284"
+  },
+  "AMERICA": {
+    "file_id": "02356",
+    "gloss": "america",
+    "pkl_file": "02356.pkl",
+    "sign_key": "WORD-02356"
+  },
+  "AMPUTATE": {
+    "file_id": "02435",
+    "gloss": "amputate",
+    "pkl_file": "02435.pkl",
+    "sign_key": "WORD-02435"
+  },
+  "ANALYZE": {
+    "file_id": "02483",
+    "gloss": "analyze",
+    "pkl_file": "02483.pkl",
+    "sign_key": "WORD-02483"
+  },
+  "ANATOMY": {
+    "file_id": "02492",
+    "gloss": "anatomy",
+    "pkl_file": "02492.pkl",
+    "sign_key": "WORD-02492"
+  },
+  "AND": {
+    "file_id": "02525",
+    "gloss": "and",
+    "pkl_file": "02525.pkl",
+    "sign_key": "WORD-02525"
+  },
+  "ANGEL": {
+    "file_id": "02548",
+    "gloss": "angel",
+    "pkl_file": "02548.pkl",
+    "sign_key": "WORD-02548"
+  },
+  "ANGLE": {
+    "file_id": "02562",
+    "gloss": "angle",
+    "pkl_file": "02562.pkl",
+    "sign_key": "WORD-02562"
+  },
+  "ANGRY": {
+    "file_id": "02575",
+    "gloss": "angry",
+    "pkl_file": "02575.pkl",
+    "sign_key": "WORD-02575"
+  },
+  "ANIMAL": {
+    "file_id": "02592",
+    "gloss": "animal",
+    "pkl_file": "02592.pkl",
+    "sign_key": "WORD-02592"
+  },
+  "ANNIVERSARY": {
+    "file_id": "02616",
+    "gloss": "anniversary",
+    "pkl_file": "02616.pkl",
+    "sign_key": "WORD-02616"
+  },
+  "ANNOUNCE": {
+    "file_id": "02625",
+    "gloss": "announce",
+    "pkl_file": "02625.pkl",
+    "sign_key": "WORD-02625"
+  },
+  "ANNOY": {
+    "file_id": "02653",
+    "gloss": "annoy",
+    "pkl_file": "02653.pkl",
+    "sign_key": "WORD-02653"
+  },
+  "ANOTHER": {
+    "file_id": "02706",
+    "gloss": "another",
+    "pkl_file": "02706.pkl",
+    "sign_key": "WORD-02706"
+  },
+  "ANSWER": {
+    "file_id": "02718",
+    "gloss": "answer",
+    "pkl_file": "02718.pkl",
+    "sign_key": "WORD-02718"
+  },
+  "ANY": {
+    "file_id": "02833",
+    "gloss": "any",
+    "pkl_file": "02833.pkl",
+    "sign_key": "WORD-02833"
+  },
+  "ANYWAY": {
+    "file_id": "02856",
+    "gloss": "anyway",
+    "pkl_file": "02856.pkl",
+    "sign_key": "WORD-02856"
+  },
+  "APART": {
+    "file_id": "02870",
+    "gloss": "apart",
+    "pkl_file": "02870.pkl",
+    "sign_key": "WORD-02870"
+  },
+  "APARTMENT": {
+    "file_id": "02880",
+    "gloss": "apartment",
+    "pkl_file": "02880.pkl",
+    "sign_key": "WORD-02880"
+  },
+  "APOSTROPHE": {
+    "file_id": "02916",
+    "gloss": "apostrophe",
+    "pkl_file": "02916.pkl",
+    "sign_key": "WORD-02916"
+  },
+  "APPEAR": {
+    "file_id": "02961",
+    "gloss": "appear",
+    "pkl_file": "02961.pkl",
+    "sign_key": "WORD-02961"
+  },
+  "APPETITE": {
+    "file_id": "02975",
+    "gloss": "appetite",
+    "pkl_file": "02975.pkl",
+    "sign_key": "WORD-02975"
+  },
+  "APPLE": {
+    "file_id": "03008",
+    "gloss": "apple",
+    "pkl_file": "03008.pkl",
+    "sign_key": "WORD-03008"
+  },
+  "APPOINTMENT": {
+    "file_id": "03063",
+    "gloss": "appointment",
+    "pkl_file": "03063.pkl",
+    "sign_key": "WORD-03063"
+  },
+  "APPRECIATE": {
+    "file_id": "03074",
+    "gloss": "appreciate",
+    "pkl_file": "03074.pkl",
+    "sign_key": "WORD-03074"
+  },
+  "APPROACH": {
+    "file_id": "03094",
+    "gloss": "approach",
+    "pkl_file": "03094.pkl",
+    "sign_key": "WORD-03094"
+  },
+  "APPROPRIATE": {
+    "file_id": "03108",
+    "gloss": "appropriate",
+    "pkl_file": "03108.pkl",
+    "sign_key": "WORD-03108"
+  },
+  "APPROVE": {
+    "file_id": "03131",
+    "gloss": "approve",
+    "pkl_file": "03131.pkl",
+    "sign_key": "WORD-03131"
+  },
+  "APRIL": {
+    "file_id": "03161",
+    "gloss": "april",
+    "pkl_file": "03161.pkl",
+    "sign_key": "WORD-03161"
+  },
+  "ARCHERY": {
+    "file_id": "03207",
+    "gloss": "archery",
+    "pkl_file": "03207.pkl",
+    "sign_key": "WORD-03207"
+  },
+  "AREA": {
+    "file_id": "03246",
+    "gloss": "area",
+    "pkl_file": "03246.pkl",
+    "sign_key": "WORD-03246"
+  },
+  "ARGUE": {
+    "file_id": "03282",
+    "gloss": "argue",
+    "pkl_file": "03282.pkl",
+    "sign_key": "WORD-03282"
+  },
+  "ARIZONA": {
+    "file_id": "03320",
+    "gloss": "arizona",
+    "pkl_file": "03320.pkl",
+    "sign_key": "WORD-03320"
+  },
+  "ARM": {
+    "file_id": "03344",
+    "gloss": "arm",
+    "pkl_file": "03344.pkl",
+    "sign_key": "WORD-03344"
+  },
+  "ARMY": {
+    "file_id": "03368",
+    "gloss": "army",
+    "pkl_file": "03368.pkl",
+    "sign_key": "WORD-03368"
+  },
+  "AROUND": {
+    "file_id": "03389",
+    "gloss": "around",
+    "pkl_file": "03389.pkl",
+    "sign_key": "WORD-03389"
+  },
+  "ARREST": {
+    "file_id": "03430",
+    "gloss": "arrest",
+    "pkl_file": "03430.pkl",
+    "sign_key": "WORD-03430"
+  },
+  "ARRIVE": {
+    "file_id": "03445",
+    "gloss": "arrive",
+    "pkl_file": "03445.pkl",
+    "sign_key": "WORD-03445"
+  },
+  "ARROGANT": {
+    "file_id": "03457",
+    "gloss": "arrogant",
+    "pkl_file": "03457.pkl",
+    "sign_key": "WORD-03457"
+  },
+  "ART": {
+    "file_id": "03486",
+    "gloss": "art",
+    "pkl_file": "03486.pkl",
+    "sign_key": "WORD-03486"
+  },
+  "ARTICLE": {
+    "file_id": "03495",
+    "gloss": "article",
+    "pkl_file": "03495.pkl",
+    "sign_key": "WORD-03495"
+  },
+  "ARTIST": {
+    "file_id": "03522",
+    "gloss": "artist",
+    "pkl_file": "03522.pkl",
+    "sign_key": "WORD-03522"
+  },
+  "ASIA": {
+    "file_id": "03571",
+    "gloss": "asia",
+    "pkl_file": "03571.pkl",
+    "sign_key": "WORD-03571"
+  },
+  "ASK": {
+    "file_id": "03607",
+    "gloss": "ask",
+    "pkl_file": "03607.pkl",
+    "sign_key": "WORD-03607"
+  },
+  "ASL": {
+    "file_id": "03642",
+    "gloss": "asl",
+    "pkl_file": "03642.pkl",
+    "sign_key": "WORD-03642"
+  },
+  "ASSIST": {
+    "file_id": "03771",
+    "gloss": "assist",
+    "pkl_file": "03771.pkl",
+    "sign_key": "WORD-03771"
+  },
+  "ASSISTANT": {
+    "file_id": "03763",
+    "gloss": "assistant",
+    "pkl_file": "03763.pkl",
+    "sign_key": "WORD-03763"
+  },
+  "ASSUME": {
+    "file_id": "03805",
+    "gloss": "assume",
+    "pkl_file": "03805.pkl",
+    "sign_key": "WORD-03805"
+  },
+  "ATTEND": {
+    "file_id": "04007",
+    "gloss": "attend",
+    "pkl_file": "04007.pkl",
+    "sign_key": "WORD-04007"
+  },
+  "ATTENTION": {
+    "file_id": "04017",
+    "gloss": "attention",
+    "pkl_file": "04017.pkl",
+    "sign_key": "WORD-04017"
+  },
+  "ATTITUDE": {
+    "file_id": "04048",
+    "gloss": "attitude",
+    "pkl_file": "04048.pkl",
+    "sign_key": "WORD-04048"
+  },
+  "ATTORNEY": {
+    "file_id": "04055",
+    "gloss": "attorney",
+    "pkl_file": "04055.pkl",
+    "sign_key": "WORD-04055"
+  },
+  "ATTRACT": {
+    "file_id": "04075",
+    "gloss": "attract",
+    "pkl_file": "04075.pkl",
+    "sign_key": "WORD-04075"
+  },
+  "AUCTION": {
+    "file_id": "04106",
+    "gloss": "auction",
+    "pkl_file": "04106.pkl",
+    "sign_key": "WORD-04106"
+  },
+  "AUDIENCE": {
+    "file_id": "04123",
+    "gloss": "audience",
+    "pkl_file": "04123.pkl",
+    "sign_key": "WORD-04123"
+  },
+  "AUDIOLOGIST": {
+    "file_id": "04134",
+    "gloss": "audiologist",
+    "pkl_file": "04134.pkl",
+    "sign_key": "WORD-04134"
+  },
+  "AUDIOLOGY": {
+    "file_id": "04140",
+    "gloss": "audiology",
+    "pkl_file": "04140.pkl",
+    "sign_key": "WORD-04140"
+  },
+  "AUGUST": {
+    "file_id": "04164",
+    "gloss": "august",
+    "pkl_file": "04164.pkl",
+    "sign_key": "WORD-04164"
+  },
+  "AUNT": {
+    "file_id": "04175",
+    "gloss": "aunt",
+    "pkl_file": "04175.pkl",
+    "sign_key": "WORD-04175"
+  },
+  "AUSTRALIA": {
+    "file_id": "04198",
+    "gloss": "australia",
+    "pkl_file": "04198.pkl",
+    "sign_key": "WORD-04198"
+  },
+  "AUSTRIA": {
+    "file_id": "04205",
+    "gloss": "austria",
+    "pkl_file": "04205.pkl",
+    "sign_key": "WORD-04205"
+  },
+  "AUTHOR": {
+    "file_id": "04223",
+    "gloss": "author",
+    "pkl_file": "04223.pkl",
+    "sign_key": "WORD-04223"
+  },
+  "AUTHORITY": {
+    "file_id": "04231",
+    "gloss": "authority",
+    "pkl_file": "04231.pkl",
+    "sign_key": "WORD-04231"
+  },
+  "AUTUMN": {
+    "file_id": "04296",
+    "gloss": "autumn",
+    "pkl_file": "04296.pkl",
+    "sign_key": "WORD-04296"
+  },
+  "AVAILABLE": {
+    "file_id": "04304",
+    "gloss": "available",
+    "pkl_file": "04304.pkl",
+    "sign_key": "WORD-04304"
+  }
+}

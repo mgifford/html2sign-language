@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Data
+signavatars-data/
+*.pkl
+*.zip
+*.tar.gz
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Large binaries or temp files
+*.log
+/tmp/

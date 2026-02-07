@@ -1,0 +1,18 @@
+{
+  "name": "html-sign-language",
+  "version": "1.0.0",
+  "description": "This repository is a minimal, static demonstration of a **Sign Language Sidecar**: a 3D sign-language avatar that stays in view while users read long-form ICT accessibility content. The content focuses on how **EN 301 549 v3.2.1** is applied in **Canada** (CAN/ASC – EN 301 549:2024) versus the **European Union** (Web Accessibility Directive / European Accessibility Act).",
+  "main": "app.js",
+  "scripts": {
+    "test": "node tests/validate-imports.js",
+    "validate": "node tests/validate-imports.js",
+    "serve": "npx serve -l 8000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pixiv/three-vrm": "^3.4.5",
+    "three": "^0.182.0"
+  }
+}

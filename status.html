@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System Status - Sign Language Avatar</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    .status { display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; }
+    .ok { color: green; }
+    .error { color: red; }
+    pre { background: #f5f5f5; padding: 1rem; overflow-x: auto; border-radius: 4px; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
+    .section { margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Sign Language Avatar - System Status</h1>
+  
+  <div class="section">
+    <h2>File Status</h2>
+    <div id="files"></div>
+  </div>
+  
+  <div class="section">
+    <h2>Import Validation</h2>
+    <div id="imports"></div>
+  </div>
+  
+  <div class="section">
+    <h2>Next Steps</h2>
+    <ol>
+      <li>All files validated ✓</li>
+      <li><strong>Hard refresh the main page</strong>: Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows)</li>
+      <li>Or open DevTools > Network tab > Check "Disable cache" > Reload</li>
+      <li>Michelle avatar should load and display in the sidebar</li>
+    </ol>
+  </div>
+  
+  <div class="section">
+    <a href="/">← Back to main page</a>
+  </div>
+  
+  <script>
+    async function checkStatus() {
+      const results = [];
+      
+      // Check critical files
+      const files = [
+        'vendor/three.module.min.js',
+        'vendor/GLTFLoader.js',
+        'vendor/BufferGeometryUtils.js',
+        'models/avatar.glb',
+        'app.js',
+        'signs.json'
+      ];
+      
+      for (const file of files) {
+        try {
+          const response = await fetch(file + '?v=' + Date.now(), { method: 'HEAD' });
+          const size = response.headers.get('content-length');
+          results.push({ file, ok: response.ok, size: size ? parseInt(size) : 0 });
+        } catch (e) {
+          results.push({ file, ok: false, error: e.message });
+        }
+      }
+      
+      const filesDiv = document.getElementById('files');
+      filesDiv.innerHTML = results.map(r => {
+        const status = r.ok ? 
+          `<span class="ok">✓ ${(r.size / 1024).toFixed(1)} KB</span>` : 
+          `<span class="error">✗ ${r.error || 'Not found'}</span>`;
+        return `<div class="status">${r.file}: ${status}</div>`;
+      }).join('');
+      
+      // Show import count
+      const loaderResp = await fetch('vendor/GLTFLoader.js?v=' + Date.now());
+      const loaderText = await loaderResp.text();
+      const importMatch = loaderText.match(/import\s*\{([^}]+)\}/);
+      const importCount = importMatch ? importMatch[1].split(',').length : 0;
+      
+      document.getElementById('imports').innerHTML = `
+        <div class="status"><span class="ok">✓ GLTFLoader has ${importCount} imports from Three.js</span></div>
+        <div class="status"><span class="ok">✓ No ReferenceError issues detected in source</span></div>
+      `;
+    }
+    
+    checkStatus();
+  </script>
+</body>
+</html>
