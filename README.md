@@ -19,9 +19,32 @@ The goal is to treat sign language (LSF/ASL/IS) as a **first-class interface**, 
 
 All runtime behaviour is implemented client-side, using only static files.
 
+## 3. License & Credits
+
+### 3.1 Main License
+This "Sign Language Sidecar" project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See [LICENSE.txt](LICENSE.txt) for details.
+
+### 3.2 Acknowledgements & Data Attribution
+This project stands on the shoulders of giants. It builds upon open research, datasets, and libraries:
+
+**Core Libraries:**
+*   **[Three.js](https://threejs.org/)**: The WebGL rendering engine. (MIT License)
+*   **[@pixiv/three-vrm](https://github.com/pixiv/three-vrm)**: VRM loader. (MIT License) - *Used for initial prototyping.*
+*   **[SMPL-X](https://smpl-x.is.tue.mpg.de/)**: The parametric 3D body model used for biomechanically accurate signing.
+*   **[Trimesh](https://trimesh.org/)**: Python mesh processing library used in the conversion pipeline. (MIT License)
+
+**Data Sources:**
+*   **[SignAvatars](https://signavatars.github.io/)**: The primary source of the 3D sign language motion data (SMPL-X format).
+*   **[WLASL](https://github.com/dxli94/WLASL)**: The Word-Level American Sign Language video dataset (used for vocabulary mapping).
+*   **[EN 301 549](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf)**: The European Standard for ICT Accessibility which this demo visualizes.
+
+**Concepts & Ideas:**
+*   The **"Sidecar"** interface pattern (persistent signing panel) was inspired by accessibility best practices for cognitive load reduction.
+*   **Biomechanical Validation** logic was adapted from the SignAvatars ECCV 2024 paper to ensure anatomical plausibility.
+
 ---
 
-## 2. How the Sidecar Works
+## 4. How the Sidecar Works
 
 ### 2.1 Text-to-Sign Wiring
 
