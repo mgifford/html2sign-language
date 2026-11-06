@@ -6,7 +6,10 @@
   "scripts": {
     "test": "node tests/validate-imports.js",
     "validate": "node tests/validate-imports.js",
-    "serve": "npx serve -l 8000"
+    "serve": "npx serve -l 8000",
+    "avatar:fetch": "node tools/avatar/fetch-sources.mjs",
+    "avatar:convert": "node tools/avatar/convert.mjs",
+    "test:avatar": "node --test tests/avatar-glb.test.mjs"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +17,8 @@
   "dependencies": {
     "@pixiv/three-vrm": "^3.4.5",
     "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0"
   }
 }
