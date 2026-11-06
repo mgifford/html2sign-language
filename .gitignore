@@ -21,3 +21,6 @@ signavatars-data/
 # Large binaries or temp files
 *.log
 /tmp/
+
+# Downloaded third-party source assets (see tools/avatar/rocketbox-sources.json)
+.cache/

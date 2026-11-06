@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/microsoft/Microsoft-Rocketbox",
+  "commit": "0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+  "license": "MIT",
+  "licenseFile": "LICENSE.md",
+  "note": "Files are fetched from this exact commit and verified by size and git blob SHA-1 before conversion.",
+  "avatars": {
+    "rocketbox-female-adult-01": {
+      "basePath": "Assets/Avatars/Adults/Female_Adult_01",
+      "files": [
+        {
+          "path": "Export/Female_Adult_01_facial.fbx",
+          "role": "model",
+          "bytes": 2226864,
+          "gitBlobSha1": "90c4e00089c5193cb96b9da5db9e043bcae9b019"
+        },
+        {
+          "path": "Textures/f001_body_color.tga",
+          "role": "baseColor:f001_body",
+          "bytes": 12582956,
+          "gitBlobSha1": "25852db0db1f44a0de0643ce1e09c88aef587e6f"
+        },
+        {
+          "path": "Textures/f001_head_color.tga",
+          "role": "baseColor:f001_head",
+          "bytes": 12582956,
+          "gitBlobSha1": "0cdc62ab47da3dca01aff0bb179159865a559c63"
+        },
+        {
+          "path": "Textures/f001_opacity_color.tga",
+          "role": "baseColor+alpha:f001_opacity",
+          "bytes": 16777260,
+          "gitBlobSha1": "de21a9e69c88e539da6a5050eaceadd026e99b62"
+        }
+      ]
+    }
+  }
+}
