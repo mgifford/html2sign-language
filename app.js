@@ -32,6 +32,14 @@ let loader;
 const actionCache = new Map();
 let signMetadata = {};
 
+// The sign meshes slide up to about 1.4 m sideways within one sign (tracking error in the
+// source video), so each mesh is anchored on its torso: the torso stays centred while the
+// arms and hands still move. Feet are placed at FLOOR_Y.
+const FLOOR_Y = -1.2;
+let torsoIndices = null;
+let idleAnchor = null;
+let activeAnchor = null;
+
 // SignAvatars dataset reference for biomechanical validation
 // See: https://signavatars.github.io/ (ECCV 2024)
 const BIOMECHANICAL_VALIDATION = {
@@ -139,10 +147,7 @@ function initThree() {
   const height = canvas.clientHeight || 260;
 
   camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
-  // SMPL-X avatar centered at origin after converter fix.
-  // Wider FOV + further back to frame full body with outstretched arms.
-  camera.position.set(0, -0.1, 3.0);
-  camera.lookAt(0, -0.1, 0);
+  frameSigningSpace();
 
   renderer = new THREE.WebGLRenderer({
     canvas,
@@ -178,8 +183,115 @@ function onWindowResize() {
   const width = canvas.clientWidth || window.innerWidth;
   const height = canvas.clientHeight || 260;
   camera.aspect = width / height;
+  frameSigningSpace();
   camera.updateProjectionMatrix();
   renderer.setSize(width, height, false);
+}
+
+// Frame the signing space (above the head to below the hips) instead of the whole body,
+// so the hands are large enough to see. These margins keep every keyframe of the 24 sign
+// files in view at desktop, tablet, and phone canvas sizes. The idle T-pose's hands fall
+// outside the sides.
+function frameSigningSpace() {
+  const top = FLOOR_Y + 1.95; // head top is about 1.72 m above the feet; some bodies also rise
+  const bottom = FLOOR_Y + 0.7; // resting hands hang just below the hips
+  const halfWidth = 0.6;
+  const visibleHeight = Math.max(top - bottom, (2 * halfWidth) / camera.aspect);
+  const distance = visibleHeight / 2 / Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+  const centreY = (top + bottom) / 2;
+  camera.position.set(0, centreY, distance);
+  camera.lookAt(0, centreY, 0);
+}
+
+function firstMesh(root) {
+  let found = null;
+  root.traverse((o) => {
+    if (!found && o.isMesh) found = o;
+  });
+  return found;
+}
+
+// Mesh-to-root transform with the root at the origin, so results are offsets for root.position.
+function rootSpaceMatrix(root, mesh) {
+  const saved = root.position.clone();
+  root.position.set(0, 0, 0);
+  root.updateMatrixWorld(true);
+  const matrix = mesh.matrixWorld.clone();
+  root.position.copy(saved);
+  root.updateMatrixWorld(true);
+  return matrix;
+}
+
+function meanOf(attribute, indices) {
+  const sum = new THREE.Vector3();
+  for (const i of indices) {
+    sum.x += attribute.getX(i);
+    sum.y += attribute.getY(i);
+    sum.z += attribute.getZ(i);
+  }
+  return sum.divideScalar(indices.length);
+}
+
+// Torso vertices (between the hips and the chest, near the midline), picked from the idle
+// T-pose, where the arms are well away from the body. All the flipbook files share the
+// SMPL-X vertex order, so the same indices work for every sign.
+function findTorsoIndices(root) {
+  const mesh = firstMesh(root);
+  if (!mesh) return null;
+  const matrix = rootSpaceMatrix(root, mesh);
+  const position = mesh.geometry.attributes.position;
+  const v = new THREE.Vector3();
+  const xs = new Float32Array(position.count);
+  const ys = new Float32Array(position.count);
+  let minY = Infinity;
+  let maxY = -Infinity;
+  for (let i = 0; i < position.count; i++) {
+    v.fromBufferAttribute(position, i).applyMatrix4(matrix);
+    xs[i] = v.x;
+    ys[i] = v.y;
+    minY = Math.min(minY, v.y);
+    maxY = Math.max(maxY, v.y);
+  }
+  const height = maxY - minY;
+  const indices = [];
+  for (let i = 0; i < position.count; i++) {
+    if (ys[i] > minY + 0.55 * height && ys[i] < minY + 0.72 * height && Math.abs(xs[i]) < 0.15) {
+      indices.push(i);
+    }
+  }
+  return indices.length ? indices : null;
+}
+
+// Precompute the torso centre of the base mesh and of each morph target. The torso centre
+// in any frame is then the base centre plus the influence-weighted target centres.
+function prepareAnchor(root) {
+  const mesh = firstMesh(root);
+  if (!mesh || !torsoIndices) return null;
+  const matrix = rootSpaceMatrix(root, mesh);
+  const rotation = new THREE.Matrix3().setFromMatrix4(matrix);
+  const geometry = mesh.geometry;
+  const position = geometry.attributes.position;
+  const v = new THREE.Vector3();
+  let minY = Infinity;
+  for (let i = 0; i < position.count; i++) {
+    minY = Math.min(minY, v.fromBufferAttribute(position, i).applyMatrix4(matrix).y);
+  }
+  return {
+    root,
+    mesh,
+    torso: meanOf(position, torsoIndices).applyMatrix4(matrix),
+    deltas: (geometry.morphAttributes.position || []).map((a) => meanOf(a, torsoIndices).applyMatrix3(rotation)),
+    floorOffset: FLOOR_Y - minY,
+    point: new THREE.Vector3(),
+  };
+}
+
+function applyAnchor(anchor) {
+  if (!anchor) return;
+  const point = anchor.point.copy(anchor.torso);
+  const weights = anchor.mesh.morphTargetInfluences || [];
+  anchor.deltas.forEach((delta, i) => point.addScaledVector(delta, weights[i] || 0));
+  anchor.root.position.set(-point.x, anchor.floorOffset, -point.z);
 }
 
 async function loadAvatarModel() {
@@ -200,6 +312,14 @@ async function loadAvatarModel() {
         debug("SMPL-X idle pose loaded successfully!");
         avatar = gltf.scene;
         avatar.position.set(0, 0, 0);
+        // convert_pkl_to_glb.py turns every mesh 180 degrees about X, which corrects the
+        // video-fitted sign data. The idle pose was generated upright (fix_idle.py), so that
+        // turn left it upside down and facing away. Undo it here.
+        avatar.rotation.x = Math.PI;
+        torsoIndices = findTorsoIndices(avatar);
+        idleAnchor = prepareAnchor(avatar);
+        activeAnchor = idleAnchor;
+        applyAnchor(activeAnchor);
         scene.add(avatar);
         
         mixer = new THREE.AnimationMixer(avatar);
@@ -542,6 +662,9 @@ async function playSign(signKey) {
     // Add the sign's own scene (which has the mesh with morph targets)
     const signScene = action.scene;
     signScene.position.set(0, 0, 0);
+    if (!action.anchor) action.anchor = prepareAnchor(signScene);
+    activeAnchor = action.anchor;
+    applyAnchor(activeAnchor);
     scene.add(signScene);
     
     // Create a new mixer for this sign's scene
@@ -570,6 +693,7 @@ async function playSign(signKey) {
       
       // Restore idle avatar
       if (avatar) {
+        activeAnchor = idleAnchor;
         scene.add(avatar);
         mixer = new THREE.AnimationMixer(avatar);
         
@@ -777,6 +901,8 @@ function animate() {
     const delta = clock.getDelta();
     mixer.update(delta);
   }
+
+  applyAnchor(activeAnchor);
 
   // Visible idle animation for placeholder avatar when no mixer is available
   if (!mixer && avatar && !isPaused && clock) {
