@@ -196,8 +196,8 @@ function onWindowResize() {
 
 // Frame the signing space (above the head to below the hips) instead of the whole body,
 // so the hands are large enough to see. These margins keep every keyframe of the 24 sign
-// files in view at desktop, tablet, and phone canvas sizes. The idle T-pose's hands fall
-// outside the sides.
+// files in view at desktop, tablet, and phone canvas sizes, including the idle figure's
+// rest pose, which is one of those keyframes.
 function frameSigningSpace() {
   const top = FLOOR_Y + 1.95; // head top is about 1.72 m above the feet; some bodies also rise
   const bottom = FLOOR_Y + 0.7; // resting hands hang just below the hips
@@ -362,13 +362,46 @@ function paintMesh(root) {
   mesh.material.needsUpdate = true;
 }
 
+// The idle file is the SMPL-X zero pose, a T-pose with the arms straight out. A person at rest
+// stands with the arms relaxed at the sides, so the idle figure takes its shape from the first
+// frame of a sign recording, where the signer stands like that before signing. The idle file's
+// own morph targets stay; they move vertices by under half a millimetre.
+const REST_POSE_PATH = "animations/WORD-01162.glb";
+
+// Returns the rest pose's scene, or null if it cannot load (the idle figure then keeps the T-pose).
+async function loadRestPose() {
+  try {
+    return (await loader.loadAsync(REST_POSE_PATH)).scene;
+  } catch (error) {
+    debug(`Could not load the rest pose from ${REST_POSE_PATH}. ${error?.message || error}`, "error");
+    return null;
+  }
+}
+
+// Replaces the idle mesh's T-pose with the rest pose's base mesh, turned into the idle mesh's
+// coordinates. Call it after the T-pose has been measured.
+function setRestPose(root, restRoot) {
+  const mesh = firstMesh(root);
+  const restMesh = firstMesh(restRoot);
+  if (!mesh || !restMesh) return false;
+  const restGeometry = restMesh.geometry;
+  if (restGeometry.attributes.position.count !== mesh.geometry.attributes.position.count) return false;
+  const matrix = rootSpaceMatrix(root, mesh).invert().multiply(rootSpaceMatrix(restRoot, restMesh));
+  const normalMatrix = new THREE.Matrix3().getNormalMatrix(matrix);
+  mesh.geometry.setAttribute("position", restGeometry.attributes.position.clone().applyMatrix4(matrix));
+  mesh.geometry.setAttribute("normal", restGeometry.attributes.normal.clone().applyNormalMatrix(normalMatrix));
+  mesh.geometry.computeBoundingSphere();
+  return true;
+}
+
 async function loadAvatarModel() {
   if (!canvas) return;
 
   // Use SMPL-X idle pose (biomechanically accurate, optimized for sign language)
-  // This is a neutral standing pose with subtle breathing animation
+  // This file is a T-pose with subtle breathing animation; setRestPose lowers the arms
   // SMPL-X format includes full hand and facial detail needed for ASL
   const idlePath = "animations/idle-neutral.glb";
+  const restScene = await loadRestPose();
   
   debug("Loading SMPL-X neutral idle pose (optimized for sign language visibility)...");
   debug("SMPL-X features: Full hand articulation, facial expressions, biomechanical constraints");
@@ -386,6 +419,9 @@ async function loadAvatarModel() {
         avatar.rotation.x = Math.PI;
         torsoIndices = findTorsoIndices(avatar);
         paintColours = findPaintColours(avatar);
+        if (restScene && setRestPose(avatar, restScene)) {
+          debug(`Idle figure stands in the rest pose from ${REST_POSE_PATH}.`);
+        }
         paintMesh(avatar);
         idleAnchor = prepareAnchor(avatar);
         activeAnchor = idleAnchor;
