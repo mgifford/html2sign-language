@@ -40,6 +40,12 @@ let torsoIndices = null;
 let idleAnchor = null;
 let activeAnchor = null;
 
+// The SMPL-X body has no clothes or hair, and the sign files store only that bare surface,
+// so a long-sleeved top, trousers, shoes, and short hair are painted on as vertex colours.
+// Hands and face keep the skin colour; the dark sleeves help the hands stand out.
+const PAINT = { top: 0x2f4f6f, trousers: 0x3a3a40, shoes: 0x1c1c1c, hair: 0x3b2a1e };
+let paintColours = null;
+
 // SignAvatars dataset reference for biomechanical validation
 // See: https://signavatars.github.io/ (ECCV 2024)
 const BIOMECHANICAL_VALIDATION = {
@@ -294,6 +300,68 @@ function applyAnchor(anchor) {
   anchor.root.position.set(-point.x, anchor.floorOffset, -point.z);
 }
 
+// Colour of each vertex, measured on the idle T-pose like the torso indices. Distances in
+// metres come from slices of the idle mesh: the wrists are about 21 cm in from the fingertips,
+// the collar is 26 cm below the top of the head, and the hairline drops from about 6 cm below
+// the top at the forehead to 16 cm at the nape. +z is the face. Each edge is blended over
+// 2 cm so the coarse mesh does not show stair steps.
+function findPaintColours(root) {
+  const mesh = firstMesh(root);
+  if (!mesh) return null;
+  const matrix = rootSpaceMatrix(root, mesh);
+  const position = mesh.geometry.attributes.position;
+  const points = [];
+  let minY = Infinity;
+  let maxY = -Infinity;
+  let maxX = 0;
+  for (let i = 0; i < position.count; i++) {
+    const p = new THREE.Vector3().fromBufferAttribute(position, i).applyMatrix4(matrix);
+    points.push(p);
+    minY = Math.min(minY, p.y);
+    maxY = Math.max(maxY, p.y);
+    maxX = Math.max(maxX, Math.abs(p.x));
+  }
+  const height = maxY - minY;
+  let zMin = Infinity;
+  let zMax = -Infinity;
+  for (const p of points) {
+    if (Math.abs(p.x) < 0.12 && p.y > maxY - 0.1 && p.y < maxY - 0.06) {
+      zMin = Math.min(zMin, p.z);
+      zMax = Math.max(zMax, p.z);
+    }
+  }
+  const headZ = (zMin + zMax) / 2;
+  const skin = mesh.material.color.clone();
+  const [top, trousers, shoes, hair] = [PAINT.top, PAINT.trousers, PAINT.shoes, PAINT.hair].map((hex) => new THREE.Color(hex));
+  const above = (value, edge) => THREE.MathUtils.clamp((value - edge) / 0.02 + 0.5, 0, 1); // 0 below the edge, 1 above
+  const head = new THREE.Color();
+  const colour = new THREE.Color();
+  const colours = new Float32Array(points.length * 3);
+  points.forEach((p, i) => {
+    const dz = p.z - headZ;
+    const facing = dz / (Math.hypot(p.x, dz) || 1); // 1 front, 0 side, -1 back
+    const hairline = maxY - (facing >= 0 ? 0.084 - 0.02 * facing : 0.084 - 0.08 * facing);
+    head.copy(skin).lerp(hair, above(p.y, hairline));
+    colour.copy(shoes).lerp(trousers, above(p.y, minY + 0.05 * height)).lerp(top, above(p.y, minY + 0.57 * height));
+    if (Math.abs(p.x) < 0.12) colour.lerp(head, above(p.y, maxY - 0.26));
+    colour.lerp(skin, above(Math.abs(p.x), maxX - 0.21)); // hands
+    colour.toArray(colours, i * 3);
+  });
+  return colours;
+}
+
+// Paints a mesh once. Does nothing if the colours are not known yet or the mesh does not
+// share the idle mesh's vertex order, so that mesh keeps its original single colour.
+function paintMesh(root) {
+  const mesh = firstMesh(root);
+  if (!mesh || !paintColours || mesh.geometry.attributes.color) return;
+  if (mesh.geometry.attributes.position.count * 3 !== paintColours.length) return;
+  mesh.geometry.setAttribute("color", new THREE.BufferAttribute(paintColours, 3));
+  mesh.material.color.set(0xffffff);
+  mesh.material.vertexColors = true;
+  mesh.material.needsUpdate = true;
+}
+
 async function loadAvatarModel() {
   if (!canvas) return;
 
@@ -317,6 +385,8 @@ async function loadAvatarModel() {
         // turn left it upside down and facing away. Undo it here.
         avatar.rotation.x = Math.PI;
         torsoIndices = findTorsoIndices(avatar);
+        paintColours = findPaintColours(avatar);
+        paintMesh(avatar);
         idleAnchor = prepareAnchor(avatar);
         activeAnchor = idleAnchor;
         applyAnchor(activeAnchor);
@@ -662,6 +732,7 @@ async function playSign(signKey) {
     // Add the sign's own scene (which has the mesh with morph targets)
     const signScene = action.scene;
     signScene.position.set(0, 0, 0);
+    paintMesh(signScene);
     if (!action.anchor) action.anchor = prepareAnchor(signScene);
     activeAnchor = action.anchor;
     applyAnchor(activeAnchor);
