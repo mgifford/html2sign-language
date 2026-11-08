@@ -2,6 +2,8 @@
 
 Status: proposal, 2026-11-07. Nothing in this plan is built yet.
 
+Revised 2026-11-07: the translation units now come from new, short content about the page and the avatar, not from the legacy page's EN 301 549 text. Section 4 explains why.
+
 Evidence labels: **[V]** verified in this repository or a cited source, **[A]** assumption, **[D]** decision for the project owner.
 
 ## 1. Goal
@@ -10,7 +12,7 @@ A visitor types a sentence from this page, or picks one, and the avatar signs a 
 
 **In scope**
 
-- A fixed set of translation units taken from `index.html`.
+- A small, fixed set of translation units: new, short content about the page and the avatar (section 4). The legacy page and its EN 301 549 text stay unchanged.
 - Matching typed text to those units.
 - Playback on the rigged Rocketbox avatar (`assets/avatars/rocketbox-female-adult-01.glb`), with hands, face, gaze, and head on one timeline.
 - Showing each unit's review status.
@@ -60,18 +62,27 @@ Paraphrase matching with a browser AI model is optional and later (brief Phase 9
 
 ## 4. Proposed translation units
 
-Taken from `index.html` as it stands on `main` at `c54e09c` [V]. Headings and the "Sign Trigger" demo paragraphs are excluded. The translator may merge or split units, because an ASL translation does not have to follow English sentence boundaries.
+**Why not the legacy page's text.** An earlier draft of this plan took its units from `index.html`. That text compares how Canada and the EU apply EN 301 549. It is sample reading material from the original sidecar demo, and none of it is about sign language. It is also a poor first test:
 
-| ID | English source | Notes |
+- It is dense with names and acronyms: CAN/ASC, WAD, EAA, BFSG, RGAA, S.I. No. 636/2023 [V `index.html`]. Most would be fingerspelled. Fingerspelling is the hardest thing for an avatar to make readable, and it tests little of ASL grammar.
+- Deaf reviewers would be judging a translation of content a Deaf visitor has little reason to want signed.
+- Legal and standards text is closer to the important information that WFD and WASLI caution against giving to avatars (section 1).
+
+**Proposed instead:** short content about the page and the avatar, which is what a Deaf visitor needs to know first. The source text does not exist yet. The project owner writes it with the translator at M0. Because the text is new, it could be drafted in ASL first, with the English written to match; the translator advises on which comes first (D3). The translator may also merge or split units, because an ASL translation does not have to follow English sentence boundaries.
+
+| ID | Topic | Notes |
 | --- | --- | --- |
-| U1 | "While both Canada and the European Union (EU) use EN 301 549 v3.2.1 as their technical baseline, their legal frameworks differ significantly in scope and enforcement." | **Proposed pilot.** It is short, and it tests a comparison structure, proper names, and fingerspelling a standard number. |
-| U2 | Section 1, the paragraph starting "Canada: Adopted as CAN/ASC" | Includes the Accessible Canada Act |
-| U3 | Section 1, the paragraph starting "European Union: Enforced via the Web Accessibility Directive" | Two acronyms, WAD and EAA |
-| U4 | Section 2, the paragraph starting "In Europe, EN 301 549 is a harmonized standard" | |
-| U5 to U7 | Section 2 table rows: Germany (BFSG), France (RGAA), Ireland (S.I. No. 636/2023) | The table stays as an HTML table. Units sign the row content. |
-| U8 | Section 3, the paragraph starting "Canada has actually surpassed Europe" | The longest unit |
-| U9 | Section 3, "This improves:" and its three list items | |
-| U10 | The closing paragraph starting "This page is a demonstrator" | |
+| U1 | What this page is, and what the avatar is for | |
+| U2 | What the avatar cannot do, and that it does not replace human interpreters | **Proposed pilot.** It is short, has few proper names, and tests negation, which ASL marks partly with the head and face as well as the hands [A, to confirm with the translator]. It also states the avatar's limits before anything else is signed. |
+| U3 | Who translated and reviewed this content, and what each review status means | Needed by the honesty rules (section 8) |
+| U4 | How to use the player controls | Play, pause, stop, speed, step |
+| U5 | How to send feedback | |
+| U6 | Optional: sign language in EN 301 549 and WCAG | Only if D9 is yes |
+
+**[D] D9.** Keep an EN 301 549 thread, limited to what concerns signers? If yes, U6 could cover two verified points:
+
+- EN 301 549 does not require sign language for prerecorded video. Its web requirements for time-based media stop at clause 9.1.2.5. WCAG 1.2.6 Sign Language (Prerecorded) appears only in Table 9.1, a list of Level AAA criteria that authors are encouraged to consider [V [EN 301 549 V3.2.1](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf), clause 9.5; [WCAG 2.2 Understanding 1.2.6](https://www.w3.org/WAI/WCAG22/Understanding/sign-language-prerecorded.html), Level AAA].
+- Clause 6.5 does serve signers, but only for two-way video calls. It names sign language and lip reading as the reason for its minimums: at least 20 frames per second (30 preferred), at least QVGA resolution, and audio and video within 100 ms. Its informative note says frame rate matters more than resolution, especially for fingerspelling [V EN 301 549 V3.2.1, clauses 6.5.1 to 6.5.4]. These are call requirements, not avatar requirements.
 
 **[D] D2.** Which sign language? This plan assumes ASL only. Canada also has LSQ (Quebec Sign Language), and each EU country has its own national sign language. Supporting only ASL should be stated on the page as a limitation.
 
@@ -110,8 +121,8 @@ Each record carries provenance and a review status. The schema is validated by `
 
 Each milestone ends with a check. Brief phase numbers are in brackets.
 
-**M0. Decisions.** D1 to D7, the pilot unit, and where the feature lives. **[D] D8:** a new page (recommended, so the legacy demo stays a historical record), or replacing the sidecar.
-*Exit:* the decisions are recorded in this file.
+**M0. Decisions and source text.** D1 to D7 and D9, the unit topics, the pilot unit, and where the feature lives. **[D] D8:** a new page with its own content (recommended, so the legacy demo and its EN 301 549 text stay as a historical record), or replacing the legacy page's text and sidecar. The source text for the pilot unit (U2) is written.
+*Exit:* the decisions are recorded in this file, and the pilot unit's source text is agreed by the owner and the translator.
 
 **M1. Player foundation, with no ASL content** [Phases 2 and 5].
 - Before building, assess Performs (MIT, three.js) for reuse, and record the decision (see `AVATAR-ARCHITECTURE.md`).
@@ -134,9 +145,9 @@ Each milestone ends with a check. Brief phase numbers are in brackets.
 - The effort per sign and the file size are recorded for each method.
 - D1 is decided.
 
-**M3. Pilot unit end to end** [Phases 8 and 11]. The translator delivers U1. Build its motion, non-manual tracks, fingerspelled items, and gloss-synchronised captions.
+**M3. Pilot unit end to end** [Phases 8 and 11]. The translator delivers U2. Build its motion, non-manual tracks, fingerspelled items, and gloss-synchronised captions.
 
-*Exit:* the Phase 11 review is complete, and comprehension and naturalness are recorded. U1 is marked `reviewed` only if it meets criteria agreed before the review. If it fails, the failure is documented.
+*Exit:* the Phase 11 review is complete, and comprehension and naturalness are recorded. U2 is marked `reviewed` only if it meets criteria agreed before the review. If it fails, the failure is documented.
 
 **M4. Typed input page** [Phases 8 and 10].
 - A labelled text field and a submit button.
@@ -173,6 +184,7 @@ Each milestone ends with a check. Brief phase numbers are in brackets.
 | The current avatar wears a pink shirt | Lower hand contrast | Choose the final avatar before M3 |
 | Deaf experts' availability and cost | Delays | Agree scope at M0 and start with one unit |
 | Data rights not settled | Cannot publish | D7 must be signed before recording |
+| The units' source text is not written yet | M3 cannot start | Write the pilot unit (U2) first, at M0 |
 
 ## 10. Relation to the brief
 
