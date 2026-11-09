@@ -585,6 +585,45 @@ function createPlaceholderAvatar() {
   }
 }
 
+// The sign files are flipbooks: each frame is a morph target that moves the vertices but has no
+// normals, so the lighting kept the first frame's normals (hands hanging at the sides) and raised
+// or turned hands rendered almost black. Each frame's normals are computed once when the sign
+// loads, and blendFrameNormals mixes them by the morph weights before each render. Handing them
+// to three.js as morph normals instead would add about 22 MB per sign (it pads its morph texture).
+function computeFrameNormals(root) {
+  const mesh = firstMesh(root);
+  const geometry = mesh?.geometry;
+  const targets = geometry?.morphAttributes.position;
+  if (!targets || !geometry.attributes.normal || !geometry.morphTargetsRelative) return;
+  const base = geometry.attributes.position.array;
+  const frame = new THREE.BufferGeometry();
+  frame.setIndex(geometry.index);
+  const position = new Float32Array(base.length);
+  frame.setAttribute("position", new THREE.BufferAttribute(position, 3));
+  const frames = targets.map((target) => {
+    for (let k = 0; k < base.length; k++) position[k] = base[k] + target.array[k];
+    frame.computeVertexNormals();
+    return frame.attributes.normal.array.slice();
+  });
+  root.userData.frameNormals = { mesh, base: geometry.attributes.normal.array.slice(), frames };
+}
+
+function blendFrameNormals(root) {
+  const data = root?.userData.frameNormals;
+  if (!data) return;
+  const weights = data.mesh.morphTargetInfluences;
+  const normal = data.mesh.geometry.attributes.normal;
+  const out = normal.array;
+  const baseWeight = 1 - weights.reduce((sum, w) => sum + w, 0);
+  for (let k = 0; k < out.length; k++) out[k] = data.base[k] * baseWeight;
+  weights.forEach((w, f) => {
+    if (!w) return;
+    const frameNormal = data.frames[f];
+    for (let k = 0; k < out.length; k++) out[k] += frameNormal[k] * w;
+  });
+  normal.needsUpdate = true;
+}
+
 async function loadSignAction(signKey) {
   if (!signKey) return null;
 
@@ -674,6 +713,10 @@ async function loadSignAction(signKey) {
           });
           return;
         }
+
+        const normalsStart = performance.now();
+        computeFrameNormals(gltf.scene);
+        debug(`Computed lighting normals for each frame in ${(performance.now() - normalsStart).toFixed(0)} ms.`);
         
         // IMPORTANT: Morph target animations are mesh-specific.
         // Each sign GLB contains its own mesh with its own morph targets.
@@ -1007,6 +1050,7 @@ function animate() {
   if (mixer && !isPaused && clock) {
     const delta = clock.getDelta();
     mixer.update(delta);
+    blendFrameNormals(mixer.getRoot());
   }
 
   applyAnchor(activeAnchor);
