@@ -49,7 +49,7 @@ Before setting any `approved` flag to `true`, record and verify:
 7. [done] Owner plus independent reviewer for P1-block → upstream-sentence alignment.
 8. [done] The provisional holdout stays excluded from P2.
 
-The remaining blockers are the owner alignment review (`data/p2/review.json` is pending) and a clean-room image-pinned run. `--check` reports `ready: true` in the verified Python 3.12 environment.
+The image-pinned clean-room run passed with 40/40 plan matches. The remaining blocker is the owner/independent review (`data/p2/review.json` is pending). `--check` reports `ready: true` in the verified Python 3.12 environment.
 
 ## Files
 
