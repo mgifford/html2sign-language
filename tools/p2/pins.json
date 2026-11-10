@@ -22,18 +22,20 @@
       "commit": "da5d67fe731c771b0a2126a25a57e71a33ff5a81",
       "license": "MIT"
     },
-    "serving": "local CPU container; pin the image digest at setup"
+    "serving": "local CPU container; pin the image digest at setup",
+    "imageDigest": null
   },
   "wordnet": {
     "version": "omw-en:1.4",
     "source": "sign/wn@2d0e81362599062ba185f774b08a76e226bf1415",
-    "license": "Princeton WordNet License (WordNet 3.0 export via OMW); explicit OMW LICENSE file still to confirm",
-    "approved": false,
+    "license": "Princeton WordNet License (https://wordnet.princeton.edu/license-and-commercial-use)",
+    "approved": true,
     "api": {
       "repository": "sign/wn",
       "commit": "2d0e81362599062ba185f774b08a76e226bf1415",
       "license": "MIT"
-    }
+    },
+    "imageDigest": null
   },
   "spacy": {
     "model": "en_core_web_lg",
@@ -49,8 +51,8 @@
   "notes": [
     "Owner-approved P2 decisions, 2026-11-10: local-only WSD stack; commit per-fixture JSON; do not commit WSD intermediates; 40 development fixtures only; research-only lexical plan with no ASL claim; owner plus independent alignment review.",
     "The WSD model revision is Apache-2.0 and the WSD/WordNet API code is MIT. spaCy 3.8.16 with en_core_web_lg 3.8.0 is MIT; 3.8.0 is yanked.",
-    "The OMW English WordNet 3.0 export is based on Princeton WordNet; its explicit data LICENSE still needs confirmation before setting wordnet.approved to true.",
-    "Python 3.11/3.12 is required; the current 3.14 environment is unsupported and has no model stack installed.",
+    "OMW English WordNet 3.0 is listed by the wn index under the Princeton WordNet License (https://wordnet.princeton.edu/license-and-commercial-use).",
+    "Still open: CPU image digests for WSD and sign/wn. Python 3.12 import path is verified in a temporary environment.",
     "No model weights, WSD intermediates, or generated glosses may be committed."
   ]
 }

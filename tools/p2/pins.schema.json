@@ -42,7 +42,7 @@
     "wsd": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["model", "revision", "license", "approved", "code", "serving"],
+      "required": ["model", "revision", "license", "approved", "code", "serving", "imageDigest"],
       "properties": {
         "model": { "type": "string", "minLength": 1 },
         "revision": { "type": ["string", "null"] },
@@ -58,13 +58,14 @@
             "license": { "type": "string", "minLength": 1 }
           }
         },
-        "serving": { "type": "string", "minLength": 1 }
+        "serving": { "type": "string", "minLength": 1 },
+        "imageDigest": { "type": ["string", "null"] }
       }
     },
     "wordnet": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["version", "source", "license", "approved", "api"],
+      "required": ["version", "source", "license", "approved", "api", "imageDigest"],
       "properties": {
         "version": { "type": ["string", "null"] },
         "source": { "type": ["string", "null"] },
@@ -79,7 +80,8 @@
             "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
             "license": { "type": "string", "minLength": 1 }
           }
-        }
+        },
+        "imageDigest": { "type": ["string", "null"] }
       }
     },
     "spacy": {

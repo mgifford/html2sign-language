@@ -87,6 +87,8 @@ def validate_pins(pins: Any) -> list[str]:
             errors.append("wsd.code.license must be a non-empty string")
     if not isinstance(wsd.get("serving"), str) or not wsd.get("serving"):
         errors.append("wsd.serving must be a non-empty string")
+    if wsd.get("imageDigest") is not None and not isinstance(wsd.get("imageDigest"), str):
+        errors.append("wsd.imageDigest must be a string or null")
 
     wordnet = pins.get("wordnet", {})
     for key in ("version", "source", "license"):
@@ -104,6 +106,8 @@ def validate_pins(pins: Any) -> list[str]:
             errors.append("wordnet.api.commit must be a 40-character lowercase hex SHA")
         if not isinstance(wordnet_api.get("license"), str) or not wordnet_api.get("license"):
             errors.append("wordnet.api.license must be a non-empty string")
+    if wordnet.get("imageDigest") is not None and not isinstance(wordnet.get("imageDigest"), str):
+        errors.append("wordnet.imageDigest must be a string or null")
 
     spacy = pins.get("spacy", {})
     if not isinstance(spacy.get("model"), str) or not spacy.get("model"):
@@ -168,11 +172,15 @@ def missing_prerequisites(
         missing.append("WSD licence not recorded")
     if not wsd.get("code", {}).get("license"):
         missing.append("WSD code licence not recorded")
+    if not wsd.get("imageDigest"):
+        missing.append("WSD CPU image digest not pinned")
     wordnet = pins.get("wordnet", {})
     if not wordnet.get("approved"):
         missing.append("WordNet resource not approved")
     if not wordnet.get("license"):
         missing.append("WordNet data licence not recorded")
+    if not wordnet.get("imageDigest"):
+        missing.append("WordNet API CPU image digest not pinned")
     spacy = pins.get("spacy", {})
     if not spacy.get("approved"):
         missing.append("spaCy model not approved")

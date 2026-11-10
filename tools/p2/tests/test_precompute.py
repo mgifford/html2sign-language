@@ -27,7 +27,9 @@ class PinTests(unittest.TestCase):
         self.assertTrue(self.pins["wsd"]["approved"])
         self.assertEqual(self.pins["wsd"]["revision"], "8751b577199d1bb95b74fa2457da7065d57100ae")
         self.assertEqual(self.pins["wsd"]["license"], "Apache-2.0")
-        self.assertFalse(self.pins["wordnet"]["approved"])
+        self.assertTrue(self.pins["wordnet"]["approved"])
+        self.assertIsNone(self.pins["wsd"]["imageDigest"])
+        self.assertIsNone(self.pins["wordnet"]["imageDigest"])
 
     def test_invalid_commit_is_rejected(self):
         pins = copy.deepcopy(self.pins)
@@ -39,14 +41,16 @@ class PinTests(unittest.TestCase):
         self.assertFalse(precompute.python_supported(">=3.11,<3.13", (3, 14)))
         self.assertFalse(precompute.python_supported("invalid", (3, 11)))
 
-    def test_wordnet_approval_is_still_open(self):
+    def test_image_digests_are_still_open(self):
         missing = precompute.missing_prerequisites(self.pins, version=(3, 11), module_exists=lambda _: True)
-        self.assertTrue(any("WordNet resource" in item for item in missing))
-        self.assertFalse(any("WSD model not approved" in item for item in missing))
+        self.assertTrue(any("WSD CPU image digest" in item for item in missing))
+        self.assertTrue(any("WordNet API CPU image digest" in item for item in missing))
+        self.assertFalse(any("WordNet resource not approved" in item for item in missing))
 
-    def test_fully_approved_pins_are_ready(self):
+    def test_fully_pinned_stack_is_ready(self):
         pins = copy.deepcopy(self.pins)
-        pins["wordnet"]["approved"] = True
+        pins["wsd"]["imageDigest"] = "sha256:" + "a" * 64
+        pins["wordnet"]["imageDigest"] = "sha256:" + "b" * 64
         missing = precompute.missing_prerequisites(pins, version=(3, 11), module_exists=lambda _: True)
         self.assertEqual(missing, [])
 

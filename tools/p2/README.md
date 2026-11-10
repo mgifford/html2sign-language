@@ -1,6 +1,6 @@
 # P2 tooling
 
-Status: **P2.0 scaffold.** It validates pins and refuses to write a lexical plan until every prerequisite is approved and installed. It does not run upstream, a WSD model, WordNet, or spaCy. The WSD model/code pins are approved; the OMW data licence and CPU image digests are still open. A Python 3.12 import check is complete in a temporary environment.
+Status: **P2.0 scaffold.** It validates pins and refuses to write a lexical plan until every prerequisite is approved and installed. It does not run upstream, a WSD model, WordNet, or spaCy. The WSD model/code pins and OMW licence are approved; the CPU image digests are still open. A Python 3.12 import check is complete in a temporary environment.
 
 ## Commands
 
@@ -33,7 +33,7 @@ It also refuses holdout fixtures and unknown fixture IDs.
 - spaCy model/version/licence;
 - artifact publication mode.
 
-Approved on 2026-11-10: upstream, WSD model/code, spaCy, and the committed-JSON artifact policy. Still open: the explicit OMW English 3.0 data licence and pinned CPU image digests. The Python 3.12 import path is verified in a temporary environment.
+Approved on 2026-11-10: upstream, WSD model/code, spaCy, and the committed-JSON artifact policy. Still open: pinned CPU image digests. The OMW English 3.0 licence (Princeton WordNet License) and the Python 3.12 import path are verified.
 
 ## Approval checklist
 
@@ -41,14 +41,14 @@ Before setting any `approved` flag to `true`, record and verify:
 
 1. [done] The exact upstream commit and MIT licence.
 2. [done] The WSD model revision `8751b57…` (Apache-2.0) and WSD/WordNet API commits (MIT).
-3. [open] The OMW English 3.0 data licence and its exact resource hash.
+3. [done] The OMW English 3.0 licence is recorded as the Princeton WordNet License; the CPU image digest is still open.
 4. [done] A Python 3.12 environment with spaCy 3.8.16, `en_core_web_lg` 3.8.0, and the pinned upstream `senses_to_gloss` import verified. A committed lock file is still needed.
 5. [done] The artifact policy: commit per-fixture JSON; no WSD intermediates.
 6. [done] Owner acceptance of the rule limits (lexical plan only; no nonmanuals or spatial grammar).
 7. [done] Owner plus independent reviewer for P1-block → upstream-sentence alignment.
 8. [done] The provisional holdout stays excluded from P2.
 
-The remaining blockers are the OMW data licence and pinned CPU image digests for WSD and `sign/wn`. Run `--check` and confirm `ready: true` before P2.1.
+The remaining blocker is the pinned CPU image digest for WSD and `sign/wn`. Run `--check` and confirm `ready: true` before P2.1.
 
 ## Files
 
