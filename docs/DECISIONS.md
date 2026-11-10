@@ -40,7 +40,7 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - **PR 2 (implemented, pending review, 2026-11-10):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The holdout is not blind until the owner replaces or reviews it.
 - **PR 3 (implemented, pending review, 2026-11-10):** P2 proposal only, in `experiments/html-to-asl/docs/P2-ADAPTER.md`; no code, model, data, or runtime change.
 - **PR 4 (implemented, pending review, 2026-11-10):** P2.0 pin record, schemas, fail-closed CLI, refusal tests, and empty data index. No model, upstream call, or lexical plan.
-- **PR 5 (next, blocked):** P2.1 one-fixture prototype after the CPU image digests are pinned; the WSD model/code, OMW licence, Python 3.12 import path, and artifact policy are approved.
+- **PR 5 (next, blocked):** P2.1 `NEG-01` prototype produced; owner alignment review and CPU image digests are still open. The WSD model/code, OMW licence, Python 3.12 import path, and artifact policy are approved.
 - Do not combine P1 with P0 verification. The owner controls the holdout fixtures, not the implementing agent.
 
 ## D7 — Claim separation (Accepted, 2026-11-10)
@@ -66,4 +66,4 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - [done] Python 3.12 import check: spaCy 3.8.16, `en_core_web_lg` 3.8.0, and pinned `senses_to_gloss` (temporary venv; commit a lock file later).
 - Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json` (still open).
 - Run `precompute.py --check` with `ready: true`.
-- Produce and review one fixture before the 40-fixture run.
+- [prototype] `NEG-01` produced from source checkouts and a local model snapshot; owner alignment review is pending. `MOD-01` and the 40-fixture run wait for review and image pins.

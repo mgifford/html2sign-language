@@ -1,11 +1,18 @@
 {
   "schemaVersion": "p2.0",
-  "status": "empty",
+  "status": "partial",
   "translation": false,
-  "artifacts": [],
+  "artifacts": [
+    {
+      "fixtureId": "NEG-01",
+      "file": "NEG-01.json",
+      "status": "partial",
+      "outputSha256": "6266db0a59747e1e879534ae784c254e6e5e8ea66b7ee9f2df7e2bf5298e7553"
+    }
+  ],
   "warnings": [
-    "No lexical plans have been precomputed.",
-    "P2.1 is blocked until the WSD model/revision, WordNet resource, licences, and artifact policy are approved.",
-    "This is not ASL. Nonmanual markers and spatial grammar are not represented."
+    "NEG-01 is a P2.1 research prototype; owner alignment review is pending.",
+    "Lexical plan only. Nonmanual markers, spatial grammar, and ASL fluency are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests."
   ]
 }

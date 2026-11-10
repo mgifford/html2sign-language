@@ -1,6 +1,6 @@
 # P2 proposal: pinned, offline English → ASL lexical-plan adapter
 
-Status: **P2.0 implemented; P2.1 blocked on pinned CPU image digests.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
+Status: **P2.0 implemented; P2.1 NEG-01 prototype produced; owner alignment review and pinned CPU image digests are still open.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
 
 ## 1. Goal
 
@@ -33,7 +33,7 @@ P2.0 is implemented in `tools/p2/`:
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
 - `validate.py` and 14 stdlib `unittest` cases cover the contracts and refusal paths.
-- `experiments/html-to-asl/data/p2/index.json` is intentionally empty.
+- `experiments/html-to-asl/data/p2/NEG-01.json` is a **partial** P2.1 prototype generated from the pinned rules and a local WSD model snapshot; it says `semantic-rules-unavailable`, has all candidates aligned to `b0001`, and awaits owner review.
 
 The system default is Python 3.14 with no model stack. A temporary Python 3.12 environment has verified spaCy 3.8.16, `en_core_web_lg` 3.8.0, and the pinned `senses_to_gloss` import. See `tools/p2/README.md` for the approval checklist. P2.1 still needs pinned CPU image digests for WSD and `sign/wn`.
 
@@ -218,7 +218,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 | Milestone | Deliverable |
 |---|---|
 | P2.0 | **Implemented:** schema, fixture selection, licence/pin record, fail-closed CLI; no model output |
-| P2.1 | **Next, blocked on pinned CPU image digests:** one-fixture local prototype; WSD → `senses_to_gloss` → aligned JSON |
+| P2.1 | **Prototype delivered (pending review):** `NEG-01` local WSD → `senses_to_gloss` → aligned JSON; image-pinned reproducibility and `MOD-01` still open |
 | P2.2 | All 40 development fixtures precomputed; static viewer |
 | P2.3 | Reproducibility, failure tests, browser tests, docs |
 | P2.4 | Owner/Deaf-review decision before any public ASL claim |
@@ -239,7 +239,8 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 - [x] Create a Python 3.12 environment and verify spaCy 3.8.16 / `en_core_web_lg` 3.8.0 and the pinned `senses_to_gloss` import (temporary venv, not committed).
 - [ ] Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json`.
 - [ ] Run `python3 tools/p2/precompute.py --check` with `ready: true`.
-- [ ] Produce one fixture (`NEG-01`, then `MOD-01`) and have the owner review its alignment.
+- [x] Produce the `NEG-01` prototype artifact with all candidates aligned to `b0001`.
+- [ ] Owner review of the `NEG-01` alignment; then `MOD-01`.
 
 ## 13. References
 
