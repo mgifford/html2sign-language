@@ -66,4 +66,4 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - [done] Python 3.12 import check: spaCy 3.8.16, `en_core_web_lg` 3.8.0, and pinned `senses_to_gloss` (temporary venv; commit a lock file later).
 - Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json` (still open).
 - Run `precompute.py --check` with `ready: true`.
-- [implemented] All 40 development artifacts and the static viewer were produced from source checkouts and a local model snapshot. Owner alignment review is pending; image-pinned reproducibility remains open.
+- [implemented] All 40 development artifacts and the static viewer were produced from source checkouts and a local model snapshot. The Python lock and entity-linker hash are recorded; owner alignment review, the entity-linker licence, and image-pinned reproducibility remain open.

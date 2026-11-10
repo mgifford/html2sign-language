@@ -32,9 +32,10 @@ P2.0 is implemented in `tools/p2/`:
 - `artifact.schema.json`, `index.schema.json`, and `pins.schema.json` define the contracts.
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
-- `validate.py` and 19 stdlib `unittest` cases cover the contracts, all 40 artifacts, and refusal paths.
+- `validate.py`, `requirements.lock`, and 20 stdlib `unittest` cases cover the contracts, all 40 artifacts, the pending review record, and refusal paths.
 - `experiments/html-to-asl/data/p2/` contains **40 partial P2.2 artifacts** generated from the pinned rules and a local WSD model snapshot. All candidates align to P1 blocks; upstream reports `semantic-rules-unavailable`, and owner review is pending.
 - `experiments/html-to-asl/p2/` is the static viewer for the index and artifacts.
+- `data/p2/review.json` records that all 40 owner alignment reviews are **pending**; no implementer self-approval is recorded.
 
 The system default is Python 3.14 with no model stack. A temporary Python 3.12 environment has verified spaCy 3.8.16, `en_core_web_lg` 3.8.0, and the pinned `senses_to_gloss` import. See `tools/p2/README.md` for the approval checklist. P2.3 still needs pinned CPU image digests for WSD and `sign/wn`.
 
@@ -239,11 +240,12 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 - [x] Record the OMW English 3.0 licence as the Princeton WordNet License and set `wordnet.approved: true`.
 - [x] Create a Python 3.12 environment and verify spaCy 3.8.16 / `en_core_web_lg` 3.8.0 and the pinned `senses_to_gloss` import (temporary venv, not committed).
 - [ ] Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json`.
-- [ ] Pin the spaCy entity-linker knowledge base used by the WSD service.
+- [x] Pin the spaCy entity-linker database URL and SHA-256; its licence and exact archive revision remain unverified.
+- [x] Commit the Python 3.12 dependency lock (`tools/p2/requirements.lock`).
 - [ ] Run `python3 tools/p2/precompute.py --check` with `ready: true`.
 - [x] Produce all 40 development artifacts with candidates aligned to P1 blocks.
 - [x] Add the static P2 viewer and browser coverage.
-- [ ] Owner review of the 40 alignment records; image-pinned reproducibility.
+- [ ] Owner review of the 40 alignment records (`data/p2/review.json` is pending); image-pinned reproducibility.
 
 ## 13. References
 

@@ -11,12 +11,14 @@ from validate import validate_artifact  # noqa: E402
 
 ARTIFACT = REPO_ROOT / "experiments/html-to-asl/data/p2/NEG-01.json"
 INDEX = REPO_ROOT / "experiments/html-to-asl/data/p2/index.json"
+REVIEW = REPO_ROOT / "experiments/html-to-asl/data/p2/review.json"
 
 
 class Neg01ArtifactTests(unittest.TestCase):
     def setUp(self):
         self.artifact = json.loads(ARTIFACT.read_text(encoding="utf-8"))
         self.index = json.loads(INDEX.read_text(encoding="utf-8"))
+        self.review = json.loads(REVIEW.read_text(encoding="utf-8"))
 
     def test_artifact_matches_p2_contract(self):
         self.assertEqual(validate_artifact(self.artifact), [])
@@ -58,6 +60,11 @@ class Neg01ArtifactTests(unittest.TestCase):
                     self.assertLessEqual(token["sourceEnd"], block["textEnd"], entry["fixtureId"])
                     self.assertEqual(token["status"], "aligned")
             self.assertEqual(artifact["abstentions"], [])
+
+    def test_owner_review_is_explicitly_pending(self):
+        self.assertEqual(self.review["status"], "pending")
+        self.assertEqual(len(self.review["fixtures"]), 40)
+        self.assertTrue(all(item["status"] == "pending" for item in self.review["fixtures"]))
 
     def test_artifact_does_not_claim_asl(self):
         warnings = " ".join(self.artifact["warnings"]).lower()
