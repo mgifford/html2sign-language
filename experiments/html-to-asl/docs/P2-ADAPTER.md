@@ -32,7 +32,7 @@ P2.0 is implemented in `tools/p2/`:
 - `artifact.schema.json`, `index.schema.json`, `pins.schema.json`, and `review.schema.json` define the contracts.
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
-- `validate.py`, `requirements.lock`, and 20 stdlib `unittest` cases cover the contracts, all 40 artifacts, the pending review record, and refusal paths.
+- `validate.py`, `requirements.lock`, `review.py`, and 25 stdlib `unittest` cases cover the contracts, all 40 artifacts, the pending review record, review CLI, and refusal paths.
 - `experiments/html-to-asl/data/p2/` contains **40 partial P2.2 artifacts** generated from the pinned rules and a local WSD model snapshot. All candidates align to P1 blocks; upstream reports `semantic-rules-unavailable`, and owner review is pending.
 - `experiments/html-to-asl/p2/` is the static viewer for the index and artifacts.
 - `data/p2/review.json` records that all 40 owner alignment reviews are **pending**; no implementer self-approval is recorded.
