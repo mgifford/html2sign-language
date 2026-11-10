@@ -7,6 +7,7 @@ This packet supports P2.4. It does not itself make a linguistic, accessibility, 
 ## Materials
 
 - Viewer: `experiments/html-to-asl/p2/`
+- One-page review table: `experiments/html-to-asl/data/p2/review.md`
 - Artifacts: `experiments/html-to-asl/data/p2/`
 - Review record: `data/p2/review.json` (40 entries, all pending)
 - Contracts: `tools/p2/artifact.schema.json`, `tools/p2/review.schema.json`
