@@ -15,6 +15,7 @@ The goal is to treat sign language (LSF/ASL/IS) as a **first-class interface**, 
 - `AGENTS.md` – Guidance for AI agents contributing to this repo (stack constraints, EN 301 549 / WCAG expectations).
 - `docs/DECISIONS.md` – Current project decisions and open questions (licence, avatar format, experiment boundary).
 - `experiments/html-to-asl/` – English-only HTML analysis research bench; it does not produce ASL. Linked from the main page footer.
+- `tools/p2/` – P2.0 pin record, schemas, and fail-closed precompute scaffold; no model or lexical plan.
 - `RESEARCH.md` – Background links and notes on existing 3D sign-language avatar work (CNRS/LIMSI, SignAvatars, JASigning, etc.).
 - `models/avatar.glb` – **(You provide)** Base avatar model with an idle animation.
 - `animations/*.glb` – **(You provide)** Per-sign animation clips, one GLB file per `data-sign` key.
@@ -121,6 +122,7 @@ Tests:
 
 - `npm test` runs the legacy import validation and the experiment's Node tests.
 - `npm run test:browser:experiment` runs the Chromium/Chrome smoke test for the experiment.
+- `npm run test:p2` runs the P2.0 pin/schema/refusal tests with Python’s built-in `unittest`.
 
 ### 3.2 Prepare Your 3D Assets
 

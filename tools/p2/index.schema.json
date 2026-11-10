@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/html2asl/p2/index.schema.json",
+  "title": "P2 artifact index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "status", "translation", "artifacts", "warnings"],
+  "properties": {
+    "schemaVersion": { "const": "p2.0" },
+    "status": { "enum": ["empty", "partial", "complete", "failed"] },
+    "translation": { "const": false },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fixtureId", "file", "status", "outputSha256"],
+        "properties": {
+          "fixtureId": { "type": "string", "minLength": 1 },
+          "file": { "type": "string", "pattern": "\\.json$" },
+          "status": { "enum": ["complete", "partial", "failed"] },
+          "outputSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}
