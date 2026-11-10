@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/html2asl/p2/artifact.schema.json",
+  "title": "P2 lexical-plan artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "fixtureId",
+    "translation",
+    "source",
+    "upstream",
+    "language",
+    "plan",
+    "alignment",
+    "status",
+    "abstentions",
+    "warnings",
+    "hashes"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "p2.0" },
+    "fixtureId": { "type": "string", "minLength": 1 },
+    "translation": { "const": false },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["p1SchemaVersion", "inputSha256", "blocks"],
+      "properties": {
+        "p1SchemaVersion": { "const": "0.3.0" },
+        "inputSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "path", "textStart", "textEnd"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^b[0-9]{4}$" },
+              "path": { "type": "string", "minLength": 1 },
+              "textStart": { "type": "integer", "minimum": 0 },
+              "textEnd": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "upstream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "commit",
+        "license",
+        "wsdModel",
+        "wsdRevision",
+        "wordnet",
+        "spacyModel"
+      ],
+      "properties": {
+        "repository": { "type": "string", "minLength": 1 },
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "license": { "type": "string", "minLength": 1 },
+        "wsdModel": { "type": "string", "minLength": 1 },
+        "wsdRevision": { "type": "string", "minLength": 1 },
+        "wordnet": { "type": "string", "minLength": 1 },
+        "spacyModel": { "type": "string", "minLength": 1 }
+      }
+    },
+    "language": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spoken", "signed"],
+      "properties": {
+        "spoken": { "const": "en" },
+        "signed": { "const": "ase" }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sentences"],
+      "properties": {
+        "sentences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tokens", "indexes", "changes", "notes"],
+            "properties": {
+              "tokens": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/token" }
+              },
+              "indexes": {
+                "type": "array",
+                "items": { "type": "array", "items": { "type": "integer", "minimum": 0 } }
+              },
+              "changes": { "type": "array", "items": { "type": "object" } },
+              "notes": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "alignment": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidateIndex", "blockId", "sourceStart", "sourceEnd"],
+        "properties": {
+          "candidateIndex": { "type": "integer", "minimum": 0 },
+          "blockId": { "type": "string", "pattern": "^b[0-9]{4}$" },
+          "sourceStart": { "type": "integer", "minimum": 0 },
+          "sourceEnd": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "status": { "enum": ["complete", "partial", "failed"] },
+    "abstentions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["reason"],
+        "properties": {
+          "reason": { "type": "string", "minLength": 1 },
+          "blockId": { "type": "string" },
+          "sourceStart": { "type": "integer", "minimum": 0 },
+          "sourceEnd": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputSha256", "outputSha256"],
+      "properties": {
+        "inputSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "outputSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  },
+  "$defs": {
+    "token": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["word", "lemma", "pos", "dep", "head", "blockId", "sourceStart", "sourceEnd"],
+      "properties": {
+        "word": { "type": "string" },
+        "lemma": { "type": "string" },
+        "pos": { "type": "string" },
+        "dep": { "type": "string" },
+        "head": { "type": "integer" },
+        "blockId": { "type": "string", "pattern": "^b[0-9]{4}$" },
+        "sourceStart": { "type": "integer", "minimum": 0 },
+        "sourceEnd": { "type": "integer", "minimum": 0 },
+        "status": { "enum": ["aligned", "unmatched", "abstained"] }
+      }
+    }
+  }
+}

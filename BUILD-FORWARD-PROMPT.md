@@ -12,7 +12,8 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 - **PR 1 (implemented, pending review):** P0 verification and hardening: extractor tests, JSON contract, manifest failure, browser smoke, access fixes. P1 has not started.
 - **PR 2 (implemented, pending review):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The owner must replace or review the holdout before using it as a blind set.
 - **PR 3 (implemented, pending review):** P2 proposal only: pinned offline adapter design, data contract, failure modes, licences and acceptance criteria. No upstream code, model, data, or runtime change.
-- **PR 4 (next, after PR 3 review):** P2 implementation only after the owner resolves the P2 decisions.
+- **PR 4 (implemented, pending review):** P2.0 only: pin record, artifact/index schemas, fail-closed CLI, refusal tests, empty data index. No model, upstream call, or lexical plan.
+- **PR 5 (next, blocked):** P2.1 one-fixture prototype after the owner approves the WSD revision/licence, WordNet resource, Python 3.11/3.12 environment, and artifact policy.
 
 ## First tasks
 
@@ -41,7 +42,7 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 - A separate P1 PR for the block-aware extractor and the 40/20 fixture split. The provisional holdout must be owner-reviewed or replaced before it is used as a blind set.
 - Test report (commands, browsers, outcomes), fixture manifest and version hashes.
 - Updated architecture and attribution notes including 3D-LEX citation and licence/access caveat.
-- An issue-ready P2 proposal with acceptance criteria (`experiments/html-to-asl/docs/P2-ADAPTER.md`), not a premature AI translator or model.
+- An issue-ready P2 proposal and P2.0 scaffold with acceptance criteria (`experiments/html-to-asl/docs/P2-ADAPTER.md`, `tools/p2/`); P2.1 stays blocked until the owner decisions are recorded.
 - No claims of validated ASL content.
 
 Stop and summarize what changed, what was omitted, why, and the next experimentally testable decision.

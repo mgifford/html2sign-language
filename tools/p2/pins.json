@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "p2.0",
+  "status": "candidate",
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "entryPoint": "spoken_to_signed.text_to_gloss.senses.senses_to_gloss",
+    "approved": false
+  },
+  "python": {
+    "requires": ">=3.11,<3.13",
+    "tested": false
+  },
+  "wsd": {
+    "model": "sign/Ettin-150m-WSD",
+    "revision": null,
+    "license": null,
+    "approved": false
+  },
+  "wordnet": {
+    "version": null,
+    "source": null,
+    "license": null,
+    "approved": false
+  },
+  "spacy": {
+    "model": "en_core_web_lg",
+    "version": "3.8.0",
+    "approved": false
+  },
+  "artifacts": {
+    "mode": "committed-json",
+    "directory": "experiments/html-to-asl/data/p2",
+    "approved": false
+  },
+  "notes": [
+    "P2.0 records candidates only. No model, WordNet resource, or upstream code is installed or approved.",
+    "Every approved flag must stay false until the owner records a specific revision, licence, and verification.",
+    "Precompute fails closed while any prerequisite is missing; it must never write a placeholder lexical plan."
+  ]
+}

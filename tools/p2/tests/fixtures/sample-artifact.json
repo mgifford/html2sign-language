@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "STRUCT-TABLE",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "blocks": [
+      {
+        "id": "b0001",
+        "path": "main > table:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 23
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "example-revision",
+    "wordnet": "example-wordnet",
+    "spacyModel": "en_core_web_lg@3.8.0"
+  },
+  "language": { "spoken": "en", "signed": "ase" },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Fees",
+            "lemma": "fee",
+            "pos": "NOUN",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 4,
+            "status": "aligned"
+          }
+        ],
+        "indexes": [[0]],
+        "changes": [],
+        "notes": []
+      }
+    ]
+  },
+  "alignment": [
+    { "candidateIndex": 0, "blockId": "b0001", "sourceStart": 0, "sourceEnd": 4 }
+  ],
+  "status": "complete",
+  "abstentions": [],
+  "warnings": ["Lexical plan only; not ASL."],
+  "hashes": {
+    "inputSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "outputSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  }
+}

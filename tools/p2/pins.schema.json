@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/html2asl/p2/pins.schema.json",
+  "title": "P2 pin record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "upstream",
+    "python",
+    "wsd",
+    "wordnet",
+    "spacy",
+    "artifacts",
+    "notes"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "p2.0" },
+    "status": { "enum": ["candidate", "approved", "blocked"] },
+    "upstream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "license", "entryPoint", "approved"],
+      "properties": {
+        "repository": { "type": "string", "minLength": 1 },
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "license": { "type": "string", "minLength": 1 },
+        "entryPoint": { "type": "string", "minLength": 1 },
+        "approved": { "type": "boolean" }
+      }
+    },
+    "python": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requires", "tested"],
+      "properties": {
+        "requires": { "type": "string", "minLength": 1 },
+        "tested": { "type": "boolean" }
+      }
+    },
+    "wsd": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "revision", "license", "approved"],
+      "properties": {
+        "model": { "type": "string", "minLength": 1 },
+        "revision": { "type": ["string", "null"] },
+        "license": { "type": ["string", "null"] },
+        "approved": { "type": "boolean" }
+      }
+    },
+    "wordnet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "source", "license", "approved"],
+      "properties": {
+        "version": { "type": ["string", "null"] },
+        "source": { "type": ["string", "null"] },
+        "license": { "type": ["string", "null"] },
+        "approved": { "type": "boolean" }
+      }
+    },
+    "spacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "version", "approved"],
+      "properties": {
+        "model": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "approved": { "type": "boolean" }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "directory", "approved"],
+      "properties": {
+        "mode": { "enum": ["committed-json", "ci-artifact"] },
+        "directory": { "type": "string", "minLength": 1 },
+        "approved": { "type": "boolean" }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

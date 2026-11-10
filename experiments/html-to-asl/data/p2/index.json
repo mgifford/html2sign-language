@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "p2.0",
+  "status": "empty",
+  "translation": false,
+  "artifacts": [],
+  "warnings": [
+    "No lexical plans have been precomputed.",
+    "P2.1 is blocked until the WSD model/revision, WordNet resource, licences, and artifact policy are approved.",
+    "This is not ASL. Nonmanual markers and spatial grammar are not represented."
+  ]
+}

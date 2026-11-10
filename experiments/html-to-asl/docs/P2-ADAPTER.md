@@ -1,6 +1,6 @@
 # P2 proposal: pinned, offline English → ASL lexical-plan adapter
 
-Status: **proposal only; not implemented.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added by this change.
+Status: **P2.0 implemented; P2.1 blocked on owner decisions.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
 
 ## 1. Goal
 
@@ -23,6 +23,19 @@ The output is a **lexical plan**, not fluent ASL. It does not include classifier
 - Signing, avatar playback, 3D-LEX motion, or pose generation.
 - Claims of fluent ASL, native-ASL correctness, or accessibility conformance.
 - The 20 provisional holdout cases; P2 runs on development fixtures only.
+
+## 1.1 P2.0 implementation status
+
+P2.0 is implemented in `tools/p2/`:
+
+- `pins.json` records candidate pins; every `approved` flag is currently `false`.
+- `artifact.schema.json`, `index.schema.json`, and `pins.schema.json` define the contracts.
+- `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
+- `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
+- `validate.py` and 14 stdlib `unittest` cases cover the contracts and refusal paths.
+- `experiments/html-to-asl/data/p2/index.json` is intentionally empty.
+
+The local environment is Python 3.14 with no `spacy` or `spoken_to_signed`, so P2.1 cannot run here. See `tools/p2/README.md` for the approval checklist. P2.1 needs an approved WSD model revision/licence and a Python 3.11/3.12 environment.
 
 ## 2. Upstream facts to pin
 
@@ -204,8 +217,8 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 
 | Milestone | Deliverable |
 |---|---|
-| P2.0 | Schema, fixture selection, licence/pin record; no model output |
-| P2.1 | One-fixture local prototype; WSD → `senses_to_gloss` → aligned JSON |
+| P2.0 | **Implemented:** schema, fixture selection, licence/pin record, fail-closed CLI; no model output |
+| P2.1 | **Next, blocked on owner decisions:** one-fixture local prototype; WSD → `senses_to_gloss` → aligned JSON |
 | P2.2 | All 40 development fixtures precomputed; static viewer |
 | P2.3 | Reproducibility, failure tests, browser tests, docs |
 | P2.4 | Owner/Deaf-review decision before any public ASL claim |
