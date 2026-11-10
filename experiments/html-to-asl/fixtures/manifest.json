@@ -135,5 +135,316 @@
       "required must be completed"
     ],
     "notes": "P0 does NOT yet encode input required attribute."
+  },
+  {
+    "id": "STRUCT-HIER",
+    "title": "Heading hierarchy",
+    "html": "<main><h1>Access guide</h1><section><h2>Apply</h2><h3>Online</h3><p>Use the portal.</p></section></main>",
+    "invariant": "Preserve heading levels and order.",
+    "expectedTokens": [
+      "Access guide",
+      "Apply",
+      "Online",
+      "Use the portal"
+    ],
+    "notes": "H1/H2/H3 nesting."
+  },
+  {
+    "id": "STRUCT-NESTED",
+    "title": "Nested lists",
+    "html": "<main><ul><li>Parent<ul><li>Child<ul><li>Grandchild</li></ul></li></ul></li></ul></main>",
+    "invariant": "Preserve list depth without duplicating child text.",
+    "expectedTokens": [
+      "Parent",
+      "Child",
+      "Grandchild"
+    ],
+    "notes": "Three list levels."
+  },
+  {
+    "id": "STRUCT-ORDERED",
+    "title": "Ordered list start",
+    "html": "<main><ol start=\"3\"><li>Third</li><li>Fourth</li></ol></main>",
+    "invariant": "Preserve ordered-list start value.",
+    "expectedTokens": [
+      "Third",
+      "Fourth"
+    ],
+    "notes": "Start attribute must survive."
+  },
+  {
+    "id": "STRUCT-DL",
+    "title": "Description list",
+    "html": "<main><dl><dt>Fee</dt><dd>Twenty dollars</dd></dl></main>",
+    "invariant": "Preserve term and definition.",
+    "expectedTokens": [
+      "Fee",
+      "Twenty dollars"
+    ],
+    "notes": "DT/DD pair."
+  },
+  {
+    "id": "STRUCT-LINK",
+    "title": "Single link",
+    "html": "<main><p>Read <a href=\"/rules\">the rules</a> first.</p></main>",
+    "invariant": "Preserve link text and href.",
+    "expectedTokens": [
+      "the rules"
+    ],
+    "notes": "Href is /rules."
+  },
+  {
+    "id": "STRUCT-LINKS",
+    "title": "Multiple links",
+    "html": "<main><p><a href=\"/a\">First</a> and <a href=\"/b\">Second</a>.</p></main>",
+    "invariant": "Preserve both links and their order.",
+    "expectedTokens": [
+      "First",
+      "Second"
+    ],
+    "notes": "Two links in one paragraph."
+  },
+  {
+    "id": "STRUCT-TABLE",
+    "title": "Table with scoped headers",
+    "html": "<main><table><caption>Fees</caption><thead><tr><th scope=\"col\">Type</th><th scope=\"col\">Fee</th></tr></thead><tbody><tr><th scope=\"row\">Adult</th><td>$20</td></tr></tbody></table></main>",
+    "invariant": "Preserve caption, column headers, and row header.",
+    "expectedTokens": [
+      "Fees",
+      "Type",
+      "Fee",
+      "Adult",
+      "$20"
+    ],
+    "notes": "Header association is required."
+  },
+  {
+    "id": "STRUCT-TABLE-NOHEAD",
+    "title": "Table without headers",
+    "html": "<main><table><tr><td>Adult</td><td>$20</td></tr></table></main>",
+    "invariant": "Preserve cells and flag missing header cells.",
+    "expectedTokens": [
+      "Adult",
+      "$20"
+    ],
+    "notes": "Known limitation: no TH cells."
+  },
+  {
+    "id": "FORM-REQUIRED",
+    "title": "Required email field",
+    "html": "<main><label for=\"email\">Email address</label><input id=\"email\" type=\"email\" required><p>Use your work email.</p></main>",
+    "invariant": "Preserve label, type, required state, and hint.",
+    "expectedTokens": [
+      "Email address",
+      "Use your work email"
+    ],
+    "notes": "Required property must survive."
+  },
+  {
+    "id": "FORM-GROUP",
+    "title": "Radio group",
+    "html": "<main><fieldset><legend>Contact method</legend><label><input type=\"radio\" name=\"contact\" value=\"email\"> Email</label><label><input type=\"radio\" name=\"contact\" value=\"phone\"> Phone</label></fieldset></main>",
+    "invariant": "Preserve group legend and each option label.",
+    "expectedTokens": [
+      "Contact method",
+      "Email",
+      "Phone"
+    ],
+    "notes": "Wrapping labels."
+  },
+  {
+    "id": "FORM-SELECT",
+    "title": "Select options",
+    "html": "<main><label for=\"country\">Country</label><select id=\"country\"><option>Canada</option><option>France</option></select></main>",
+    "invariant": "Preserve label and option text.",
+    "expectedTokens": [
+      "Country",
+      "Canada",
+      "France"
+    ],
+    "notes": "Options must survive."
+  },
+  {
+    "id": "FORM-TEXTAREA",
+    "title": "Textarea with description",
+    "html": "<main><label for=\"notes\">Notes</label><textarea id=\"notes\" aria-describedby=\"hint\"></textarea><p id=\"hint\">Do not include passwords.</p></main>",
+    "invariant": "Preserve label and aria-describedby text.",
+    "expectedTokens": [
+      "Notes",
+      "Do not include passwords"
+    ],
+    "notes": "Hint is referenced by aria-describedby."
+  },
+  {
+    "id": "FORM-CHECK",
+    "title": "Required checkbox",
+    "html": "<main><label><input type=\"checkbox\" required> I agree</label></main>",
+    "invariant": "Preserve wrapping label and required state.",
+    "expectedTokens": [
+      "I agree"
+    ],
+    "notes": "Required checkbox."
+  },
+  {
+    "id": "ARIA-BUTTON",
+    "title": "Icon button name",
+    "html": "<main><button aria-label=\"Close dialog\"></button></main>",
+    "invariant": "Preserve the accessible name of an icon-only button.",
+    "expectedTokens": [
+      "Close dialog"
+    ],
+    "notes": "ARIA label is the only name."
+  },
+  {
+    "id": "ARIA-SECTION",
+    "title": "Named region",
+    "html": "<main><section aria-labelledby=\"notice-title\"><h2 id=\"notice-title\">Notice</h2><p>Office closed.</p></section></main>",
+    "invariant": "Preserve the region name and its content.",
+    "expectedTokens": [
+      "Notice",
+      "Office closed"
+    ],
+    "notes": "aria-labelledby resolves to a heading."
+  },
+  {
+    "id": "IMG-ALT",
+    "title": "Image with alt",
+    "html": "<main><figure><img alt=\"A ramp at the side entrance\"><figcaption>Use the side entrance.</figcaption></figure></main>",
+    "invariant": "Preserve alt text and caption.",
+    "expectedTokens": [
+      "A ramp at the side entrance",
+      "Use the side entrance"
+    ],
+    "notes": "Meaningful image."
+  },
+  {
+    "id": "IMG-DECOR",
+    "title": "Decorative image",
+    "html": "<main><img alt=\"\"><p>Decorative image above.</p></main>",
+    "invariant": "Empty alt stays decorative and is not announced.",
+    "expectedTokens": [
+      "Decorative image above"
+    ],
+    "notes": "Empty alt."
+  },
+  {
+    "id": "IMG-NOALT",
+    "title": "Image without alt",
+    "html": "<main><img src=\"x\"><p>Image without alt.</p></main>",
+    "invariant": "Preserve text and flag missing alt.",
+    "expectedTokens": [
+      "Image without alt"
+    ],
+    "notes": "Limitation: image-without-alt."
+  },
+  {
+    "id": "QUOTE",
+    "title": "Blockquote",
+    "html": "<main><blockquote>Access is a right, not a privilege.</blockquote></main>",
+    "invariant": "Preserve quoted text.",
+    "expectedTokens": [
+      "Access is a right, not a privilege"
+    ],
+    "notes": "Blockquote."
+  },
+  {
+    "id": "CODE",
+    "title": "Preformatted code",
+    "html": "<main><pre><code>curl -I https://example.org</code></pre></main>",
+    "invariant": "Preserve code text.",
+    "expectedTokens": [
+      "curl -I https://example.org"
+    ],
+    "notes": "PRE/CODE."
+  },
+  {
+    "id": "BARE-DIV",
+    "title": "Bare container text",
+    "html": "<main><div>Office closes at noon.</div></main>",
+    "invariant": "Do not drop text in a bare container.",
+    "expectedTokens": [
+      "Office closes at noon"
+    ],
+    "notes": "P0 dropped this."
+  },
+  {
+    "id": "HIDDEN",
+    "title": "Hidden content",
+    "html": "<main><p>Visible notice.</p><p hidden>Hidden notice.</p><p aria-hidden=\"true\">Aria hidden notice.</p><script>window.bad=true</script></main>",
+    "invariant": "Exclude hidden content and scripts.",
+    "expectedTokens": [
+      "Visible notice"
+    ],
+    "notes": "Hidden and aria-hidden text must be absent."
+  },
+  {
+    "id": "DETAILS-CLOSED",
+    "title": "Closed details",
+    "html": "<main><details><summary>More information</summary><p>Closed detail.</p></details></main>",
+    "invariant": "Preserve summary and flag skipped closed content.",
+    "expectedTokens": [
+      "More information"
+    ],
+    "notes": "Closed content is not extracted."
+  },
+  {
+    "id": "DETAILS-OPEN",
+    "title": "Open details",
+    "html": "<main><details open><summary>More information</summary><p>Open detail.</p></details></main>",
+    "invariant": "Preserve summary and open content.",
+    "expectedTokens": [
+      "More information",
+      "Open detail"
+    ],
+    "notes": "Open content is extracted."
+  },
+  {
+    "id": "UNICODE",
+    "title": "Unicode text",
+    "html": "<main><p lang=\"fr\">Résumé — 日本語 — العربية</p></main>",
+    "invariant": "Preserve Unicode text and language attribute.",
+    "expectedTokens": [
+      "Résumé",
+      "日本語",
+      "العربية"
+    ],
+    "notes": "French, Japanese, Arabic."
+  },
+  {
+    "id": "INJECT",
+    "title": "Injection attempt",
+    "html": "<main><p>Safe text.</p><script>window.bad2=1</script><img src=\"x\" onerror=\"window.bad2=2\"></main>",
+    "invariant": "Do not execute scripts or event handlers.",
+    "expectedTokens": [
+      "Safe text"
+    ],
+    "notes": "Script and onerror image."
+  },
+  {
+    "id": "MIXED",
+    "title": "Mixed document",
+    "html": "<main><h1>Notice</h1><p>Read the <a href=\"/guide\">guide</a>.</p><ul><li>One</li><li>Two</li></ul></main>",
+    "invariant": "Preserve heading, link, and list order.",
+    "expectedTokens": [
+      "Notice",
+      "guide",
+      "One",
+      "Two"
+    ],
+    "notes": "Mixed structures."
+  },
+  {
+    "id": "TABLE-LINK",
+    "title": "Link inside a table",
+    "html": "<main><table><caption>Links</caption><tr><th scope=\"col\">Name</th><th scope=\"col\">URL</th></tr><tr><td>Guide</td><td><a href=\"/guide\">Open guide</a></td></tr></table></main>",
+    "invariant": "Preserve cell text and link href.",
+    "expectedTokens": [
+      "Links",
+      "Name",
+      "URL",
+      "Guide",
+      "Open guide"
+    ],
+    "notes": "Link inside TD."
   }
 ]

@@ -2,7 +2,9 @@
 
 A **static, runnable experiment** at `experiments/html-to-asl/` in [mgifford/html2sign-language](https://github.com/mgifford/html2sign-language). It is English analysis only and does not produce ASL.
 
-**What works in this experiment:** controlled-tag HTML extraction from 12 synthetic fixtures; deterministic English surface-cue spotting; token-presence smoke checks (not semantic validation); JSON export; 3D-LEX credit and import contract; Node unit tests; and a Chromium browser smoke test.
+**What works in this experiment:** block-aware HTML extraction from 40 development fixtures, with 20 provisional holdout fixtures; source IDs/paths/text spans; headings, nested lists, links, tables with header scope, form labels/required/ARIA, and image alternatives; deterministic English surface-cue spotting; token-presence smoke checks (not semantic validation); JSON export; 3D-LEX credit and import contract; Node unit tests; and a Chromium browser smoke test.
+
+Source spans are offsets into the normalized extracted text stream, paired with a DOM path; they are not byte offsets into the original HTML.
 
 **What does not work yet:** AI simplification, direct-AI lexical planning, hybrid inference, ASL grammar, 3D-LEX motion decoding/retargeting, ASL playback, or linguistic evaluation. The dashboard explicitly marks these as *not implemented*. The rules-only baseline is **English analysis only**, not an ASL translator.
 
@@ -25,8 +27,8 @@ The experiment is served as a static subpath of the existing Pages site and is l
 
 ## Planned stages
 
-1. **P0 (included):** 12 fixtures, a controlled-tag HTML extractor, deterministic **English** surface cues, constraints, provenance, static UI, JSON export, tests.
-2. **P1:** 60 reviewed fixtures, stable source offsets, semantic relation graph, CI, adversarial browser tests, better DOM fixtures including tables and forms.
+1. **P0 (delivered):** 12 fixtures, a controlled-tag HTML extractor, deterministic **English** surface cues, constraints, provenance, static UI, JSON export, tests.
+2. **P1 (this branch):** 40 development fixtures and 20 provisional holdout fixtures; block-aware extraction with source IDs/paths/text spans; headings, nested lists, links/hrefs, table header scope, form labels/required/ARIA, image alternatives; adversarial and Unicode cases.
 3. **P2:** upstream `spoken-to-signed-translation` adapter via offline, pinned *precomputed* outputs (GitHub Pages cannot run Python server-side); never claim its lexical plan is fluent ASL.
 4. **P3:** optional browser AI simplifier B using pinned Transformers.js or WebLLM and strict meaning checks. No model is bundled here.
 5. **P4:** direct AI C and hybrid D, same fixtures, provenance, five repeats; evaluate errors, abstentions and coverage distinctly.
@@ -39,8 +41,9 @@ Do not send any generated lexical candidate to the existing public sign-language
 ## Files
 
 - `index.html`, `styles.css`, `src/app.js` are the static Pages dashboard.
-- `src/core.mjs` is the deterministic analysis engine shared with Node tests.
-- `fixtures/manifest.json` contains 12 synthetic, author-created English HTML test cases.
+- `src/extract.mjs` is the block-aware extractor; `src/core.mjs` is the deterministic analysis engine shared with Node tests.
+- `fixtures/manifest.json` contains 40 synthetic, author-created English HTML development cases.
+- `fixtures/holdout.json` contains 20 provisional holdout cases; see `fixtures/HOLDOUT.md` for the owner review/replacement process.
 - `docs/PHASES.md` supplies detailed exit criteria and no-go gates.
 - `docs/3D-LEX.md` covers dataset access, attribution, and future adapter contract.
 - `docs/PROTOCOL.md` defines evaluation metrics and conditions.

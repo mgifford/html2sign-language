@@ -37,7 +37,8 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 
 - **PR 0 (done, 2026-11-10):** integrate the starter, add relative links, fix paths, add this record, and add the experiment test command.
 - **PR 1 (implemented, pending review, 2026-11-10):** P0 verification and hardening: extraction tests, JSON contract, manifest failure, browser smoke test, and access fixes.
-- **PR 2 (next, after PR 1 review):** P1 extractor and 60 fixtures.
+- **PR 2 (implemented, pending review, 2026-11-10):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The holdout is not blind until the owner replaces or reviews it.
+- **PR 3 (next, after PR 2 review):** P2 upstream adapter proposal.
 - Do not combine P1 with P0 verification. The owner controls the holdout fixtures, not the implementing agent.
 
 ## D7 — Claim separation (Accepted, 2026-11-10)
