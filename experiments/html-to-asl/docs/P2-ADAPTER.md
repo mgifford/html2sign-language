@@ -239,6 +239,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 - [x] Record the OMW English 3.0 licence as the Princeton WordNet License and set `wordnet.approved: true`.
 - [x] Create a Python 3.12 environment and verify spaCy 3.8.16 / `en_core_web_lg` 3.8.0 and the pinned `senses_to_gloss` import (temporary venv, not committed).
 - [ ] Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json`.
+- [ ] Pin the spaCy entity-linker knowledge base used by the WSD service.
 - [ ] Run `python3 tools/p2/precompute.py --check` with `ready: true`.
 - [x] Produce all 40 development artifacts with candidates aligned to P1 blocks.
 - [x] Add the static P2 viewer and browser coverage.

@@ -48,7 +48,7 @@ Before setting any `approved` flag to `true`, record and verify:
 7. [done] Owner plus independent reviewer for P1-block → upstream-sentence alignment.
 8. [done] The provisional holdout stays excluded from P2.
 
-The remaining blockers are the pinned CPU image digests and the owner alignment review. Run `--check` and confirm `ready: true` before P2.3.
+The remaining blockers are the pinned CPU image digests, the spaCy entity-linker knowledge-base pin, and the owner alignment review. Run `--check` and confirm `ready: true` before P2.3.
 
 ## Files
 
