@@ -126,6 +126,7 @@ Tests:
 - `npm run test:browser:experiment` runs the Chromium/Chrome smoke test for the experiment.
 - `npm run test:p2` runs the P2 pin/schema/artifact/refusal tests with Python’s built-in `unittest`.
 - GitHub Actions (`.github/workflows/test.yml`) runs the Node tests, P2 tests, and the Chromium browser tests on pushes and pull requests.
+- `.github/workflows/p2-cleanroom.yml` is a manual, image-pinned amd64 clean-room run; it is not triggered by ordinary PRs.
 
 ### 3.2 Prepare Your 3D Assets
 

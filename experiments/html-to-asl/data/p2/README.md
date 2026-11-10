@@ -7,7 +7,7 @@ Status: **40 partial P2.2 source-run artifacts.** No other lexical plans exist.
 - `review.json` records all 40 owner alignment reviews and the independent review as **pending**; see `../docs/P2-REVIEW.md`.
 - `review.md` is a one-page table of all 40 source texts and plans for review.
 - WSD intermediates and model weights are not committed.
-- The WSD model/code and OMW licence are approved. CPU image digests and the spaCy entity-linker hash are recorded; the entity-linker archive revision is unpublished. A clean-room image-pinned run is still pending.
+- The WSD model/code and OMW licence are approved. CPU image digests and the spaCy entity-linker hash are recorded; the entity-linker archive revision is unpublished. The image-pinned clean-room run passed with 40/40 plan contents matching.
 
 View the artifacts at `../../p2/`. This directory must never contain a placeholder gloss, model weight, WSD intermediate, or 3D-LEX asset.
 

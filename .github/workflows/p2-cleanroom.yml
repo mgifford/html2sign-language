@@ -1,0 +1,113 @@
+name: P2 clean-room
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cleanroom:
+    name: Image-pinned WSD reproduction
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Generate P1 extraction JSON
+        run: node tools/p2/export_p1.mjs --output /tmp/p1-all.json
+
+      - name: Install pinned Python stack
+        run: python -m pip install --disable-pip-version-check -r tools/p2/requirements.lock
+
+      - name: Download pinned WSD model snapshot
+        env:
+          HF_HOME: /tmp/hf-home
+          HF_HUB_CACHE: /tmp/hf-cache
+          HF_HUB_DISABLE_XET: "1"
+        run: |
+          python - <<'PY'
+          from huggingface_hub import snapshot_download
+          path = snapshot_download(
+              "sign/Ettin-150m-WSD",
+              revision="8751b577199d1bb95b74fa2457da7065d57100ae",
+              local_dir="/tmp/wsd-model",
+          )
+          print(path)
+          PY
+
+      - name: Start pinned WordNet and WSD containers
+        run: |
+          docker network create p2
+          docker run -d --network p2 --name wn -p 8000:8080 \
+            ghcr.io/sign/wn@sha256:271d8418036da5bde1c02bfa703b7b480455e5af8c206f71ae1aa590f3bdd19f
+          docker run -d --network p2 --name wsd -p 8001:8080 \
+            -e PORT=8080 \
+            -e WORDNET_URL=http://wn:8080 \
+            -e WSD_MODEL=/models \
+            -e MODEL_VERSION=p2-cleanroom \
+            -v /tmp/wsd-model:/models:ro \
+            ghcr.io/sign/word-sense-disambiguation@sha256:b9d8b60f7c5be132baab66ba215b21f3582d9325ce2155301ecbdb00a077bce5
+
+      - name: Wait for WordNet
+        run: |
+          for attempt in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8000/health; then exit 0; fi
+            sleep 2
+          done
+          docker logs wn
+          exit 1
+
+      - name: Wait for WSD
+        run: |
+          for attempt in $(seq 1 120); do
+            if curl -fsS http://127.0.0.1:8001/health; then exit 0; fi
+            sleep 2
+          done
+          docker logs wsd
+          exit 1
+
+      - name: Run clean-room source plan generation
+        run: |
+          python tools/p2/source_run.py \
+            --allow-source-run \
+            --p1-json /tmp/p1-all.json \
+            --wsd-url http://127.0.0.1:8001/disambiguate \
+            --output /tmp/p2-cleanroom
+
+      - name: Compare plan content with committed artifacts
+        run: |
+          python tools/p2/compare_plans.py \
+            --committed experiments/html-to-asl/data/p2 \
+            --clean /tmp/p2-cleanroom
+
+      - name: Upload clean-room output and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p2-cleanroom-${{ github.run_id }}
+          path: |
+            /tmp/p2-cleanroom
+            /tmp/p1-all.json
+          if-no-files-found: warn
+
+      - name: Container logs on failure
+        if: failure()
+        run: |
+          docker logs wn || true
+          docker logs wsd || true
