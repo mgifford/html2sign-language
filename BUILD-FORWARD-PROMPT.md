@@ -13,7 +13,7 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 - **PR 2 (implemented, pending review):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The owner must replace or review the holdout before using it as a blind set.
 - **PR 3 (implemented, pending review):** P2 proposal only: pinned offline adapter design, data contract, failure modes, licences and acceptance criteria. No upstream code, model, data, or runtime change.
 - **PR 4 (implemented, pending review):** P2.0 only: pin record, artifact/index schemas, fail-closed CLI, refusal tests, empty data index. No model, upstream call, or lexical plan.
-- **PR 5 (implemented, pending review):** P2.1/P2.2 source-run artifacts for all 40 development fixtures, a static viewer, and P2.3 image digests/Python lock/entity-linker pin/source-run tool. P2.4 review packet added; owner/Deaf review and a clean-room image-pinned run remain open.
+- **PR 5 (implemented, pending review):** P2.1/P2.2 source-run artifacts for all 40 development fixtures, a static viewer, and P2.3 image digests/Python lock/entity-linker pin/source-run tool. P2.4 review packet added; the image-pinned clean-room run passed 40/40. Owner/Deaf review remains open.
 
 ## First tasks
 

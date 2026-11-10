@@ -66,7 +66,8 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - [done] Python 3.12 import check and `requirements.lock`: spaCy 3.8.16, `en_core_web_lg` 3.8.0, and pinned `senses_to_gloss`.
 - [done] CPU image digests for WSD and `sign/wn` are recorded in `pins.json`.
 - [done] `precompute.py --check` reports `ready: true` in the verified Python 3.12 environment.
-- [implemented] All 40 development artifacts and the static viewer were produced from source checkouts and a local model snapshot. Image digests, the entity-linker hash/licence, the Python lock, and the source-run tool are recorded; owner alignment review and a clean-room image-pinned run remain open.
+- [done] Image-pinned clean-room run passed on amd64: all 40 plan contents matched the committed artifacts.
+- [implemented] All 40 development artifacts and the static viewer were produced from source checkouts and a local model snapshot. Image digests, the entity-linker hash/licence, the Python lock, the source-run tool, and a passing image-pinned clean-room run are recorded; owner and independent review remain open.
 
 ## D10 — P2.4 review packet (Open)
 

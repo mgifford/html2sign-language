@@ -1,6 +1,6 @@
 # P2 proposal: pinned, offline English → ASL lexical-plan adapter
 
-Status: **P2.0–P2.2 implemented; P2.3 pins, CPU image digests, entity-linker hash/licence, Python lock, and source-run tool are recorded. Owner alignment review and a clean-room image-pinned run remain open.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
+Status: **P2.0–P2.3 implemented. The image-pinned clean-room run passed on amd64 with all 40 plan contents matching. Owner alignment review and independent Deaf ASL review remain open (P2.4).** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
 
 ## 1. Goal
 
@@ -37,7 +37,7 @@ P2.0 is implemented in `tools/p2/`:
 - `experiments/html-to-asl/p2/` is the static viewer for the index and artifacts.
 - `data/p2/review.json` records that all 40 owner alignment reviews are **pending**; no implementer self-approval is recorded.
 - `tools/p2/source_run.py` reproduces the source-run artifacts against a local WSD service; it is explicitly not the image-pinned path.
-- `.github/workflows/p2-cleanroom.yml` is a manual, image-pinned amd64 workflow that starts the pinned WSD/WordNet containers, regenerates the plans, and compares plan content with the committed artifacts.
+- `.github/workflows/p2-cleanroom.yml` is a manual, image-pinned amd64 workflow that starts the pinned WSD/WordNet containers, regenerates the plans, and compares plan content with the committed artifacts. It **passed** on run [42915233893](https://github.com/mgifford/html2sign-language/actions/runs/42915233893): 40/40 plans matched.
 
 The system default is Python 3.14 with no model stack. A temporary Python 3.12 environment has verified spaCy 3.8.16, `en_core_web_lg` 3.8.0, and the pinned `senses_to_gloss` import. See `tools/p2/README.md` for the approval checklist. P2.3 pins are recorded; owner review and a clean-room image-pinned run remain.
 
@@ -248,7 +248,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 - [x] Produce all 40 development artifacts with candidates aligned to P1 blocks.
 - [x] Add the static P2 viewer and browser coverage.
 - [ ] Owner review of the 40 alignment records (`data/p2/review.json` is pending).
-- [ ] Execute the image-pinned stack clean-room with the manual workflow; Docker was unavailable locally.
+- [x] Execute the image-pinned stack clean-room with the manual workflow: 40/40 plan contents matched.
 
 ## 13. References
 

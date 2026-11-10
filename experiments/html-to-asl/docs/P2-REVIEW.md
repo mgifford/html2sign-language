@@ -19,7 +19,7 @@ This packet supports P2.4. It does not itself make a linguistic, accessibility, 
 - Review the **40 development artifacts** only.
 - The 20-case holdout remains excluded; do not tune against it.
 - The 40 artifacts are `partial` because upstream reports `semantic-rules-unavailable`.
-- The source-run artifacts were produced from source checkouts and a local model snapshot; clean-room image-pinned reproduction is still open.
+- The source-run artifacts were produced from source checkouts and a local model snapshot. The image-pinned clean-room run later matched all 40 plan contents.
 
 ## 1. Owner alignment review (all 40)
 
@@ -86,7 +86,7 @@ The overall `status` becomes `complete` only when the owner and independent revi
 - [ ] The independent Deaf ASL reviewer has reviewed the agreed sample, and 100% before any public claim.
 - [ ] Every rejection/discussion item has a recorded disposition.
 - [ ] No artifact is presented as ASL or fed to the public avatar.
-- [ ] The clean-room image-pinned run is complete, or the limitation is explicit.
+- [x] The clean-room image-pinned run is complete: 40/40 plan contents matched.
 
 ## 5. Rules
 

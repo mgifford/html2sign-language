@@ -2,8 +2,6 @@ name: P2 clean-room
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ci/p2-cleanroom]
 
 permissions:
   contents: read
