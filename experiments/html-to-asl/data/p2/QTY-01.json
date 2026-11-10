@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "QTY-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "5e575626412c57930f0d9fce0b3da1ac10a84966b507a92ed27060c085c282bb",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 35,
+        "text": "Provide two references and pay $25."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Provide",
+            "lemma": "provide",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 7,
+            "status": "aligned",
+            "gloss": "provide"
+          },
+          {
+            "word": "two",
+            "lemma": "two",
+            "pos": "NUM",
+            "dep": "nummod",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 8,
+            "sourceEnd": 11,
+            "status": "aligned",
+            "gloss": "two"
+          },
+          {
+            "word": "references",
+            "lemma": "reference",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 12,
+            "sourceEnd": 22,
+            "status": "aligned",
+            "gloss": "reference"
+          },
+          {
+            "word": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 23,
+            "sourceEnd": 26,
+            "status": "aligned",
+            "gloss": "and"
+          },
+          {
+            "word": "pay",
+            "lemma": "pay",
+            "pos": "VERB",
+            "dep": "conj",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 27,
+            "sourceEnd": 30,
+            "status": "aligned",
+            "gloss": "pay"
+          },
+          {
+            "word": "$",
+            "lemma": "$",
+            "pos": "SYM",
+            "dep": "nmod",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 31,
+            "sourceEnd": 32,
+            "status": "aligned",
+            "gloss": "$"
+          },
+          {
+            "word": "25",
+            "lemma": "25",
+            "pos": "NUM",
+            "dep": "dobj",
+            "head": 4,
+            "blockId": "b0001",
+            "sourceStart": 32,
+            "sourceEnd": 34,
+            "status": "aligned",
+            "gloss": "25"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 34,
+            "sourceEnd": 35,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "complex-clause-order-preserved"
+          },
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 7
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 8,
+      "sourceEnd": 11
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 12,
+      "sourceEnd": 22
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 23,
+      "sourceEnd": 26
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 27,
+      "sourceEnd": 30
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 31,
+      "sourceEnd": 32
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0001",
+      "sourceStart": 32,
+      "sourceEnd": 34
+    },
+    {
+      "candidateIndex": 7,
+      "blockId": "b0001",
+      "sourceStart": 34,
+      "sourceEnd": 35
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "5e575626412c57930f0d9fce0b3da1ac10a84966b507a92ed27060c085c282bb",
+    "outputSha256": "805b90060fd9766a59710892640e8848c6f494264e73fc9b23cebfd9547de9f4"
+  }
+}

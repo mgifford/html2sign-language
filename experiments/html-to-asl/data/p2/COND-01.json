@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "COND-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "b1f4d076218720b0297d82bdb3497567f595722e3ad3db72f4e932822fce5f2d",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 49,
+        "text": "Apply before June 1 unless you have an extension."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Apply",
+            "lemma": "apply",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 5,
+            "status": "aligned",
+            "gloss": "apply"
+          },
+          {
+            "word": "before",
+            "lemma": "before",
+            "pos": "ADP",
+            "dep": "prep",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 6,
+            "sourceEnd": 12,
+            "status": "aligned",
+            "gloss": "before"
+          },
+          {
+            "word": "June",
+            "lemma": "june",
+            "pos": "PROPN",
+            "dep": "pobj",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 13,
+            "sourceEnd": 17,
+            "status": "aligned",
+            "gloss": "june"
+          },
+          {
+            "word": "1",
+            "lemma": "1",
+            "pos": "NUM",
+            "dep": "nummod",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 18,
+            "sourceEnd": 19,
+            "status": "aligned",
+            "gloss": "1"
+          },
+          {
+            "word": "unless",
+            "lemma": "unless",
+            "pos": "SCONJ",
+            "dep": "mark",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 20,
+            "sourceEnd": 26,
+            "status": "aligned",
+            "gloss": "unless"
+          },
+          {
+            "word": "you",
+            "lemma": "you",
+            "pos": "PRON",
+            "dep": "nsubj",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 27,
+            "sourceEnd": 30,
+            "status": "aligned",
+            "gloss": "you"
+          },
+          {
+            "word": "have",
+            "lemma": "have",
+            "pos": "VERB",
+            "dep": "advcl",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 31,
+            "sourceEnd": 35,
+            "status": "aligned",
+            "gloss": "have"
+          },
+          {
+            "word": "extension",
+            "lemma": "extension",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 39,
+            "sourceEnd": 48,
+            "status": "aligned",
+            "gloss": "extension"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 48,
+            "sourceEnd": 49,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              7
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "complex-clause-order-preserved"
+          },
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 5
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 6,
+      "sourceEnd": 12
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 13,
+      "sourceEnd": 17
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 18,
+      "sourceEnd": 19
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 20,
+      "sourceEnd": 26
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 27,
+      "sourceEnd": 30
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0001",
+      "sourceStart": 31,
+      "sourceEnd": 35
+    },
+    {
+      "candidateIndex": 7,
+      "blockId": "b0001",
+      "sourceStart": 39,
+      "sourceEnd": 48
+    },
+    {
+      "candidateIndex": 8,
+      "blockId": "b0001",
+      "sourceStart": 48,
+      "sourceEnd": 49
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "b1f4d076218720b0297d82bdb3497567f595722e3ad3db72f4e932822fce5f2d",
+    "outputSha256": "71d89e49d40607a4fb4d3d0b6254f4f44346a4ee29386f66210ea6f8e1376491"
+  }
+}

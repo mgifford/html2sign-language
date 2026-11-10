@@ -36,10 +36,28 @@ class Neg01ArtifactTests(unittest.TestCase):
 
     def test_index_points_at_the_artifact_hash(self):
         self.assertEqual(self.index["status"], "partial")
-        self.assertEqual(len(self.index["artifacts"]), 1)
-        entry = self.index["artifacts"][0]
-        self.assertEqual(entry["fixtureId"], "NEG-01")
+        self.assertEqual(len(self.index["artifacts"]), 40)
+        entry = next(item for item in self.index["artifacts"] if item["fixtureId"] == "NEG-01")
         self.assertEqual(entry["outputSha256"], self.artifact["hashes"]["outputSha256"])
+
+    def test_all_40_artifacts_match_the_contract(self):
+        for entry in self.index["artifacts"]:
+            path = ARTIFACT.parent / entry["file"]
+            artifact = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(validate_artifact(artifact), [], entry["fixtureId"])
+            self.assertEqual(artifact["fixtureId"], entry["fixtureId"])
+            self.assertEqual(artifact["translation"], False)
+            self.assertEqual(artifact["status"], entry["status"])
+            self.assertEqual(artifact["hashes"]["outputSha256"], entry["outputSha256"])
+
+            blocks = {block["id"]: block for block in artifact["source"]["blocks"]}
+            for sentence in artifact["plan"]["sentences"]:
+                for token in sentence["tokens"]:
+                    block = blocks[token["blockId"]]
+                    self.assertGreaterEqual(token["sourceStart"], block["textStart"], entry["fixtureId"])
+                    self.assertLessEqual(token["sourceEnd"], block["textEnd"], entry["fixtureId"])
+                    self.assertEqual(token["status"], "aligned")
+            self.assertEqual(artifact["abstentions"], [])
 
     def test_artifact_does_not_claim_asl(self):
         warnings = " ".join(self.artifact["warnings"]).lower()

@@ -1,6 +1,6 @@
 # P2 tooling
 
-Status: **P2.0 scaffold plus a partial P2.1 `NEG-01` prototype.** The CLI still refuses to write until every prerequisite is approved and installed. The WSD model/code and OMW licence are approved; CPU image digests are still open. The prototype was produced from source checkouts and a local model snapshot, and awaits owner alignment review.
+Status: **P2.0 scaffold plus 40 partial P2.2 source-run artifacts and a static viewer.** The CLI still refuses to write until every prerequisite is approved and installed. The WSD model/code and OMW licence are approved; CPU image digests are still open. Artifacts were produced from source checkouts and a local model snapshot and await owner alignment review.
 
 ## Commands
 
@@ -48,7 +48,7 @@ Before setting any `approved` flag to `true`, record and verify:
 7. [done] Owner plus independent reviewer for P1-block → upstream-sentence alignment.
 8. [done] The provisional holdout stays excluded from P2.
 
-The remaining blockers are the pinned CPU image digests and the owner alignment review. Run `--check` and confirm `ready: true` before P2.1.
+The remaining blockers are the pinned CPU image digests and the owner alignment review. Run `--check` and confirm `ready: true` before P2.3.
 
 ## Files
 
@@ -57,6 +57,6 @@ The remaining blockers are the pinned CPU image digests and the owner alignment 
 - `index.schema.json` — static index contract.
 - `precompute.py` — fail-closed CLI.
 - `validate.py` — dependency-free checks used by tests.
-- `tests/` — 14 unit tests, including refusal and holdout cases.
+- `tests/` — 19 unit tests, including all 40 artifacts, refusal, and holdout cases.
 
 No model weights, WSD intermediates, generated glosses, or 3D-LEX assets belong in this directory.

@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "HTML-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "3c9a38e715a8a50be50b0901fb95c0f605bc8055fa96a5d37ecf5122dc49bead",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "heading",
+        "path": "main > h2:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 18,
+        "text": "Required documents"
+      },
+      {
+        "id": "b0002",
+        "type": "list-item",
+        "path": "main > ul:nth-of-type(1) > li:nth-of-type(1)",
+        "textStart": 19,
+        "textEnd": 35,
+        "text": "Proof of address"
+      },
+      {
+        "id": "b0003",
+        "type": "list-item",
+        "path": "main > ul:nth-of-type(1) > li:nth-of-type(2)",
+        "textStart": 36,
+        "textEnd": 56,
+        "text": "Photo identification"
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Required",
+            "lemma": "required",
+            "pos": "PROPN",
+            "dep": "amod",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 8,
+            "status": "aligned",
+            "gloss": "required"
+          },
+          {
+            "word": "documents",
+            "lemma": "document",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 9,
+            "sourceEnd": 18,
+            "status": "aligned",
+            "gloss": "document"
+          },
+          {
+            "word": "Proof",
+            "lemma": "proof",
+            "pos": "PROPN",
+            "dep": "ROOT",
+            "head": 3,
+            "blockId": "b0002",
+            "sourceStart": 19,
+            "sourceEnd": 24,
+            "status": "aligned",
+            "gloss": "proof"
+          },
+          {
+            "word": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep",
+            "head": 3,
+            "blockId": "b0002",
+            "sourceStart": 25,
+            "sourceEnd": 27,
+            "status": "aligned",
+            "gloss": "of"
+          },
+          {
+            "word": "address",
+            "lemma": "address",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 7,
+            "blockId": "b0002",
+            "sourceStart": 28,
+            "sourceEnd": 35,
+            "status": "aligned",
+            "gloss": "address"
+          },
+          {
+            "word": "Photo",
+            "lemma": "photo",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 8,
+            "blockId": "b0003",
+            "sourceStart": 36,
+            "sourceEnd": 41,
+            "status": "aligned",
+            "gloss": "photo"
+          },
+          {
+            "word": "identification",
+            "lemma": "identification",
+            "pos": "NOUN",
+            "dep": "pobj",
+            "head": 4,
+            "blockId": "b0003",
+            "sourceStart": 42,
+            "sourceEnd": 56,
+            "status": "aligned",
+            "gloss": "identification"
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              2
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              6
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 8
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 9,
+      "sourceEnd": 18
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0002",
+      "sourceStart": 19,
+      "sourceEnd": 24
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0002",
+      "sourceStart": 25,
+      "sourceEnd": 27
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0002",
+      "sourceStart": 28,
+      "sourceEnd": 35
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0003",
+      "sourceStart": 36,
+      "sourceEnd": 41
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0003",
+      "sourceStart": 42,
+      "sourceEnd": 56
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "3c9a38e715a8a50be50b0901fb95c0f605bc8055fa96a5d37ecf5122dc49bead",
+    "outputSha256": "f9be8354efcaf6c12a1757a5f31e43bb4e8533c9be610d6af161bdb4303f5b39"
+  }
+}

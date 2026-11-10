@@ -7,12 +7,245 @@
       "fixtureId": "NEG-01",
       "file": "NEG-01.json",
       "status": "partial",
-      "outputSha256": "6266db0a59747e1e879534ae784c254e6e5e8ea66b7ee9f2df7e2bf5298e7553"
+      "outputSha256": "d96e4677393b1f326923b1ef909e96abf106b83cd3e2cd5a4d3122e407451209"
+    },
+    {
+      "fixtureId": "MOD-01",
+      "file": "MOD-01.json",
+      "status": "partial",
+      "outputSha256": "c407a7bf0aacf3bfa053a20e4bf3673e5285ce718fc400f3492d34d96806d877"
+    },
+    {
+      "fixtureId": "COND-01",
+      "file": "COND-01.json",
+      "status": "partial",
+      "outputSha256": "71d89e49d40607a4fb4d3d0b6254f4f44346a4ee29386f66210ea6f8e1376491"
+    },
+    {
+      "fixtureId": "LEX-01",
+      "file": "LEX-01.json",
+      "status": "partial",
+      "outputSha256": "2b9038af18effa74fb3d27429e0c6a8abd54a133fc073f71be0be31805db5d4b"
+    },
+    {
+      "fixtureId": "DOC-01",
+      "file": "DOC-01.json",
+      "status": "partial",
+      "outputSha256": "c1cac98d0ef0ff7fa0689bf7ad08d26a3445b7c754313f1c739864f0cfc41d16"
+    },
+    {
+      "fixtureId": "HTML-01",
+      "file": "HTML-01.json",
+      "status": "partial",
+      "outputSha256": "f9be8354efcaf6c12a1757a5f31e43bb4e8533c9be610d6af161bdb4303f5b39"
+    },
+    {
+      "fixtureId": "SEC-01",
+      "file": "SEC-01.json",
+      "status": "partial",
+      "outputSha256": "3f3312ee41b9f7c146449d952d023d727c5b774df16d9f1b19a14faf7f1a14d5"
+    },
+    {
+      "fixtureId": "NAV-01",
+      "file": "NAV-01.json",
+      "status": "partial",
+      "outputSha256": "86dc6c246e765837f371607404c47301ff3142f9858193f2e9b9e3a67763b0dc"
+    },
+    {
+      "fixtureId": "QTY-01",
+      "file": "QTY-01.json",
+      "status": "partial",
+      "outputSha256": "805b90060fd9766a59710892640e8848c6f494264e73fc9b23cebfd9547de9f4"
+    },
+    {
+      "fixtureId": "LINK-01",
+      "file": "LINK-01.json",
+      "status": "partial",
+      "outputSha256": "33ae9f1fb584ca9a761f2df6c2374d871bdd4da838ab16485ff09b503203698c"
+    },
+    {
+      "fixtureId": "TABLE-01",
+      "file": "TABLE-01.json",
+      "status": "partial",
+      "outputSha256": "25284d61c989b6c0e55c008d53793f5c216b232501e8e1622f35ac2464fc0801"
+    },
+    {
+      "fixtureId": "FORM-01",
+      "file": "FORM-01.json",
+      "status": "partial",
+      "outputSha256": "2f1f021e450be64bce27aecc27b7e92241beda6fd092013f76cbc4eeb5ed7723"
+    },
+    {
+      "fixtureId": "STRUCT-HIER",
+      "file": "STRUCT-HIER.json",
+      "status": "partial",
+      "outputSha256": "9b29085e59486321b2b9a5754e27b80404d6777abbf732fae0443aa6b82c865a"
+    },
+    {
+      "fixtureId": "STRUCT-NESTED",
+      "file": "STRUCT-NESTED.json",
+      "status": "partial",
+      "outputSha256": "c718471486f632de96fd7843808773b24a7f634379f38b31423a2a80117045a4"
+    },
+    {
+      "fixtureId": "STRUCT-ORDERED",
+      "file": "STRUCT-ORDERED.json",
+      "status": "partial",
+      "outputSha256": "5d032a550db1b7274d7ca4d5e85069fbfbc32784bf8446deca9a1b9501c2e014"
+    },
+    {
+      "fixtureId": "STRUCT-DL",
+      "file": "STRUCT-DL.json",
+      "status": "partial",
+      "outputSha256": "dca1111b4c60c926d77b32b13dd5e768e0683136c009da588ad8255ca0023a69"
+    },
+    {
+      "fixtureId": "STRUCT-LINK",
+      "file": "STRUCT-LINK.json",
+      "status": "partial",
+      "outputSha256": "983ae6efaa078aec12875bc823fa9c4ea8f67821cabe37e5514fb2faf208fa29"
+    },
+    {
+      "fixtureId": "STRUCT-LINKS",
+      "file": "STRUCT-LINKS.json",
+      "status": "partial",
+      "outputSha256": "42c9547377b0ab9bae41a7130056ee0c6e2e76ccb2c8857ad48d57975f15b6fd"
+    },
+    {
+      "fixtureId": "STRUCT-TABLE",
+      "file": "STRUCT-TABLE.json",
+      "status": "partial",
+      "outputSha256": "cd2c93c82c358d84cf5b4b5cacd4640358774d59199b43125a920ebee7481c84"
+    },
+    {
+      "fixtureId": "STRUCT-TABLE-NOHEAD",
+      "file": "STRUCT-TABLE-NOHEAD.json",
+      "status": "partial",
+      "outputSha256": "264e2744819dc53a3e8b023b6b0479003773cd354dc40f4ee362d74f19054448"
+    },
+    {
+      "fixtureId": "FORM-REQUIRED",
+      "file": "FORM-REQUIRED.json",
+      "status": "partial",
+      "outputSha256": "c3b11f990c97cd351104a14d936cf85b5e5b5a6c2404acbc9dad4e20fb8d65fc"
+    },
+    {
+      "fixtureId": "FORM-GROUP",
+      "file": "FORM-GROUP.json",
+      "status": "partial",
+      "outputSha256": "c4bd0279df6739e4b049bf0c1ed74a881267b401fabc0c50eb6d41e361f72c50"
+    },
+    {
+      "fixtureId": "FORM-SELECT",
+      "file": "FORM-SELECT.json",
+      "status": "partial",
+      "outputSha256": "1a771e34e7dcf64c21fddb0c45f9391f55efb4959680c27b3d279584cd39b29b"
+    },
+    {
+      "fixtureId": "FORM-TEXTAREA",
+      "file": "FORM-TEXTAREA.json",
+      "status": "partial",
+      "outputSha256": "865e4467148e539aa5539ef86448ee764156aea48dce520bb5957ead8fa16d81"
+    },
+    {
+      "fixtureId": "FORM-CHECK",
+      "file": "FORM-CHECK.json",
+      "status": "partial",
+      "outputSha256": "5dde075c5e72d44dc08955db5b13f04d4aeae44e6105906b19962389f39dd55b"
+    },
+    {
+      "fixtureId": "ARIA-BUTTON",
+      "file": "ARIA-BUTTON.json",
+      "status": "partial",
+      "outputSha256": "c2b65cb485f284a3d7125126beb60b88f993bd1fc8d7e3b2d252c40be83aaec0"
+    },
+    {
+      "fixtureId": "ARIA-SECTION",
+      "file": "ARIA-SECTION.json",
+      "status": "partial",
+      "outputSha256": "efad593978a3a740fc7cccd9557e65eac0776a38010a156ea9a67f64a4f713a4"
+    },
+    {
+      "fixtureId": "IMG-ALT",
+      "file": "IMG-ALT.json",
+      "status": "partial",
+      "outputSha256": "23a87c9008651ce59e94eb79837976c87db34c971b51a9126f3b53d9fbd411af"
+    },
+    {
+      "fixtureId": "IMG-DECOR",
+      "file": "IMG-DECOR.json",
+      "status": "partial",
+      "outputSha256": "b3cda6fde8eed880f38e9ca85362ca1bfe2afa04f4bf27f814092348b5eeedaa"
+    },
+    {
+      "fixtureId": "IMG-NOALT",
+      "file": "IMG-NOALT.json",
+      "status": "partial",
+      "outputSha256": "5ef179282603320e7887d12842b11882e35f6b2106f9d676469ae7ed0fb17b98"
+    },
+    {
+      "fixtureId": "QUOTE",
+      "file": "QUOTE.json",
+      "status": "partial",
+      "outputSha256": "d60d7a8c9f89720aa065919b015bcbf72f606db9188718d1d8f3cbd84d95ff3f"
+    },
+    {
+      "fixtureId": "CODE",
+      "file": "CODE.json",
+      "status": "partial",
+      "outputSha256": "8882bced66ec2f2f394458544ee20e6f3edaac04d7cf95abef6261efe7d6adb2"
+    },
+    {
+      "fixtureId": "BARE-DIV",
+      "file": "BARE-DIV.json",
+      "status": "partial",
+      "outputSha256": "8b7b5b9abd90218d64bfedf75777b784486a5812ca5db37aec6cc8996da6f89e"
+    },
+    {
+      "fixtureId": "HIDDEN",
+      "file": "HIDDEN.json",
+      "status": "partial",
+      "outputSha256": "2045c12c96e03cd50de71b4cc066584d11dafc10c30caf60a828331b6343e5e9"
+    },
+    {
+      "fixtureId": "DETAILS-CLOSED",
+      "file": "DETAILS-CLOSED.json",
+      "status": "partial",
+      "outputSha256": "b5225fdcc83a24a947e464e6bb184dfa813e9b8a4e5cb555cb263fbce35fbe8e"
+    },
+    {
+      "fixtureId": "DETAILS-OPEN",
+      "file": "DETAILS-OPEN.json",
+      "status": "partial",
+      "outputSha256": "21e4528fb264bef019d31fe553a1058d7a8ee3d410540c81f591ac188665c175"
+    },
+    {
+      "fixtureId": "UNICODE",
+      "file": "UNICODE.json",
+      "status": "partial",
+      "outputSha256": "9c43ff312556497e0a25fa69ec87cc59089a0404948e43a83e1c23dded6c2c8b"
+    },
+    {
+      "fixtureId": "INJECT",
+      "file": "INJECT.json",
+      "status": "partial",
+      "outputSha256": "96ec61e9a5edcd9042636fbdc151e9d4723b7ce4970b29489c0908e935817cdb"
+    },
+    {
+      "fixtureId": "MIXED",
+      "file": "MIXED.json",
+      "status": "partial",
+      "outputSha256": "748a6cbae783f3636546315b5f337405b318599cb57fa26d9bcbc875f74b34d5"
+    },
+    {
+      "fixtureId": "TABLE-LINK",
+      "file": "TABLE-LINK.json",
+      "status": "partial",
+      "outputSha256": "f36a6761b8c911a0adbf0f9996f492c4dd7ceffba8206d5461512a3c771d9090"
     }
   ],
   "warnings": [
-    "NEG-01 is a P2.1 research prototype; owner alignment review is pending.",
-    "Lexical plan only. Nonmanual markers, spatial grammar, and ASL fluency are not represented.",
-    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests."
+    "P2.2 source-run artifacts; owner alignment review and CPU image pins remain open.",
+    "Lexical plans only. Nonmanual markers, spatial grammar, and ASL fluency are not represented."
   ]
 }

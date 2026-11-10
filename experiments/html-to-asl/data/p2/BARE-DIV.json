@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "BARE-DIV",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "d43c4fe1c0efc1300c162e3b301b20f7d0dd21481e71c051e92267c59cc6f291",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "text",
+        "path": "main > div:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 22,
+        "text": "Office closes at noon."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Office",
+            "lemma": "office",
+            "pos": "NOUN",
+            "dep": "nsubj",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 6,
+            "status": "aligned",
+            "gloss": "office"
+          },
+          {
+            "word": "closes",
+            "lemma": "close",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 7,
+            "sourceEnd": 13,
+            "status": "aligned",
+            "gloss": "close"
+          },
+          {
+            "word": "at",
+            "lemma": "at",
+            "pos": "ADP",
+            "dep": "prep",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 14,
+            "sourceEnd": 16,
+            "status": "aligned",
+            "gloss": "at"
+          },
+          {
+            "word": "noon",
+            "lemma": "noon",
+            "pos": "NOUN",
+            "dep": "pobj",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 17,
+            "sourceEnd": 21,
+            "status": "aligned",
+            "gloss": "noon"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 21,
+            "sourceEnd": 22,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 6
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 7,
+      "sourceEnd": 13
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 14,
+      "sourceEnd": 16
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 17,
+      "sourceEnd": 21
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 21,
+      "sourceEnd": 22
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "d43c4fe1c0efc1300c162e3b301b20f7d0dd21481e71c051e92267c59cc6f291",
+    "outputSha256": "8b7b5b9abd90218d64bfedf75777b784486a5812ca5db37aec6cc8996da6f89e"
+  }
+}

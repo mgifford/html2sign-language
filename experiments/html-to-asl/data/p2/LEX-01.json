@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "LEX-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "5473d96c7aad50f9652d97cc41c8a28bee51f7acbf598650edd532eca1c305e1",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 60,
+        "text": "Download the application before submitting your application."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Download",
+            "lemma": "download",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 8,
+            "status": "aligned",
+            "gloss": "download"
+          },
+          {
+            "word": "application",
+            "lemma": "application",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 13,
+            "sourceEnd": 24,
+            "status": "aligned",
+            "gloss": "application"
+          },
+          {
+            "word": "before",
+            "lemma": "before",
+            "pos": "ADP",
+            "dep": "prep",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 25,
+            "sourceEnd": 31,
+            "status": "aligned",
+            "gloss": "before"
+          },
+          {
+            "word": "submitting",
+            "lemma": "submit",
+            "pos": "VERB",
+            "dep": "pcomp",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 32,
+            "sourceEnd": 42,
+            "status": "aligned",
+            "gloss": "submit"
+          },
+          {
+            "word": "your",
+            "lemma": "your",
+            "pos": "PRON",
+            "dep": "poss",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 43,
+            "sourceEnd": 47,
+            "status": "aligned",
+            "gloss": "your"
+          },
+          {
+            "word": "application",
+            "lemma": "application",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 4,
+            "blockId": "b0001",
+            "sourceStart": 48,
+            "sourceEnd": 59,
+            "status": "aligned",
+            "gloss": "application"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 59,
+            "sourceEnd": 60,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              1
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 8
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 13,
+      "sourceEnd": 24
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 25,
+      "sourceEnd": 31
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 32,
+      "sourceEnd": 42
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 43,
+      "sourceEnd": 47
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 48,
+      "sourceEnd": 59
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0001",
+      "sourceStart": 59,
+      "sourceEnd": 60
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "5473d96c7aad50f9652d97cc41c8a28bee51f7acbf598650edd532eca1c305e1",
+    "outputSha256": "2b9038af18effa74fb3d27429e0c6a8abd54a133fc073f71be0be31805db5d4b"
+  }
+}

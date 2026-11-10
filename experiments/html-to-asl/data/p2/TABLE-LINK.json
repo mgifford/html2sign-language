@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "TABLE-LINK",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "bd856eae35e0aeba9ae3999be56fd53123bb3ea8afe20f20ab0a349a11f5ba82",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "table",
+        "path": "main > table:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 31,
+        "text": "Links Name URL Guide Open guide"
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Links",
+            "lemma": "link",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 5,
+            "status": "aligned",
+            "gloss": "link"
+          },
+          {
+            "word": "Name",
+            "lemma": "name",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 6,
+            "sourceEnd": 10,
+            "status": "aligned",
+            "gloss": "name"
+          },
+          {
+            "word": "URL",
+            "lemma": "url",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 4,
+            "blockId": "b0001",
+            "sourceStart": 11,
+            "sourceEnd": 14,
+            "status": "aligned",
+            "gloss": "url"
+          },
+          {
+            "word": "Guide",
+            "lemma": "guide",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 4,
+            "blockId": "b0001",
+            "sourceStart": 15,
+            "sourceEnd": 20,
+            "status": "aligned",
+            "gloss": "guide"
+          },
+          {
+            "word": "Open",
+            "lemma": "open",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 5,
+            "blockId": "b0001",
+            "sourceStart": 21,
+            "sourceEnd": 25,
+            "status": "aligned",
+            "gloss": "open"
+          },
+          {
+            "word": "guide",
+            "lemma": "guide",
+            "pos": "NOUN",
+            "dep": "ROOT",
+            "head": 5,
+            "blockId": "b0001",
+            "sourceStart": 26,
+            "sourceEnd": 31,
+            "status": "aligned",
+            "gloss": "guide"
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 5
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 6,
+      "sourceEnd": 10
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 11,
+      "sourceEnd": 14
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 15,
+      "sourceEnd": 20
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 21,
+      "sourceEnd": 25
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 26,
+      "sourceEnd": 31
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "bd856eae35e0aeba9ae3999be56fd53123bb3ea8afe20f20ab0a349a11f5ba82",
+    "outputSha256": "f36a6761b8c911a0adbf0f9996f492c4dd7ceffba8206d5461512a3c771d9090"
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "FORM-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "890906e3d2d7bdde876560cc0f8861cb9fa837890de78fa7c0b3dba73303f3c1",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "field",
+        "path": "main > input:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 24,
+        "text": "Email address (required)"
+      },
+      {
+        "id": "b0002",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 25,
+        "textEnd": 66,
+        "text": "Fields marked required must be completed."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Email",
+            "lemma": "email",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 5,
+            "status": "aligned",
+            "gloss": "email"
+          },
+          {
+            "word": "address",
+            "lemma": "address",
+            "pos": "NOUN",
+            "dep": "nsubjpass",
+            "head": 11,
+            "blockId": "b0001",
+            "sourceStart": 6,
+            "sourceEnd": 13,
+            "status": "aligned",
+            "gloss": "address"
+          },
+          {
+            "word": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 14,
+            "sourceEnd": 15,
+            "status": "aligned",
+            "gloss": "("
+          },
+          {
+            "word": "required",
+            "lemma": "require",
+            "pos": "VERB",
+            "dep": "acl",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 15,
+            "sourceEnd": 23,
+            "status": "aligned",
+            "gloss": "require"
+          },
+          {
+            "word": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 23,
+            "sourceEnd": 24,
+            "status": "aligned",
+            "gloss": ")"
+          },
+          {
+            "word": "Fields",
+            "lemma": "field",
+            "pos": "NOUN",
+            "dep": "nsubjpass",
+            "head": 11,
+            "blockId": "b0002",
+            "sourceStart": 25,
+            "sourceEnd": 31,
+            "status": "aligned",
+            "gloss": "field"
+          },
+          {
+            "word": "marked",
+            "lemma": "mark",
+            "pos": "VERB",
+            "dep": "acl",
+            "head": 6,
+            "blockId": "b0002",
+            "sourceStart": 32,
+            "sourceEnd": 38,
+            "status": "aligned",
+            "gloss": "mark"
+          },
+          {
+            "word": "required",
+            "lemma": "require",
+            "pos": "VERB",
+            "dep": "dobj",
+            "head": 7,
+            "blockId": "b0002",
+            "sourceStart": 39,
+            "sourceEnd": 47,
+            "status": "aligned",
+            "gloss": "require"
+          },
+          {
+            "word": "must",
+            "lemma": "must",
+            "pos": "AUX",
+            "dep": "aux",
+            "head": 11,
+            "blockId": "b0002",
+            "sourceStart": 48,
+            "sourceEnd": 52,
+            "status": "aligned",
+            "gloss": "must"
+          },
+          {
+            "word": "be",
+            "lemma": "be",
+            "pos": "AUX",
+            "dep": "auxpass",
+            "head": 11,
+            "blockId": "b0002",
+            "sourceStart": 53,
+            "sourceEnd": 55,
+            "status": "aligned",
+            "gloss": "be"
+          },
+          {
+            "word": "completed",
+            "lemma": "complete",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 11,
+            "blockId": "b0002",
+            "sourceStart": 56,
+            "sourceEnd": 65,
+            "status": "aligned",
+            "gloss": "complete"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 11,
+            "blockId": "b0002",
+            "sourceStart": 65,
+            "sourceEnd": 66,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              5
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "complex-clause-order-preserved"
+          },
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 5
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 6,
+      "sourceEnd": 13
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 14,
+      "sourceEnd": 15
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 15,
+      "sourceEnd": 23
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 23,
+      "sourceEnd": 24
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0002",
+      "sourceStart": 25,
+      "sourceEnd": 31
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0002",
+      "sourceStart": 32,
+      "sourceEnd": 38
+    },
+    {
+      "candidateIndex": 7,
+      "blockId": "b0002",
+      "sourceStart": 39,
+      "sourceEnd": 47
+    },
+    {
+      "candidateIndex": 8,
+      "blockId": "b0002",
+      "sourceStart": 48,
+      "sourceEnd": 52
+    },
+    {
+      "candidateIndex": 9,
+      "blockId": "b0002",
+      "sourceStart": 53,
+      "sourceEnd": 55
+    },
+    {
+      "candidateIndex": 10,
+      "blockId": "b0002",
+      "sourceStart": 56,
+      "sourceEnd": 65
+    },
+    {
+      "candidateIndex": 11,
+      "blockId": "b0002",
+      "sourceStart": 65,
+      "sourceEnd": 66
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "890906e3d2d7bdde876560cc0f8861cb9fa837890de78fa7c0b3dba73303f3c1",
+    "outputSha256": "2f1f021e450be64bce27aecc27b7e92241beda6fd092013f76cbc4eeb5ed7723"
+  }
+}

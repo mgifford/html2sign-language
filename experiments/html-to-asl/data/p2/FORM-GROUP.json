@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "FORM-GROUP",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "d64a8fa6ad883dd8a966323b5e3367e174f2ee5d4732b666c74624c97253b95f",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "caption",
+        "path": "main > fieldset:nth-of-type(1) > legend:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 14,
+        "text": "Contact method"
+      },
+      {
+        "id": "b0002",
+        "type": "field",
+        "path": "main > fieldset:nth-of-type(1) > label:nth-of-type(1) > input:nth-of-type(1)",
+        "textStart": 15,
+        "textEnd": 35,
+        "text": "Email Contact method"
+      },
+      {
+        "id": "b0003",
+        "type": "field",
+        "path": "main > fieldset:nth-of-type(1) > label:nth-of-type(2) > input:nth-of-type(1)",
+        "textStart": 36,
+        "textEnd": 56,
+        "text": "Phone Contact method"
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Contact",
+            "lemma": "contact",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 7,
+            "status": "aligned",
+            "gloss": "contact"
+          },
+          {
+            "word": "method",
+            "lemma": "method",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 9,
+            "blockId": "b0001",
+            "sourceStart": 8,
+            "sourceEnd": 14,
+            "status": "aligned",
+            "gloss": "method"
+          },
+          {
+            "word": "Email",
+            "lemma": "email",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 4,
+            "blockId": "b0002",
+            "sourceStart": 15,
+            "sourceEnd": 20,
+            "status": "aligned",
+            "gloss": "email"
+          },
+          {
+            "word": "Contact",
+            "lemma": "contact",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 5,
+            "blockId": "b0002",
+            "sourceStart": 21,
+            "sourceEnd": 28,
+            "status": "aligned",
+            "gloss": "contact"
+          },
+          {
+            "word": "method",
+            "lemma": "method",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 9,
+            "blockId": "b0002",
+            "sourceStart": 29,
+            "sourceEnd": 35,
+            "status": "aligned",
+            "gloss": "method"
+          },
+          {
+            "word": "Phone",
+            "lemma": "phone",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 8,
+            "blockId": "b0003",
+            "sourceStart": 36,
+            "sourceEnd": 41,
+            "status": "aligned",
+            "gloss": "phone"
+          },
+          {
+            "word": "Contact",
+            "lemma": "contact",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 9,
+            "blockId": "b0003",
+            "sourceStart": 42,
+            "sourceEnd": 49,
+            "status": "aligned",
+            "gloss": "contact"
+          },
+          {
+            "word": "method",
+            "lemma": "method",
+            "pos": "NOUN",
+            "dep": "ROOT",
+            "head": 9,
+            "blockId": "b0003",
+            "sourceStart": 50,
+            "sourceEnd": 56,
+            "status": "aligned",
+            "gloss": "method"
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              2
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              6
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 7
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 8,
+      "sourceEnd": 14
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0002",
+      "sourceStart": 15,
+      "sourceEnd": 20
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0002",
+      "sourceStart": 21,
+      "sourceEnd": 28
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0002",
+      "sourceStart": 29,
+      "sourceEnd": 35
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0003",
+      "sourceStart": 36,
+      "sourceEnd": 41
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0003",
+      "sourceStart": 42,
+      "sourceEnd": 49
+    },
+    {
+      "candidateIndex": 7,
+      "blockId": "b0003",
+      "sourceStart": 50,
+      "sourceEnd": 56
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "d64a8fa6ad883dd8a966323b5e3367e174f2ee5d4732b666c74624c97253b95f",
+    "outputSha256": "c4bd0279df6739e4b049bf0c1ed74a881267b401fabc0c50eb6d41e361f72c50"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "IMG-ALT",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "ed3993db87a43670b11a1b8779b8cb860f818c347e79e32e8a325c9eed5334bd",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "image",
+        "path": "main > figure:nth-of-type(1) > img:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 27,
+        "text": "A ramp at the side entrance"
+      },
+      {
+        "id": "b0002",
+        "type": "caption",
+        "path": "main > figure:nth-of-type(1) > figcaption:nth-of-type(1)",
+        "textStart": 28,
+        "textEnd": 50,
+        "text": "Use the side entrance."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "ramp",
+            "lemma": "ramp",
+            "pos": "NOUN",
+            "dep": "nsubj",
+            "head": 7,
+            "blockId": "b0001",
+            "sourceStart": 2,
+            "sourceEnd": 6,
+            "status": "aligned",
+            "gloss": "ramp"
+          },
+          {
+            "word": "at",
+            "lemma": "at",
+            "pos": "ADP",
+            "dep": "prep",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 7,
+            "sourceEnd": 9,
+            "status": "aligned",
+            "gloss": "at"
+          },
+          {
+            "word": "side entrance",
+            "lemma": "side",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 5,
+            "blockId": "b0001",
+            "sourceStart": 14,
+            "sourceEnd": 27,
+            "status": "aligned",
+            "gloss": "side entrance"
+          },
+          {
+            "word": "Use",
+            "lemma": "use",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 7,
+            "blockId": "b0002",
+            "sourceStart": 28,
+            "sourceEnd": 31,
+            "status": "aligned",
+            "gloss": "use"
+          },
+          {
+            "word": "side entrance",
+            "lemma": "side",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 10,
+            "blockId": "b0002",
+            "sourceStart": 36,
+            "sourceEnd": 49,
+            "status": "aligned",
+            "gloss": "side entrance"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 7,
+            "blockId": "b0002",
+            "sourceStart": 49,
+            "sourceEnd": 50,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          9
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              0
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              3
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              8
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              6
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 2,
+      "sourceEnd": 6
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 7,
+      "sourceEnd": 9
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 14,
+      "sourceEnd": 27
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0002",
+      "sourceStart": 28,
+      "sourceEnd": 31
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0002",
+      "sourceStart": 36,
+      "sourceEnd": 49
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0002",
+      "sourceStart": 49,
+      "sourceEnd": 50
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "ed3993db87a43670b11a1b8779b8cb860f818c347e79e32e8a325c9eed5334bd",
+    "outputSha256": "23a87c9008651ce59e94eb79837976c87db34c971b51a9126f3b53d9fbd411af"
+  }
+}

@@ -39,7 +39,9 @@
               "id": { "type": "string", "pattern": "^b[0-9]{4}$" },
               "path": { "type": "string", "minLength": 1 },
               "textStart": { "type": "integer", "minimum": 0 },
-              "textEnd": { "type": "integer", "minimum": 0 }
+              "textEnd": { "type": "integer", "minimum": 0 },
+              "type": { "type": "string" },
+              "text": { "type": "string" }
             }
           }
         }

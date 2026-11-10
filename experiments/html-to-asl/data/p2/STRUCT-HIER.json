@@ -1,0 +1,250 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "STRUCT-HIER",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "0238aa3afc218715814bdeb2e66d67ca003de7b3aca85d398b7c65c1bd6bec38",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "heading",
+        "path": "main > h1:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 12,
+        "text": "Access guide"
+      },
+      {
+        "id": "b0002",
+        "type": "heading",
+        "path": "main > section:nth-of-type(1) > h2:nth-of-type(1)",
+        "textStart": 13,
+        "textEnd": 18,
+        "text": "Apply"
+      },
+      {
+        "id": "b0003",
+        "type": "heading",
+        "path": "main > section:nth-of-type(1) > h3:nth-of-type(1)",
+        "textStart": 19,
+        "textEnd": 25,
+        "text": "Online"
+      },
+      {
+        "id": "b0004",
+        "type": "paragraph",
+        "path": "main > section:nth-of-type(1) > p:nth-of-type(1)",
+        "textStart": 26,
+        "textEnd": 41,
+        "text": "Use the portal."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Access",
+            "lemma": "access",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 6,
+            "status": "aligned",
+            "gloss": "access"
+          },
+          {
+            "word": "guide",
+            "lemma": "guide",
+            "pos": "NOUN",
+            "dep": "nsubj",
+            "head": 7,
+            "blockId": "b0001",
+            "sourceStart": 7,
+            "sourceEnd": 12,
+            "status": "aligned",
+            "gloss": "guide"
+          },
+          {
+            "word": "Apply",
+            "lemma": "apply",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 5,
+            "blockId": "b0002",
+            "sourceStart": 13,
+            "sourceEnd": 18,
+            "status": "aligned",
+            "gloss": "apply"
+          },
+          {
+            "word": "Online",
+            "lemma": "online",
+            "pos": "PROPN",
+            "dep": "compound",
+            "head": 7,
+            "blockId": "b0003",
+            "sourceStart": 19,
+            "sourceEnd": 25,
+            "status": "aligned",
+            "gloss": "online"
+          },
+          {
+            "word": "Use",
+            "lemma": "use",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 7,
+            "blockId": "b0004",
+            "sourceStart": 26,
+            "sourceEnd": 29,
+            "status": "aligned",
+            "gloss": "use"
+          },
+          {
+            "word": "portal",
+            "lemma": "portal",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 7,
+            "blockId": "b0004",
+            "sourceStart": 34,
+            "sourceEnd": 40,
+            "status": "aligned",
+            "gloss": "portal"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 7,
+            "blockId": "b0004",
+            "sourceStart": 40,
+            "sourceEnd": 41,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          3,
+          5,
+          7,
+          9,
+          10
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              8
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              2
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              4
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              6
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 6
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 7,
+      "sourceEnd": 12
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0002",
+      "sourceStart": 13,
+      "sourceEnd": 18
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0003",
+      "sourceStart": 19,
+      "sourceEnd": 25
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0004",
+      "sourceStart": 26,
+      "sourceEnd": 29
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0004",
+      "sourceStart": 34,
+      "sourceEnd": 40
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0004",
+      "sourceStart": 40,
+      "sourceEnd": 41
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "0238aa3afc218715814bdeb2e66d67ca003de7b3aca85d398b7c65c1bd6bec38",
+    "outputSha256": "9b29085e59486321b2b9a5754e27b80404d6777abbf732fae0443aa6b82c865a"
+  }
+}

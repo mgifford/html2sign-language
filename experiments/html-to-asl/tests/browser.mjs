@@ -229,6 +229,29 @@ try {
   assert.match(await failingToken.getAttribute('#status', 'class'), /is-error/);
   checks.missingToken = 'visible error and check-missing class';
 
+  // P2 viewer: 40 precomputed plans, NEG-01 render, 320 px reflow.
+  const p2 = await context.newPage();
+  const p2Errors = [];
+  p2.on('console', (message) => {
+    if (message.type() === 'error') p2Errors.push(message.text());
+  });
+  p2.on('pageerror', (error) => p2Errors.push(error.message));
+  await p2.goto(`${base}/experiments/html-to-asl/p2/`, { waitUntil: 'load' });
+  await p2.waitForFunction(() => document.querySelectorAll('#p2-fixture option').length === 40);
+  await p2.selectOption('#p2-fixture', 'NEG-01.json');
+  await p2.waitForFunction(() => document.querySelectorAll('#p2-tokens tbody tr').length === 6);
+  assert.equal(await p2.locator('#p2-source article').count(), 1);
+  assert.match(await p2.textContent('#p2-warnings'), /Lexical plan only/i);
+  await p2.setViewportSize({ width: 320, height: 640 });
+  await p2.waitForTimeout(200);
+  const p2Reflow = await p2.evaluate(() => ({
+    viewport: window.innerWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+  assert.ok(p2Reflow.scrollWidth <= p2Reflow.viewport, `P2 overflow: ${p2Reflow.scrollWidth}`);
+  assert.deepEqual(p2Errors, []);
+  checks.p2Viewer = { fixtures: 40, neg01Candidates: 6, p2Reflow };
+
   console.log(JSON.stringify({ ok: true, browser: browser.version(), checks }, null, 2));
 } finally {
   await browser.close();

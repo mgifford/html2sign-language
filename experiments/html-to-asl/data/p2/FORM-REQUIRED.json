@@ -1,0 +1,274 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "FORM-REQUIRED",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "85382ad3e10e4d34e1c981d07acbd890a7bb20a544ff8caf93471d2f6fdc4fb0",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "field",
+        "path": "main > input:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 24,
+        "text": "Email address (required)"
+      },
+      {
+        "id": "b0002",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 25,
+        "textEnd": 45,
+        "text": "Use your work email."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Email",
+            "lemma": "email",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 5,
+            "status": "aligned",
+            "gloss": "email"
+          },
+          {
+            "word": "address",
+            "lemma": "address",
+            "pos": "NOUN",
+            "dep": "nsubj",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 6,
+            "sourceEnd": 13,
+            "status": "aligned",
+            "gloss": "address"
+          },
+          {
+            "word": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 14,
+            "sourceEnd": 15,
+            "status": "aligned",
+            "gloss": "("
+          },
+          {
+            "word": "required",
+            "lemma": "require",
+            "pos": "VERB",
+            "dep": "acl",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 15,
+            "sourceEnd": 23,
+            "status": "aligned",
+            "gloss": "require"
+          },
+          {
+            "word": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 23,
+            "sourceEnd": 24,
+            "status": "aligned",
+            "gloss": ")"
+          },
+          {
+            "word": "Use",
+            "lemma": "use",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 6,
+            "blockId": "b0002",
+            "sourceStart": 25,
+            "sourceEnd": 28,
+            "status": "aligned",
+            "gloss": "use"
+          },
+          {
+            "word": "your",
+            "lemma": "your",
+            "pos": "PRON",
+            "dep": "poss",
+            "head": 9,
+            "blockId": "b0002",
+            "sourceStart": 29,
+            "sourceEnd": 33,
+            "status": "aligned",
+            "gloss": "your"
+          },
+          {
+            "word": "work",
+            "lemma": "work",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 9,
+            "blockId": "b0002",
+            "sourceStart": 34,
+            "sourceEnd": 38,
+            "status": "aligned",
+            "gloss": "work"
+          },
+          {
+            "word": "email",
+            "lemma": "email",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 6,
+            "blockId": "b0002",
+            "sourceStart": 39,
+            "sourceEnd": 44,
+            "status": "aligned",
+            "gloss": "email"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 6,
+            "blockId": "b0002",
+            "sourceStart": 44,
+            "sourceEnd": 45,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              5
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "complex-clause-order-preserved"
+          },
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 5
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 6,
+      "sourceEnd": 13
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 14,
+      "sourceEnd": 15
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 15,
+      "sourceEnd": 23
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 23,
+      "sourceEnd": 24
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0002",
+      "sourceStart": 25,
+      "sourceEnd": 28
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0002",
+      "sourceStart": 29,
+      "sourceEnd": 33
+    },
+    {
+      "candidateIndex": 7,
+      "blockId": "b0002",
+      "sourceStart": 34,
+      "sourceEnd": 38
+    },
+    {
+      "candidateIndex": 8,
+      "blockId": "b0002",
+      "sourceStart": 39,
+      "sourceEnd": 44
+    },
+    {
+      "candidateIndex": 9,
+      "blockId": "b0002",
+      "sourceStart": 44,
+      "sourceEnd": 45
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "85382ad3e10e4d34e1c981d07acbd890a7bb20a544ff8caf93471d2f6fdc4fb0",
+    "outputSha256": "c3b11f990c97cd351104a14d936cf85b5e5b5a6c2404acbc9dad4e20fb8d65fc"
+  }
+}

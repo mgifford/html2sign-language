@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "ARIA-BUTTON",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "1a3ddf2db08d566f60679c72e948c6355231b7b0030d856097b86efcc30bae83",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "field",
+        "path": "main > button:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 12,
+        "text": "Close dialog"
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Close",
+            "lemma": "close",
+            "pos": "ADJ",
+            "dep": "amod",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 5,
+            "status": "aligned",
+            "gloss": "close"
+          },
+          {
+            "word": "dialog",
+            "lemma": "dialog",
+            "pos": "NOUN",
+            "dep": "ROOT",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 6,
+            "sourceEnd": 12,
+            "status": "aligned",
+            "gloss": "dialog"
+          }
+        ],
+        "indexes": [
+          0,
+          1
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 5
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 6,
+      "sourceEnd": 12
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "1a3ddf2db08d566f60679c72e948c6355231b7b0030d856097b86efcc30bae83",
+    "outputSha256": "c2b65cb485f284a3d7125126beb60b88f993bd1fc8d7e3b2d252c40be83aaec0"
+  }
+}

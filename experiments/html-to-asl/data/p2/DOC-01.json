@@ -1,0 +1,337 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "DOC-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "379884a625cd44b098b3811a4c9dbd3701792c69b9c63961b56390bddcbf0384",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 32,
+        "text": "Maria submitted her application."
+      },
+      {
+        "id": "b0002",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(2)",
+        "textStart": 33,
+        "textEnd": 65,
+        "text": "She can check its status online."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Maria",
+            "lemma": "maria",
+            "pos": "PROPN",
+            "dep": "nsubj",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 5,
+            "status": "aligned",
+            "gloss": "maria"
+          },
+          {
+            "word": "submitted",
+            "lemma": "submit",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 6,
+            "sourceEnd": 15,
+            "status": "aligned",
+            "gloss": "submit"
+          },
+          {
+            "word": "her",
+            "lemma": "her",
+            "pos": "PRON",
+            "dep": "poss",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 16,
+            "sourceEnd": 19,
+            "status": "aligned",
+            "gloss": "her"
+          },
+          {
+            "word": "application",
+            "lemma": "application",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 20,
+            "sourceEnd": 31,
+            "status": "aligned",
+            "gloss": "application"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 31,
+            "sourceEnd": 32,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              5
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          },
+          {
+            "sentence": 1,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      },
+      {
+        "tokens": [
+          {
+            "word": "She",
+            "lemma": "she",
+            "pos": "PRON",
+            "dep": "nsubj",
+            "head": 8,
+            "blockId": "b0002",
+            "sourceStart": 33,
+            "sourceEnd": 36,
+            "status": "aligned",
+            "gloss": "she"
+          },
+          {
+            "word": "can",
+            "lemma": "can",
+            "pos": "AUX",
+            "dep": "aux",
+            "head": 8,
+            "blockId": "b0002",
+            "sourceStart": 37,
+            "sourceEnd": 40,
+            "status": "aligned",
+            "gloss": "can"
+          },
+          {
+            "word": "check",
+            "lemma": "check",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 8,
+            "blockId": "b0002",
+            "sourceStart": 41,
+            "sourceEnd": 46,
+            "status": "aligned",
+            "gloss": "check"
+          },
+          {
+            "word": "its",
+            "lemma": "its",
+            "pos": "PRON",
+            "dep": "poss",
+            "head": 10,
+            "blockId": "b0002",
+            "sourceStart": 47,
+            "sourceEnd": 50,
+            "status": "aligned",
+            "gloss": "its"
+          },
+          {
+            "word": "status",
+            "lemma": "status",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 8,
+            "blockId": "b0002",
+            "sourceStart": 51,
+            "sourceEnd": 57,
+            "status": "aligned",
+            "gloss": "status"
+          },
+          {
+            "word": "online",
+            "lemma": "online",
+            "pos": "ADV",
+            "dep": "advmod",
+            "head": 8,
+            "blockId": "b0002",
+            "sourceStart": 58,
+            "sourceEnd": 64,
+            "status": "aligned",
+            "gloss": "online"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 8,
+            "blockId": "b0002",
+            "sourceStart": 64,
+            "sourceEnd": 65,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              5
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          },
+          {
+            "sentence": 1,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 5
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 6,
+      "sourceEnd": 15
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 16,
+      "sourceEnd": 19
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 20,
+      "sourceEnd": 31
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 31,
+      "sourceEnd": 32
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0002",
+      "sourceStart": 33,
+      "sourceEnd": 36
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0002",
+      "sourceStart": 37,
+      "sourceEnd": 40
+    },
+    {
+      "candidateIndex": 7,
+      "blockId": "b0002",
+      "sourceStart": 41,
+      "sourceEnd": 46
+    },
+    {
+      "candidateIndex": 8,
+      "blockId": "b0002",
+      "sourceStart": 47,
+      "sourceEnd": 50
+    },
+    {
+      "candidateIndex": 9,
+      "blockId": "b0002",
+      "sourceStart": 51,
+      "sourceEnd": 57
+    },
+    {
+      "candidateIndex": 10,
+      "blockId": "b0002",
+      "sourceStart": 58,
+      "sourceEnd": 64
+    },
+    {
+      "candidateIndex": 11,
+      "blockId": "b0002",
+      "sourceStart": 64,
+      "sourceEnd": 65
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "379884a625cd44b098b3811a4c9dbd3701792c69b9c63961b56390bddcbf0384",
+    "outputSha256": "c1cac98d0ef0ff7fa0689bf7ad08d26a3445b7c754313f1c739864f0cfc41d16"
+  }
+}
