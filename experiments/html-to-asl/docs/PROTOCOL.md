@@ -4,11 +4,13 @@
 
 One fixture HTML document is the paired unit. Arms A (upstream deterministic ASL lexical pipeline), B (browser AI simplify + same upstream), C (direct browser AI lexical candidate), and D (AI concept analysis + same upstream). P0 has an English-only A-prebaseline, not the real upstream A.
 
-P0 output uses `targetLanguage: null`, `plannedTargetLanguage: "ase"`, `translation: false`, and `checkStatus` (`token-presence-passed` or `token-presence-failed`). Its `checks` are within-block substring smoke tests, not semantic validation.
+Source spans in P1 are offsets into the normalized extracted text stream plus a DOM path, not byte offsets into the original HTML. P0 output uses `targetLanguage: null`, `plannedTargetLanguage: "ase"`, `translation: false`, and `checkStatus` (`token-presence-passed` or `token-presence-failed`). Its `checks` are within-block substring smoke tests, not semantic validation.
 
 ## Data governance
 
-Keep 40 development and 20 hold-out fixtures in the 60-fixture expansion. Include conditions, negation, dates, references, ambiguous senses, forms, tables, and adversarial markup. Do not tune prompts using holdout results. Store original source, copyright status, source spans, English proposition references and human reviewer provenance. Synthetic fixture originals can be distributed.
+Keep 40 development and 20 holdout fixtures in the 60-fixture expansion. Include conditions, negation, dates, references, ambiguous senses, forms, tables, and adversarial markup. Do not tune prompts using holdout results. Store original source, copyright status, source spans, English proposition references and human reviewer provenance. Synthetic fixture originals can be distributed.
+
+The current `fixtures/holdout.json` is **provisional and agent-authored**. It is not a blind holdout until the owner replaces or reviews it and keeps it out of prompt iteration; see `fixtures/HOLDOUT.md`.
 
 ## Metrics (do not combine into single unqualified quality score)
 

@@ -83,7 +83,7 @@ try {
   page.on('pageerror', (error) => pageErrors.push(error.message));
 
   await page.goto(`${base}/experiments/html-to-asl/`, { waitUntil: 'load' });
-  await page.waitForFunction(() => document.querySelectorAll('#fixture option').length === 12);
+  await page.waitForFunction(() => document.querySelectorAll('#fixture option').length === 40);
   assert.equal(await page.textContent('#status'), 'Ready to run.');
   assert.equal(await page.getAttribute('main', 'aria-busy'), 'false');
   assert.equal(await page.isDisabled('#fixture'), false);
@@ -139,6 +139,19 @@ try {
     assert.equal(await page.locator('#checks .check-missing').count(), 0, id);
   }
   checks.fixturesRun = fixtureIds.length;
+  assert.equal(fixtureIds.length, 40);
+
+  await page.selectOption('#fixture', 'STRUCT-TABLE');
+  await page.click('#run');
+  await page.waitForFunction(() => !document.getElementById('export').disabled);
+  assert.equal(await page.locator('#blocks table').count(), 1);
+  assert.equal(await page.textContent('#blocks table caption'), 'Fees');
+  assert.equal(await page.locator('#blocks th[scope="row"]').count(), 1);
+
+  await page.selectOption('#fixture', 'FORM-REQUIRED');
+  await page.click('#run');
+  await page.waitForFunction(() => !document.getElementById('export').disabled);
+  assert.match(await page.textContent('#blocks'), /\(required\)/);
 
   // Keyboard order: select -> source pre -> run -> export.
   await page.focus('#fixture');
@@ -159,7 +172,20 @@ try {
     scrollWidth: document.documentElement.scrollWidth,
   }));
   assert.ok(reflow.scrollWidth <= reflow.viewport, `horizontal overflow: ${reflow.scrollWidth} > ${reflow.viewport}`);
-  checks.reflow320 = reflow;
+
+  await page.selectOption('#fixture', 'STRUCT-TABLE');
+  await page.click('#run');
+  await page.waitForFunction(() => !document.getElementById('export').disabled);
+  const tableReflow = await page.evaluate(() => ({
+    viewport: window.innerWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+    scroller: (() => {
+      const element = document.querySelector('.table-scroll');
+      return element ? { clientWidth: element.clientWidth, scrollWidth: element.scrollWidth } : null;
+    })(),
+  }));
+  assert.ok(tableReflow.scrollWidth <= tableReflow.viewport, `table overflow: ${tableReflow.scrollWidth}`);
+  checks.reflow320 = { ...reflow, table: tableReflow };
 
   assert.deepEqual(consoleErrors, []);
   assert.deepEqual(pageErrors, []);

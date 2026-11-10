@@ -10,15 +10,16 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 
 - **PR 0 (done):** integrate the starter, link it from the main page, fix paths, record decisions, and add the experiment test command. No runtime or licence changes.
 - **PR 1 (implemented, pending review):** P0 verification and hardening: extractor tests, JSON contract, manifest failure, browser smoke, access fixes. P1 has not started.
-- **PR 2 (next, after PR 1 review):** P1 extractor and 60 fixtures, with the holdout controlled by the owner.
+- **PR 2 (implemented, pending review):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The owner must replace or review the holdout before using it as a blind set.
+- **PR 3 (next, after PR 2 review):** P2 upstream adapter proposal; no implementation before review.
 
 ## First tasks
 
 1. Inspect current repo and report conflicts, notably root AGPL-3.0 vs package.json ISC and outdated VRM preferences in root AGENTS.md. Fix only after documenting the choice in `docs/DECISIONS.md` (D3 and D4), preserving historical decisions.
 2. The starter is already integrated at `experiments/html-to-asl/` with relative URLs and a footer link from the main page. Verify the static route and links; do not re-copy or duplicate it, and do not alter the main page's established behavior beyond that link.
 3. Run Node unit tests, serve locally, and run real Playwright browser checks on Chromium, Firefox, and WebKit where available. Verify keyboard accessibility, visible error states, JSON export, no console errors, and that scripts in fixture HTML are inert. Browser code should not interpolate untrusted HTML into live DOM.
-4. Expand P1's extractor: stable source IDs and spans; headings, nested lists, anchors with href, tables with header associations and scope, labelled form controls including required, aria-label/aria-labelledby, and alt text where relevant. Add adversarial DOM and Unicode fixtures. An extractor must not drop critical meaning; flag unsupported constructs.
-5. Expand from 12 to 60 curated synthetic fixtures. Keep holdout hidden from prompt iteration and document reviewer criteria. Ensure fixtures cover English negation, modality, exceptions, numbers, entities, ambiguity, HTML structures and injection attempts.
+4. P1's extractor is implemented: stable source IDs/paths/text spans; headings, nested lists, links with href, tables with header associations and scope, form labels/required/ARIA, and alt text; adversarial and Unicode tests. Verify the P1 gate and record remaining structural gaps before P2.
+5. The 40 development and 20 provisional holdout fixtures are present. The holdout is agent-authored and not blind; the owner must replace or review it before evaluation. See `experiments/html-to-asl/fixtures/HOLDOUT.md`.
 6. Record changes, reasons, limitations, citations and credit in `experiments/html-to-asl/docs/UPSTREAM.md`; add an upstream maintenance/contribution plan. No copied media, 3D-LEX motions or models without explicit licence review.
 7. Propose P2 upstream `spoken-to-signed-translation` adapter design before implementing. GitHub Pages needs precomputed JSON or a browser-native library; it cannot run Python server-side.
 
@@ -36,7 +37,7 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 ## Deliverables for the PR
 
 - Functional P0 static route on Pages, plus the P0 verification tests and test report from PR 1.
-- A separate, reviewed P1 PR for the extractor and 60 fixtures, with the holdout controlled by the owner.
+- A separate P1 PR for the block-aware extractor and the 40/20 fixture split. The provisional holdout must be owner-reviewed or replaced before it is used as a blind set.
 - Test report (commands, browsers, outcomes), fixture manifest and version hashes.
 - Updated architecture and attribution notes including 3D-LEX citation and licence/access caveat.
 - An issue-ready P2 proposal with acceptance criteria, not a premature AI translator.
