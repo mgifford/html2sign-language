@@ -123,6 +123,55 @@ def validate_artifact(data: Any) -> list[str]:
     return errors
 
 
+def validate_review(data: Any) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(data, dict):
+        return ["review must be an object"]
+    if data.get("schemaVersion") != "p2.4-review":
+        errors.append("schemaVersion must be p2.4-review")
+    if data.get("status") not in {"pending", "in-review", "complete", "rejected"}:
+        errors.append("status is invalid")
+    if data.get("artifactCount") != 40:
+        errors.append("artifactCount must be 40")
+    for role in ("owner", "independent"):
+        review = data.get(role)
+        if not isinstance(review, dict):
+            errors.append(f"{role} must be an object")
+            continue
+        if review.get("status") not in {"pending", "in-review", "accepted", "rejected"}:
+            errors.append(f"{role}.status is invalid")
+        if review.get("reviewer") is not None and not isinstance(review.get("reviewer"), str):
+            errors.append(f"{role}.reviewer must be a string or null")
+        if not isinstance(review.get("notes"), str):
+            errors.append(f"{role}.notes must be a string")
+    fixtures = data.get("fixtures")
+    if not isinstance(fixtures, list) or len(fixtures) != 40:
+        errors.append("fixtures must contain exactly 40 entries")
+    else:
+        seen = set()
+        for fixture in fixtures:
+            if not isinstance(fixture, dict):
+                errors.append("fixture review entries must be objects")
+                continue
+            fixture_id = fixture.get("fixtureId")
+            if not isinstance(fixture_id, str) or not fixture_id:
+                errors.append("fixtureId must be a non-empty string")
+            elif fixture_id in seen:
+                errors.append(f"duplicate fixtureId: {fixture_id}")
+            else:
+                seen.add(fixture_id)
+            if fixture.get("ownerStatus") not in {"pending", "accepted", "rejected", "needs-discussion"}:
+                errors.append(f"invalid ownerStatus for {fixture_id}")
+            if fixture.get("linguisticStatus") not in {"not-started", "accepted", "rejected", "needs-discussion"}:
+                errors.append(f"invalid linguisticStatus for {fixture_id}")
+            for key in ("ownerNotes", "linguisticNotes"):
+                if not isinstance(fixture.get(key), str):
+                    errors.append(f"{key} must be a string for {fixture_id}")
+    if not isinstance(data.get("warnings"), list):
+        errors.append("warnings must be an array")
+    return errors
+
+
 def validate_index(data: Any) -> list[str]:
     errors: list[str] = []
     if not isinstance(data, dict):

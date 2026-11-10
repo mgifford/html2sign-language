@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/html2asl/p2/review.schema.json",
+  "title": "P2 review record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "status", "artifactCount", "owner", "independent", "fixtures", "warnings"],
+  "properties": {
+    "schemaVersion": { "const": "p2.4-review" },
+    "status": { "enum": ["pending", "in-review", "complete", "rejected"] },
+    "artifactCount": { "const": 40 },
+    "owner": { "$ref": "#/$defs/review" },
+    "independent": { "$ref": "#/$defs/review" },
+    "fixtures": {
+      "type": "array",
+      "minItems": 40,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fixtureId", "ownerStatus", "ownerNotes", "linguisticStatus", "linguisticNotes"],
+        "properties": {
+          "fixtureId": { "type": "string", "minLength": 1 },
+          "ownerStatus": { "enum": ["pending", "accepted", "rejected", "needs-discussion"] },
+          "ownerNotes": { "type": "string" },
+          "linguisticStatus": { "enum": ["not-started", "accepted", "rejected", "needs-discussion"] },
+          "linguisticNotes": { "type": "string" }
+        }
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reviewer", "reviewedAt", "notes"],
+      "properties": {
+        "status": { "enum": ["pending", "in-review", "accepted", "rejected"] },
+        "reviewer": { "type": ["string", "null"] },
+        "reviewedAt": { "type": ["string", "null"] },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

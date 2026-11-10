@@ -1,249 +1,304 @@
 {
-  "schemaVersion": "p2.2-review",
+  "schemaVersion": "p2.4-review",
   "status": "pending",
-  "reviewer": null,
-  "reviewedAt": null,
-  "notes": "Owner alignment review has not been performed. Each fixture is pending.",
+  "artifactCount": 40,
+  "owner": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": "Owner alignment review of all 40 artifacts has not started."
+  },
+  "independent": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": "Independent Deaf ASL review has not started. At least 20% sample; 100% before a public ASL claim."
+  },
   "fixtures": [
     {
       "fixtureId": "NEG-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "MOD-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "COND-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "LEX-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "DOC-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "HTML-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "SEC-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "NAV-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "QTY-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "LINK-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "TABLE-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "FORM-01",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-HIER",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-NESTED",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-ORDERED",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-DL",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-LINK",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-LINKS",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-TABLE",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "STRUCT-TABLE-NOHEAD",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "FORM-REQUIRED",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "FORM-GROUP",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "FORM-SELECT",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "FORM-TEXTAREA",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "FORM-CHECK",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "ARIA-BUTTON",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "ARIA-SECTION",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "IMG-ALT",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "IMG-DECOR",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "IMG-NOALT",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "QUOTE",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "CODE",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "BARE-DIV",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "HIDDEN",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "DETAILS-CLOSED",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "DETAILS-OPEN",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "UNICODE",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "INJECT",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "MIXED",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     },
     {
       "fixtureId": "TABLE-LINK",
-      "status": "pending",
-      "decision": null,
-      "notes": ""
+      "ownerStatus": "pending",
+      "ownerNotes": "",
+      "linguisticStatus": "not-started",
+      "linguisticNotes": ""
     }
+  ],
+  "warnings": [
+    "Lexical plans only; not ASL.",
+    "Owner review and independent Deaf ASL review are pending.",
+    "The 20-case holdout is excluded from P2 review."
   ]
 }
