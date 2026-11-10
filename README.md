@@ -1,5 +1,7 @@
 # Sign Language Sidecar – EN 301 549 Demo
 
+[![Tests](https://github.com/mgifford/html2sign-language/actions/workflows/test.yml/badge.svg)](https://github.com/mgifford/html2sign-language/actions/workflows/test.yml)
+
 This repository is a minimal, static demonstration of a **Sign Language Sidecar**: a 3D sign-language avatar that stays in view while users read long-form ICT accessibility content. The content focuses on how **EN 301 549 v3.2.1** is applied in **Canada** (CAN/ASC – EN 301 549:2024) versus the **European Union** (Web Accessibility Directive / European Accessibility Act).
 
 The goal is to treat sign language (LSF/ASL/IS) as a **first-class interface**, not decorative media, while remaining compatible with **GitHub Pages** (static hosting only).
@@ -122,7 +124,8 @@ Tests:
 
 - `npm test` runs the legacy import validation and the experiment's Node tests.
 - `npm run test:browser:experiment` runs the Chromium/Chrome smoke test for the experiment.
-- `npm run test:p2` runs the P2.0 pin/schema/refusal tests with Python’s built-in `unittest`.
+- `npm run test:p2` runs the P2 pin/schema/artifact/refusal tests with Python’s built-in `unittest`.
+- GitHub Actions (`.github/workflows/test.yml`) runs the Node tests, P2 tests, and the Chromium browser tests on pushes and pull requests.
 
 ### 3.2 Prepare Your 3D Assets
 
