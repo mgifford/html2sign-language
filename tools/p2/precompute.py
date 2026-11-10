@@ -75,6 +75,18 @@ def validate_pins(pins: Any) -> list[str]:
             errors.append(f"wsd.{key} must be a string or null")
     if not isinstance(wsd.get("approved"), bool):
         errors.append("wsd.approved must be a boolean")
+    wsd_code = wsd.get("code")
+    if not isinstance(wsd_code, dict):
+        errors.append("wsd.code must be an object")
+    else:
+        if not isinstance(wsd_code.get("repository"), str) or not wsd_code.get("repository"):
+            errors.append("wsd.code.repository must be a non-empty string")
+        if not isinstance(wsd_code.get("commit"), str) or not re.fullmatch(r"[0-9a-f]{40}", wsd_code.get("commit", "")):
+            errors.append("wsd.code.commit must be a 40-character lowercase hex SHA")
+        if not isinstance(wsd_code.get("license"), str) or not wsd_code.get("license"):
+            errors.append("wsd.code.license must be a non-empty string")
+    if not isinstance(wsd.get("serving"), str) or not wsd.get("serving"):
+        errors.append("wsd.serving must be a non-empty string")
 
     wordnet = pins.get("wordnet", {})
     for key in ("version", "source", "license"):
@@ -82,12 +94,24 @@ def validate_pins(pins: Any) -> list[str]:
             errors.append(f"wordnet.{key} must be a string or null")
     if not isinstance(wordnet.get("approved"), bool):
         errors.append("wordnet.approved must be a boolean")
+    wordnet_api = wordnet.get("api")
+    if not isinstance(wordnet_api, dict):
+        errors.append("wordnet.api must be an object")
+    else:
+        if not isinstance(wordnet_api.get("repository"), str) or not wordnet_api.get("repository"):
+            errors.append("wordnet.api.repository must be a non-empty string")
+        if not isinstance(wordnet_api.get("commit"), str) or not re.fullmatch(r"[0-9a-f]{40}", wordnet_api.get("commit", "")):
+            errors.append("wordnet.api.commit must be a 40-character lowercase hex SHA")
+        if not isinstance(wordnet_api.get("license"), str) or not wordnet_api.get("license"):
+            errors.append("wordnet.api.license must be a non-empty string")
 
     spacy = pins.get("spacy", {})
     if not isinstance(spacy.get("model"), str) or not spacy.get("model"):
         errors.append("spacy.model must be a non-empty string")
     if not isinstance(spacy.get("version"), str) or not spacy.get("version"):
         errors.append("spacy.version must be a non-empty string")
+    if not isinstance(spacy.get("license"), str) or not spacy.get("license"):
+        errors.append("spacy.license must be a non-empty string")
     if not isinstance(spacy.get("approved"), bool):
         errors.append("spacy.approved must be a boolean")
 
@@ -116,12 +140,20 @@ def python_supported(requires: str, version: tuple[int, int] | None = None) -> b
     return (low_major, low_minor) <= current < (high_major, high_minor)
 
 
+def module_importable(name: str) -> bool:
+    try:
+        importlib.import_module(name)
+        return True
+    except Exception:
+        return False
+
+
 def missing_prerequisites(
     pins: dict[str, Any],
     version: tuple[int, int] | None = None,
     module_exists=None,
 ) -> list[str]:
-    exists = module_exists or (lambda name: importlib.util.find_spec(name) is not None)
+    exists = module_exists or module_importable
     missing: list[str] = []
 
     upstream = pins.get("upstream", {})
@@ -134,12 +166,18 @@ def missing_prerequisites(
         missing.append("WSD revision not pinned")
     if not wsd.get("license"):
         missing.append("WSD licence not recorded")
+    if not wsd.get("code", {}).get("license"):
+        missing.append("WSD code licence not recorded")
     wordnet = pins.get("wordnet", {})
     if not wordnet.get("approved"):
         missing.append("WordNet resource not approved")
+    if not wordnet.get("license"):
+        missing.append("WordNet data licence not recorded")
     spacy = pins.get("spacy", {})
     if not spacy.get("approved"):
         missing.append("spaCy model not approved")
+    if not spacy.get("license"):
+        missing.append("spaCy model licence not recorded")
     artifacts = pins.get("artifacts", {})
     if not artifacts.get("approved"):
         missing.append("artifact publication policy not approved")

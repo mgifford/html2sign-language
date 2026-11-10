@@ -19,12 +19,15 @@ class PinTests(unittest.TestCase):
     def setUp(self):
         self.pins = json.loads((TOOL_DIR / "pins.json").read_text(encoding="utf-8"))
 
-    def test_pins_are_well_formed_and_not_approved(self):
+    def test_pins_are_well_formed_and_record_approvals(self):
         self.assertEqual(precompute.validate_pins(self.pins), [])
         self.assertEqual(self.pins["upstream"]["commit"], "fec7ac393989f4b6541ab5f860819262a54f27c7")
         self.assertEqual(self.pins["upstream"]["license"], "MIT")
-        self.assertFalse(self.pins["upstream"]["approved"])
-        self.assertFalse(self.pins["wsd"]["approved"])
+        self.assertTrue(self.pins["upstream"]["approved"])
+        self.assertTrue(self.pins["wsd"]["approved"])
+        self.assertEqual(self.pins["wsd"]["revision"], "8751b577199d1bb95b74fa2457da7065d57100ae")
+        self.assertEqual(self.pins["wsd"]["license"], "Apache-2.0")
+        self.assertFalse(self.pins["wordnet"]["approved"])
 
     def test_invalid_commit_is_rejected(self):
         pins = copy.deepcopy(self.pins)
@@ -36,18 +39,14 @@ class PinTests(unittest.TestCase):
         self.assertFalse(precompute.python_supported(">=3.11,<3.13", (3, 14)))
         self.assertFalse(precompute.python_supported("invalid", (3, 11)))
 
-    def test_unapproved_pins_are_not_ready(self):
+    def test_wordnet_approval_is_still_open(self):
         missing = precompute.missing_prerequisites(self.pins, version=(3, 11), module_exists=lambda _: True)
-        self.assertTrue(any("WSD model" in item for item in missing))
-        self.assertTrue(any("artifact" in item for item in missing))
+        self.assertTrue(any("WordNet resource" in item for item in missing))
+        self.assertFalse(any("WSD model not approved" in item for item in missing))
 
     def test_fully_approved_pins_are_ready(self):
         pins = copy.deepcopy(self.pins)
-        pins["upstream"]["approved"] = True
-        pins["wsd"].update(approved=True, revision="abc123", license="MIT")
-        pins["wordnet"].update(approved=True, version="1.8.0", source="local", license="WordNet")
-        pins["spacy"]["approved"] = True
-        pins["artifacts"]["approved"] = True
+        pins["wordnet"]["approved"] = True
         missing = precompute.missing_prerequisites(pins, version=(3, 11), module_exists=lambda _: True)
         self.assertEqual(missing, [])
 

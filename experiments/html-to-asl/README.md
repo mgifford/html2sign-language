@@ -29,7 +29,7 @@ The experiment is served as a static subpath of the existing Pages site and is l
 
 1. **P0 (delivered):** 12 fixtures, a controlled-tag HTML extractor, deterministic **English** surface cues, constraints, provenance, static UI, JSON export, tests.
 2. **P1 (this branch):** 40 development fixtures and 20 provisional holdout fixtures; block-aware extraction with source IDs/paths/text spans; headings, nested lists, links/hrefs, table header scope, form labels/required/ARIA, image alternatives; adversarial and Unicode cases.
-3. **P2:** upstream `spoken-to-signed-translation` adapter via offline, pinned *precomputed* outputs (GitHub Pages cannot run Python server-side); see the [P2 proposal](docs/P2-ADAPTER.md). P2.0 (pins/schema/fail-closed CLI) is implemented in `tools/p2/`; P2.1 is blocked on WSD/licence decisions. Never claim its lexical plan is fluent ASL.
+3. **P2:** upstream `spoken-to-signed-translation` adapter via offline, pinned *precomputed* outputs (GitHub Pages cannot run Python server-side); see the [P2 proposal](docs/P2-ADAPTER.md). P2.0 (pins/schema/fail-closed CLI) is implemented in `tools/p2/`; P2.1 is blocked on the OMW data licence and pinned CPU images; WSD model/code and a Python 3.12 import path are verified. Never claim its lexical plan is fluent ASL.
 4. **P3:** optional browser AI simplifier B using pinned Transformers.js or WebLLM and strict meaning checks. No model is bundled here.
 5. **P4:** direct AI C and hybrid D, same fixtures, provenance, five repeats; evaluate errors, abstentions and coverage distinctly.
 6. **P5:** independently reviewed ASL references and a legally sourced 3D-LEX **metadata** importer, then separate avatar rendering research. Motion is not embedded.

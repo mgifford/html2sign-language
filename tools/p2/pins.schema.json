@@ -42,32 +42,54 @@
     "wsd": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["model", "revision", "license", "approved"],
+      "required": ["model", "revision", "license", "approved", "code", "serving"],
       "properties": {
         "model": { "type": "string", "minLength": 1 },
         "revision": { "type": ["string", "null"] },
         "license": { "type": ["string", "null"] },
-        "approved": { "type": "boolean" }
+        "approved": { "type": "boolean" },
+        "code": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "commit", "license"],
+          "properties": {
+            "repository": { "type": "string", "minLength": 1 },
+            "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+            "license": { "type": "string", "minLength": 1 }
+          }
+        },
+        "serving": { "type": "string", "minLength": 1 }
       }
     },
     "wordnet": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["version", "source", "license", "approved"],
+      "required": ["version", "source", "license", "approved", "api"],
       "properties": {
         "version": { "type": ["string", "null"] },
         "source": { "type": ["string", "null"] },
         "license": { "type": ["string", "null"] },
-        "approved": { "type": "boolean" }
+        "approved": { "type": "boolean" },
+        "api": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "commit", "license"],
+          "properties": {
+            "repository": { "type": "string", "minLength": 1 },
+            "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+            "license": { "type": "string", "minLength": 1 }
+          }
+        }
       }
     },
     "spacy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["model", "version", "approved"],
+      "required": ["model", "version", "license", "approved"],
       "properties": {
         "model": { "type": "string", "minLength": 1 },
         "version": { "type": "string", "minLength": 1 },
+        "license": { "type": "string", "minLength": 1 },
         "approved": { "type": "boolean" }
       }
     },

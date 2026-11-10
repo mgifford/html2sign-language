@@ -6,37 +6,51 @@
     "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
     "license": "MIT",
     "entryPoint": "spoken_to_signed.text_to_gloss.senses.senses_to_gloss",
-    "approved": false
+    "approved": true
   },
   "python": {
     "requires": ">=3.11,<3.13",
-    "tested": false
+    "tested": true
   },
   "wsd": {
     "model": "sign/Ettin-150m-WSD",
-    "revision": null,
-    "license": null,
-    "approved": false
+    "revision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "license": "Apache-2.0",
+    "approved": true,
+    "code": {
+      "repository": "sign/word-sense-disambiguation",
+      "commit": "da5d67fe731c771b0a2126a25a57e71a33ff5a81",
+      "license": "MIT"
+    },
+    "serving": "local CPU container; pin the image digest at setup"
   },
   "wordnet": {
-    "version": null,
-    "source": null,
-    "license": null,
-    "approved": false
+    "version": "omw-en:1.4",
+    "source": "sign/wn@2d0e81362599062ba185f774b08a76e226bf1415",
+    "license": "Princeton WordNet License (WordNet 3.0 export via OMW); explicit OMW LICENSE file still to confirm",
+    "approved": false,
+    "api": {
+      "repository": "sign/wn",
+      "commit": "2d0e81362599062ba185f774b08a76e226bf1415",
+      "license": "MIT"
+    }
   },
   "spacy": {
     "model": "en_core_web_lg",
-    "version": "3.8.0",
-    "approved": false
+    "version": "3.8.16",
+    "license": "MIT",
+    "approved": true
   },
   "artifacts": {
     "mode": "committed-json",
     "directory": "experiments/html-to-asl/data/p2",
-    "approved": false
+    "approved": true
   },
   "notes": [
-    "P2.0 records candidates only. No model, WordNet resource, or upstream code is installed or approved.",
-    "Every approved flag must stay false until the owner records a specific revision, licence, and verification.",
-    "Precompute fails closed while any prerequisite is missing; it must never write a placeholder lexical plan."
+    "Owner-approved P2 decisions, 2026-11-10: local-only WSD stack; commit per-fixture JSON; do not commit WSD intermediates; 40 development fixtures only; research-only lexical plan with no ASL claim; owner plus independent alignment review.",
+    "The WSD model revision is Apache-2.0 and the WSD/WordNet API code is MIT. spaCy 3.8.16 with en_core_web_lg 3.8.0 is MIT; 3.8.0 is yanked.",
+    "The OMW English WordNet 3.0 export is based on Princeton WordNet; its explicit data LICENSE still needs confirmation before setting wordnet.approved to true.",
+    "Python 3.11/3.12 is required; the current 3.14 environment is unsupported and has no model stack installed.",
+    "No model weights, WSD intermediates, or generated glosses may be committed."
   ]
 }

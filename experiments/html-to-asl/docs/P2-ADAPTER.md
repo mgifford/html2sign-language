@@ -1,6 +1,6 @@
 # P2 proposal: pinned, offline English → ASL lexical-plan adapter
 
-Status: **P2.0 implemented; P2.1 blocked on owner decisions.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
+Status: **P2.0 implemented; P2.1 blocked on the OMW data licence and pinned CPU images.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
 
 ## 1. Goal
 
@@ -28,14 +28,14 @@ The output is a **lexical plan**, not fluent ASL. It does not include classifier
 
 P2.0 is implemented in `tools/p2/`:
 
-- `pins.json` records candidate pins; every `approved` flag is currently `false`.
+- `pins.json` records the approved WSD/upstream/spaCy/artifact pins; the WordNet data licence remains open.
 - `artifact.schema.json`, `index.schema.json`, and `pins.schema.json` define the contracts.
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
 - `validate.py` and 14 stdlib `unittest` cases cover the contracts and refusal paths.
 - `experiments/html-to-asl/data/p2/index.json` is intentionally empty.
 
-The local environment is Python 3.14 with no `spacy` or `spoken_to_signed`, so P2.1 cannot run here. See `tools/p2/README.md` for the approval checklist. P2.1 needs an approved WSD model revision/licence and a Python 3.11/3.12 environment.
+The system default is Python 3.14 with no model stack. A temporary Python 3.12 environment has verified spaCy 3.8.16, `en_core_web_lg` 3.8.0, and the pinned `senses_to_gloss` import. See `tools/p2/README.md` for the approval checklist. P2.1 still needs the OMW data licence confirmed and pinned CPU images.
 
 ## 2. Upstream facts to pin
 
@@ -52,7 +52,7 @@ Verified from the upstream repository on 2026-11-10:
 | Output | Ordered `sentences`, `indexes`, `changes`, `notes`; candidates retain original inclusive token spans, morphology, and source annotations |
 | Known upstream limits | Rules are an ordering/omission experiment, not a complete translator; no nonmanuals; conservative fallbacks for complex clauses; entity/WSD errors remain possible |
 
-Upstream evaluation documents a historical WSD service revision `8751b577199d1bb95b74fa2457da7065d57100ae` (`sign/Ettin-150m-WSD`) and spaCy `en_core_web_lg` 3.8.0 / WordNet 1.8.0 for its regression runs. Those are **candidates, not yet approved pins** for this project; the implementation must re-verify availability, licence, and hashes.
+Upstream evaluation documents the WSD revision `8751b577199d1bb95b74fa2457da7065d57100ae` (`sign/Ettin-150m-WSD`) and spaCy 3.8.16 with `en_core_web_lg` 3.8.0. This project approves the WSD model/code and spaCy pins, but treats the OMW English 1.4 data terms as open. The implementation must record exact image digests and hashes.
 
 References: [upstream README](https://github.com/sign-language-processing/spoken-to-signed-translation), [ASL rules and evaluation](https://github.com/sign-language-processing/spoken-to-signed-translation/blob/main/evaluation/asl/README.md), [paper](https://arxiv.org/abs/2305.17714).
 
@@ -103,7 +103,7 @@ Sketch:
     "wsdModel": "sign/Ettin-150m-WSD",
     "wsdRevision": "…",
     "wordnet": "…",
-    "spacyModel": "en_core_web_lg@3.8.0"
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
   },
   "language": { "spoken": "en", "signed": "ase" },
   "plan": {
@@ -218,20 +218,28 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 | Milestone | Deliverable |
 |---|---|
 | P2.0 | **Implemented:** schema, fixture selection, licence/pin record, fail-closed CLI; no model output |
-| P2.1 | **Next, blocked on owner decisions:** one-fixture local prototype; WSD → `senses_to_gloss` → aligned JSON |
+| P2.1 | **Next, blocked on OMW data licence and pinned CPU images:** one-fixture local prototype; WSD → `senses_to_gloss` → aligned JSON |
 | P2.2 | All 40 development fixtures precomputed; static viewer |
 | P2.3 | Reproducibility, failure tests, browser tests, docs |
 | P2.4 | Owner/Deaf-review decision before any public ASL claim |
 
-## 12. Open decisions
+## 12. Decisions (recorded 2026-11-10)
 
-1. Which WSD model revision and serving method is approved, and can its weights be used locally under their licence?
-2. Can the precomputed JSON be committed, or must it be generated in CI and published as an artifact?
-3. Should WSD intermediates be retained (for audit) or discarded?
-4. Which WordNet/OMW resources and hosting method are approved?
-5. Is the 40-fixture development set sufficient for P2, with the provisional holdout excluded?
-6. Does the owner accept the upstream rule limits (no nonmanuals, conservative complex clauses) as a research output?
-7. Who reviews the mapping from P1 blocks to upstream sentences, and how are disagreements recorded?
+1. **WSD stack — approved, local only.** Use `sign/Ettin-150m-WSD` at revision `8751b577199d1bb95b74fa2457da7065d57100ae` (Apache-2.0), served by `sign/word-sense-disambiguation` at `da5d67fe731c771b0a2126a25a57e71a33ff5a81` (MIT), with `sign/wn` at `2d0e81362599062ba185f774b08a76e226bf1415` (MIT). Pin the CPU image digest and record `MODEL_VERSION`/`X-Model-Tag`. No hosted model or external API.
+2. **Artifacts — commit JSON.** Commit per-fixture `p2.0` JSON for the 40 development fixtures, generated by the documented command and validated by schema/hash tests. Do not commit model weights, caches, or bulk WSD output.
+3. **WSD intermediates — not committed.** Keep bulk WSD output in local/CI audit artifacts. A small hand-authored WSD test fixture may be committed only if it is needed for the adapter contract and is labelled as such.
+4. **WordNet — OMW English 1.4, local.** Use `omw-en:1.4` through the pinned `sign/wn` API; no hosted `WORDNET_URL`. The OMW English 3.0 export is based on Princeton WordNet; the **explicit OMW data licence is still open**, so `wordnet.approved` remains false.
+5. **Fixture scope — development only.** Use the 40 development fixtures for P2.1/P2.2. The current 20-case holdout is agent-authored and not blind; it is excluded from P2 and must be replaced or reviewed by the owner before any evaluation claim.
+6. **Rule limits — research only.** The upstream output is a lexical plan, not ASL. No avatar feed, no public translation/accessibility claim, and no claim covering nonmanuals, spatial grammar, classifiers, role shift, or aspect. P2.4 Deaf ASL review is required before any linguistic claim. Human-translated fixed sentences remain the production route.
+7. **Alignment review — owner plus independent reviewer.** Deterministic exact-span alignment first; unresolved or cross-block candidates become abstentions. The owner reviews the P2.1 fixture; an independent reviewer samples at least 20% of P2.2 and reviews 100% before any public claim. Record reviewer, date, fixture, candidate, decision, and reason in `data/p2/review.json`. The implementer must not self-approve.
+
+### 12.1 Remaining blockers for P2.1
+
+- [ ] Confirm the explicit OMW English 3.0 data licence and set `wordnet.approved: true`.
+- [x] Create a Python 3.12 environment and verify spaCy 3.8.16 / `en_core_web_lg` 3.8.0 and the pinned `senses_to_gloss` import (temporary venv, not committed).
+- [ ] Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json`.
+- [ ] Run `python3 tools/p2/precompute.py --check` with `ready: true`.
+- [ ] Produce one fixture (`NEG-01`, then `MOD-01`) and have the owner review its alignment.
 
 ## 13. References
 

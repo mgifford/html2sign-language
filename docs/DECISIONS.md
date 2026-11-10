@@ -40,7 +40,7 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - **PR 2 (implemented, pending review, 2026-11-10):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The holdout is not blind until the owner replaces or reviews it.
 - **PR 3 (implemented, pending review, 2026-11-10):** P2 proposal only, in `experiments/html-to-asl/docs/P2-ADAPTER.md`; no code, model, data, or runtime change.
 - **PR 4 (implemented, pending review, 2026-11-10):** P2.0 pin record, schemas, fail-closed CLI, refusal tests, and empty data index. No model, upstream call, or lexical plan.
-- **PR 5 (next, blocked):** P2.1 one-fixture prototype after the owner approves the WSD revision/licence, WordNet resource, Python environment, and artifact policy.
+- **PR 5 (next, blocked):** P2.1 one-fixture prototype after the OMW data licence is confirmed and a Python 3.11/3.12 environment with pinned images is ready; the WSD model/code and artifact policy are approved.
 - Do not combine P1 with P0 verification. The owner controls the holdout fixtures, not the implementing agent.
 
 ## D7 — Claim separation (Accepted, 2026-11-10)
@@ -50,9 +50,20 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - Playwright or axe checks are not accessibility conformance.
 - State each claim separately in the README, test report, and UI.
 
-## D8 — P2 adapter (Open)
+## D8 — P2 adapter decisions (Accepted, 2026-11-10)
 
-- The P2 proposal is accepted and P2.0 is implemented in `tools/p2/`: pins, schemas, fail-closed CLI, and tests. No model output exists.
-- It pins a candidate upstream commit (`fec7ac3…`, MIT) but does not approve a WSD model, WordNet resource, or committed precomputed JSON yet.
-- P2 must run offline and fail closed; GitHub Pages must serve static JSON only, with no Python, model, or external API at runtime.
-- Open decisions are listed in `experiments/html-to-asl/docs/P2-ADAPTER.md` section 12.
+- **WSD stack:** approve `sign/Ettin-150m-WSD` revision `8751b577199d1bb95b74fa2457da7065d57100ae` (Apache-2.0), `sign/word-sense-disambiguation` commit `da5d67fe731c771b0a2126a25a57e71a33ff5a81` (MIT), and `sign/wn` commit `2d0e81362599062ba185f774b08a76e226bf1415` (MIT). Local CPU only; no hosted model or external API.
+- **Artifacts:** commit per-fixture `p2.0` JSON for the 40 development fixtures; do not commit model weights, caches, or bulk WSD output.
+- **WSD intermediates:** keep as local/CI audit artifacts; only a small hand-authored WSD test fixture may be committed.
+- **WordNet:** pin `omw-en:1.4` locally through `sign/wn`; the explicit OMW data licence is still open, so `wordnet.approved` remains false.
+- **Fixtures:** use only the 40 development fixtures; the 20-case holdout is provisional and not blind.
+- **Claims:** lexical plan only; no avatar feed, no ASL/accessibility claim, no nonmanual/spatial coverage. P2.4 requires independent Deaf ASL review. Human-translated fixed sentences remain the production route.
+- **Review:** deterministic exact-span alignment; owner reviews the P2.1 fixture; an independent reviewer samples at least 20% of P2.2 and reviews 100% before a public claim; record decisions in `data/p2/review.json`. No implementer self-approval.
+
+## D9 — P2.1 prerequisites (Open)
+
+- Confirm the explicit OMW English 3.0 data licence and set `wordnet.approved: true`.
+- [done] Python 3.12 import check: spaCy 3.8.16, `en_core_web_lg` 3.8.0, and pinned `senses_to_gloss` (temporary venv; commit a lock file later).
+- Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json`.
+- Run `precompute.py --check` with `ready: true`.
+- Produce and review one fixture before the 40-fixture run.
