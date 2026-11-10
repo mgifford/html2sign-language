@@ -29,7 +29,7 @@ The output is a **lexical plan**, not fluent ASL. It does not include classifier
 P2.0 is implemented in `tools/p2/`:
 
 - `pins.json` records the approved WSD/upstream/spaCy/WordNet/artifact pins, the two CPU image digests, and the entity-linker database hash.
-- `artifact.schema.json`, `index.schema.json`, and `pins.schema.json` define the contracts.
+- `artifact.schema.json`, `index.schema.json`, `pins.schema.json`, and `review.schema.json` define the contracts.
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
 - `validate.py`, `requirements.lock`, and 20 stdlib `unittest` cases cover the contracts, all 40 artifacts, the pending review record, and refusal paths.
@@ -224,7 +224,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 | P2.1 | **Prototype delivered (pending review):** `NEG-01` local WSD → `senses_to_gloss` → aligned JSON; image-pinned reproducibility and `MOD-01` still open |
 | P2.2 | **Implemented (source-run):** all 40 development fixtures precomputed; static viewer at `p2/` |
 | P2.3 | Reproducibility, failure tests, browser tests, docs |
-| P2.4 | Owner/Deaf-review decision before any public ASL claim |
+| P2.4 | **Review packet added** (`P2-REVIEW.md`); owner alignment and independent Deaf ASL review are pending |
 
 ## 12. Decisions (recorded 2026-11-10)
 

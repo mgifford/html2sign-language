@@ -47,7 +47,8 @@ Do not send any generated lexical candidate to the existing public sign-language
 - `docs/PHASES.md` supplies detailed exit criteria and no-go gates.
 - `docs/3D-LEX.md` covers dataset access, attribution, and future adapter contract.
 - `docs/PROTOCOL.md` defines evaluation metrics and conditions.
-- `docs/P2-ADAPTER.md` is the P2 design proposal and acceptance criteria; it is not implemented.
+- `docs/P2-ADAPTER.md` is the P2 design proposal and acceptance criteria.
+- `docs/P2-REVIEW.md` is the owner/independent review packet; no review is complete.
 - `docs/UPSTREAM.md` credits precursor work, with licence checks.
 - `data/p2/` contains 40 partial P2.2 artifacts; `p2/index.html`, `p2/p2.js`, and `p2/p2.css` are the static viewer.
 - `../../BUILD-FORWARD-PROMPT.md` is the agent continuation prompt for this experiment.

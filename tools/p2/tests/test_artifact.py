@@ -7,7 +7,7 @@ TOOL_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = TOOL_DIR.parents[1]
 sys.path.insert(0, str(TOOL_DIR))
 
-from validate import validate_artifact  # noqa: E402
+from validate import validate_artifact, validate_review  # noqa: E402
 
 ARTIFACT = REPO_ROOT / "experiments/html-to-asl/data/p2/NEG-01.json"
 INDEX = REPO_ROOT / "experiments/html-to-asl/data/p2/index.json"
@@ -61,10 +61,18 @@ class Neg01ArtifactTests(unittest.TestCase):
                     self.assertEqual(token["status"], "aligned")
             self.assertEqual(artifact["abstentions"], [])
 
-    def test_owner_review_is_explicitly_pending(self):
+    def test_owner_and_independent_reviews_are_explicitly_pending(self):
+        self.assertEqual(validate_review(self.review), [])
         self.assertEqual(self.review["status"], "pending")
-        self.assertEqual(len(self.review["fixtures"]), 40)
-        self.assertTrue(all(item["status"] == "pending" for item in self.review["fixtures"]))
+        self.assertEqual(self.review["artifactCount"], 40)
+        self.assertEqual(self.review["owner"]["status"], "pending")
+        self.assertEqual(self.review["independent"]["status"], "pending")
+        self.assertTrue(all(item["ownerStatus"] == "pending" for item in self.review["fixtures"]))
+        self.assertTrue(all(item["linguisticStatus"] == "not-started" for item in self.review["fixtures"]))
+        self.assertEqual(
+            [item["fixtureId"] for item in self.review["fixtures"]],
+            [item["fixtureId"] for item in self.index["artifacts"]],
+        )
 
     def test_artifact_does_not_claim_asl(self):
         warnings = " ".join(self.artifact["warnings"]).lower()

@@ -54,6 +54,7 @@ The remaining blockers are the owner alignment review (`data/p2/review.json` is 
 
 - `pins.json` / `pins.schema.json` — candidate pins and their contract.
 - `artifact.schema.json` — per-fixture `p2.0` artifact contract.
+- `review.schema.json` — P2.4 owner/independent review contract.
 - `index.schema.json` — static index contract.
 - `precompute.py` — fail-closed CLI.
 - `validate.py` — dependency-free checks used by tests.

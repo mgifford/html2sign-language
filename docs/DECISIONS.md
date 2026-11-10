@@ -60,10 +60,16 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - **Claims:** lexical plan only; no avatar feed, no ASL/accessibility claim, no nonmanual/spatial coverage. P2.4 requires independent Deaf ASL review. Human-translated fixed sentences remain the production route.
 - **Review:** deterministic exact-span alignment; owner reviews the P2.1 fixture; an independent reviewer samples at least 20% of P2.2 and reviews 100% before a public claim; record decisions in `data/p2/review.json`. No implementer self-approval.
 
-## D9 — P2.1 prerequisites (Open)
+## D9 — P2 review prerequisites (Open)
 
 - Record the OMW English 3.0 licence as the Princeton WordNet License and set `wordnet.approved: true` (done).
-- [done] Python 3.12 import check: spaCy 3.8.16, `en_core_web_lg` 3.8.0, and pinned `senses_to_gloss` (temporary venv; commit a lock file later).
-- Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json` (still open).
-- Run `precompute.py --check` with `ready: true`.
+- [done] Python 3.12 import check and `requirements.lock`: spaCy 3.8.16, `en_core_web_lg` 3.8.0, and pinned `senses_to_gloss`.
+- [done] CPU image digests for WSD and `sign/wn` are recorded in `pins.json`.
+- [done] `precompute.py --check` reports `ready: true` in the verified Python 3.12 environment.
 - [implemented] All 40 development artifacts and the static viewer were produced from source checkouts and a local model snapshot. Image digests, the entity-linker hash/licence, the Python lock, and the source-run tool are recorded; owner alignment review and a clean-room image-pinned run remain open.
+
+## D10 — P2.4 review packet (Open)
+
+- `experiments/html-to-asl/docs/P2-REVIEW.md` defines the owner alignment review and independent Deaf ASL review process.
+- All 40 fixture records are pending; no implementer self-approval is recorded.
+- No ASL, accessibility, or linguistic claim is made from the artifacts or review packet.
