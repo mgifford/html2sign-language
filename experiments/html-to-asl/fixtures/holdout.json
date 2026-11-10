@@ -1,0 +1,225 @@
+[
+  {
+    "id": "H-TABLE-SPAN",
+    "title": "Table with spanning cells",
+    "html": "<main><table><caption>Plan</caption><tr><th scope=\"col\">Tier</th><th scope=\"col\">Cost</th></tr><tr><td>Basic</td><td>$10</td></tr></table></main>",
+    "invariant": "Preserve caption and cells.",
+    "expectedTokens": [
+      "Plan",
+      "Tier",
+      "Basic",
+      "$10"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-TABLE-ROW",
+    "title": "Row headers",
+    "html": "<main><table><tr><th scope=\"row\">Adult</th><td>$20</td></tr><tr><th scope=\"row\">Child</th><td>$10</td></tr></table></main>",
+    "invariant": "Preserve row headers.",
+    "expectedTokens": [
+      "Adult",
+      "Child",
+      "$20",
+      "$10"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-TABLE-NONE",
+    "title": "Table without caption",
+    "html": "<main><table><tr><th scope=\"col\">Type</th><td>Adult</td></tr></table></main>",
+    "invariant": "Preserve cells and note missing caption.",
+    "expectedTokens": [
+      "Type",
+      "Adult"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-FORM-ARIA",
+    "title": "ARIA-labelled input",
+    "html": "<main><input aria-label=\"Search\" type=\"search\" required><p>Search the guide.</p></main>",
+    "invariant": "Preserve aria-label and required.",
+    "expectedTokens": [
+      "Search",
+      "Search the guide"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-FORM-DESC",
+    "title": "Described input",
+    "html": "<main><label for=\"code\">Code</label><input id=\"code\" aria-describedby=\"help\"><p id=\"help\">Six digits.</p></main>",
+    "invariant": "Preserve label and description.",
+    "expectedTokens": [
+      "Code",
+      "Six digits"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-FORM-GROUP2",
+    "title": "Fieldset group",
+    "html": "<main><fieldset><legend>Language</legend><label><input type=\"checkbox\"> English</label><label><input type=\"checkbox\"> French</label></fieldset></main>",
+    "invariant": "Preserve legend and labels.",
+    "expectedTokens": [
+      "Language",
+      "English",
+      "French"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-LIST-MIX",
+    "title": "Mixed nested lists",
+    "html": "<main><ol><li>First<ul><li>Sub</li></ul></li><li>Second</li></ol></main>",
+    "invariant": "Preserve order and depth.",
+    "expectedTokens": [
+      "First",
+      "Sub",
+      "Second"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-LINK-ARIA",
+    "title": "Link with aria-label",
+    "html": "<main><p>Open <a href=\"/map\" aria-label=\"Map of the office\">the map</a>.</p></main>",
+    "invariant": "Preserve link text and href.",
+    "expectedTokens": [
+      "the map"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-IMG-LONG",
+    "title": "Long alt text",
+    "html": "<main><img alt=\"A step-free entrance on the east side of the building\"><p>Use the east entrance.</p></main>",
+    "invariant": "Preserve long alt text.",
+    "expectedTokens": [
+      "A step-free entrance on the east side of the building",
+      "Use the east entrance"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-IMG-EMPTY",
+    "title": "Decorative image",
+    "html": "<main><img alt=\"\"><h2>Fees</h2><p>No fee.</p></main>",
+    "invariant": "Keep decorative image out of text.",
+    "expectedTokens": [
+      "Fees",
+      "No fee"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-DETAILS",
+    "title": "Details open and closed",
+    "html": "<main><details><summary>Closed</summary><p>Hidden body</p></details><details open><summary>Open</summary><p>Visible body</p></details></main>",
+    "invariant": "Skip closed body, keep open body.",
+    "expectedTokens": [
+      "Closed",
+      "Open",
+      "Visible body"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-UNICODE-RTL",
+    "title": "Right-to-left text",
+    "html": "<main><p dir=\"rtl\" lang=\"ar\">مرحبا بالعالم</p></main>",
+    "invariant": "Preserve RTL text.",
+    "expectedTokens": [
+      "مرحبا بالعالم"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-INJECT-2",
+    "title": "Injection with SVG",
+    "html": "<main><p>Safe paragraph.</p><svg><script>window.bad=1</script></svg><img src=\"x\" onerror=\"window.bad=2\"></main>",
+    "invariant": "Do not execute embedded code.",
+    "expectedTokens": [
+      "Safe paragraph"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-HIDDEN-2",
+    "title": "Hidden and visible",
+    "html": "<main><p>Shown.</p><div hidden><p>Hidden.</p></div><p aria-hidden=\"true\">Also hidden.</p></main>",
+    "invariant": "Keep only visible text.",
+    "expectedTokens": [
+      "Shown"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-STRUCT-HEAD",
+    "title": "Heading hierarchy",
+    "html": "<main><h1>Top</h1><h2>Middle</h2><h3>Low</h3></main>",
+    "invariant": "Preserve levels.",
+    "expectedTokens": [
+      "Top",
+      "Middle",
+      "Low"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-STRUCT-DL",
+    "title": "Description list",
+    "html": "<main><dl><dt>Cost</dt><dd>Free</dd></dl></main>",
+    "invariant": "Preserve term and definition.",
+    "expectedTokens": [
+      "Cost",
+      "Free"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-QUOTE",
+    "title": "Quotation",
+    "html": "<main><blockquote>No access without consent.</blockquote></main>",
+    "invariant": "Preserve quote.",
+    "expectedTokens": [
+      "No access without consent"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-CODE",
+    "title": "Code block",
+    "html": "<main><pre><code>npm test</code></pre></main>",
+    "invariant": "Preserve code.",
+    "expectedTokens": [
+      "npm test"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-BARE",
+    "title": "Bare text container",
+    "html": "<main><section>Bare section text.</section></main>",
+    "invariant": "Preserve container text.",
+    "expectedTokens": [
+      "Bare section text"
+    ],
+    "notes": "Provisional holdout."
+  },
+  {
+    "id": "H-MIXED-2",
+    "title": "Mixed content",
+    "html": "<main><h2>Summary</h2><p>Read the <a href=\"/guide\">guide</a>.</p><ul><li>One</li><li>Two</li></ul></main>",
+    "invariant": "Preserve order and link.",
+    "expectedTokens": [
+      "Summary",
+      "guide",
+      "One",
+      "Two"
+    ],
+    "notes": "Provisional holdout."
+  }
+]

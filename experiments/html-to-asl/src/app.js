@@ -41,6 +41,33 @@ function render() {
   setStatus('Ready to run.');
 }
 
+function buildTable(tableData) {
+  const table = document.createElement('table');
+  if (tableData.caption) {
+    const caption = document.createElement('caption');
+    caption.textContent = tableData.caption;
+    table.append(caption);
+  }
+  for (const row of tableData.rows) {
+    const tr = document.createElement('tr');
+    for (const cell of row.cells) {
+      const td = document.createElement(cell.header ? 'th' : 'td');
+      if (cell.header && cell.scope) td.setAttribute('scope', cell.scope);
+      td.textContent = cell.text;
+      tr.append(td);
+    }
+    table.append(tr);
+  }
+  return table;
+}
+
+function blockLabel(block) {
+  const parts = [block.id, block.type];
+  if (block.level) parts.push(`h${block.level}`);
+  if (block.list) parts.push(`depth ${block.list.depth}`);
+  return parts.join(' · ');
+}
+
 function display(result) {
   clearOutput();
 
@@ -48,9 +75,32 @@ function display(result) {
     const article = document.createElement('article');
     const label = document.createElement('small');
     const text = document.createElement('div');
-    label.textContent = `${block.id} · <${block.type}>`;
-    text.textContent = block.text;
-    article.append(label, text);
+    label.textContent = `${blockLabel(block)} · <${block.tag}>`;
+    if (block.list) article.style.paddingLeft = `${(block.list.depth - 1) * 1.1}rem`;
+    if (block.type === 'table' && block.table) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'table-scroll';
+      wrapper.append(buildTable(block.table));
+      article.append(label, wrapper);
+    } else {
+      text.textContent = block.text;
+      article.append(label, text);
+    }
+    if (block.links?.length) {
+      const links = document.createElement('ul');
+      links.className = 'links';
+      for (const link of block.links) {
+        const item = document.createElement('li');
+        const href = link.href || '(no href)';
+        item.textContent = `${link.text} → ${href}`;
+        links.append(item);
+      }
+      article.append(links);
+    }
+    const source = document.createElement('small');
+    source.className = 'source-path';
+    source.textContent = block.source?.path || '';
+    article.append(source);
     $('blocks').append(article);
   }
   if (result.blocks.length === 0) {
@@ -81,7 +131,9 @@ function display(result) {
   const tokenWord = total === 1 ? 'token' : 'tokens';
   const summary =
     `${result.blocks.length} ${blockWord}, ${result.englishConceptMarkers.length} ${cueWord}, ` +
-    `${passed}/${total} expected ${tokenWord} present.`;
+    `${passed}/${total} expected ${tokenWord} present, ` +
+    `${result.structures.tables} table${result.structures.tables === 1 ? '' : 's'}, ` +
+    `${result.structures.fields} field${result.structures.fields === 1 ? '' : 's'}.`;
 
   if (failed > 0) {
     setStatus(
