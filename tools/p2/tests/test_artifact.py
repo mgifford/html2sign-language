@@ -12,6 +12,7 @@ from validate import validate_artifact, validate_review  # noqa: E402
 ARTIFACT = REPO_ROOT / "experiments/html-to-asl/data/p2/NEG-01.json"
 INDEX = REPO_ROOT / "experiments/html-to-asl/data/p2/index.json"
 REVIEW = REPO_ROOT / "experiments/html-to-asl/data/p2/review.json"
+REVIEW_MD = REPO_ROOT / "experiments/html-to-asl/data/p2/review.md"
 
 
 class Neg01ArtifactTests(unittest.TestCase):
@@ -19,6 +20,7 @@ class Neg01ArtifactTests(unittest.TestCase):
         self.artifact = json.loads(ARTIFACT.read_text(encoding="utf-8"))
         self.index = json.loads(INDEX.read_text(encoding="utf-8"))
         self.review = json.loads(REVIEW.read_text(encoding="utf-8"))
+        self.review_md = REVIEW_MD.read_text(encoding="utf-8")
 
     def test_artifact_matches_p2_contract(self):
         self.assertEqual(validate_artifact(self.artifact), [])
@@ -73,6 +75,11 @@ class Neg01ArtifactTests(unittest.TestCase):
             [item["fixtureId"] for item in self.review["fixtures"]],
             [item["fixtureId"] for item in self.index["artifacts"]],
         )
+
+    def test_review_report_has_all_40_rows(self):
+        rows = [line for line in self.review_md.splitlines() if line.startswith("| [")]
+        self.assertEqual(len(rows), 40)
+        self.assertIn("not ASL", self.review_md)
 
     def test_artifact_does_not_claim_asl(self):
         warnings = " ".join(self.artifact["warnings"]).lower()
