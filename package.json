@@ -8,6 +8,7 @@
     "test:experiment": "node --test \"experiments/html-to-asl/tests/*.test.mjs\"",
     "test:browser:experiment": "node experiments/html-to-asl/tests/browser.mjs",
     "test:p2": "python3 -m unittest discover -s tools/p2/tests -p 'test_*.py'",
+    "review:p2": "python3 tools/p2/review.py",
     "validate": "node tests/validate-imports.js",
     "serve": "npx serve -l 8000",
     "avatar:fetch": "node tools/avatar/fetch-sources.mjs",

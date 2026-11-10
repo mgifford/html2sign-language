@@ -39,6 +39,20 @@ Record one `ownerStatus` per fixture:
 
 Record `ownerNotes` with the fixture ID, a specific concern, and whether it affects the plan or only its presentation. Do not edit artifacts to make a review pass.
 
+## 1.1 Recording decisions
+
+```sh
+python3 tools/p2/review.py --list
+python3 tools/p2/review.py --set NEG-01 --owner-status accepted \
+  --owner-notes "source mapping checked" --reviewer "Reviewer name"
+python3 tools/p2/review.py --set NEG-01 --linguistic-status accepted \
+  --linguistic-notes "recognisable in context" --reviewer "Deaf ASL reviewer"
+python3 tools/p2/review.py --summary
+python3 tools/p2/review.py --validate
+```
+
+The CLI edits `data/p2/review.json`; it cannot perform the review. Do not use it to self-approve as the implementer. To mark a sampled independent review accepted, record the reviewed fixtures and set the role status with `--independent-status accepted --reviewer ...`.
+
 ## 2. Independent Deaf ASL review
 
 This is separate from source alignment. It asks whether the lexical sequence is recognisable/plausible to a fluent Deaf ASL reviewer, **not** whether the pipeline is a fluent translator.

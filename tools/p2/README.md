@@ -8,6 +8,7 @@ From the repository root:
 
 ```sh
 python3 tools/p2/precompute.py --check
+python3 tools/p2/review.py --list
 python3 -m unittest discover -s tools/p2/tests -p 'test_*.py'
 ```
 
@@ -60,6 +61,7 @@ The remaining blockers are the owner alignment review (`data/p2/review.json` is 
 - `validate.py` — dependency-free checks used by tests.
 - `requirements.lock` — Python 3.12 dependency freeze; platform-specific.
 - `source_run.py` — explicit research-only source-run reproducer; not the image-pinned path.
-- `tests/` — 20 unit tests, including all 40 artifacts, the pending review record, refusal, and holdout cases.
+- `review.py` — records owner/independent review decisions in `review.json`; it cannot perform a review.
+- `tests/` — 25 unit tests, including all 40 artifacts, the pending review record, review CLI, refusal, and holdout cases.
 
 No model weights, WSD intermediates, generated glosses, or 3D-LEX assets belong in this directory.
