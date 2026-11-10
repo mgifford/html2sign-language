@@ -41,7 +41,13 @@
     "model": "en_core_web_lg",
     "version": "3.8.16",
     "license": "MIT",
-    "approved": true
+    "approved": true,
+    "entityLinker": {
+      "url": "https://huggingface.co/MartinoMensio/spaCy-entity-linker/resolve/main/knowledge_base.tar.gz",
+      "databaseSha256": "709737c9026408ecdf339c7e95212b8bd93991eba5f0b3247ff64a181069adcd",
+      "license": "unverified (Wikidata-derived knowledge base; package has no licence metadata)",
+      "approved": false
+    }
   },
   "artifacts": {
     "mode": "committed-json",
@@ -53,6 +59,7 @@
     "The WSD model revision is Apache-2.0 and the WSD/WordNet API code is MIT. spaCy 3.8.16 with en_core_web_lg 3.8.0 is MIT; 3.8.0 is yanked.",
     "OMW English WordNet 3.0 is listed by the wn index under the Princeton WordNet License (https://wordnet.princeton.edu/license-and-commercial-use).",
     "Still open: CPU image digests for WSD and sign/wn. Python 3.12 import path is verified in a temporary environment.",
-    "No model weights, WSD intermediates, or generated glosses may be committed."
+    "No model weights, WSD intermediates, or generated glosses may be committed.",
+    "The spaCy entity-linker knowledge base is hashed but its licence and exact archive revision remain unverified; approved is false."
   ]
 }

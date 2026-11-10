@@ -118,6 +118,18 @@ def validate_pins(pins: Any) -> list[str]:
         errors.append("spacy.license must be a non-empty string")
     if not isinstance(spacy.get("approved"), bool):
         errors.append("spacy.approved must be a boolean")
+    entity_linker = spacy.get("entityLinker")
+    if not isinstance(entity_linker, dict):
+        errors.append("spacy.entityLinker must be an object")
+    else:
+        if not isinstance(entity_linker.get("url"), str) or not entity_linker.get("url"):
+            errors.append("spacy.entityLinker.url must be a non-empty string")
+        if not isinstance(entity_linker.get("databaseSha256"), str) or not re.fullmatch(r"[0-9a-f]{64}", entity_linker.get("databaseSha256", "")):
+            errors.append("spacy.entityLinker.databaseSha256 must be a SHA-256 hex string")
+        if not isinstance(entity_linker.get("license"), str) or not entity_linker.get("license"):
+            errors.append("spacy.entityLinker.license must be a non-empty string")
+        if not isinstance(entity_linker.get("approved"), bool):
+            errors.append("spacy.entityLinker.approved must be a boolean")
 
     artifacts = pins.get("artifacts", {})
     if artifacts.get("mode") not in {"committed-json", "ci-artifact"}:
@@ -186,6 +198,11 @@ def missing_prerequisites(
         missing.append("spaCy model not approved")
     if not spacy.get("license"):
         missing.append("spaCy model licence not recorded")
+    entity_linker = spacy.get("entityLinker", {})
+    if not entity_linker.get("approved"):
+        missing.append("spaCy entity-linker knowledge base not approved")
+    if not entity_linker.get("databaseSha256"):
+        missing.append("spaCy entity-linker database hash not recorded")
     artifacts = pins.get("artifacts", {})
     if not artifacts.get("approved"):
         missing.append("artifact publication policy not approved")

@@ -30,6 +30,8 @@ class PinTests(unittest.TestCase):
         self.assertTrue(self.pins["wordnet"]["approved"])
         self.assertIsNone(self.pins["wsd"]["imageDigest"])
         self.assertIsNone(self.pins["wordnet"]["imageDigest"])
+        self.assertFalse(self.pins["spacy"]["entityLinker"]["approved"])
+        self.assertEqual(len(self.pins["spacy"]["entityLinker"]["databaseSha256"]), 64)
 
     def test_invalid_commit_is_rejected(self):
         pins = copy.deepcopy(self.pins)
@@ -45,12 +47,14 @@ class PinTests(unittest.TestCase):
         missing = precompute.missing_prerequisites(self.pins, version=(3, 11), module_exists=lambda _: True)
         self.assertTrue(any("WSD CPU image digest" in item for item in missing))
         self.assertTrue(any("WordNet API CPU image digest" in item for item in missing))
+        self.assertTrue(any("entity-linker knowledge base" in item for item in missing))
         self.assertFalse(any("WordNet resource not approved" in item for item in missing))
 
     def test_fully_pinned_stack_is_ready(self):
         pins = copy.deepcopy(self.pins)
         pins["wsd"]["imageDigest"] = "sha256:" + "a" * 64
         pins["wordnet"]["imageDigest"] = "sha256:" + "b" * 64
+        pins["spacy"]["entityLinker"]["approved"] = True
         missing = precompute.missing_prerequisites(pins, version=(3, 11), module_exists=lambda _: True)
         self.assertEqual(missing, [])
 

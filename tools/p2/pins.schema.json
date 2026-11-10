@@ -87,12 +87,23 @@
     "spacy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["model", "version", "license", "approved"],
+      "required": ["model", "version", "license", "approved", "entityLinker"],
       "properties": {
         "model": { "type": "string", "minLength": 1 },
         "version": { "type": "string", "minLength": 1 },
         "license": { "type": "string", "minLength": 1 },
-        "approved": { "type": "boolean" }
+        "approved": { "type": "boolean" },
+        "entityLinker": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url", "databaseSha256", "license", "approved"],
+          "properties": {
+            "url": { "type": "string", "minLength": 1 },
+            "databaseSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "license": { "type": "string", "minLength": 1 },
+            "approved": { "type": "boolean" }
+          }
+        }
       }
     },
     "artifacts": {

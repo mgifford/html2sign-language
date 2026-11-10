@@ -1,0 +1,249 @@
+{
+  "schemaVersion": "p2.2-review",
+  "status": "pending",
+  "reviewer": null,
+  "reviewedAt": null,
+  "notes": "Owner alignment review has not been performed. Each fixture is pending.",
+  "fixtures": [
+    {
+      "fixtureId": "NEG-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "MOD-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "COND-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "LEX-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "DOC-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "HTML-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "SEC-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "NAV-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "QTY-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "LINK-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "TABLE-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "FORM-01",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-HIER",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-NESTED",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-ORDERED",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-DL",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-LINK",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-LINKS",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-TABLE",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "STRUCT-TABLE-NOHEAD",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "FORM-REQUIRED",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "FORM-GROUP",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "FORM-SELECT",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "FORM-TEXTAREA",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "FORM-CHECK",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "ARIA-BUTTON",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "ARIA-SECTION",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "IMG-ALT",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "IMG-DECOR",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "IMG-NOALT",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "QUOTE",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "CODE",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "BARE-DIV",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "HIDDEN",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "DETAILS-CLOSED",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "DETAILS-OPEN",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "UNICODE",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "INJECT",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "MIXED",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    },
+    {
+      "fixtureId": "TABLE-LINK",
+      "status": "pending",
+      "decision": null,
+      "notes": ""
+    }
+  ]
+}
