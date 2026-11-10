@@ -1,11 +1,12 @@
 # P2 precomputed data
 
-Status: **empty scaffold.** No lexical plans exist yet.
+Status: **one partial P2.1 prototype** (`NEG-01`). No other lexical plans exist.
 
 - `index.json` is the static index the Pages viewer may read in P2.2.
-- Per-fixture artifacts will be `p2.0` JSON files described by `tools/p2/artifact.schema.json`.
-- P2.0 does not run upstream, a WSD model, or WordNet. `tools/p2/precompute.py --check` validates the pin record; `--fixture` refuses to write until every prerequisite is approved and installed. The WSD model/code pins and OMW licence are approved; the CPU image digests remain open. A Python 3.12 import check has been done in a temporary environment.
+- `NEG-01.json` is a `p2.0` artifact generated from the pinned upstream rules using a local WSD model snapshot. It is `partial`: upstream reported `semantic-rules-unavailable`, and owner alignment review is pending.
+- WSD intermediates and model weights are not committed.
+- The WSD model/code and OMW licence are approved. CPU image digests remain open, so this prototype is not yet a reproducible image-pinned run.
 
 This directory must never contain a placeholder gloss, model weight, WSD intermediate, or 3D-LEX asset.
 
-See [the P2 proposal](../../docs/P2-ADAPTER.md) and [the pin record](../../../../tools/p2/pins.json).
+See [the P2 proposal](../../docs/P2-ADAPTER.md), [the pin record](../../../../tools/p2/pins.json), and [the artifact contract](../../../../tools/p2/artifact.schema.json).

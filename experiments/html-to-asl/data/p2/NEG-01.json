@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "NEG-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "130f05ff9597792ba4189f5d5837f32ec1553aedd16e297c7d69e897cc1602bc",
+    "blocks": [
+      {
+        "id": "b0001",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 29
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "You",
+            "lemma": "you",
+            "pos": "PRON",
+            "dep": "nsubj",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 3,
+            "status": "aligned",
+            "gloss": "you"
+          },
+          {
+            "word": "not",
+            "lemma": "not",
+            "pos": "PART",
+            "dep": "neg",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 7,
+            "sourceEnd": 10,
+            "status": "aligned",
+            "gloss": "not"
+          },
+          {
+            "word": "need",
+            "lemma": "need",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 11,
+            "sourceEnd": 15,
+            "status": "aligned",
+            "gloss": "need"
+          },
+          {
+            "word": "pay",
+            "lemma": "pay",
+            "pos": "VERB",
+            "dep": "xcomp",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 19,
+            "sourceEnd": 22,
+            "status": "aligned",
+            "gloss": "pay"
+          },
+          {
+            "word": "fee",
+            "lemma": "fee",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 5,
+            "blockId": "b0001",
+            "sourceStart": 25,
+            "sourceEnd": 28,
+            "status": "aligned",
+            "gloss": "fee"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 28,
+            "sourceEnd": 29,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          2,
+          3,
+          5,
+          7,
+          8
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              1
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              4
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              6
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "complex-clause-order-preserved"
+          },
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 3
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 7,
+      "sourceEnd": 10
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 11,
+      "sourceEnd": 15
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 19,
+      "sourceEnd": 22
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 25,
+      "sourceEnd": 28
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 28,
+      "sourceEnd": 29
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests."
+  ],
+  "hashes": {
+    "inputSha256": "130f05ff9597792ba4189f5d5837f32ec1553aedd16e297c7d69e897cc1602bc",
+    "outputSha256": "6266db0a59747e1e879534ae784c254e6e5e8ea66b7ee9f2df7e2bf5298e7553"
+  }
+}

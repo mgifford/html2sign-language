@@ -1,6 +1,6 @@
 # P2 tooling
 
-Status: **P2.0 scaffold.** It validates pins and refuses to write a lexical plan until every prerequisite is approved and installed. It does not run upstream, a WSD model, WordNet, or spaCy. The WSD model/code pins and OMW licence are approved; the CPU image digests are still open. A Python 3.12 import check is complete in a temporary environment.
+Status: **P2.0 scaffold plus a partial P2.1 `NEG-01` prototype.** The CLI still refuses to write until every prerequisite is approved and installed. The WSD model/code and OMW licence are approved; CPU image digests are still open. The prototype was produced from source checkouts and a local model snapshot, and awaits owner alignment review.
 
 ## Commands
 
@@ -48,7 +48,7 @@ Before setting any `approved` flag to `true`, record and verify:
 7. [done] Owner plus independent reviewer for P1-block → upstream-sentence alignment.
 8. [done] The provisional holdout stays excluded from P2.
 
-The remaining blocker is the pinned CPU image digest for WSD and `sign/wn`. Run `--check` and confirm `ready: true` before P2.1.
+The remaining blockers are the pinned CPU image digests and the owner alignment review. Run `--check` and confirm `ready: true` before P2.1.
 
 ## Files
 
