@@ -1,0 +1,72 @@
+#p2-source article {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+#p2-source article:last-child {
+  border-bottom: 0;
+}
+#p2-source h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+#p2-source p {
+  margin: 0.25rem 0;
+  overflow-wrap: anywhere;
+}
+.p2-path {
+  display: block;
+  color: #526176;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+#p2-tokens {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+#p2-tokens caption {
+  text-align: left;
+  color: #475569;
+  font-size: 0.9rem;
+  padding: 0.35rem 0;
+}
+#p2-tokens th,
+#p2-tokens td {
+  border: 1px solid #cbd5e1;
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+#p2-tokens thead th {
+  background: #eef4fa;
+}
+#p2-tokens tbody th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+.p2-abstained {
+  color: #8a1c1c;
+  font-weight: 650;
+}
+#p2-changes,
+#p2-warnings {
+  margin: 0.35rem 0 1rem;
+  padding-left: 1.25rem;
+}
+#p2-changes li,
+#p2-warnings li {
+  margin: 0.25rem 0;
+  overflow-wrap: anywhere;
+}
+#p2-status {
+  min-height: 1.55em;
+}
+#p2-status.is-error {
+  color: #8a1c1c;
+  font-weight: 650;
+}

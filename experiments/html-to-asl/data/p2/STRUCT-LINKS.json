@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "STRUCT-LINKS",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "e3a49ec9d57f435d93df6166d9b9a89f3c5987613f60462c7b0cd7850c774ccb",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 17,
+        "text": "First and Second."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "First",
+            "lemma": "first",
+            "pos": "ADV",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 5,
+            "status": "aligned",
+            "gloss": "first"
+          },
+          {
+            "word": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 6,
+            "sourceEnd": 9,
+            "status": "aligned",
+            "gloss": "and"
+          },
+          {
+            "word": "Second",
+            "lemma": "second",
+            "pos": "PROPN",
+            "dep": "conj",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 10,
+            "sourceEnd": 16,
+            "status": "aligned",
+            "gloss": "second"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 16,
+            "sourceEnd": 17,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 5
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 6,
+      "sourceEnd": 9
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 10,
+      "sourceEnd": 16
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 16,
+      "sourceEnd": 17
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "e3a49ec9d57f435d93df6166d9b9a89f3c5987613f60462c7b0cd7850c774ccb",
+    "outputSha256": "42c9547377b0ab9bae41a7130056ee0c6e2e76ccb2c8857ad48d57975f15b6fd"
+  }
+}

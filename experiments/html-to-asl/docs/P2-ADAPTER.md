@@ -1,6 +1,6 @@
 # P2 proposal: pinned, offline English → ASL lexical-plan adapter
 
-Status: **P2.0 implemented; P2.1 NEG-01 prototype produced; owner alignment review and pinned CPU image digests are still open.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
+Status: **P2.0, P2.1, and P2.2 source-run artifacts/viewer are implemented; owner alignment review and pinned CPU image digests are still open (P2.3).** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
 
 ## 1. Goal
 
@@ -32,10 +32,11 @@ P2.0 is implemented in `tools/p2/`:
 - `artifact.schema.json`, `index.schema.json`, and `pins.schema.json` define the contracts.
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
-- `validate.py` and 14 stdlib `unittest` cases cover the contracts and refusal paths.
-- `experiments/html-to-asl/data/p2/NEG-01.json` is a **partial** P2.1 prototype generated from the pinned rules and a local WSD model snapshot; it says `semantic-rules-unavailable`, has all candidates aligned to `b0001`, and awaits owner review.
+- `validate.py` and 19 stdlib `unittest` cases cover the contracts, all 40 artifacts, and refusal paths.
+- `experiments/html-to-asl/data/p2/` contains **40 partial P2.2 artifacts** generated from the pinned rules and a local WSD model snapshot. All candidates align to P1 blocks; upstream reports `semantic-rules-unavailable`, and owner review is pending.
+- `experiments/html-to-asl/p2/` is the static viewer for the index and artifacts.
 
-The system default is Python 3.14 with no model stack. A temporary Python 3.12 environment has verified spaCy 3.8.16, `en_core_web_lg` 3.8.0, and the pinned `senses_to_gloss` import. See `tools/p2/README.md` for the approval checklist. P2.1 still needs pinned CPU image digests for WSD and `sign/wn`.
+The system default is Python 3.14 with no model stack. A temporary Python 3.12 environment has verified spaCy 3.8.16, `en_core_web_lg` 3.8.0, and the pinned `senses_to_gloss` import. See `tools/p2/README.md` for the approval checklist. P2.3 still needs pinned CPU image digests for WSD and `sign/wn`.
 
 ## 2. Upstream facts to pin
 
@@ -52,7 +53,7 @@ Verified from the upstream repository on 2026-11-10:
 | Output | Ordered `sentences`, `indexes`, `changes`, `notes`; candidates retain original inclusive token spans, morphology, and source annotations |
 | Known upstream limits | Rules are an ordering/omission experiment, not a complete translator; no nonmanuals; conservative fallbacks for complex clauses; entity/WSD errors remain possible |
 
-Upstream evaluation documents the WSD revision `8751b577199d1bb95b74fa2457da7065d57100ae` (`sign/Ettin-150m-WSD`) and spaCy 3.8.16 with `en_core_web_lg` 3.8.0. This project approves the WSD model/code and spaCy pins, but treats the OMW English 1.4 data terms as open. The implementation must record exact image digests and hashes.
+Upstream evaluation documents the WSD revision `8751b577199d1bb95b74fa2457da7065d57100ae` (`sign/Ettin-150m-WSD`) and spaCy 3.8.16 with `en_core_web_lg` 3.8.0. This project approves the WSD model/code, spaCy, and OMW English 1.4 (Princeton WordNet License) pins. The remaining implementation condition is exact CPU image digests and hashes.
 
 References: [upstream README](https://github.com/sign-language-processing/spoken-to-signed-translation), [ASL rules and evaluation](https://github.com/sign-language-processing/spoken-to-signed-translation/blob/main/evaluation/asl/README.md), [paper](https://arxiv.org/abs/2305.17714).
 
@@ -219,7 +220,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 |---|---|
 | P2.0 | **Implemented:** schema, fixture selection, licence/pin record, fail-closed CLI; no model output |
 | P2.1 | **Prototype delivered (pending review):** `NEG-01` local WSD → `senses_to_gloss` → aligned JSON; image-pinned reproducibility and `MOD-01` still open |
-| P2.2 | All 40 development fixtures precomputed; static viewer |
+| P2.2 | **Implemented (source-run):** all 40 development fixtures precomputed; static viewer at `p2/` |
 | P2.3 | Reproducibility, failure tests, browser tests, docs |
 | P2.4 | Owner/Deaf-review decision before any public ASL claim |
 
@@ -231,16 +232,18 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 4. **WordNet — OMW English 1.4, local — approved.** Use `omw-en:1.4` through the pinned `sign/wn` API; no hosted `WORDNET_URL`. The `wn` index lists the OMW English 3.0 export under the [Princeton WordNet License](https://wordnet.princeton.edu/license-and-commercial-use). The remaining condition is the CPU image digest.
 5. **Fixture scope — development only.** Use the 40 development fixtures for P2.1/P2.2. The current 20-case holdout is agent-authored and not blind; it is excluded from P2 and must be replaced or reviewed by the owner before any evaluation claim.
 6. **Rule limits — research only.** The upstream output is a lexical plan, not ASL. No avatar feed, no public translation/accessibility claim, and no claim covering nonmanuals, spatial grammar, classifiers, role shift, or aspect. P2.4 Deaf ASL review is required before any linguistic claim. Human-translated fixed sentences remain the production route.
-7. **Alignment review — owner plus independent reviewer.** Deterministic exact-span alignment first; unresolved or cross-block candidates become abstentions. The owner reviews the P2.1 fixture; an independent reviewer samples at least 20% of P2.2 and reviews 100% before any public claim. Record reviewer, date, fixture, candidate, decision, and reason in `data/p2/review.json`. The implementer must not self-approve.
+7. **Alignment review — owner plus independent reviewer.** Deterministic exact-span alignment first; unresolved or cross-block candidates become abstentions. The owner reviews the 40 development artifacts; an independent reviewer samples at least 20% and reviews 100% before a public claim. Record reviewer, date, fixture, candidate, decision, and reason in `data/p2/review.json`. The implementer must not self-approve.
 
-### 12.1 Remaining blockers for P2.1
+### 12.1 Remaining blockers for P2.3
 
 - [x] Record the OMW English 3.0 licence as the Princeton WordNet License and set `wordnet.approved: true`.
 - [x] Create a Python 3.12 environment and verify spaCy 3.8.16 / `en_core_web_lg` 3.8.0 and the pinned `senses_to_gloss` import (temporary venv, not committed).
 - [ ] Pin CPU image digests for WSD and `sign/wn`, and record them in `pins.json`.
+- [ ] Pin the spaCy entity-linker knowledge base used by the WSD service.
 - [ ] Run `python3 tools/p2/precompute.py --check` with `ready: true`.
-- [x] Produce the `NEG-01` prototype artifact with all candidates aligned to `b0001`.
-- [ ] Owner review of the `NEG-01` alignment; then `MOD-01`.
+- [x] Produce all 40 development artifacts with candidates aligned to P1 blocks.
+- [x] Add the static P2 viewer and browser coverage.
+- [ ] Owner review of the 40 alignment records; image-pinned reproducibility.
 
 ## 13. References
 

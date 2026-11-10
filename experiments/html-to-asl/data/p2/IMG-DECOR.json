@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "IMG-DECOR",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "408874975eaa1c4dd060f9d6ef633b664a8dbe17c6f7d836520a2daa3630229e",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 23,
+        "text": "Decorative image above."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Decorative",
+            "lemma": "decorative",
+            "pos": "ADJ",
+            "dep": "amod",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 10,
+            "status": "aligned",
+            "gloss": "decorative"
+          },
+          {
+            "word": "image",
+            "lemma": "image",
+            "pos": "NOUN",
+            "dep": "ROOT",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 11,
+            "sourceEnd": 16,
+            "status": "aligned",
+            "gloss": "image"
+          },
+          {
+            "word": "above",
+            "lemma": "above",
+            "pos": "ADV",
+            "dep": "advmod",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 17,
+            "sourceEnd": 22,
+            "status": "aligned",
+            "gloss": "above"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 22,
+            "sourceEnd": 23,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 10
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 11,
+      "sourceEnd": 16
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 17,
+      "sourceEnd": 22
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 22,
+      "sourceEnd": 23
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "408874975eaa1c4dd060f9d6ef633b664a8dbe17c6f7d836520a2daa3630229e",
+    "outputSha256": "b3cda6fde8eed880f38e9ca85362ca1bfe2afa04f4bf27f814092348b5eeedaa"
+  }
+}

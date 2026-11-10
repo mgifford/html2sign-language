@@ -1,0 +1,294 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "MOD-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "9c2bdb4fdba03b376c548efe82b063614eaa7c1dcbc4d8501fc9e12dd7e811d9",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 47,
+        "text": "You may appeal. You must appeal within 30 days."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "You",
+            "lemma": "you",
+            "pos": "PRON",
+            "dep": "nsubj",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 3,
+            "status": "aligned",
+            "gloss": "you"
+          },
+          {
+            "word": "may",
+            "lemma": "may",
+            "pos": "AUX",
+            "dep": "aux",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 4,
+            "sourceEnd": 7,
+            "status": "aligned",
+            "gloss": "may"
+          },
+          {
+            "word": "appeal",
+            "lemma": "appeal",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 8,
+            "sourceEnd": 14,
+            "status": "aligned",
+            "gloss": "appeal"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 14,
+            "sourceEnd": 15,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          },
+          {
+            "sentence": 1,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      },
+      {
+        "tokens": [
+          {
+            "word": "You",
+            "lemma": "you",
+            "pos": "PRON",
+            "dep": "nsubj",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 16,
+            "sourceEnd": 19,
+            "status": "aligned",
+            "gloss": "you"
+          },
+          {
+            "word": "must",
+            "lemma": "must",
+            "pos": "AUX",
+            "dep": "aux",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 20,
+            "sourceEnd": 24,
+            "status": "aligned",
+            "gloss": "must"
+          },
+          {
+            "word": "appeal",
+            "lemma": "appeal",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 25,
+            "sourceEnd": 31,
+            "status": "aligned",
+            "gloss": "appeal"
+          },
+          {
+            "word": "within",
+            "lemma": "within",
+            "pos": "ADP",
+            "dep": "prep",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 32,
+            "sourceEnd": 38,
+            "status": "aligned",
+            "gloss": "within"
+          },
+          {
+            "word": "30",
+            "lemma": "30",
+            "pos": "NUM",
+            "dep": "nummod",
+            "head": 9,
+            "blockId": "b0001",
+            "sourceStart": 39,
+            "sourceEnd": 41,
+            "status": "aligned",
+            "gloss": "30"
+          },
+          {
+            "word": "days",
+            "lemma": "day",
+            "pos": "NOUN",
+            "dep": "pobj",
+            "head": 7,
+            "blockId": "b0001",
+            "sourceStart": 42,
+            "sourceEnd": 46,
+            "status": "aligned",
+            "gloss": "day"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 6,
+            "blockId": "b0001",
+            "sourceStart": 46,
+            "sourceEnd": 47,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          },
+          {
+            "sentence": 1,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 3
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 4,
+      "sourceEnd": 7
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 8,
+      "sourceEnd": 14
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 14,
+      "sourceEnd": 15
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 16,
+      "sourceEnd": 19
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 20,
+      "sourceEnd": 24
+    },
+    {
+      "candidateIndex": 6,
+      "blockId": "b0001",
+      "sourceStart": 25,
+      "sourceEnd": 31
+    },
+    {
+      "candidateIndex": 7,
+      "blockId": "b0001",
+      "sourceStart": 32,
+      "sourceEnd": 38
+    },
+    {
+      "candidateIndex": 8,
+      "blockId": "b0001",
+      "sourceStart": 39,
+      "sourceEnd": 41
+    },
+    {
+      "candidateIndex": 9,
+      "blockId": "b0001",
+      "sourceStart": 42,
+      "sourceEnd": 46
+    },
+    {
+      "candidateIndex": 10,
+      "blockId": "b0001",
+      "sourceStart": 46,
+      "sourceEnd": 47
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "9c2bdb4fdba03b376c548efe82b063614eaa7c1dcbc4d8501fc9e12dd7e811d9",
+    "outputSha256": "c407a7bf0aacf3bfa053a20e4bf3673e5285ce718fc400f3492d34d96806d877"
+  }
+}

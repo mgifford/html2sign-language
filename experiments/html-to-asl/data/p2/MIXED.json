@@ -1,0 +1,281 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "MIXED",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "61bb5fae9f86495987b310082e589306e45fe4a4f0aad0769e7208d7e807e960",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "heading",
+        "path": "main > h1:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 6,
+        "text": "Notice"
+      },
+      {
+        "id": "b0002",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 7,
+        "textEnd": 22,
+        "text": "Read the guide."
+      },
+      {
+        "id": "b0003",
+        "type": "list-item",
+        "path": "main > ul:nth-of-type(1) > li:nth-of-type(1)",
+        "textStart": 23,
+        "textEnd": 26,
+        "text": "One"
+      },
+      {
+        "id": "b0004",
+        "type": "list-item",
+        "path": "main > ul:nth-of-type(1) > li:nth-of-type(2)",
+        "textStart": 27,
+        "textEnd": 30,
+        "text": "Two"
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Notice",
+            "lemma": "notice",
+            "pos": "NOUN",
+            "dep": "nsubj",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 6,
+            "status": "aligned",
+            "gloss": "notice"
+          },
+          {
+            "word": "Read",
+            "lemma": "read",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 2,
+            "blockId": "b0002",
+            "sourceStart": 7,
+            "sourceEnd": 11,
+            "status": "aligned",
+            "gloss": "read"
+          },
+          {
+            "word": "guide",
+            "lemma": "guide",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 2,
+            "blockId": "b0002",
+            "sourceStart": 16,
+            "sourceEnd": 21,
+            "status": "aligned",
+            "gloss": "guide"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 2,
+            "blockId": "b0002",
+            "sourceStart": 21,
+            "sourceEnd": 22,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          2,
+          4,
+          5
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              3
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              1
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              6
+            ]
+          },
+          {
+            "sentence": 1,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              8
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          },
+          {
+            "sentence": 1,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      },
+      {
+        "tokens": [
+          {
+            "word": "One",
+            "lemma": "one",
+            "pos": "NUM",
+            "dep": "ROOT",
+            "head": 7,
+            "blockId": "b0003",
+            "sourceStart": 23,
+            "sourceEnd": 26,
+            "status": "aligned",
+            "gloss": "one"
+          },
+          {
+            "word": "Two",
+            "lemma": "two",
+            "pos": "NUM",
+            "dep": "amod",
+            "head": 7,
+            "blockId": "b0004",
+            "sourceStart": 27,
+            "sourceEnd": 30,
+            "status": "aligned",
+            "gloss": "two"
+          }
+        ],
+        "indexes": [
+          7,
+          9
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              3
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              1
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              6
+            ]
+          },
+          {
+            "sentence": 1,
+            "rule": "omit-whitespace",
+            "source_tokens": [
+              8
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          },
+          {
+            "sentence": 1,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 6
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0002",
+      "sourceStart": 7,
+      "sourceEnd": 11
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0002",
+      "sourceStart": 16,
+      "sourceEnd": 21
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0002",
+      "sourceStart": 21,
+      "sourceEnd": 22
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0003",
+      "sourceStart": 23,
+      "sourceEnd": 26
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0004",
+      "sourceStart": 27,
+      "sourceEnd": 30
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "61bb5fae9f86495987b310082e589306e45fe4a4f0aad0769e7208d7e807e960",
+    "outputSha256": "748a6cbae783f3636546315b5f337405b318599cb57fa26d9bcbc875f74b34d5"
+  }
+}

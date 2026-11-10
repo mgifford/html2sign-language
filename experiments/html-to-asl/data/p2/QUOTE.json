@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "QUOTE",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "2834149605802886196ed08269fc122a1f6cd261a9ed43d56616d99d8c7811ca",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "quote",
+        "path": "main > blockquote:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 35,
+        "text": "Access is a right, not a privilege."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Access",
+            "lemma": "access",
+            "pos": "NOUN",
+            "dep": "nsubj",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 6,
+            "status": "aligned",
+            "gloss": "access"
+          },
+          {
+            "word": "right",
+            "lemma": "right",
+            "pos": "NOUN",
+            "dep": "attr",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 12,
+            "sourceEnd": 17,
+            "status": "aligned",
+            "gloss": "right"
+          },
+          {
+            "word": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 17,
+            "sourceEnd": 18,
+            "status": "aligned",
+            "gloss": ","
+          },
+          {
+            "word": "not",
+            "lemma": "not",
+            "pos": "PART",
+            "dep": "neg",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 19,
+            "sourceEnd": 22,
+            "status": "aligned",
+            "gloss": "not"
+          },
+          {
+            "word": "privilege",
+            "lemma": "privilege",
+            "pos": "NOUN",
+            "dep": "appos",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 25,
+            "sourceEnd": 34,
+            "status": "aligned",
+            "gloss": "privilege"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 1,
+            "blockId": "b0001",
+            "sourceStart": 34,
+            "sourceEnd": 35,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              1
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              2
+            ]
+          },
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              6
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 6
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 12,
+      "sourceEnd": 17
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 17,
+      "sourceEnd": 18
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 19,
+      "sourceEnd": 22
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 25,
+      "sourceEnd": 34
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 34,
+      "sourceEnd": 35
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "2834149605802886196ed08269fc122a1f6cd261a9ed43d56616d99d8c7811ca",
+    "outputSha256": "d60d7a8c9f89720aa065919b015bcbf72f606db9188718d1d8f3cbd84d95ff3f"
+  }
+}

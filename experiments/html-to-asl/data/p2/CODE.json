@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "CODE",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "84f4be818d3af4d264f2ee275ab032c56caca6e4f3a0d5e26ed9cff393fc920a",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "code",
+        "path": "main > pre:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 27,
+        "text": "curl -I https://example.org"
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "curl",
+            "lemma": "curl",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 4,
+            "status": "aligned",
+            "gloss": "curl"
+          },
+          {
+            "word": "-I",
+            "lemma": "-i",
+            "pos": "PROPN",
+            "dep": "dobj",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 5,
+            "sourceEnd": 7,
+            "status": "aligned",
+            "gloss": "-i"
+          },
+          {
+            "word": "https://example.org",
+            "lemma": "https://example.org",
+            "pos": "X",
+            "dep": "punct",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 8,
+            "sourceEnd": 27,
+            "status": "aligned",
+            "gloss": "https://example.org"
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 4
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 5,
+      "sourceEnd": 7
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 8,
+      "sourceEnd": 27
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "84f4be818d3af4d264f2ee275ab032c56caca6e4f3a0d5e26ed9cff393fc920a",
+    "outputSha256": "8882bced66ec2f2f394458544ee20e6f3edaac04d7cf95abef6261efe7d6adb2"
+  }
+}

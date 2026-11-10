@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "UNICODE",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "9dcd907d2804bad3d9d08542573ace9a6850cc43fd23ea2f8157d6486e561ab1",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 22,
+        "text": "R\u00e9sum\u00e9 \u2014 \u65e5\u672c\u8a9e \u2014 \u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "R\u00e9sum\u00e9",
+            "lemma": "r\u00e9sum\u00e9",
+            "pos": "NOUN",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 6,
+            "status": "aligned",
+            "gloss": "r\u00e9sum\u00e9"
+          },
+          {
+            "word": "\u2014",
+            "lemma": "\u2014",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 7,
+            "sourceEnd": 8,
+            "status": "aligned",
+            "gloss": "\u2014"
+          },
+          {
+            "word": "\u65e5\u672c\u8a9e",
+            "lemma": "\u65e5\u672c\u8a9e",
+            "pos": "NOUN",
+            "dep": "appos",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 9,
+            "sourceEnd": 12,
+            "status": "aligned",
+            "gloss": "\u65e5\u672c\u8a9e"
+          },
+          {
+            "word": "\u2014",
+            "lemma": "\u2014",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 13,
+            "sourceEnd": 14,
+            "status": "aligned",
+            "gloss": "\u2014"
+          },
+          {
+            "word": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+            "lemma": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+            "pos": "NOUN",
+            "dep": "appos",
+            "head": 2,
+            "blockId": "b0001",
+            "sourceStart": 15,
+            "sourceEnd": 22,
+            "status": "aligned",
+            "gloss": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+          }
+        ],
+        "indexes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "changes": [],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 6
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 7,
+      "sourceEnd": 8
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 9,
+      "sourceEnd": 12
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 13,
+      "sourceEnd": 14
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 15,
+      "sourceEnd": 22
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "9dcd907d2804bad3d9d08542573ace9a6850cc43fd23ea2f8157d6486e561ab1",
+    "outputSha256": "9c43ff312556497e0a25fa69ec87cc59089a0404948e43a83e1c23dded6c2c8b"
+  }
+}

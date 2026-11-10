@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "p2.0",
+  "fixtureId": "LINK-01",
+  "translation": false,
+  "source": {
+    "p1SchemaVersion": "0.3.0",
+    "inputSha256": "2dd1230df83e4ac4ab7641faf9a7f015f033fbd14b0b1934210db7f51d6b627b",
+    "blocks": [
+      {
+        "id": "b0001",
+        "type": "paragraph",
+        "path": "main > p:nth-of-type(1)",
+        "textStart": 0,
+        "textEnd": 46,
+        "text": "Read the eligibility guidance before applying."
+      }
+    ]
+  },
+  "upstream": {
+    "repository": "sign-language-processing/spoken-to-signed-translation",
+    "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
+    "license": "MIT",
+    "wsdModel": "sign/Ettin-150m-WSD",
+    "wsdRevision": "8751b577199d1bb95b74fa2457da7065d57100ae",
+    "wordnet": "omw-en:1.4",
+    "spacyModel": "en_core_web_lg@3.8.0 (spaCy 3.8.16)"
+  },
+  "language": {
+    "spoken": "en",
+    "signed": "ase"
+  },
+  "plan": {
+    "sentences": [
+      {
+        "tokens": [
+          {
+            "word": "Read",
+            "lemma": "read",
+            "pos": "VERB",
+            "dep": "ROOT",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 0,
+            "sourceEnd": 4,
+            "status": "aligned",
+            "gloss": "read"
+          },
+          {
+            "word": "eligibility",
+            "lemma": "eligibility",
+            "pos": "NOUN",
+            "dep": "compound",
+            "head": 3,
+            "blockId": "b0001",
+            "sourceStart": 9,
+            "sourceEnd": 20,
+            "status": "aligned",
+            "gloss": "eligibility"
+          },
+          {
+            "word": "guidance",
+            "lemma": "guidance",
+            "pos": "NOUN",
+            "dep": "dobj",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 21,
+            "sourceEnd": 29,
+            "status": "aligned",
+            "gloss": "guidance"
+          },
+          {
+            "word": "before",
+            "lemma": "before",
+            "pos": "ADP",
+            "dep": "prep",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 30,
+            "sourceEnd": 36,
+            "status": "aligned",
+            "gloss": "before"
+          },
+          {
+            "word": "applying",
+            "lemma": "apply",
+            "pos": "VERB",
+            "dep": "pcomp",
+            "head": 4,
+            "blockId": "b0001",
+            "sourceStart": 37,
+            "sourceEnd": 45,
+            "status": "aligned",
+            "gloss": "apply"
+          },
+          {
+            "word": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct",
+            "head": 0,
+            "blockId": "b0001",
+            "sourceStart": 45,
+            "sourceEnd": 46,
+            "status": "aligned",
+            "gloss": "."
+          }
+        ],
+        "indexes": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "changes": [
+          {
+            "sentence": 0,
+            "rule": "omit-function-word",
+            "source_tokens": [
+              1
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "sentence": 0,
+            "code": "semantic-rules-unavailable"
+          }
+        ]
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "candidateIndex": 0,
+      "blockId": "b0001",
+      "sourceStart": 0,
+      "sourceEnd": 4
+    },
+    {
+      "candidateIndex": 1,
+      "blockId": "b0001",
+      "sourceStart": 9,
+      "sourceEnd": 20
+    },
+    {
+      "candidateIndex": 2,
+      "blockId": "b0001",
+      "sourceStart": 21,
+      "sourceEnd": 29
+    },
+    {
+      "candidateIndex": 3,
+      "blockId": "b0001",
+      "sourceStart": 30,
+      "sourceEnd": 36
+    },
+    {
+      "candidateIndex": 4,
+      "blockId": "b0001",
+      "sourceStart": 37,
+      "sourceEnd": 45
+    },
+    {
+      "candidateIndex": 5,
+      "blockId": "b0001",
+      "sourceStart": 45,
+      "sourceEnd": 46
+    }
+  ],
+  "status": "partial",
+  "abstentions": [],
+  "warnings": [
+    "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
+    "Owner alignment review is pending.",
+    "WSD model output was generated locally and is not committed.",
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
+  ],
+  "hashes": {
+    "inputSha256": "2dd1230df83e4ac4ab7641faf9a7f015f033fbd14b0b1934210db7f51d6b627b",
+    "outputSha256": "33ae9f1fb584ca9a761f2df6c2374d871bdd4da838ab16485ff09b503203698c"
+  }
+}

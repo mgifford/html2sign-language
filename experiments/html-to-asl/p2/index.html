@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P2 lexical plans | Research Bench</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2310263c'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="p2.css">
+</head>
+<body>
+  <a class="skip" href="#p2-main">Skip to the lexical plans</a>
+  <header class="mast">
+    <div class="wrap">
+      <span class="eyebrow">P2.2 / RESEARCH OUTPUT</span>
+      <h1>P2 precomputed lexical plans</h1>
+      <p><strong>These are lexical plans, not ASL.</strong> No nonmanual markers, spatial grammar, classifiers, role shift, or aspect are represented. Owner alignment review is pending.</p>
+    </div>
+  </header>
+  <main id="p2-main" class="wrap">
+    <section class="warning" aria-label="Research limitations">
+      <strong>Do not treat this as a translation.</strong> The upstream rules omit and reorder English source words. They do not produce fluent ASL and must not feed the public avatar.
+    </section>
+
+    <section class="panel" aria-labelledby="p2-choose">
+      <h2 id="p2-choose">Choose a fixture</h2>
+      <label for="p2-fixture">Precomputed development fixture</label>
+      <select id="p2-fixture" aria-describedby="p2-meta" disabled></select>
+      <p id="p2-status" role="status" aria-live="polite">Loading index…</p>
+      <p id="p2-meta" class="subtle"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="p2-source-title">
+      <h2 id="p2-source-title">Source blocks</h2>
+      <div id="p2-source"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="p2-plan-title">
+      <h2 id="p2-plan-title">Lexical plan</h2>
+      <div class="table-scroll" id="p2-plan-scroll">
+        <table id="p2-tokens">
+          <caption>Ordered candidates. “Gloss” is the upstream candidate string, not a validated ASL sign.</caption>
+          <thead><tr><th scope="col">#</th><th scope="col">Word</th><th scope="col">Gloss</th><th scope="col">POS</th><th scope="col">Block</th><th scope="col">Alignment</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <h3>Upstream changes and notes</h3>
+      <ul id="p2-changes"></ul>
+      <h3>Warnings</h3>
+      <ul id="p2-warnings"></ul>
+    </section>
+
+    <p><a href="../">Back to the HTML analysis bench</a></p>
+  </main>
+  <footer class="wrap"><p>Research prototype. Lexical plan only; no ASL or accessibility-conformance claim.</p></footer>
+  <script type="module" src="p2.js"></script>
+</body>
+</html>

@@ -4,13 +4,15 @@
   "translation": false,
   "source": {
     "p1SchemaVersion": "0.3.0",
-    "inputSha256": "130f05ff9597792ba4189f5d5837f32ec1553aedd16e297c7d69e897cc1602bc",
+    "inputSha256": "575fa665cb899fb9b8403f41b4a900d72059efe392d1030de6cc5b21d44f0e5f",
     "blocks": [
       {
         "id": "b0001",
+        "type": "paragraph",
         "path": "main > p:nth-of-type(1)",
         "textStart": 0,
-        "textEnd": 29
+        "textEnd": 29,
+        "text": "You do not need to pay a fee."
       }
     ]
   },
@@ -190,13 +192,13 @@
   "abstentions": [],
   "warnings": [
     "Lexical plan only, not ASL. Nonmanual markers and spatial grammar are not represented.",
-    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped.",
+    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests.",
     "Owner alignment review is pending.",
     "WSD model output was generated locally and is not committed.",
-    "Prototype used source checkouts and a local model snapshot, not pinned CPU images; reproducibility waits on the image digests."
+    "Upstream reports semantic-rules-unavailable; temporal/infinitive rules were skipped."
   ],
   "hashes": {
-    "inputSha256": "130f05ff9597792ba4189f5d5837f32ec1553aedd16e297c7d69e897cc1602bc",
-    "outputSha256": "6266db0a59747e1e879534ae784c254e6e5e8ea66b7ee9f2df7e2bf5298e7553"
+    "inputSha256": "575fa665cb899fb9b8403f41b4a900d72059efe392d1030de6cc5b21d44f0e5f",
+    "outputSha256": "d96e4677393b1f326923b1ef909e96abf106b83cd3e2cd5a4d3122e407451209"
   }
 }
