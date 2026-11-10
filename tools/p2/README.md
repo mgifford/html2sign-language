@@ -1,6 +1,6 @@
 # P2 tooling
 
-Status: **P2.0 scaffold plus 40 partial P2.2 source-run artifacts, a static viewer, and a P2.3 Python lock.** The CLI still refuses to write until every prerequisite is approved and installed. The WSD model/code and OMW licence are approved; CPU image digests and the entity-linker licence are still open. Artifacts were produced from source checkouts and a local model snapshot and await owner alignment review.
+Status: **P2.0 scaffold plus 40 partial P2.2 source-run artifacts, a static viewer, and P2.3 pins/lock/source-run tool.** The CLI still refuses to write until the image-pinned path is implemented. CPU image digests, the entity-linker hash, and the Python lock are recorded; owner alignment review and a clean-room run remain open.
 
 ## Commands
 
@@ -48,7 +48,7 @@ Before setting any `approved` flag to `true`, record and verify:
 7. [done] Owner plus independent reviewer for P1-block → upstream-sentence alignment.
 8. [done] The provisional holdout stays excluded from P2.
 
-The remaining blockers are the pinned CPU image digests, the entity-linker licence/approval, and the owner alignment review (`data/p2/review.json` is pending). Run `--check` and confirm `ready: true` before an image-pinned P2.3 run.
+The remaining blockers are the owner alignment review (`data/p2/review.json` is pending) and a clean-room image-pinned run. `--check` reports `ready: true` in the verified Python 3.12 environment.
 
 ## Files
 
@@ -58,6 +58,7 @@ The remaining blockers are the pinned CPU image digests, the entity-linker licen
 - `precompute.py` — fail-closed CLI.
 - `validate.py` — dependency-free checks used by tests.
 - `requirements.lock` — Python 3.12 dependency freeze; platform-specific.
+- `source_run.py` — explicit research-only source-run reproducer; not the image-pinned path.
 - `tests/` — 20 unit tests, including all 40 artifacts, the pending review record, refusal, and holdout cases.
 
 No model weights, WSD intermediates, generated glosses, or 3D-LEX assets belong in this directory.

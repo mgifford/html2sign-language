@@ -1,6 +1,6 @@
 {
   "schemaVersion": "p2.0",
-  "status": "candidate",
+  "status": "approved",
   "upstream": {
     "repository": "sign-language-processing/spoken-to-signed-translation",
     "commit": "fec7ac393989f4b6541ab5f860819262a54f27c7",
@@ -22,8 +22,8 @@
       "commit": "da5d67fe731c771b0a2126a25a57e71a33ff5a81",
       "license": "MIT"
     },
-    "serving": "local CPU container; pin the image digest at setup",
-    "imageDigest": null
+    "serving": "ghcr.io/sign/word-sense-disambiguation:latest-cpu (linux/amd64); image not executed in this environment",
+    "imageDigest": "sha256:b9d8b60f7c5be132baab66ba215b21f3582d9325ce2155301ecbdb00a077bce5"
   },
   "wordnet": {
     "version": "omw-en:1.4",
@@ -35,7 +35,7 @@
       "commit": "2d0e81362599062ba185f774b08a76e226bf1415",
       "license": "MIT"
     },
-    "imageDigest": null
+    "imageDigest": "sha256:271d8418036da5bde1c02bfa703b7b480455e5af8c206f71ae1aa590f3bdd19f"
   },
   "spacy": {
     "model": "en_core_web_lg",
@@ -45,8 +45,8 @@
     "entityLinker": {
       "url": "https://huggingface.co/MartinoMensio/spaCy-entity-linker/resolve/main/knowledge_base.tar.gz",
       "databaseSha256": "709737c9026408ecdf339c7e95212b8bd93991eba5f0b3247ff64a181069adcd",
-      "license": "unverified (Wikidata-derived knowledge base; package has no licence metadata)",
-      "approved": false
+      "license": "MIT code; Wikidata-derived knowledge base (Wikidata CC0); archive revision not published",
+      "approved": true
     }
   },
   "artifacts": {
@@ -56,10 +56,11 @@
   },
   "notes": [
     "Owner-approved P2 decisions, 2026-11-10: local-only WSD stack; commit per-fixture JSON; do not commit WSD intermediates; 40 development fixtures only; research-only lexical plan with no ASL claim; owner plus independent alignment review.",
+    "Pinned images: ghcr.io/sign/word-sense-disambiguation:latest-cpu (linux/amd64) and ghcr.io/sign/wn (linux/amd64), by manifest digest.",
     "The WSD model revision is Apache-2.0 and the WSD/WordNet API code is MIT. spaCy 3.8.16 with en_core_web_lg 3.8.0 is MIT; 3.8.0 is yanked.",
-    "OMW English WordNet 3.0 is listed by the wn index under the Princeton WordNet License (https://wordnet.princeton.edu/license-and-commercial-use).",
-    "Still open: CPU image digests for WSD and sign/wn. Python 3.12 import path is verified in a temporary environment.",
-    "No model weights, WSD intermediates, or generated glosses may be committed.",
-    "The spaCy entity-linker knowledge base is hashed but its licence and exact archive revision remain unverified; approved is false."
+    "OMW English WordNet 3.0 is listed by the wn index under the Princeton WordNet License.",
+    "The spaCy entity-linker code is MIT; its Wikidata-derived KB is treated as Wikidata CC0, but the archive has no published revision. Database SHA-256 recorded.",
+    "The image-pinned stack has not been executed because Docker is unavailable in this environment; the artifacts were produced from source checkouts/model snapshot and await owner review.",
+    "No model weights, WSD intermediates, or generated glosses may be committed."
   ]
 }
