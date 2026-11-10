@@ -28,9 +28,9 @@ class PinTests(unittest.TestCase):
         self.assertEqual(self.pins["wsd"]["revision"], "8751b577199d1bb95b74fa2457da7065d57100ae")
         self.assertEqual(self.pins["wsd"]["license"], "Apache-2.0")
         self.assertTrue(self.pins["wordnet"]["approved"])
-        self.assertIsNone(self.pins["wsd"]["imageDigest"])
-        self.assertIsNone(self.pins["wordnet"]["imageDigest"])
-        self.assertFalse(self.pins["spacy"]["entityLinker"]["approved"])
+        self.assertTrue(self.pins["wsd"]["imageDigest"].startswith("sha256:"))
+        self.assertTrue(self.pins["wordnet"]["imageDigest"].startswith("sha256:"))
+        self.assertTrue(self.pins["spacy"]["entityLinker"]["approved"])
         self.assertEqual(len(self.pins["spacy"]["entityLinker"]["databaseSha256"]), 64)
 
     def test_invalid_commit_is_rejected(self):
@@ -43,12 +43,9 @@ class PinTests(unittest.TestCase):
         self.assertFalse(precompute.python_supported(">=3.11,<3.13", (3, 14)))
         self.assertFalse(precompute.python_supported("invalid", (3, 11)))
 
-    def test_image_digests_are_still_open(self):
-        missing = precompute.missing_prerequisites(self.pins, version=(3, 11), module_exists=lambda _: True)
-        self.assertTrue(any("WSD CPU image digest" in item for item in missing))
-        self.assertTrue(any("WordNet API CPU image digest" in item for item in missing))
-        self.assertTrue(any("entity-linker knowledge base" in item for item in missing))
-        self.assertFalse(any("WordNet resource not approved" in item for item in missing))
+    def test_complete_pins_are_ready_on_python_3_12(self):
+        missing = precompute.missing_prerequisites(self.pins, version=(3, 12), module_exists=lambda _: True)
+        self.assertEqual(missing, [])
 
     def test_fully_pinned_stack_is_ready(self):
         pins = copy.deepcopy(self.pins)
@@ -96,6 +93,7 @@ class CliTests(unittest.TestCase):
             result = self.run_cli("--fixture", "NO-SUCH-FIXTURE", "--output", str(Path(directory) / "p2"))
             self.assertEqual(result.returncode, 2)
             self.assertIn("unknown", result.stderr)
+
 
 
 class SchemaTests(unittest.TestCase):
