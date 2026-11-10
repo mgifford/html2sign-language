@@ -38,7 +38,8 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - **PR 0 (done, 2026-11-10):** integrate the starter, add relative links, fix paths, add this record, and add the experiment test command.
 - **PR 1 (implemented, pending review, 2026-11-10):** P0 verification and hardening: extraction tests, JSON contract, manifest failure, browser smoke test, and access fixes.
 - **PR 2 (implemented, pending review, 2026-11-10):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The holdout is not blind until the owner replaces or reviews it.
-- **PR 3 (next, after PR 2 review):** P2 upstream adapter proposal.
+- **PR 3 (implemented, pending review, 2026-11-10):** P2 proposal only, in `experiments/html-to-asl/docs/P2-ADAPTER.md`; no code, model, data, or runtime change.
+- **PR 4 (next, after PR 3 review):** P2 implementation after the owner resolves the P2 decisions.
 - Do not combine P1 with P0 verification. The owner controls the holdout fixtures, not the implementing agent.
 
 ## D7 — Claim separation (Accepted, 2026-11-10)
@@ -47,3 +48,9 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 - Extraction tests are not ASL linguistic review.
 - Playwright or axe checks are not accessibility conformance.
 - State each claim separately in the README, test report, and UI.
+
+## D8 — P2 adapter proposal (Open)
+
+- The P2 proposal is a design only. It pins a candidate upstream commit (`fec7ac3…`, MIT) but does not approve a WSD model, WordNet resource, or committed precomputed JSON yet.
+- P2 must run offline and fail closed; GitHub Pages must serve static JSON only, with no Python, model, or external API at runtime.
+- Open decisions are listed in `experiments/html-to-asl/docs/P2-ADAPTER.md` section 12.

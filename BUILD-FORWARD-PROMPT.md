@@ -11,7 +11,8 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 - **PR 0 (done):** integrate the starter, link it from the main page, fix paths, record decisions, and add the experiment test command. No runtime or licence changes.
 - **PR 1 (implemented, pending review):** P0 verification and hardening: extractor tests, JSON contract, manifest failure, browser smoke, access fixes. P1 has not started.
 - **PR 2 (implemented, pending review):** P1 extractor, 40 development fixtures, and a 20-case provisional holdout. The owner must replace or review the holdout before using it as a blind set.
-- **PR 3 (next, after PR 2 review):** P2 upstream adapter proposal; no implementation before review.
+- **PR 3 (implemented, pending review):** P2 proposal only: pinned offline adapter design, data contract, failure modes, licences and acceptance criteria. No upstream code, model, data, or runtime change.
+- **PR 4 (next, after PR 3 review):** P2 implementation only after the owner resolves the P2 decisions.
 
 ## First tasks
 
@@ -21,7 +22,7 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 4. P1's extractor is implemented: stable source IDs/paths/text spans; headings, nested lists, links with href, tables with header associations and scope, form labels/required/ARIA, and alt text; adversarial and Unicode tests. Verify the P1 gate and record remaining structural gaps before P2.
 5. The 40 development and 20 provisional holdout fixtures are present. The holdout is agent-authored and not blind; the owner must replace or review it before evaluation. See `experiments/html-to-asl/fixtures/HOLDOUT.md`.
 6. Record changes, reasons, limitations, citations and credit in `experiments/html-to-asl/docs/UPSTREAM.md`; add an upstream maintenance/contribution plan. No copied media, 3D-LEX motions or models without explicit licence review.
-7. Propose P2 upstream `spoken-to-signed-translation` adapter design before implementing. GitHub Pages needs precomputed JSON or a browser-native library; it cannot run Python server-side.
+7. The P2 proposal is in `experiments/html-to-asl/docs/P2-ADAPTER.md`. Do not implement P2 until the owner resolves the open decisions in section 12. GitHub Pages needs precomputed JSON; it cannot run Python server-side.
 
 ## Non-negotiable rules
 
@@ -40,7 +41,7 @@ Continue the research bench at `experiments/html-to-asl/` without replacing the 
 - A separate P1 PR for the block-aware extractor and the 40/20 fixture split. The provisional holdout must be owner-reviewed or replaced before it is used as a blind set.
 - Test report (commands, browsers, outcomes), fixture manifest and version hashes.
 - Updated architecture and attribution notes including 3D-LEX citation and licence/access caveat.
-- An issue-ready P2 proposal with acceptance criteria, not a premature AI translator.
+- An issue-ready P2 proposal with acceptance criteria (`experiments/html-to-asl/docs/P2-ADAPTER.md`), not a premature AI translator or model.
 - No claims of validated ASL content.
 
 Stop and summarize what changed, what was omitted, why, and the next experimentally testable decision.
