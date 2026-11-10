@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {markEnglishConcepts,checkExpectedTokens,createBaseline} from '../src/core.mjs';
+test('negation and modality are recorded, not translated',()=>{const blocks=[{id:'b1',text:'You may apply but must not pay.'}];const kinds=markEnglishConcepts(blocks).map(x=>x.kind);assert.ok(kinds.includes('negation'));assert.ok(kinds.includes('permission'));assert.ok(kinds.includes('obligation'))});
+test('unmatched tokens remain visible as failures',()=>{assert.deepEqual(checkExpectedTokens([{text:'apply now'}],['apply','June 1']),[{term:'apply',preserved:true},{term:'June 1',preserved:false}])});
+test('no generated ASL lexical items',()=>{const r=createBaseline({id:'T',expectedTokens:['no']},[{id:'b1',text:'no fee'}]);assert.deepEqual(r.lexicalCandidates,[]);assert.equal(r.status,'english-analysis-only')});

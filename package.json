@@ -4,7 +4,9 @@
   "description": "This repository is a minimal, static demonstration of a **Sign Language Sidecar**: a 3D sign-language avatar that stays in view while users read long-form ICT accessibility content. The content focuses on how **EN 301 549 v3.2.1** is applied in **Canada** (CAN/ASC – EN 301 549:2024) versus the **European Union** (Web Accessibility Directive / European Accessibility Act).",
   "main": "app.js",
   "scripts": {
-    "test": "node tests/validate-imports.js",
+    "test": "node tests/validate-imports.js && node --test \"experiments/html-to-asl/tests/*.test.mjs\"",
+    "test:experiment": "node --test \"experiments/html-to-asl/tests/*.test.mjs\"",
+    "test:browser:experiment": "node experiments/html-to-asl/tests/browser.mjs",
     "validate": "node tests/validate-imports.js",
     "serve": "npx serve -l 8000",
     "avatar:fetch": "node tools/avatar/fetch-sources.mjs",
@@ -19,6 +21,7 @@
     "three": "^0.182.0"
   },
   "devDependencies": {
+    "linkedom": "^0.18.15",
     "playwright": "^1.65.0"
   }
 }
