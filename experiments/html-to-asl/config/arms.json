@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "0.1.0",
+  "arms": [
+    {
+      "id": "A",
+      "status": "english-analysis-only",
+      "implementation": "src/core.mjs"
+    },
+    {
+      "id": "B",
+      "status": "not-implemented"
+    },
+    {
+      "id": "C",
+      "status": "not-implemented"
+    },
+    {
+      "id": "D",
+      "status": "not-implemented"
+    }
+  ],
+  "language": {
+    "source": "en",
+    "target": "ase"
+  },
+  "datasetAssetsIncluded": false
+}

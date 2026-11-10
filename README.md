@@ -13,6 +13,8 @@ The goal is to treat sign language (LSF/ASL/IS) as a **first-class interface**, 
 - `app.js` – Three.js-based "signer" engine that loads a GLB avatar, plays idle and sign animations, and wires `data-sign` triggers.
 - `signs.json` – Metadata registry for all signs/animations (file name, description for screen readers, and regional label).
 - `AGENTS.md` – Guidance for AI agents contributing to this repo (stack constraints, EN 301 549 / WCAG expectations).
+- `docs/DECISIONS.md` – Current project decisions and open questions (licence, avatar format, experiment boundary).
+- `experiments/html-to-asl/` – English-only HTML analysis research bench; it does not produce ASL. Linked from the main page footer.
 - `RESEARCH.md` – Background links and notes on existing 3D sign-language avatar work (CNRS/LIMSI, SignAvatars, JASigning, etc.).
 - `models/avatar.glb` – **(You provide)** Base avatar model with an idle animation.
 - `animations/*.glb` – **(You provide)** Per-sign animation clips, one GLB file per `data-sign` key.
@@ -114,6 +116,11 @@ You can use any static HTTP server. Two simple options:
   ```
 
 GitHub Pages will serve the same files directly from the default branch.
+
+Tests:
+
+- `npm test` runs the legacy import validation and the experiment's Node tests.
+- `npm run test:browser:experiment` runs the Chromium/Chrome smoke test for the experiment.
 
 ### 3.2 Prepare Your 3D Assets
 

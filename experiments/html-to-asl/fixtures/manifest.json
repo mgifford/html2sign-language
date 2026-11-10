@@ -1,0 +1,139 @@
+[
+  {
+    "id": "NEG-01",
+    "title": "Negation",
+    "html": "<main><p>You do not need to pay a fee.</p></main>",
+    "invariant": "Negation must apply to requirement to pay.",
+    "expectedTokens": [
+      "do not",
+      "pay a fee"
+    ],
+    "notes": "Preserve negative obligation."
+  },
+  {
+    "id": "MOD-01",
+    "title": "Permission versus obligation",
+    "html": "<main><p>You may appeal. You must appeal within 30 days.</p></main>",
+    "invariant": "Distinguish permission to appeal from mandatory deadline if appealing.",
+    "expectedTokens": [
+      "may appeal",
+      "must appeal",
+      "30 days"
+    ],
+    "notes": "Modal verbs are critical."
+  },
+  {
+    "id": "COND-01",
+    "title": "Exception and deadline",
+    "html": "<main><p>Apply before June 1 unless you have an extension.</p></main>",
+    "invariant": "Preserve deadline and exception.",
+    "expectedTokens": [
+      "before June 1",
+      "unless",
+      "extension"
+    ],
+    "notes": "Exceptions must not disappear."
+  },
+  {
+    "id": "LEX-01",
+    "title": "Ambiguous application",
+    "html": "<main><p>Download the application before submitting your application.</p></main>",
+    "invariant": "Software versus benefits application senses need context.",
+    "expectedTokens": [
+      "download the application",
+      "submitting your application"
+    ],
+    "notes": "No ASL mapping implied."
+  },
+  {
+    "id": "DOC-01",
+    "title": "Coreference",
+    "html": "<main><p>Maria submitted her application.</p><p>She can check its status online.</p></main>",
+    "invariant": "Link she to Maria and its to application.",
+    "expectedTokens": [
+      "Maria",
+      "She",
+      "its status"
+    ],
+    "notes": "Cross-paragraph relationships."
+  },
+  {
+    "id": "HTML-01",
+    "title": "List semantics",
+    "html": "<main><h2>Required documents</h2><ul><li>Proof of address</li><li>Photo identification</li></ul></main>",
+    "invariant": "Preserve heading and both items.",
+    "expectedTokens": [
+      "Required documents",
+      "Proof of address",
+      "Photo identification"
+    ],
+    "notes": "List structural extraction."
+  },
+  {
+    "id": "SEC-01",
+    "title": "Untrusted markup",
+    "html": "<main><p>Applications close Friday.</p><script>window.bad=true</script></main>",
+    "invariant": "Do not execute code; retain human-visible content.",
+    "expectedTokens": [
+      "Applications close Friday"
+    ],
+    "notes": "Inert DOMParser handling."
+  },
+  {
+    "id": "NAV-01",
+    "title": "Ignore navigation",
+    "html": "<nav><p>Home About Contact</p></nav><main><h1>Apply for a licence</h1><p>Send your form online.</p></main>",
+    "invariant": "Exclude navigation, preserve main content.",
+    "expectedTokens": [
+      "Apply for a licence",
+      "Send your form online"
+    ],
+    "notes": "Article scope."
+  },
+  {
+    "id": "QTY-01",
+    "title": "Quantity preservation",
+    "html": "<main><p>Provide two references and pay $25.</p></main>",
+    "invariant": "Retain exact quantity and payment.",
+    "expectedTokens": [
+      "two references",
+      "$25"
+    ],
+    "notes": "Numbers and amounts."
+  },
+  {
+    "id": "LINK-01",
+    "title": "Link context",
+    "html": "<main><p>Read the <a href=\"/guidance\">eligibility guidance</a> before applying.</p></main>",
+    "invariant": "Retain link text and dependency.",
+    "expectedTokens": [
+      "eligibility guidance",
+      "before applying"
+    ],
+    "notes": "Future phase should preserve href metadata."
+  },
+  {
+    "id": "TABLE-01",
+    "title": "Table semantics",
+    "html": "<main><table><tr><th>Type</th><th>Fee</th></tr><tr><td>Adult</td><td>$20</td></tr></table></main>",
+    "invariant": "Preserve cell values and their header relationships.",
+    "expectedTokens": [
+      "Type",
+      "Fee",
+      "Adult",
+      "$20"
+    ],
+    "notes": "P0 extracts cells but does NOT yet preserve header association."
+  },
+  {
+    "id": "FORM-01",
+    "title": "Form instructions",
+    "html": "<main><label for=\"email\">Email address</label><input id=\"email\" type=\"email\" required><p>Fields marked required must be completed.</p></main>",
+    "invariant": "Preserve accessible label, required property, and instructions.",
+    "expectedTokens": [
+      "Email address",
+      "required must be completed"
+    ],
+    "notes": "P0 does NOT yet encode input required attribute."
+  }
+]
