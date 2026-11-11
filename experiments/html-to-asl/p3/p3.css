@@ -51,21 +51,25 @@
   overflow-x: auto;
 }
 
-#runs-table {
+#runs-table,
+#compare-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.85rem;
 }
 
 #runs-table th,
-#runs-table td {
+#runs-table td,
+#compare-table th,
+#compare-table td {
   border: 1px solid #cbd5e1;
   padding: 0.35rem 0.45rem;
   text-align: left;
   overflow-wrap: anywhere;
 }
 
-#runs-table th {
+#runs-table th,
+#compare-table th {
   background: #f1f5f9;
 }
 

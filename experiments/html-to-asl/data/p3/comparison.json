@@ -1,0 +1,555 @@
+{
+  "schemaVersion": "p3.2-comparison",
+  "status": "descriptive",
+  "disclaimer": "Counts and alignment only. This is not an ASL quality, semantic-equivalence, or comprehension measure. Lexical plans are not ASL.",
+  "model": {
+    "id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "revision": "31b70e2e869a7173562077fd711b654946d38674",
+    "license": "Apache-2.0",
+    "file": "onnx/model_q4f16.onnx",
+    "fileSha256": "d94946187fb5f27579f3db4ba21fb7f7466c7cbd18956bd420d3981f75282f9c",
+    "fileBytes": 1108730338,
+    "tokenizerSha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+    "library": "@huggingface/transformers",
+    "libraryVersion": "4.3.2",
+    "dtype": "q4f16",
+    "device": "wasm",
+    "source": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct"
+  },
+  "environment": {
+    "runtime": "node",
+    "device": "cpu",
+    "os": "macOS arm64",
+    "browser": null,
+    "note": "P3.2 offline runs used Node/CPU; the separate NEG-01 browser run is recorded in NEG-01-browser.json."
+  },
+  "fixtures": [
+    {
+      "fixtureId": "NEG-01",
+      "original": "You do not need to pay a fee.",
+      "simplified": "No fee.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [
+        "not"
+      ],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 6,
+        "aligned": 6,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 3,
+        "aligned": 3,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": -3,
+      "tokenRatio": 0.5,
+      "originalSourceWords": 8,
+      "simplifiedSourceWords": 2,
+      "originalTokensPerWord": 0.75,
+      "simplifiedTokensPerWord": 1.5
+    },
+    {
+      "fixtureId": "MOD-01",
+      "original": "You may appeal. You must appeal within 30 days.",
+      "simplified": "You may appeal.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [
+        "30",
+        "must"
+      ],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 11,
+        "aligned": 11,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": -7,
+      "tokenRatio": 0.364,
+      "originalSourceWords": 9,
+      "simplifiedSourceWords": 3,
+      "originalTokensPerWord": 1.222,
+      "simplifiedTokensPerWord": 1.333
+    },
+    {
+      "fixtureId": "COND-01",
+      "original": "Apply before June 1 unless you have an extension.",
+      "simplified": "Apply before June 1 unless you have an extension.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 9,
+        "aligned": 9,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 9,
+        "aligned": 9,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 9,
+      "simplifiedSourceWords": 9,
+      "originalTokensPerWord": 1.0,
+      "simplifiedTokensPerWord": 1.0
+    },
+    {
+      "fixtureId": "LEX-01",
+      "original": "Download the application before submitting your application.",
+      "simplified": "Download the application before submitting your application.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 7,
+        "aligned": 7,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 7,
+        "aligned": 7,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 7,
+      "simplifiedSourceWords": 7,
+      "originalTokensPerWord": 1.0,
+      "simplifiedTokensPerWord": 1.0
+    },
+    {
+      "fixtureId": "SEC-01",
+      "original": "Applications close Friday.",
+      "simplified": "Applications close Friday.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 3,
+      "simplifiedSourceWords": 3,
+      "originalTokensPerWord": 1.333,
+      "simplifiedTokensPerWord": 1.333
+    },
+    {
+      "fixtureId": "QTY-01",
+      "original": "Provide two references and pay $25.",
+      "simplified": "Provide two references and pay $25.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 8,
+        "aligned": 8,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 8,
+        "aligned": 8,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 6,
+      "simplifiedSourceWords": 6,
+      "originalTokensPerWord": 1.333,
+      "simplifiedTokensPerWord": 1.333
+    },
+    {
+      "fixtureId": "LINK-01",
+      "original": "Read the eligibility guidance before applying.",
+      "simplified": "Read the eligibility guidance before applying.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 6,
+        "aligned": 6,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 6,
+        "aligned": 6,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 6,
+      "simplifiedSourceWords": 6,
+      "originalTokensPerWord": 1.0,
+      "simplifiedTokensPerWord": 1.0
+    },
+    {
+      "fixtureId": "STRUCT-LINK",
+      "original": "Read the rules first.",
+      "simplified": "Read the rules first.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 4,
+      "simplifiedSourceWords": 4,
+      "originalTokensPerWord": 1.0,
+      "simplifiedTokensPerWord": 1.0
+    },
+    {
+      "fixtureId": "STRUCT-LINKS",
+      "original": "First and Second.",
+      "simplified": "",
+      "validRuns": 0,
+      "totalRuns": 5,
+      "distinctValidOutputs": 0,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": null,
+      "tokenDelta": null,
+      "tokenRatio": null,
+      "originalSourceWords": 3,
+      "simplifiedSourceWords": 0,
+      "originalTokensPerWord": 1.333,
+      "simplifiedTokensPerWord": null
+    },
+    {
+      "fixtureId": "IMG-DECOR",
+      "original": "Decorative image above.",
+      "simplified": "",
+      "validRuns": 0,
+      "totalRuns": 5,
+      "distinctValidOutputs": 0,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": null,
+      "tokenDelta": null,
+      "tokenRatio": null,
+      "originalSourceWords": 3,
+      "simplifiedSourceWords": 0,
+      "originalTokensPerWord": 1.333,
+      "simplifiedTokensPerWord": null
+    },
+    {
+      "fixtureId": "IMG-NOALT",
+      "original": "Image without alt.",
+      "simplified": "Image without alt.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 4,
+        "aligned": 4,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 3,
+      "simplifiedSourceWords": 3,
+      "originalTokensPerWord": 1.333,
+      "simplifiedTokensPerWord": 1.333
+    },
+    {
+      "fixtureId": "QUOTE",
+      "original": "Access is a right, not a privilege.",
+      "simplified": "Access is a right, not a privilege.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 6,
+        "aligned": 6,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 6,
+        "aligned": 6,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 7,
+      "simplifiedSourceWords": 7,
+      "originalTokensPerWord": 0.857,
+      "simplifiedTokensPerWord": 0.857
+    },
+    {
+      "fixtureId": "BARE-DIV",
+      "original": "Office closes at noon.",
+      "simplified": "Office closes at noon.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 5,
+        "aligned": 5,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 5,
+        "aligned": 5,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 4,
+      "simplifiedSourceWords": 4,
+      "originalTokensPerWord": 1.25,
+      "simplifiedTokensPerWord": 1.25
+    },
+    {
+      "fixtureId": "HIDDEN",
+      "original": "Visible notice.",
+      "simplified": "Visible notice.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 3,
+        "aligned": 3,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 3,
+        "aligned": 3,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 2,
+      "simplifiedSourceWords": 2,
+      "originalTokensPerWord": 1.5,
+      "simplifiedTokensPerWord": 1.5
+    },
+    {
+      "fixtureId": "UNICODE",
+      "original": "R\u00e9sum\u00e9 \u2014 \u65e5\u672c\u8a9e \u2014 \u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+      "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 5,
+        "aligned": 5,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 5,
+        "aligned": 5,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 5,
+      "simplifiedSourceWords": 5,
+      "originalTokensPerWord": 1.0,
+      "simplifiedTokensPerWord": 1.0
+    },
+    {
+      "fixtureId": "INJECT",
+      "original": "Safe text.",
+      "simplified": "Safe text.",
+      "validRuns": 5,
+      "totalRuns": 5,
+      "distinctValidOutputs": 1,
+      "criticalMissing": [],
+      "originalPlan": {
+        "status": "partial",
+        "tokens": 3,
+        "aligned": 3,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "simplifiedPlan": {
+        "status": "partial",
+        "tokens": 3,
+        "aligned": 3,
+        "abstentions": 0,
+        "blockIds": [
+          "b0001"
+        ]
+      },
+      "tokenDelta": 0,
+      "tokenRatio": 1.0,
+      "originalSourceWords": 2,
+      "simplifiedSourceWords": 2,
+      "originalTokensPerWord": 1.5,
+      "simplifiedTokensPerWord": 1.5
+    }
+  ],
+  "summary": {
+    "fixtures": 16,
+    "validRuns": 70,
+    "totalRuns": 80,
+    "allFiveValid": 14,
+    "statusCounts": {
+      "partial": 14,
+      "null": 2
+    }
+  }
+}

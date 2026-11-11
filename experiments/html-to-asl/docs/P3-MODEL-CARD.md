@@ -57,4 +57,5 @@ The runtime and model are fetched only after the user checks the consent box and
 - Pinned metadata and tokenizer hash verified.
 - The page's deterministic states, consent gate, and 16-fixture loading are covered by Chromium tests without downloading the model.
 - **Browser model run, 2026-11-11:** [NEG-01-browser.json](../data/p3/NEG-01-browser.json). Chrome 157.0.8103.39 on macOS arm64, WASM/CPU, q4f16. `NEG-01` produced valid structured output: `{"simplified":"No fee.","changes":[{"from":"You do not need to pay a fee","to":"No fee","reason":"clear statement"}],"uncertainty":"","abstain":false}`. The mechanical critical-token check flagged `not` as missing because the simplification uses “No fee”; this is recorded as a review prompt, not automatically accepted or repaired.
+- P3.2’s 80 recorded runs used Node/CPU, not the browser; the environment is stored in `data/p3/runs.json`.
 - Model inference is not part of ordinary CI because of the 1.1 GB download and long WASM run.

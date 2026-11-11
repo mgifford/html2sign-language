@@ -90,6 +90,16 @@ test('validation rejects extra keys, missing fields, and abstain with text', () 
   assert.ok(validateModelOutput({ ...valid, abstain: true }).some((error) => error.includes('abstain')));
 });
 
+test('P3.2 comparison covers 16 fixtures with descriptive counts', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const comparison = JSON.parse(await readFile(new URL('../data/p3/comparison.json', import.meta.url), 'utf8'));
+  assert.equal(comparison.fixtures.length, 16);
+  assert.equal(comparison.summary.validRuns, 70);
+  assert.equal(comparison.summary.totalRuns, 80);
+  assert.equal(comparison.summary.allFiveValid, 14);
+  assert.match(comparison.disclaimer, /not an ASL quality/i);
+});
+
 test('simplifiedText joins sentences', () => {
   assert.equal(simplifiedText({ simplified: ['One.', 'Two.'] }), 'One. Two.');
   assert.equal(simplifiedText({}), '');

@@ -319,6 +319,42 @@ downloadButton.addEventListener('click', () => {
   URL.revokeObjectURL(url);
 });
 
+async function loadComparison() {
+  const status = $('compare-status');
+  const tbody = document.querySelector('#compare-table tbody');
+  try {
+    const response = await fetch('../data/p3/comparison.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('no comparison file');
+    const data = await response.json();
+    if (!Array.isArray(data.fixtures) || data.fixtures.length === 0) throw new Error('comparison is empty');
+    tbody.replaceChildren();
+    for (const item of data.fixtures) {
+      const row = document.createElement('tr');
+      const cells = [
+        item.fixtureId,
+        `${item.validRuns}/${item.totalRuns}`,
+        String(item.distinctValidOutputs),
+        String(item.originalPlan?.tokens ?? '—'),
+        String(item.simplifiedPlan?.tokens ?? '—'),
+        String(item.originalTokensPerWord ?? '—'),
+        String(item.simplifiedTokensPerWord ?? '—'),
+        item.simplifiedPlan?.status ?? '—',
+        item.criticalMissing?.length ? item.criticalMissing.join(', ') : 'none',
+      ];
+      for (const value of cells) {
+        const cell = document.createElement('td');
+        cell.textContent = value;
+        row.append(cell);
+      }
+      tbody.append(row);
+    }
+    status.textContent = `${data.fixtures.length} fixtures; ${data.summary?.validRuns ?? '—'}/${data.summary?.totalRuns ?? '—'} valid runs; ${data.disclaimer}`;
+  } catch (error) {
+    status.textContent = `No P3.2 comparison recorded (${error.message}). Run the offline comparison workflow.`;
+  }
+}
+
 detectBackend();
 setRunEnabled(false);
 loadFixtures();
+loadComparison();

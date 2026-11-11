@@ -273,6 +273,8 @@ try {
   assert.equal(await p3.isDisabled('#load-model'), true);
   assert.equal(await p3.isDisabled('#run-one'), true);
   assert.match(await p3.textContent('#model-status'), /No download has started/i);
+  await p3.waitForFunction(() => document.querySelectorAll('#compare-table tbody tr').length === 16);
+  assert.match(await p3.textContent('#compare-status'), /16 fixtures/);
   await p3.setViewportSize({ width: 320, height: 640 });
   await p3.waitForTimeout(200);
   const p3Reflow = await p3.evaluate(() => ({
