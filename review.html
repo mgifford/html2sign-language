@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML to Sign Language — review status</title>
+  <meta
+    name="description"
+    content="What exists in the HTML to sign language prototype, what is missing, and what a Deaf ASL reviewer or alignment reviewer can review now."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <h1>HTML to Sign Language — review status</h1>
+      <p class="tagline">
+        A research prototype, not a finished translator. This page separates what exists, what is missing, and what a
+        reviewer can actually review today.
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content" class="review-page">
+    <p class="review-lede">
+      <strong>There is no sentence-to-sign or page-to-sign feature yet.</strong>
+      The public demo has 24 isolated ASL word clips. The research bench produces English-to-gloss lexical plans for
+      16 prose fixtures; those plans are not ASL and are not played by the avatar.
+    </p>
+
+    <section aria-labelledby="exists">
+      <h2 id="exists">What exists</h2>
+      <div class="review-grid">
+        <article class="review-card">
+          <h3>24 isolated ASL word clips</h3>
+          <p>
+            The main page can play 24 short clips derived from WLASL. They are single signs with no sentence context.
+            The metadata file has 316 entries, but most do not have an animation file; only the 24 word clips plus idle
+            and test assets resolve.
+          </p>
+          <p><a href="./">Open the word demo</a></p>
+        </article>
+        <article class="review-card">
+          <h3>16 prose lexical plans</h3>
+          <p>
+            The P2 research bench has precomputed English-to-gloss plans for 16 single-block prose fixtures. A lexical
+            plan shows candidate gloss order and source spans. It has no nonmanual markers, spatial grammar,
+            classifiers, role shift, or avatar playback.
+          </p>
+          <p><a href="experiments/html-to-asl/p2/">Open the P2 viewer</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="missing">
+      <h2 id="missing">What is missing</h2>
+      <ul>
+        <li>Typing a sentence and seeing that sentence signed.</li>
+        <li>Pointing at an HTML page and having it read in sign language.</li>
+        <li>Continuous ASL grammar, nonmanual markers, spatial agreement, classifiers, and role shift.</li>
+        <li>Human-reviewed translations and a licensed production signing set.</li>
+        <li>Any public claim that the avatar is equivalent to a human interpreter.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="why">
+      <h2 id="why">Why adding words is not enough</h2>
+      <p>
+        Vocabulary is not grammar. Playing one sign after another does not produce an ASL sentence. ASL uses spatial
+        placement, verb direction, facial and head markers, classifiers, role shift, and context-dependent sign choice.
+        A larger dictionary would still not solve those problems.
+      </p>
+      <p>
+        The research path is therefore: lexical plans first, then a reviewed signing path with licensed or
+        human-translated units. The production route remains human translation, not free-English generation.
+      </p>
+    </section>
+
+    <section aria-labelledby="review-now">
+      <h2 id="review-now">What can be reviewed now</h2>
+      <ol>
+        <li>
+          <strong>Word clips (Deaf ASL reviewer):</strong> are these 24 isolated signs recognisable and appropriate?
+          This is a clip-by-clip review, not a sentence translation.
+        </li>
+        <li>
+          <strong>P2 lexical plans (owner/alignment reviewer):</strong> do the English source spans, block mapping,
+          omissions, and gloss order match the source? This is not an ASL review.
+        </li>
+        <li>
+          <strong>P2 linguistic plausibility (independent Deaf ASL reviewer):</strong> are the lexical sequences
+          plausible for the source, and what is missing? This must be done by a fluent Deaf ASL reviewer, not the
+          owner or implementer.
+        </li>
+      </ol>
+      <p class="review-warning">
+        If you cannot read ASL, do not record an independent ASL review. The review CLI requires an explicit
+        independent-reviewer attestation and the actual reviewer's name; the owner cannot self-attest.
+      </p>
+      <p>
+        Start with the
+        <a href="https://github.com/mgifford/html2sign-language/blob/main/experiments/html-to-asl/data/p2/review.md">one-page review table</a>,
+        the <a href="https://github.com/mgifford/html2sign-language/blob/main/experiments/html-to-asl/docs/P2-REVIEW.md">review packet</a>,
+        and the <a href="experiments/html-to-asl/p2/">P2 viewer</a>.
+      </p>
+    </section>
+
+    <section aria-labelledby="roadmap">
+      <h2 id="roadmap">Roadmap</h2>
+      <ol>
+        <li><strong>P2.4:</strong> owner alignment review and independent Deaf ASL review of the 16 prose lexical plans.</li>
+        <li><strong>P3/P4:</strong> prose-only browser-AI research (simplification, direct, hybrid); no avatar and no ASL claim.</li>
+        <li><strong>P5:</strong> licensed 3D-LEX or human-translated signing units with Deaf review.</li>
+        <li><strong>P6:</strong> optional playback only after licensing, review, and explicit approval.</li>
+      </ol>
+      <p><a href="experiments/html-to-asl/docs/P3-P4-RESEARCH.md">Read the P3/P4 research plan</a>.</p>
+    </section>
+
+    <section aria-labelledby="links">
+      <h2 id="links">Links</h2>
+      <ul>
+        <li><a href="./">Word-clip demo</a></li>
+        <li><a href="experiments/html-to-asl/">HTML to ASL research bench</a></li>
+        <li><a href="experiments/html-to-asl/p2/">P2 lexical-plan viewer</a></li>
+        <li><a href="https://github.com/mgifford/html2sign-language/blob/main/experiments/html-to-asl/data/p2/scope.json">P2 review scope</a></li>
+        <li><a href="https://github.com/mgifford/html2sign-language/issues">Feedback and issues</a></li>
+      </ul>
+    </section>
+
+    <p class="review-warning">
+      No ASL, accessibility-conformance, or translation claim is made. The 24 clips and the 16 lexical plans are
+      research materials awaiting independent review.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="./">Back to the prototype</a> &middot; <a href="experiments/html-to-asl/">Research bench</a></p>
+  </footer>
+</body>
+</html>

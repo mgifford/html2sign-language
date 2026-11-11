@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Failed HTML to Sign Attempt</title>
+  <title>HTML to Sign Language Prototype — Word Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Failed attempt to have a sign langugage verison - Sample EN 301 549 page comparing Canada and Europe with hooks for a sign language avatar."
+    content="Research prototype: a 24-word ASL clip demo, not a sentence or page translator. The HTML to ASL research bench reports lexical plans only."
   />
   <link rel="stylesheet" href="styles.css" />
   
@@ -23,10 +23,10 @@
 
   <header class="site-header">
     <div class="site-header-inner">
-      <h1>Failed HTML to Sign Attempt</h1>
+      <h1>HTML to Sign Language Prototype</h1>
       <p class="tagline">
-        An attempt to build a sign language version of a document about applying EN 301 549: Canada vs Europe
-        A sample single‑page layout showing how EN 301 549 is applied in Canada and the European Union, with sign language hooks.
+        A research prototype. This public page is a <strong>24-word ASL clip demo</strong>, not a sentence or page
+        translator. The HTML to ASL research bench produces lexical plans only. Sentence and page-to-sign are not built.
       </p>
     </div>
   </header>
@@ -53,7 +53,7 @@
           class="avatar-status"
           aria-hidden="true"
         >
-          Loading sign language avatar (VRM/GLB format). Biomechanical validation based on SignAvatars (ECCV 2024) standards.
+          Loading the 3D word-clip avatar. This is not a sentence or page translator.
         </p>
 
         <div class="avatar-controls">
@@ -83,10 +83,25 @@
     </aside>
 
     <div class="content-column">
-    <!-- REAL SIGN LANGUAGE DEMOS -->
+    <section class="prototype-notice" aria-labelledby="prototype-status">
+      <h2 id="prototype-status">Prototype status: word demo, not HTML to ASL</h2>
+      <p>
+        This page contains <strong>24 isolated ASL word clips</strong> from WLASL. It does not translate a typed
+        sentence or read an HTML page in sign language. It has no sentence grammar, nonmanual markers, spatial
+        grammar, classifiers, or role shift.
+      </p>
+      <p>
+        <a href="review.html">What exists, what is missing, and what can be reviewed</a>
+        &middot;
+        <a href="experiments/html-to-asl/">HTML to ASL research bench</a>
+        &middot;
+        <a href="experiments/html-to-asl/p2/">P2 lexical-plan viewer</a>
+      </p>
+    </section>
+
     <section aria-labelledby="test-section" class="sign-paragraph" style="background: #e8f5e9; padding: 1.5rem; border-left: 4px solid #4caf50; margin-bottom: 2rem;">
-      <h2 id="test-section" style="color: #2e7d32;">🎉 ASL Sign Language Demo</h2>
-      <p><strong>Click any word to see its ASL sign:</strong></p>
+      <h2 id="test-section" style="color: #2e7d32;">ASL word demo (24 words)</h2>
+      <p><strong>Click a word to play one isolated ASL clip.</strong> This is a vocabulary demo, not a sentence translation.</p>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.5rem; margin: 1rem 0;">
         <span class="sign-trigger" data-sign="ABLE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Able</span>
@@ -115,10 +130,11 @@
         <span class="sign-trigger" data-sign="AIRPLANE" style="padding: 0.5rem; background: #e3f2fd; border: 1px solid #2196f3; border-radius: 4px; text-align: center; cursor: pointer;">Airplane</span>
       </div>
       
-      <p style="font-size: 0.85em; color: #555; margin-top: 1rem;">
-        ✅ 124 ASL words from WLASL dataset<br>
-        ✅ SMPL-X full-body motion with hands and facial expressions<br>
-        ✅ Biomechanically validated (SignAvatars, ECCV 2024)
+      <p class="demo-facts">
+        <strong>24</strong> distinct ASL word clips from WLASL &middot;
+        <strong>316</strong> metadata entries, most without an animation file &middot;
+        single-sign playback only &middot;
+        not reviewed as ASL translations.
       </p>
     </section>
     
@@ -259,12 +275,14 @@
 
   <footer class="site-footer">
     <p>
-      This page is a demonstrator for integrating a 3D sign language avatar with EN&nbsp;301&nbsp;549 compliance content in a
-      static GitHub Pages environment.
+      This page is a demonstrator for a 3D word-clip avatar. It is not an HTML to ASL translator and does not replace
+      a human interpreter.
     </p>
     <p>
-      <a href="experiments/html-to-asl/">HTML to ASL research bench</a> &mdash; an English-only experiment that does not
-      produce ASL.
+      <a href="review.html">Project status and review guide</a>
+      &middot;
+      <a href="experiments/html-to-asl/">HTML to ASL research bench</a>
+      &mdash; an English-only experiment that does not produce ASL.
     </p>
   </footer>
 

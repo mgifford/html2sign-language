@@ -6,6 +6,8 @@ This repository is a minimal, static demonstration of a **Sign Language Sidecar*
 
 The goal is to treat sign language (LSF/ASL/IS) as a **first-class interface**, not decorative media, while remaining compatible with **GitHub Pages** (static hosting only).
 
+> **Current status:** the public demo has 24 isolated ASL word clips from WLASL. It is **not** a sentence or page translator. The HTML to ASL research bench produces lexical plans only, and the sentence/page-signing path is not built. See [the review status page](review.html) for what exists and what can be reviewed.
+
 ---
 
 ## 1. Repository Layout

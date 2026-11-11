@@ -297,3 +297,83 @@ th {
     padding-bottom: 8rem;
   }
 }
+
+/* Public prototype status and review page */
+.prototype-notice {
+  margin: 0 0 2rem;
+  padding: 1rem 1.25rem;
+  border-left: 6px solid #b45309;
+  border-radius: 0.5rem;
+  background: #fffbeb;
+  color: #111827;
+}
+
+.prototype-notice h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: #7c2d12;
+}
+
+.prototype-notice p {
+  margin: 0.5rem 0;
+}
+
+.demo-facts {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.review-page {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.review-lede {
+  padding: 1rem 1.25rem;
+  border-left: 6px solid #1d4ed8;
+  border-radius: 0.5rem;
+  background: #eff6ff;
+}
+
+.review-page h2 {
+  margin-top: 2rem;
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 0.25rem;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.review-card {
+  padding: 1rem 1.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+.review-card h3 {
+  margin-top: 0;
+}
+
+.review-warning {
+  padding: 0.75rem 1rem;
+  border-left: 6px solid #b91c1c;
+  background: #fef2f2;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 520px) {
+  .review-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .prototype-notice {
+    padding: 0.85rem 1rem;
+  }
+}

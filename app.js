@@ -446,7 +446,7 @@ async function loadAvatarModel() {
         }
         
         if (avatarStatus) {
-          avatarStatus.textContent = "✅ SMPL-X avatar loaded (biomechanically accurate with full hand & face detail for ASL)";
+          avatarStatus.textContent = "Avatar loaded. Word clips are isolated demonstrations, not ASL translations.";
         }
         
         debug("SMPL-X avatar initialization complete.");
@@ -508,7 +508,7 @@ function loadGLBAvatar(path, resolve, reject) {
 
         if (avatarStatus) {
           avatarStatus.textContent =
-            "Avatar loaded. Humanoid skeletal structure verified. ⚠️ Sign animations are placeholders - real sign language GLB files needed.";
+            "Avatar loaded. 24 isolated word clips are available; sentence signing is not implemented.";
         }
 
       debug("Base avatar and idle animation loaded successfully.");

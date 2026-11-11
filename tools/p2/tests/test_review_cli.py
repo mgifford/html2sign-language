@@ -40,8 +40,9 @@ class ReviewCliTests(unittest.TestCase):
         result = self.run_cli("--summary")
         self.assertEqual(result.returncode, 0, result.stderr)
         summary = json.loads(result.stdout)
-        self.assertEqual(summary["status"], "pending")
-        self.assertEqual(summary["ownerStatuses"]["pending"], 40)
+        self.assertIn(summary["status"], {"pending", "in-review"})
+        self.assertEqual(summary["inScope"]["total"], 16)
+        self.assertEqual(sum(summary["ownerStatuses"].values()), 40)
 
     def test_no_args_prints_summary_and_next_steps(self):
         result = self.run_cli()

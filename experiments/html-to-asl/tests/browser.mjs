@@ -70,9 +70,17 @@ try {
   assert.deepEqual(link, { text: 'HTML to ASL research bench', href: 'experiments/html-to-asl/' });
   await Promise.all([
     main.waitForURL('**/experiments/html-to-asl/'),
-    main.click('.site-footer a'),
+    main.click('.site-footer a[href="experiments/html-to-asl/"]'),
   ]);
   checks.mainLink = link.href;
+
+  const review = await context.newPage();
+  await review.goto(`${base}/review.html`, { waitUntil: 'domcontentloaded' });
+  assert.match(await review.title(), /review status/i);
+  assert.match(await review.textContent('main'), /no sentence-to-sign or page-to-sign feature yet/i);
+  assert.ok(await review.locator('a[href="experiments/html-to-asl/p2/"]').count());
+  checks.reviewPage = 'status and review links present';
+  await review.close();
 
   const page = await context.newPage();
   const consoleErrors = [];

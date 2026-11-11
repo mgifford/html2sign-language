@@ -1,12 +1,12 @@
 {
   "schemaVersion": "p2.4-review",
-  "status": "pending",
+  "status": "in-review",
   "artifactCount": 40,
   "owner": {
-    "status": "pending",
-    "reviewer": null,
-    "reviewedAt": null,
-    "notes": "Owner alignment review of all 40 artifacts has not started."
+    "status": "in-review",
+    "reviewer": "Michael Gifford",
+    "reviewedAt": "2026-11-11",
+    "notes": "Owner alignment review in progress: 1 of 16 in-scope accepted. This is not an ASL linguistic review."
   },
   "independent": {
     "status": "pending",
@@ -17,8 +17,8 @@
   "fixtures": [
     {
       "fixtureId": "NEG-01",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
+      "ownerStatus": "accepted",
+      "ownerNotes": "English source/gloss order checked; ASL not assessed",
       "linguisticStatus": "not-started",
       "linguisticNotes": ""
     },

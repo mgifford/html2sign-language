@@ -65,14 +65,14 @@ class Neg01ArtifactTests(unittest.TestCase):
                     self.assertEqual(token["status"], "aligned")
             self.assertEqual(artifact["abstentions"], [])
 
-    def test_owner_and_independent_reviews_are_explicitly_pending(self):
+    def test_independent_review_remains_pending(self):
         self.assertEqual(validate_review(self.review), [])
-        self.assertEqual(self.review["status"], "pending")
+        self.assertIn(self.review["status"], {"pending", "in-review"})
         self.assertEqual(self.review["artifactCount"], 40)
-        self.assertEqual(self.review["owner"]["status"], "pending")
+        self.assertIn(self.review["owner"]["status"], {"pending", "in-review"})
         self.assertEqual(self.review["independent"]["status"], "pending")
-        self.assertTrue(all(item["ownerStatus"] == "pending" for item in self.review["fixtures"]))
         self.assertTrue(all(item["linguisticStatus"] == "not-started" for item in self.review["fixtures"]))
+        self.assertFalse(any(item["linguisticStatus"] == "accepted" for item in self.review["fixtures"]))
         self.assertEqual(
             [item["fixtureId"] for item in self.review["fixtures"]],
             [item["fixtureId"] for item in self.index["artifacts"]],

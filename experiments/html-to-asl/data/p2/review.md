@@ -10,7 +10,7 @@ Status: **pending.** This table is a review aid, not an approval. Lexical plans 
 
 | Fixture | Scope | Artifact | Source | Plan (gloss/word order) | Owner | Independent |
 |---|---|---|---|---|---|---|
-| [NEG-01](NEG-01.json) | in | partial | You do not need to pay a fee. | you not need pay fee . | pending | not-started |
+| [NEG-01](NEG-01.json) | in | partial | You do not need to pay a fee. | you not need pay fee . | accepted | not-started |
 | [MOD-01](MOD-01.json) | in | partial | You may appeal. You must appeal within 30 days. | you may appeal . you must appeal within 30 day . | pending | not-started |
 | [COND-01](COND-01.json) | in | partial | Apply before June 1 unless you have an extension. | apply before june 1 unless you have extension . | pending | not-started |
 | [LEX-01](LEX-01.json) | in | partial | Download the application before submitting your application. | download application before submit your application . | pending | not-started |
