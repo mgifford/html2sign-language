@@ -1,6 +1,6 @@
 # Current status
 
-Snapshot date: **2026-11-11**. Baseline commit: **`10c931c`** (Phase B/P3.1 merged). This document is the authoritative current-status record; dated decision records and retrospectives remain historical.
+Snapshot date: **2026-11-11**. Baseline commit: **`ed0354d`** (P3.2 merged). This document is the authoritative current-status record; dated decision records and retrospectives remain historical.
 
 ## Current authorized phase
 
@@ -101,6 +101,28 @@ Known reproducibility evidence:
 - P2 review tests cover scope, missing review, attestation, and status transitions.
 - Firefox and WebKit were not run; the browser suite is Chromium-only.
 
+## Gates to Phase C and P5
+
+The code path is not the current blocker. These are the decisions and reviews that must happen first.
+
+| Gate | Current state | Required before proceeding |
+|---|---|---|
+| P2.4 owner source alignment | **1 of 16** prose fixtures accepted; 15 pending | Owner records `accepted` / `needs-discussion` / `rejected` for the remaining 15, with notes |
+| Independent Deaf ASL review | **Agreed as a requirement; no reviewer identity, date, or decisions recorded** | A fluent Deaf ASL reviewer reviews the agreed sample (at least 20%; 100% before any public ASL claim) and records identity/date/decisions |
+| P3.3 human analysis | **Not started** | Human review of P3 simplification meaning, uncertainty, and failures; no automatic “accuracy” score |
+| Phase C / P4 direct and hybrid | **Blocked** | P2.4 and P3.3 addressed; independent review recorded; prompts/models/rules frozen; owner-approved prose holdout; preregistered comparison |
+| P5 3D-LEX / avatar | **Blocked** | Phase C decision memo; 3D-LEX/ASL-LEX access, performer, and redistribution terms verified; reviewed ASL reference or human-translated units; Rocketbox/Three.js validation; independent Deaf ASL review; explicit owner authorization |
+
+**Nothing in Phase C or P5 is waiting on a code fix or CI.** The tests and P3.2 comparison pass. The next required work is human review, an independent reviewer, and a licensing/access decision.
+
+What can happen now:
+
+1. Review the 16 prose lexical plans and record owner alignment decisions.
+2. Run P3.3’s human semantic/uncertainty analysis.
+3. Obtain the independent Deaf ASL review.
+4. Decide whether/how to expand the prose corpus and prepare a reviewed holdout.
+5. Clarify 3D-LEX/ASL-LEX access and performer terms for P5.
+
 ## P3.2 descriptive findings
 
 - **70/80** Node/CPU model runs produced valid structured output; **14/16** fixtures had five valid runs. The separate Chrome/WASM run is recorded in `data/p3/NEG-01-browser.json`.
@@ -139,7 +161,7 @@ No automated flag, model output, or coding agent substitutes for these reviews.
 
 ## Next acceptance gate
 
-**Phase B/P3.2 review and merge.** P2.4 owner review (15/16 remaining) and the independent Deaf ASL review remain open. Phase C and P5 must not start automatically.
+**P3.3 human analysis and P2.4/independent review.** Phase C and P5 remain blocked until the gates above are closed. They must not start automatically.
 
 ## Related records
 
