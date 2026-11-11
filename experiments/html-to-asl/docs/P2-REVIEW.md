@@ -1,6 +1,6 @@
 # P2 review packet
 
-Status: **pending.** No owner alignment review or independent Deaf ASL review has been completed.
+Status: **in progress.** One owner source-alignment decision is recorded (`NEG-01`); independent Deaf ASL review has not started.
 
 This packet supports P2.4. It does not itself make a linguistic, accessibility, or ASL claim. The output being reviewed is an **English → ASL lexical plan**, not ASL.
 
@@ -10,7 +10,7 @@ This packet supports P2.4. It does not itself make a linguistic, accessibility, 
 - One-page review table: `experiments/html-to-asl/data/p2/review.md`
 - Automated risk flags: `experiments/html-to-asl/data/p2/review-qa.md` (advisory, not decisions)
 - Artifacts: `experiments/html-to-asl/data/p2/`
-- Review record: `data/p2/review.json` (40 entries, all pending)
+- Review record: `data/p2/review.json` (16 in-scope entries; 24 structurally out-of-scope entries marked `not-applicable`)
 - Contracts: `tools/p2/artifact.schema.json`, `tools/p2/review.schema.json`
 - Proposal and limits: `docs/P2-ADAPTER.md`
 - Claim boundary: `docs/DECISIONS.md`
@@ -24,7 +24,7 @@ This packet supports P2.4. It does not itself make a linguistic, accessibility, 
 - The 40 artifacts are `partial` because upstream reports `semantic-rules-unavailable`.
 - The source-run artifacts were produced from source checkouts and a local model snapshot. The image-pinned clean-room run later matched all 40 plan contents. Scope restriction is an engineering decision, not a linguistic validation.
 
-## 1. Owner alignment review (all 40)
+## 1. Owner alignment review (16 prose fixtures)
 
 For each fixture, compare:
 
@@ -34,7 +34,7 @@ For each fixture, compare:
 4. Notes, especially `semantic-rules-unavailable`.
 5. Any candidate that should have been an abstention.
 
-Record one `ownerStatus` per fixture:
+Record one `ownerStatus` per in-scope fixture; out-of-scope fixtures are `not-applicable` and must not be accepted or rejected as prose plans.
 
 - `accepted` — the mapping and omissions are acceptable for this research output.
 - `needs-discussion` — a specific mapping/omission needs another look.
@@ -70,7 +70,7 @@ This is separate from source alignment. It asks whether the lexical sequence is 
 Minimum process:
 
 - At least one independent fluent Deaf ASL reviewer, not the implementer.
-- Review at least 20% of the 40 artifacts as a sample.
+- Review at least 20% of the 16 in-scope prose artifacts as a sample.
 - Review 100% before any public ASL claim.
 - Review lexical choices, omissions, and missing nonmanual/spatial information.
 - Preserve disagreement; do not average it away.
@@ -87,13 +87,14 @@ The upstream rules do not supply classifiers, spatial agreement, role shift, non
 | `accepted` | Accepted for the stated research scope |
 | `needs-discussion` | Specific concern recorded; not accepted |
 | `rejected` | Must not be used until corrected |
+| `not-applicable` | Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research |
 
-The overall `status` becomes `complete` only when the owner and independent review records are complete and every fixture has a decision. `rejected` is a valid outcome.
+The overall `status` becomes `complete` only when the owner and independent review records are complete and every **in-scope** fixture has a decision. Out-of-scope fixtures remain `not-applicable`; they are not counted as passes or failures. `rejected` is a valid outcome.
 
 ## 4. Exit criteria for P2.4
 
-- [ ] All 40 fixtures have an owner alignment decision.
-- [ ] The independent Deaf ASL reviewer has reviewed the agreed sample, and 100% before any public claim.
+- [ ] All 16 in-scope fixtures have an owner source-alignment decision; the 24 structural fixtures remain `not-applicable`.
+- [ ] The independent Deaf ASL reviewer has reviewed the agreed sample of the 16 in-scope fixtures, and 100% before any public claim.
 - [ ] Every rejection/discussion item has a recorded disposition.
 - [ ] No artifact is presented as ASL or fed to the public avatar.
 - [x] The clean-room image-pinned run is complete: 40/40 plan contents matched.

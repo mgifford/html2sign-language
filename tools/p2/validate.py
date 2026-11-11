@@ -160,15 +160,54 @@ def validate_review(data: Any) -> list[str]:
                 errors.append(f"duplicate fixtureId: {fixture_id}")
             else:
                 seen.add(fixture_id)
-            if fixture.get("ownerStatus") not in {"pending", "accepted", "rejected", "needs-discussion"}:
+            scope = fixture.get("scope")
+            if scope not in {"in-scope", "out-of-scope"}:
+                errors.append(f"invalid scope for {fixture_id}")
+            if fixture.get("ownerStatus") not in {"pending", "accepted", "rejected", "needs-discussion", "not-applicable"}:
                 errors.append(f"invalid ownerStatus for {fixture_id}")
-            if fixture.get("linguisticStatus") not in {"not-started", "accepted", "rejected", "needs-discussion"}:
+            if fixture.get("linguisticStatus") not in {"not-started", "accepted", "rejected", "needs-discussion", "not-applicable"}:
                 errors.append(f"invalid linguisticStatus for {fixture_id}")
+            if scope == "out-of-scope":
+                if fixture.get("ownerStatus") != "not-applicable" or fixture.get("linguisticStatus") != "not-applicable":
+                    errors.append(f"out-of-scope fixture {fixture_id} must be not-applicable")
+            if scope == "in-scope" and (
+                fixture.get("ownerStatus") == "not-applicable" or fixture.get("linguisticStatus") == "not-applicable"
+            ):
+                errors.append(f"in-scope fixture {fixture_id} must not be not-applicable")
             for key in ("ownerNotes", "linguisticNotes"):
                 if not isinstance(fixture.get(key), str):
                     errors.append(f"{key} must be a string for {fixture_id}")
     if not isinstance(data.get("warnings"), list):
         errors.append("warnings must be an array")
+
+    if isinstance(fixtures, list):
+        in_scope = [
+            fixture
+            for fixture in fixtures
+            if isinstance(fixture, dict) and fixture.get("scope") == "in-scope"
+        ]
+        owner_states = [fixture.get("ownerStatus") for fixture in in_scope]
+        linguistic_states = [fixture.get("linguisticStatus") for fixture in in_scope]
+        owner_status = data.get("owner", {}).get("status") if isinstance(data.get("owner"), dict) else None
+        independent_status = data.get("independent", {}).get("status") if isinstance(data.get("independent"), dict) else None
+        overall = data.get("status")
+
+        if owner_status == "accepted" and any(state != "accepted" for state in owner_states):
+            errors.append("owner.status accepted requires every in-scope fixture accepted")
+        if owner_status == "pending" and any(state in {"accepted", "rejected", "needs-discussion"} for state in owner_states):
+            errors.append("owner.status pending conflicts with in-scope owner decisions")
+        if owner_status == "rejected" and "rejected" not in owner_states:
+            errors.append("owner.status rejected requires a rejected in-scope fixture")
+        if independent_status == "accepted" and "accepted" not in linguistic_states:
+            errors.append("independent.status accepted requires at least one accepted linguistic decision")
+        if independent_status == "pending" and any(state in {"accepted", "rejected", "needs-discussion"} for state in linguistic_states):
+            errors.append("independent.status pending conflicts with in-scope linguistic decisions")
+        if independent_status == "rejected" and "rejected" not in linguistic_states:
+            errors.append("independent.status rejected requires a rejected linguistic decision")
+        if overall == "complete" and not (owner_status == "accepted" and independent_status == "accepted"):
+            errors.append("overall complete requires both owner and independent accepted")
+        if overall != "rejected" and (owner_status == "rejected" or independent_status == "rejected"):
+            errors.append("overall status must be rejected when either review is rejected")
     return errors
 
 
@@ -199,4 +238,5 @@ def validate_index(data: Any) -> list[str]:
                 errors.append("artifact status is invalid")
     if not isinstance(data.get("warnings"), list):
         errors.append("warnings must be an array")
+
     return errors

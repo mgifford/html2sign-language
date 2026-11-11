@@ -70,3 +70,13 @@ All new animations added to the `/animations/` directory must be registered in `
 * **Instructional Clarity:** If you open this project in an AI-powered code editor, the editor will read this file and automatically suggest code that uses **Three.js** and **Semantic HTML** instead of generic solutions.
 * **Compliance Focus:** It explicitly mentions **EN 301 549** and the **Canadian 2024 standards**, ensuring the AI doesn't accidentally use outdated US-centric (Section 508) advice.
 * **Research-Backed:** Alignment with SMPL-X and HamNoSys ensures compatibility with state-of-the-art sign language synthesis research.
+## 7. Current architecture (dated 2026-11-11)
+
+This section supersedes the avatar-format recommendations above for current work. The historical text is retained so earlier decisions and failures are not erased.
+
+- **Current selected avatar:** Microsoft Rocketbox `rocketbox-female-adult-01`, a skinned glTF with 80 skin joints, 30 finger joints, 52 ARKit facial morph targets, and a neutral rest pose. See [docs/AVATAR-ARCHITECTURE.md](docs/AVATAR-ARCHITECTURE.md).
+- **Current public runtime:** the legacy Three.js flipbook demo with 24 isolated WLASL word clips. It is not a sentence or page translator. Do not change the signing runtime or public vocabulary as part of documentation/review work.
+- **VRM:** not the current runtime or selected path. The earlier “VRM preferred” guidance is historical.
+- **SMPL-X:** an importer/input format and local research path only; the model licence has a “No Distribution” term. The committed SMPL-X-derived GLBs remain a known licence risk documented in [docs/AVATAR-AUDIT.md](docs/AVATAR-AUDIT.md); do not add more or publish them.
+- **Avatar playback gate:** any new motion or reviewed signing content is blocked until P2.4, P3/P4 decisions, dataset/performer terms, and independent Deaf ASL review. A successful skeletal animation is not proof of a recognizable ASL sign.
+- **Current authorized phase:** Phase A documentation and review reconciliation only. Do not start browser-AI inference or 3D-LEX integration without explicit owner authorization.

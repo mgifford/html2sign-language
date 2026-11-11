@@ -68,7 +68,7 @@ class ReviewCliTests(unittest.TestCase):
         self.assertIn("out of scope", result.stderr)
         updated = json.loads(self.review.read_text())
         fixture = next(item for item in updated["fixtures"] if item["fixtureId"] == "TABLE-01")
-        self.assertEqual(fixture["ownerStatus"], "pending")
+        self.assertEqual(fixture["ownerStatus"], "not-applicable")
 
     def test_accepting_all_16_in_scope_fixtures_completes_owner_role(self):
         scope = json.loads((REPO_ROOT / "experiments/html-to-asl/data/p2/scope.json").read_text())
@@ -213,6 +213,35 @@ class ReviewCliTests(unittest.TestCase):
         result = self.run_cli("--fixture", "NEG-01", "--owner-status", "accepted")
         self.assertEqual(result.returncode, 2)
         self.assertIn("--reviewer", result.stderr)
+
+    def test_out_of_scope_cannot_be_accepted_even_with_allow_flag(self):
+        result = self.run_cli(
+            "--fixture",
+            "TABLE-01",
+            "--owner-status",
+            "accepted",
+            "--reviewer",
+            "Owner Test",
+            "--allow-out-of-scope",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("cannot receive", result.stderr)
+
+    def test_owner_rejection_transitions_to_rejected(self):
+        result = self.run_cli(
+            "--set",
+            "NEG-01",
+            "--owner-status",
+            "rejected",
+            "--owner-notes",
+            "mapping is wrong",
+            "--reviewer",
+            "Owner Test",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        updated = json.loads(self.review.read_text())
+        self.assertEqual(updated["owner"]["status"], "rejected")
+        self.assertEqual(updated["status"], "rejected")
 
     def test_unknown_fixture_is_rejected(self):
         result = self.run_cli(

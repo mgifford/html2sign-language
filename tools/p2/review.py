@@ -143,12 +143,19 @@ def attestation_error(args) -> str | None:
 
 
 def command_set(args, review, review_path: Path, scopes: dict[str, str]) -> int:
-    if args.fixture and scopes.get(args.fixture) == "out-of-scope" and not args.allow_out_of_scope:
-        print(
-            f"{args.fixture} is out of scope for P2/P3/P4. Use --allow-out-of-scope only to record a note; do not accept a structural lexical plan.",
-            file=sys.stderr,
-        )
-        return 2
+    if args.fixture and scopes.get(args.fixture) == "out-of-scope":
+        if not args.allow_out_of_scope:
+            print(
+                f"{args.fixture} is out of scope for P2/P3/P4. Use --allow-out-of-scope only to record a note; do not accept a structural lexical plan.",
+                file=sys.stderr,
+            )
+            return 2
+        if args.owner_status not in (None, "not-applicable") or args.linguistic_status not in (None, "not-applicable"):
+            print(
+                "Out-of-scope fixtures cannot receive accepted/rejected/needs-discussion statuses; record the scope decision instead.",
+                file=sys.stderr,
+            )
+            return 2
     if args.linguistic_status and args.linguistic_status != "not-started":
         error = attestation_error(args)
         if error:
@@ -208,7 +215,7 @@ def main(argv=None) -> int:
     parser.add_argument("--artifacts-dir", type=Path, default=DEFAULT_ARTIFACTS)
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--scope", choices=("all", "in-scope", "out-of-scope"), default="all")
-    parser.add_argument("--allow-out-of-scope", action="store_true")
+    parser.add_argument("--allow-out-of-scope", action="store_true", help="allow notes on an out-of-scope fixture; does not allow acceptance")
     parser.add_argument("--summary", action="store_true")
     parser.add_argument("--validate", action="store_true")
     parser.add_argument("--fixture", "--set", dest="fixture")

@@ -32,10 +32,10 @@ P2.0 is implemented in `tools/p2/`:
 - `artifact.schema.json`, `index.schema.json`, `pins.schema.json`, and `review.schema.json` define the contracts.
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
-- `validate.py`, `requirements.lock`, `review.py`, `qa_report.py`, and 40 stdlib `unittest` cases cover the contracts, all 40 artifacts, the pending review record, review CLI/scope guard, QA flags, plan comparison, and refusal paths.
+- `validate.py`, `requirements.lock`, `review.py`, `qa_report.py`, and 45 stdlib `unittest` cases cover the contracts, all 40 artifacts, the scoped review record, review CLI/scope guard, QA flags, plan comparison, and refusal paths.
 - `experiments/html-to-asl/data/p2/` contains **40 partial P2.2 artifacts**. All candidates align to P1 blocks; upstream reports `semantic-rules-unavailable`. P2.4 review is limited to the **16 prose fixtures** in `scope.json`; the 24 structural fixtures are out of scope for P2/P3/P4.
 - `experiments/html-to-asl/p2/` is the static viewer for the index and artifacts.
-- `data/p2/review.json` records that all 40 owner alignment reviews are **pending**; no implementer self-approval is recorded.
+- `data/p2/review.json` records 16 in-scope prose reviews and marks 24 structural fixtures `not-applicable`; one owner source-alignment decision is recorded, and no implementer self-approval is recorded.
 - `tools/p2/source_run.py` reproduces the source-run artifacts against a local WSD service; it is explicitly not the image-pinned path.
 - `.github/workflows/p2-cleanroom.yml` is a manual, image-pinned amd64 workflow that starts the pinned WSD/WordNet containers, regenerates the plans, and compares plan content with the committed artifacts. It **passed** on run [42915233893](https://github.com/mgifford/html2sign-language/actions/runs/42915233893): 40/40 plans matched.
 
@@ -247,7 +247,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 - [x] Run `python3 tools/p2/precompute.py --check` with `ready: true` in the verified Python 3.12 environment.
 - [x] Produce all 40 development artifacts with candidates aligned to P1 blocks.
 - [x] Add the static P2 viewer and browser coverage.
-- [ ] Owner review of the 16 prose alignment records (`data/p2/review.json` is pending); structural fixtures are out of scope.
+- [ ] Owner review of the 16 prose alignment records: 1 accepted, 15 pending; structural fixtures are `not-applicable`.
 - [x] Execute the image-pinned stack clean-room with the manual workflow: 40/40 plan contents matched.
 
 ## 13. References

@@ -49,7 +49,7 @@ Before setting any `approved` flag to `true`, record and verify:
 7. [done] Owner plus independent reviewer for P1-block → upstream-sentence alignment.
 8. [done] The provisional holdout stays excluded from P2.
 
-The image-pinned clean-room run passed with 40/40 plan matches. The remaining blocker is the owner/independent review (`data/p2/review.json` is pending). `--check` reports `ready: true` in the verified Python 3.12 environment.
+The image-pinned clean-room run passed with 40/40 plan matches. The remaining blocker is the owner/independent review: 1 of 16 in-scope source-alignment decisions is recorded, the rest are pending, and independent review has not started. `--check` reports `ready: true` in the verified Python 3.12 environment.
 
 ## Files
 
@@ -64,6 +64,6 @@ The image-pinned clean-room run passed with 40/40 plan matches. The remaining bl
 - `export_p1.mjs` / `compare_plans.py` — P1 export and clean-room plan comparison used by `.github/workflows/p2-cleanroom.yml`.
 - `review.py` — records owner/independent review decisions in `review.json`; it cannot perform a review. Linguistic/independent decisions require `--attest-independent-review` and the actual reviewer name.
 - `qa_report.py` — advisory technical risk flags for review; not decisions.
-- `tests/` — 40 unit tests, including all 40 artifacts, the pending review record, review CLI/scope guard, QA report, plan comparison, refusal, and holdout cases.
+- `tests/` — 45 unit tests, including all 40 artifacts, the scoped review record, review CLI/scope guard, QA report, plan comparison, refusal, and holdout cases.
 
 No model weights, WSD intermediates, generated glosses, or 3D-LEX assets belong in this directory.

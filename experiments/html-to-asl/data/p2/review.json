@@ -6,13 +6,13 @@
     "status": "in-review",
     "reviewer": "Michael Gifford",
     "reviewedAt": "2026-11-11",
-    "notes": "Owner alignment review in progress: 1 of 16 in-scope accepted. This is not an ASL linguistic review."
+    "notes": "Owner source-alignment review is in progress: 1 of 16 in-scope fixtures accepted. This is not an ASL linguistic review."
   },
   "independent": {
     "status": "pending",
     "reviewer": null,
     "reviewedAt": null,
-    "notes": "Independent Deaf ASL review has not started. At least 20% sample; 100% before a public ASL claim."
+    "notes": "No qualified independent Deaf ASL review has been performed. All 16 in-scope linguistic decisions remain open."
   },
   "fixtures": [
     {
@@ -20,280 +20,320 @@
       "ownerStatus": "accepted",
       "ownerNotes": "English source/gloss order checked; ASL not assessed",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "MOD-01",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "COND-01",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "LEX-01",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "DOC-01",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "HTML-01",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "SEC-01",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "NAV-01",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "QTY-01",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "LINK-01",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "TABLE-01",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "FORM-01",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "STRUCT-HIER",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "STRUCT-NESTED",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "STRUCT-ORDERED",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "STRUCT-DL",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "STRUCT-LINK",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "STRUCT-LINKS",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "STRUCT-TABLE",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "STRUCT-TABLE-NOHEAD",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "FORM-REQUIRED",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "FORM-GROUP",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "FORM-SELECT",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "FORM-TEXTAREA",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "FORM-CHECK",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "ARIA-BUTTON",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "ARIA-SECTION",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "IMG-ALT",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "IMG-DECOR",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "IMG-NOALT",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "QUOTE",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "CODE",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "BARE-DIV",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "HIDDEN",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "DETAILS-CLOSED",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "DETAILS-OPEN",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "UNICODE",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "INJECT",
       "ownerStatus": "pending",
       "ownerNotes": "",
       "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "linguisticNotes": "",
+      "scope": "in-scope"
     },
     {
       "fixtureId": "MIXED",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     },
     {
       "fixtureId": "TABLE-LINK",
-      "ownerStatus": "pending",
-      "ownerNotes": "",
-      "linguisticStatus": "not-started",
-      "linguisticNotes": ""
+      "ownerStatus": "not-applicable",
+      "ownerNotes": "Structurally out of scope for the prose lexical-plan review; retained for future structural HTML research.",
+      "linguisticStatus": "not-applicable",
+      "linguisticNotes": "Not reviewed as a prose lexical plan; excluded from P2/P3/P4 claims.",
+      "scope": "out-of-scope"
     }
   ],
   "warnings": [
