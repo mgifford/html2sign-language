@@ -51,12 +51,17 @@ python3 tools/p2/review.py --list --scope in-scope
 python3 tools/p2/review.py --set NEG-01 --owner-status accepted \
   --owner-notes "source mapping checked" --reviewer "Reviewer name"
 python3 tools/p2/review.py --set NEG-01 --linguistic-status accepted \
-  --linguistic-notes "recognisable in context" --reviewer "Deaf ASL reviewer"
+  --linguistic-notes "recognisable in context" \
+  --reviewer "Actual independent reviewer name" --attest-independent-review
+python3 tools/p2/review.py --independent-status accepted \
+  --reviewer "Actual independent reviewer name" --attest-independent-review
 python3 tools/p2/review.py --summary
 python3 tools/p2/review.py --validate
 ```
 
-The CLI edits `data/p2/review.json`; it cannot perform the review. Do not use it to self-approve as the implementer. With no arguments it prints the pending summary and next commands. `--scope in-scope` filters to the 16 prose fixtures. An out-of-scope decision is refused unless `--allow-out-of-scope` is passed, and that flag is for notes only, not acceptance. To mark a sampled independent review accepted, record the reviewed fixtures and set the role status with `--independent-status accepted --reviewer ...`.
+The CLI edits `data/p2/review.json`; it cannot perform the review. Do not use it to self-approve as the implementer. With no arguments it prints the pending summary and next commands. `--scope in-scope` filters to the 16 prose fixtures. An out-of-scope decision is refused unless `--allow-out-of-scope` is passed, and that flag is for notes only, not acceptance.
+
+**Who may make which decision.** The owner may record source/alignment decisions for the 16 prose fixtures. Only an independent fluent Deaf ASL reviewer may make `linguisticStatus` decisions or set the independent review to `accepted`. If you cannot read ASL, do not run the linguistic/independent commands; leave those records pending. The CLI requires `--attest-independent-review` and a real reviewer name for any linguistic decision or independent acceptance. That attestation is a guard, not proof; do not use it for yourself.
 
 ## 2. Independent Deaf ASL review
 

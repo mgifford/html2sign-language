@@ -105,6 +105,87 @@ class ReviewCliTests(unittest.TestCase):
         fixture = next(item for item in updated["fixtures"] if item["fixtureId"] == "NEG-01")
         self.assertEqual(fixture["ownerStatus"], "accepted")
 
+    def test_linguistic_accept_requires_attestation(self):
+        result = self.run_cli(
+            "--set",
+            "NEG-01",
+            "--linguistic-status",
+            "accepted",
+            "--linguistic-notes",
+            "checked",
+            "--reviewer",
+            "Pat Doe",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("--attest-independent-review", result.stderr)
+
+    def test_linguistic_accept_rejects_placeholder_reviewer(self):
+        result = self.run_cli(
+            "--set",
+            "NEG-01",
+            "--linguistic-status",
+            "accepted",
+            "--linguistic-notes",
+            "checked",
+            "--reviewer",
+            "Deaf ASL reviewer",
+            "--attest-independent-review",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("placeholder", result.stderr)
+
+    def test_linguistic_accept_with_attestation(self):
+        result = self.run_cli(
+            "--set",
+            "NEG-01",
+            "--linguistic-status",
+            "accepted",
+            "--linguistic-notes",
+            "checked by an independent reviewer",
+            "--reviewer",
+            "Pat Doe",
+            "--attest-independent-review",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        updated = json.loads(self.review.read_text())
+        fixture = next(item for item in updated["fixtures"] if item["fixtureId"] == "NEG-01")
+        self.assertEqual(fixture["linguisticStatus"], "accepted")
+
+    def test_independent_accept_requires_attestation(self):
+        result = self.run_cli(
+            "--independent-status",
+            "accepted",
+            "--reviewer",
+            "Pat Doe",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("--attest-independent-review", result.stderr)
+
+    def test_independent_accept_with_attestation(self):
+        linguistic = self.run_cli(
+            "--set",
+            "NEG-01",
+            "--linguistic-status",
+            "accepted",
+            "--linguistic-notes",
+            "checked by an independent reviewer",
+            "--reviewer",
+            "Pat Doe",
+            "--attest-independent-review",
+        )
+        self.assertEqual(linguistic.returncode, 0, linguistic.stderr)
+        independent = self.run_cli(
+            "--independent-status",
+            "accepted",
+            "--reviewer",
+            "Pat Doe",
+            "--attest-independent-review",
+        )
+        self.assertEqual(independent.returncode, 0, independent.stderr)
+        updated = json.loads(self.review.read_text())
+        self.assertEqual(updated["independent"]["status"], "accepted")
+        self.assertEqual(updated["independent"]["reviewer"], "Pat Doe")
+
     def test_record_owner_decision(self):
         result = self.run_cli(
             "--fixture",

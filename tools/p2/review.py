@@ -26,6 +26,13 @@ from validate import validate_review  # noqa: E402
 OWNER_STATUSES = ("pending", "accepted", "rejected", "needs-discussion")
 LINGUISTIC_STATUSES = ("not-started", "accepted", "rejected", "needs-discussion")
 ROLE_STATUSES = ("pending", "in-review", "accepted", "rejected")
+PLACEHOLDER_REVIEWERS = {
+    "deaf asl reviewer",
+    "reviewer name",
+    "your name",
+    "owner test",
+    "test",
+}
 
 
 def load_json(path: Path):
@@ -125,6 +132,16 @@ def command_list(review, scopes: dict[str, str], scope_filter: str) -> int:
     return 0
 
 
+def attestation_error(args) -> str | None:
+    if not args.attest_independent_review:
+        return "Independent ASL decisions require --attest-independent-review. The owner cannot self-attest as the Deaf ASL reviewer."
+    if not args.reviewer:
+        return "--reviewer is required for an independent ASL decision"
+    if args.reviewer.strip().casefold() in PLACEHOLDER_REVIEWERS:
+        return "Use the actual independent reviewer's name, not a placeholder"
+    return None
+
+
 def command_set(args, review, review_path: Path, scopes: dict[str, str]) -> int:
     if args.fixture and scopes.get(args.fixture) == "out-of-scope" and not args.allow_out_of_scope:
         print(
@@ -132,6 +149,24 @@ def command_set(args, review, review_path: Path, scopes: dict[str, str]) -> int:
             file=sys.stderr,
         )
         return 2
+    if args.linguistic_status and args.linguistic_status != "not-started":
+        error = attestation_error(args)
+        if error:
+            print(error, file=sys.stderr)
+            return 2
+        if not args.linguistic_notes:
+            print("--linguistic-notes is required for an independent linguistic decision", file=sys.stderr)
+            return 2
+    if args.independent_status and args.independent_status != "pending":
+        error = attestation_error(args)
+        if error:
+            print(error, file=sys.stderr)
+            return 2
+        if args.independent_status == "accepted" and not any(
+            item["linguisticStatus"] == "accepted" for item in review["fixtures"]
+        ):
+            print("Record at least one independent linguistic decision before accepting the independent review", file=sys.stderr)
+            return 2
     changed = False
     for item in review["fixtures"]:
         if item["fixtureId"] != args.fixture:
@@ -182,6 +217,7 @@ def main(argv=None) -> int:
     parser.add_argument("--linguistic-status", choices=LINGUISTIC_STATUSES)
     parser.add_argument("--linguistic-notes")
     parser.add_argument("--independent-status", choices=ROLE_STATUSES)
+    parser.add_argument("--attest-independent-review", action="store_true", help="confirm the named reviewer is an independent fluent Deaf ASL reviewer, or that their decision is being recorded with consent")
     parser.add_argument("--reviewer")
     parser.add_argument("--date", default=date.today().isoformat())
     args = parser.parse_args(argv)
@@ -210,6 +246,11 @@ def main(argv=None) -> int:
     if not args.reviewer:
         parser.error("--reviewer is required when recording a review")
     if not args.fixture and args.independent_status:
+        if args.independent_status != "pending":
+            error = attestation_error(args)
+            if error:
+                print(error, file=sys.stderr)
+                return 2
         review["independent"]["status"] = args.independent_status
         review["independent"]["reviewer"] = args.reviewer
         review["independent"]["reviewedAt"] = args.date
