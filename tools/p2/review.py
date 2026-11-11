@@ -67,8 +67,12 @@ def recompute_overall(review) -> None:
         review["status"] = "pending"
 
 
-def recompute(review) -> None:
-    fixtures = review["fixtures"]
+def recompute(review, scopes: dict[str, str]) -> None:
+    fixtures = [
+        item
+        for item in review["fixtures"]
+        if scopes.get(item["fixtureId"], "in-scope") == "in-scope"
+    ]
     owner_states = [item["ownerStatus"] for item in fixtures]
     linguistic_states = [item["linguisticStatus"] for item in fixtures]
 
@@ -91,13 +95,23 @@ def recompute(review) -> None:
     recompute_overall(review)
 
 
-def summary(review) -> dict:
+def summary(review, scopes: dict[str, str]) -> dict:
+    in_scope = [
+        item
+        for item in review["fixtures"]
+        if scopes.get(item["fixtureId"], "in-scope") == "in-scope"
+    ]
     return {
         "status": review["status"],
         "owner": review["owner"]["status"],
         "independent": review["independent"]["status"],
         "ownerStatuses": dict(Counter(item["ownerStatus"] for item in review["fixtures"])),
         "linguisticStatuses": dict(Counter(item["linguisticStatus"] for item in review["fixtures"])),
+        "inScope": {
+            "total": len(in_scope),
+            "ownerStatuses": dict(Counter(item["ownerStatus"] for item in in_scope)),
+            "linguisticStatuses": dict(Counter(item["linguisticStatus"] for item in in_scope)),
+        },
     }
 
 
@@ -142,14 +156,14 @@ def command_set(args, review, review_path: Path, scopes: dict[str, str]) -> int:
         print("No fixture matched or no field supplied.", file=sys.stderr)
         return 2
 
-    recompute(review)
+    recompute(review, scopes)
     if args.independent_status:
         review["independent"]["status"] = args.independent_status
         review["independent"]["reviewer"] = args.reviewer
         review["independent"]["reviewedAt"] = args.date
         recompute_overall(review)
     review_path.write_text(json.dumps(review, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps(summary(review), indent=2))
+    print(json.dumps(summary(review, scopes), indent=2))
     return 0
 
 
@@ -178,18 +192,18 @@ def main(argv=None) -> int:
         print("\n".join(errors), file=sys.stderr)
         return 1
 
+    scopes = scope_map(args.artifacts_dir)
     if args.validate:
         print("review record is valid")
         return 0
     if args.summary:
-        print(json.dumps(summary(review), indent=2))
+        print(json.dumps(summary(review, scopes), indent=2))
         return 0
-    scopes = scope_map(args.artifacts_dir)
     if args.list:
         return command_list(review, scopes, args.scope)
 
     if not args.fixture and not args.independent_status:
-        print(json.dumps(summary(review), indent=2))
+        print(json.dumps(summary(review, scopes), indent=2))
         print("\nNext: npm run review:p2 -- --list --scope in-scope")
         print("Record: npm run review:p2 -- --fixture NEG-01 --owner-status accepted --reviewer \"Your name\"")
         return 0
@@ -201,7 +215,7 @@ def main(argv=None) -> int:
         review["independent"]["reviewedAt"] = args.date
         recompute_overall(review)
         args.review_file.write_text(json.dumps(review, indent=2) + "\n", encoding="utf-8")
-        print(json.dumps(summary(review), indent=2))
+        print(json.dumps(summary(review, scopes), indent=2))
         return 0
 
     return command_set(args, review, args.review_file, scopes)

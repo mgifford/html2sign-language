@@ -69,6 +69,28 @@ class ReviewCliTests(unittest.TestCase):
         fixture = next(item for item in updated["fixtures"] if item["fixtureId"] == "TABLE-01")
         self.assertEqual(fixture["ownerStatus"], "pending")
 
+    def test_accepting_all_16_in_scope_fixtures_completes_owner_role(self):
+        scope = json.loads((REPO_ROOT / "experiments/html-to-asl/data/p2/scope.json").read_text())
+        for fixture_id in scope["inScope"]:
+            result = self.run_cli(
+                "--fixture",
+                fixture_id,
+                "--owner-status",
+                "accepted",
+                "--reviewer",
+                "Owner Test",
+                "--date",
+                "2026-11-10",
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+        updated = json.loads(self.review.read_text())
+        self.assertEqual(updated["owner"]["status"], "accepted")
+        self.assertEqual(updated["status"], "in-review")
+        self.assertEqual(
+            16,
+            sum(1 for item in updated["fixtures"] if item["ownerStatus"] == "accepted"),
+        )
+
     def test_record_owner_decision(self):
         result = self.run_cli(
             "--fixture",
