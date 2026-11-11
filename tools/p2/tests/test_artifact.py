@@ -13,6 +13,7 @@ ARTIFACT = REPO_ROOT / "experiments/html-to-asl/data/p2/NEG-01.json"
 INDEX = REPO_ROOT / "experiments/html-to-asl/data/p2/index.json"
 REVIEW = REPO_ROOT / "experiments/html-to-asl/data/p2/review.json"
 REVIEW_MD = REPO_ROOT / "experiments/html-to-asl/data/p2/review.md"
+SCOPE = REPO_ROOT / "experiments/html-to-asl/data/p2/scope.json"
 
 
 class Neg01ArtifactTests(unittest.TestCase):
@@ -21,6 +22,7 @@ class Neg01ArtifactTests(unittest.TestCase):
         self.index = json.loads(INDEX.read_text(encoding="utf-8"))
         self.review = json.loads(REVIEW.read_text(encoding="utf-8"))
         self.review_md = REVIEW_MD.read_text(encoding="utf-8")
+        self.scope = json.loads(SCOPE.read_text(encoding="utf-8"))
 
     def test_artifact_matches_p2_contract(self):
         self.assertEqual(validate_artifact(self.artifact), [])
@@ -80,6 +82,22 @@ class Neg01ArtifactTests(unittest.TestCase):
         rows = [line for line in self.review_md.splitlines() if line.startswith("| [")]
         self.assertEqual(len(rows), 40)
         self.assertIn("not ASL", self.review_md)
+
+    def test_scope_is_prose_only_and_complete(self):
+        in_scope = self.scope["inScope"]
+        out_scope = self.scope["outOfScope"]
+        self.assertEqual(self.scope["counts"], {"inScope": 16, "outOfScope": 24, "total": 40})
+        self.assertEqual(len(set(in_scope) | set(out_scope)), 40)
+        self.assertEqual(set(in_scope) & set(out_scope), set())
+        self.assertEqual(
+            set(in_scope) | set(out_scope),
+            {entry["fixtureId"] for entry in self.index["artifacts"]},
+        )
+        for fixture_id in in_scope:
+            artifact = json.loads((REPO_ROOT / "experiments/html-to-asl/data/p2" / f"{fixture_id}.json").read_text())
+            types = {block["type"] for block in artifact["source"]["blocks"]}
+            self.assertEqual(len(artifact["source"]["blocks"]), 1)
+            self.assertTrue(types <= {"paragraph", "quote", "text"}, fixture_id)
 
     def test_artifact_does_not_claim_asl(self):
         warnings = " ".join(self.artifact["warnings"]).lower()

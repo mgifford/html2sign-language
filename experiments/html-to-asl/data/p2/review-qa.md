@@ -3,6 +3,7 @@
 Status: **advisory only.** These flags are technical signals, not owner or linguistic decisions. They do not accept, reject, or translate anything.
 
 - 40 development artifacts; high: **10**, medium: **14**, low: **16**.
+- Scope: 16 single-block prose fixtures are in scope; 24 structural fixtures are out of scope for P2/P3/P4. Flags below cover all 40 for transparency.
 - All artifacts remain `partial` lexical plans; **not ASL**.
 - Owner alignment and independent Deaf ASL review remain pending in `review.json`.
 

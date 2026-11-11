@@ -72,5 +72,12 @@ Status: living record. Add entries; do not rewrite history. Mark each entry **Ac
 ## D10 — P2.4 review packet (Open)
 
 - `experiments/html-to-asl/docs/P2-REVIEW.md` defines the owner alignment review and independent Deaf ASL review process.
-- All 40 fixture records are pending; no implementer self-approval is recorded.
+- All 40 fixture records are pending; P2.4 review is limited to the 16 prose records in `scope.json`, and no implementer self-approval is recorded.
 - No ASL, accessibility, or linguistic claim is made from the artifacts or review packet.
+
+## D11 — P2 scope and P3/P4 research plan (Open)
+
+- P2.4 lexical-plan review is limited to the **16 single-block prose-like fixtures** in `experiments/html-to-asl/data/p2/scope.json`.
+- The 24 structural fixtures remain in the repository but are excluded from P2/P3/P4 claims; they require human translation, 3D-LEX, or a later structural study.
+- P3/P4 are planned in `experiments/html-to-asl/docs/P3-P4-RESEARCH.md`: four arms, prose-only, research-only, no avatar/ASL claim, no automatic P5.
+- No P3/P4 run or P5 work may start before owner review of the 16 prose artifacts.

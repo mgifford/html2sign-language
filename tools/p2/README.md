@@ -1,6 +1,6 @@
 # P2 tooling
 
-Status: **P2.0 scaffold plus 40 partial P2.2 source-run artifacts, a static viewer, and P2.3 pins/lock/source-run tool.** The CLI still refuses to write until the image-pinned path is implemented. CPU image digests, the entity-linker hash, and the Python lock are recorded; owner alignment review and a clean-room run remain open.
+Status: **P2.0 scaffold plus 40 partial P2.2 source-run artifacts, a static viewer, P2.3 pins/lock/source-run tool, and a prose-only P2/P3/P4 scope.** The CLI still refuses to write until the image-pinned path is implemented. CPU image digests, the entity-linker hash, and the Python lock are recorded; owner alignment review and a clean-room run remain open.
 
 ## Commands
 

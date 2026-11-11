@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "p2.4-scope",
+  "rationale": "P2/P3/P4 lexical plans are evaluated only on single-block prose-like content. Tables, forms, headings, lists, captions, images, code, terms, definitions, regions, summaries, and multi-block pages are out of scope; they require different treatment (human translation, 3D-LEX, or a later structural study).",
+  "inScope": [
+    "NEG-01",
+    "MOD-01",
+    "COND-01",
+    "LEX-01",
+    "SEC-01",
+    "QTY-01",
+    "LINK-01",
+    "STRUCT-LINK",
+    "STRUCT-LINKS",
+    "IMG-DECOR",
+    "IMG-NOALT",
+    "QUOTE",
+    "BARE-DIV",
+    "HIDDEN",
+    "UNICODE",
+    "INJECT"
+  ],
+  "outOfScope": [
+    "DOC-01",
+    "HTML-01",
+    "NAV-01",
+    "TABLE-01",
+    "FORM-01",
+    "STRUCT-HIER",
+    "STRUCT-NESTED",
+    "STRUCT-ORDERED",
+    "STRUCT-DL",
+    "STRUCT-TABLE",
+    "STRUCT-TABLE-NOHEAD",
+    "FORM-REQUIRED",
+    "FORM-GROUP",
+    "FORM-SELECT",
+    "FORM-TEXTAREA",
+    "FORM-CHECK",
+    "ARIA-BUTTON",
+    "ARIA-SECTION",
+    "IMG-ALT",
+    "CODE",
+    "DETAILS-CLOSED",
+    "DETAILS-OPEN",
+    "MIXED",
+    "TABLE-LINK"
+  ],
+  "inScopeTypes": [
+    "paragraph",
+    "quote",
+    "text"
+  ],
+  "outOfScopeTypes": [
+    "table",
+    "field",
+    "heading",
+    "list-item",
+    "caption",
+    "image",
+    "code",
+    "term",
+    "definition",
+    "region",
+    "summary"
+  ],
+  "counts": {
+    "inScope": 16,
+    "outOfScope": 24,
+    "total": 40
+  },
+  "warnings": [
+    "Lexical plans only; not ASL.",
+    "Scope is an engineering decision, not a linguistic validation."
+  ]
+}

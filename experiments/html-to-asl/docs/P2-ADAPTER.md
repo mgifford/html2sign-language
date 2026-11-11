@@ -1,6 +1,6 @@
 # P2 proposal: pinned, offline English → ASL lexical-plan adapter
 
-Status: **P2.0–P2.3 implemented. The image-pinned clean-room run passed on amd64 with all 40 plan contents matching. Owner alignment review and independent Deaf ASL review remain open (P2.4).** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
+Status: **P2.0–P2.3 implemented. The image-pinned clean-room run passed on amd64 with all 40 plan contents matching. P2.4 review is limited to the 16 prose fixtures; owner and independent review remain open.** This document is the issue-ready design and acceptance criteria for P2. No upstream code, model weights, WSD outputs, or ASL content are added.
 
 ## 1. Goal
 
@@ -33,7 +33,7 @@ P2.0 is implemented in `tools/p2/`:
 - `precompute.py --check` validates pins/schemas/fixture counts without importing the model stack.
 - `precompute.py --fixture … --output …` refuses with exit 2 and writes nothing while prerequisites are missing; it also refuses holdout and unknown fixture IDs.
 - `validate.py`, `requirements.lock`, `review.py`, `qa_report.py`, and 29 stdlib `unittest` cases cover the contracts, all 40 artifacts, the pending review record, review CLI, QA flags, plan comparison, and refusal paths.
-- `experiments/html-to-asl/data/p2/` contains **40 partial P2.2 artifacts** generated from the pinned rules and a local WSD model snapshot. All candidates align to P1 blocks; upstream reports `semantic-rules-unavailable`, and owner review is pending.
+- `experiments/html-to-asl/data/p2/` contains **40 partial P2.2 artifacts**. All candidates align to P1 blocks; upstream reports `semantic-rules-unavailable`. P2.4 review is limited to the **16 prose fixtures** in `scope.json`; the 24 structural fixtures are out of scope for P2/P3/P4.
 - `experiments/html-to-asl/p2/` is the static viewer for the index and artifacts.
 - `data/p2/review.json` records that all 40 owner alignment reviews are **pending**; no implementer self-approval is recorded.
 - `tools/p2/source_run.py` reproduces the source-run artifacts against a local WSD service; it is explicitly not the image-pinned path.
@@ -235,7 +235,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 4. **WordNet — OMW English 1.4, local — approved.** Use `omw-en:1.4` through the pinned `sign/wn` API; no hosted `WORDNET_URL`. The `wn` index lists the OMW English 3.0 export under the [Princeton WordNet License](https://wordnet.princeton.edu/license-and-commercial-use). The CPU image digest is recorded.
 5. **Fixture scope — development only.** Use the 40 development fixtures for P2.1/P2.2. The current 20-case holdout is agent-authored and not blind; it is excluded from P2 and must be replaced or reviewed by the owner before any evaluation claim.
 6. **Rule limits — research only.** The upstream output is a lexical plan, not ASL. No avatar feed, no public translation/accessibility claim, and no claim covering nonmanuals, spatial grammar, classifiers, role shift, or aspect. P2.4 Deaf ASL review is required before any linguistic claim. Human-translated fixed sentences remain the production route.
-7. **Alignment review — owner plus independent reviewer.** Deterministic exact-span alignment first; unresolved or cross-block candidates become abstentions. The owner reviews the 40 development artifacts; an independent reviewer samples at least 20% and reviews 100% before a public claim. Record reviewer, date, fixture, candidate, decision, and reason in `data/p2/review.json`. The implementer must not self-approve.
+7. **Alignment review — owner plus independent reviewer.** Deterministic exact-span alignment first; unresolved or cross-block candidates become abstentions. The owner reviews the 16 in-scope prose artifacts; an independent reviewer samples at least 20% and reviews 100% before a public claim. Record reviewer, date, fixture, candidate, decision, and reason in `data/p2/review.json`. The implementer must not self-approve.
 
 ### 12.1 Remaining blockers for P2.3
 
@@ -247,7 +247,7 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 - [x] Run `python3 tools/p2/precompute.py --check` with `ready: true` in the verified Python 3.12 environment.
 - [x] Produce all 40 development artifacts with candidates aligned to P1 blocks.
 - [x] Add the static P2 viewer and browser coverage.
-- [ ] Owner review of the 40 alignment records (`data/p2/review.json` is pending).
+- [ ] Owner review of the 16 prose alignment records (`data/p2/review.json` is pending); structural fixtures are out of scope.
 - [x] Execute the image-pinned stack clean-room with the manual workflow: 40/40 plan contents matched.
 
 ## 13. References
@@ -257,3 +257,4 @@ Do not use a single “accuracy” score. A passing fixture set is an engineerin
 - [An Open-Source Gloss-Based Baseline for Spoken to Signed Language Translation](https://arxiv.org/abs/2305.17714)
 - P1 extractor: `src/extract.mjs`; P1 data contract: `src/core.mjs`
 - Project decisions: [DECISIONS.md](../../../docs/DECISIONS.md)
+- P3/P4 research plan: [P3-P4-RESEARCH.md](P3-P4-RESEARCH.md)

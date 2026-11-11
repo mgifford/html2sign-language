@@ -17,10 +17,12 @@ This packet supports P2.4. It does not itself make a linguistic, accessibility, 
 
 ## Scope
 
-- Review the **40 development artifacts** only.
+- Review the **16 in-scope prose artifacts** first; the machine-readable list is `data/p2/scope.json`.
+- The 24 structural artifacts are out of scope for P2.4 lexical-plan review. They stay for transparency; do not count them as pipeline successes/failures. They need human translation, 3D-LEX, or a later structural study.
+- The 40-row table still lists all artifacts so nothing is hidden; use the scope manifest to filter.
 - The 20-case holdout remains excluded; do not tune against it.
 - The 40 artifacts are `partial` because upstream reports `semantic-rules-unavailable`.
-- The source-run artifacts were produced from source checkouts and a local model snapshot. The image-pinned clean-room run later matched all 40 plan contents.
+- The source-run artifacts were produced from source checkouts and a local model snapshot. The image-pinned clean-room run later matched all 40 plan contents. Scope restriction is an engineering decision, not a linguistic validation.
 
 ## 1. Owner alignment review (all 40)
 
