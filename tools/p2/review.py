@@ -176,7 +176,7 @@ def main(argv=None) -> int:
     parser.add_argument("--allow-out-of-scope", action="store_true")
     parser.add_argument("--summary", action="store_true")
     parser.add_argument("--validate", action="store_true")
-    parser.add_argument("--fixture")
+    parser.add_argument("--fixture", "--set", dest="fixture")
     parser.add_argument("--owner-status", choices=OWNER_STATUSES)
     parser.add_argument("--owner-notes")
     parser.add_argument("--linguistic-status", choices=LINGUISTIC_STATUSES)

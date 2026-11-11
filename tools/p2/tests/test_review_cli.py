@@ -91,6 +91,20 @@ class ReviewCliTests(unittest.TestCase):
             sum(1 for item in updated["fixtures"] if item["ownerStatus"] == "accepted"),
         )
 
+    def test_set_alias_records_a_decision(self):
+        result = self.run_cli(
+            "--set",
+            "NEG-01",
+            "--owner-status",
+            "accepted",
+            "--reviewer",
+            "Owner Test",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        updated = json.loads(self.review.read_text())
+        fixture = next(item for item in updated["fixtures"] if item["fixtureId"] == "NEG-01")
+        self.assertEqual(fixture["ownerStatus"], "accepted")
+
     def test_record_owner_decision(self):
         result = self.run_cli(
             "--fixture",
