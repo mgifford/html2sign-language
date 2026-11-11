@@ -1,0 +1,2739 @@
+{
+  "model": {
+    "id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "revision": "31b70e2e869a7173562077fd711b654946d38674",
+    "license": "Apache-2.0",
+    "file": "onnx/model_q4f16.onnx",
+    "fileSha256": "d94946187fb5f27579f3db4ba21fb7f7466c7cbd18956bd420d3981f75282f9c",
+    "fileBytes": 1108730338,
+    "tokenizerSha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+    "library": "@huggingface/transformers",
+    "libraryVersion": "4.3.2",
+    "dtype": "q4f16",
+    "device": "wasm",
+    "source": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct"
+  },
+  "fixtures": [
+    {
+      "fixtureId": "NEG-01",
+      "original": "You do not need to pay a fee.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 29
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"No fee.\",\"changes\":[{\"from\":\"You do not need to pay a fee\",\"to\":\"No fee\",\"reason\":\"clear statement\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "No fee.",
+              "changes": [
+                {
+                  "from": "You do not need to pay a fee",
+                  "to": "No fee",
+                  "reason": "clear statement"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "No fee.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [
+              "not"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "612bf82b4a0bfed8409ea96e053bb83a665659a8c0e7550b6da4682dce208d57",
+          "durationMs": 7734
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"No fee.\",\"changes\":[{\"from\":\"You do not need to pay a fee\",\"to\":\"No fee\",\"reason\":\"clear statement\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "No fee.",
+              "changes": [
+                {
+                  "from": "You do not need to pay a fee",
+                  "to": "No fee",
+                  "reason": "clear statement"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "No fee.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [
+              "not"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "612bf82b4a0bfed8409ea96e053bb83a665659a8c0e7550b6da4682dce208d57",
+          "durationMs": 7838
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"No fee.\",\"changes\":[{\"from\":\"You do not need to pay a fee\",\"to\":\"No fee\",\"reason\":\"clear statement\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "No fee.",
+              "changes": [
+                {
+                  "from": "You do not need to pay a fee",
+                  "to": "No fee",
+                  "reason": "clear statement"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "No fee.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [
+              "not"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "612bf82b4a0bfed8409ea96e053bb83a665659a8c0e7550b6da4682dce208d57",
+          "durationMs": 7609
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"No fee.\",\"changes\":[{\"from\":\"You do not need to pay a fee\",\"to\":\"No fee\",\"reason\":\"clear statement\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "No fee.",
+              "changes": [
+                {
+                  "from": "You do not need to pay a fee",
+                  "to": "No fee",
+                  "reason": "clear statement"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "No fee.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [
+              "not"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "612bf82b4a0bfed8409ea96e053bb83a665659a8c0e7550b6da4682dce208d57",
+          "durationMs": 7926
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"No fee.\",\"changes\":[{\"from\":\"You do not need to pay a fee\",\"to\":\"No fee\",\"reason\":\"clear statement\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "No fee.",
+              "changes": [
+                {
+                  "from": "You do not need to pay a fee",
+                  "to": "No fee",
+                  "reason": "clear statement"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "No fee.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [
+              "not"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "612bf82b4a0bfed8409ea96e053bb83a665659a8c0e7550b6da4682dce208d57",
+          "durationMs": 7629
+        }
+      ]
+    },
+    {
+      "fixtureId": "MOD-01",
+      "original": "You may appeal. You must appeal within 30 days.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 47
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"You may appeal.\",\"changes\":[{\"from\":\"You must appeal\",\"to\":\"Appeal within 30 days\",\"reason\":\"specific timeframe\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "You may appeal.",
+              "changes": [
+                {
+                  "from": "You must appeal",
+                  "to": "Appeal within 30 days",
+                  "reason": "specific timeframe"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "You may appeal.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "30",
+              "may",
+              "must"
+            ],
+            "missing": [
+              "30",
+              "must"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ac8e47032a8fe81b3680d0c87d4eff31156ce83e9096916bf9faebe3a8a3f6db",
+          "durationMs": 7748
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"You may appeal.\",\"changes\":[{\"from\":\"You must appeal\",\"to\":\"Appeal within 30 days\",\"reason\":\"specific timeframe\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "You may appeal.",
+              "changes": [
+                {
+                  "from": "You must appeal",
+                  "to": "Appeal within 30 days",
+                  "reason": "specific timeframe"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "You may appeal.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "30",
+              "may",
+              "must"
+            ],
+            "missing": [
+              "30",
+              "must"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ac8e47032a8fe81b3680d0c87d4eff31156ce83e9096916bf9faebe3a8a3f6db",
+          "durationMs": 7778
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"You may appeal.\",\"changes\":[{\"from\":\"You must appeal\",\"to\":\"Appeal within 30 days\",\"reason\":\"specific timeframe\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "You may appeal.",
+              "changes": [
+                {
+                  "from": "You must appeal",
+                  "to": "Appeal within 30 days",
+                  "reason": "specific timeframe"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "You may appeal.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "30",
+              "may",
+              "must"
+            ],
+            "missing": [
+              "30",
+              "must"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ac8e47032a8fe81b3680d0c87d4eff31156ce83e9096916bf9faebe3a8a3f6db",
+          "durationMs": 7881
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"You may appeal.\",\"changes\":[{\"from\":\"You must appeal\",\"to\":\"Appeal within 30 days\",\"reason\":\"specific timeframe\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "You may appeal.",
+              "changes": [
+                {
+                  "from": "You must appeal",
+                  "to": "Appeal within 30 days",
+                  "reason": "specific timeframe"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "You may appeal.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "30",
+              "may",
+              "must"
+            ],
+            "missing": [
+              "30",
+              "must"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ac8e47032a8fe81b3680d0c87d4eff31156ce83e9096916bf9faebe3a8a3f6db",
+          "durationMs": 7900
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"You may appeal.\",\"changes\":[{\"from\":\"You must appeal\",\"to\":\"Appeal within 30 days\",\"reason\":\"specific timeframe\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "You may appeal.",
+              "changes": [
+                {
+                  "from": "You must appeal",
+                  "to": "Appeal within 30 days",
+                  "reason": "specific timeframe"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "You may appeal.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "30",
+              "may",
+              "must"
+            ],
+            "missing": [
+              "30",
+              "must"
+            ],
+            "passed": false,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ac8e47032a8fe81b3680d0c87d4eff31156ce83e9096916bf9faebe3a8a3f6db",
+          "durationMs": 8029
+        }
+      ]
+    },
+    {
+      "fixtureId": "COND-01",
+      "original": "Apply before June 1 unless you have an extension.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 49
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Apply before June 1 unless you have an extension.\",\"changes\":[{\"from\":\"Apply before June 1 unless you have an extension\",\"to\":\"Apply before June 1 unless you have an extension\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Apply before June 1 unless you have an extension.",
+              "changes": [
+                {
+                  "from": "Apply before June 1 unless you have an extension",
+                  "to": "Apply before June 1 unless you have an extension",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Apply before June 1 unless you have an extension.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "1",
+              "unless",
+              "June"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "23c0090128a49547ba97cf22540912bddfdd32dcd3bcd60f34ef08b92f021155",
+          "durationMs": 10523
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Apply before June 1 unless you have an extension.\",\"changes\":[{\"from\":\"Apply before June 1 unless you have an extension\",\"to\":\"Apply before June 1 unless you have an extension\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Apply before June 1 unless you have an extension.",
+              "changes": [
+                {
+                  "from": "Apply before June 1 unless you have an extension",
+                  "to": "Apply before June 1 unless you have an extension",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Apply before June 1 unless you have an extension.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "1",
+              "unless",
+              "June"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "23c0090128a49547ba97cf22540912bddfdd32dcd3bcd60f34ef08b92f021155",
+          "durationMs": 10753
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Apply before June 1 unless you have an extension.\",\"changes\":[{\"from\":\"Apply before June 1 unless you have an extension\",\"to\":\"Apply before June 1 unless you have an extension\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Apply before June 1 unless you have an extension.",
+              "changes": [
+                {
+                  "from": "Apply before June 1 unless you have an extension",
+                  "to": "Apply before June 1 unless you have an extension",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Apply before June 1 unless you have an extension.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "1",
+              "unless",
+              "June"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "23c0090128a49547ba97cf22540912bddfdd32dcd3bcd60f34ef08b92f021155",
+          "durationMs": 10332
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Apply before June 1 unless you have an extension.\",\"changes\":[{\"from\":\"Apply before June 1 unless you have an extension\",\"to\":\"Apply before June 1 unless you have an extension\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Apply before June 1 unless you have an extension.",
+              "changes": [
+                {
+                  "from": "Apply before June 1 unless you have an extension",
+                  "to": "Apply before June 1 unless you have an extension",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Apply before June 1 unless you have an extension.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "1",
+              "unless",
+              "June"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "23c0090128a49547ba97cf22540912bddfdd32dcd3bcd60f34ef08b92f021155",
+          "durationMs": 10302
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Apply before June 1 unless you have an extension.\",\"changes\":[{\"from\":\"Apply before June 1 unless you have an extension\",\"to\":\"Apply before June 1 unless you have an extension\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Apply before June 1 unless you have an extension.",
+              "changes": [
+                {
+                  "from": "Apply before June 1 unless you have an extension",
+                  "to": "Apply before June 1 unless you have an extension",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Apply before June 1 unless you have an extension.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "1",
+              "unless",
+              "June"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "23c0090128a49547ba97cf22540912bddfdd32dcd3bcd60f34ef08b92f021155",
+          "durationMs": 10558
+        }
+      ]
+    },
+    {
+      "fixtureId": "LEX-01",
+      "original": "Download the application before submitting your application.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 60
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Download the application before submitting your application.\",\"changes\":[{\"from\":\"Download the application\",\"to\":\"Submit your application\",\"reason\":\"specific action\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Download the application before submitting your application.",
+              "changes": [
+                {
+                  "from": "Download the application",
+                  "to": "Submit your application",
+                  "reason": "specific action"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Download the application before submitting your application.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "1db9a3a6f59c3669dd568ad47707adfdacca4d953ab27ab7d28dab0ab858255d",
+          "durationMs": 8822
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Download the application before submitting your application.\",\"changes\":[{\"from\":\"Download the application\",\"to\":\"Submit your application\",\"reason\":\"specific action\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Download the application before submitting your application.",
+              "changes": [
+                {
+                  "from": "Download the application",
+                  "to": "Submit your application",
+                  "reason": "specific action"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Download the application before submitting your application.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "1db9a3a6f59c3669dd568ad47707adfdacca4d953ab27ab7d28dab0ab858255d",
+          "durationMs": 8441
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Download the application before submitting your application.\",\"changes\":[{\"from\":\"Download the application\",\"to\":\"Submit your application\",\"reason\":\"specific action\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Download the application before submitting your application.",
+              "changes": [
+                {
+                  "from": "Download the application",
+                  "to": "Submit your application",
+                  "reason": "specific action"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Download the application before submitting your application.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "1db9a3a6f59c3669dd568ad47707adfdacca4d953ab27ab7d28dab0ab858255d",
+          "durationMs": 8463
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Download the application before submitting your application.\",\"changes\":[{\"from\":\"Download the application\",\"to\":\"Submit your application\",\"reason\":\"specific action\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Download the application before submitting your application.",
+              "changes": [
+                {
+                  "from": "Download the application",
+                  "to": "Submit your application",
+                  "reason": "specific action"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Download the application before submitting your application.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "1db9a3a6f59c3669dd568ad47707adfdacca4d953ab27ab7d28dab0ab858255d",
+          "durationMs": 8930
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Download the application before submitting your application.\",\"changes\":[{\"from\":\"Download the application\",\"to\":\"Submit your application\",\"reason\":\"specific action\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Download the application before submitting your application.",
+              "changes": [
+                {
+                  "from": "Download the application",
+                  "to": "Submit your application",
+                  "reason": "specific action"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Download the application before submitting your application.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "1db9a3a6f59c3669dd568ad47707adfdacca4d953ab27ab7d28dab0ab858255d",
+          "durationMs": 8606
+        }
+      ]
+    },
+    {
+      "fixtureId": "SEC-01",
+      "original": "Applications close Friday.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 26
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Applications close Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Applications close Friday.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Applications close Friday.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "5eb0f1de4dc3b8fa62ce4715e5840f6fea6d09427778ea1f4096caba9b627099",
+          "durationMs": 7633
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Applications close Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Applications close Friday.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Applications close Friday.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "5eb0f1de4dc3b8fa62ce4715e5840f6fea6d09427778ea1f4096caba9b627099",
+          "durationMs": 7643
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Applications close Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Applications close Friday.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Applications close Friday.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "5eb0f1de4dc3b8fa62ce4715e5840f6fea6d09427778ea1f4096caba9b627099",
+          "durationMs": 7765
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Applications close Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Applications close Friday.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Applications close Friday.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "5eb0f1de4dc3b8fa62ce4715e5840f6fea6d09427778ea1f4096caba9b627099",
+          "durationMs": 7594
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Applications close Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Applications close Friday.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Applications close Friday.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "5eb0f1de4dc3b8fa62ce4715e5840f6fea6d09427778ea1f4096caba9b627099",
+          "durationMs": 7821
+        }
+      ]
+    },
+    {
+      "fixtureId": "QTY-01",
+      "original": "Provide two references and pay $25.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 35
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Provide two references and pay $25.\",\"changes\":[{\"from\":\"Provide two references\",\"to\":\"Provide two references\",\"reason\":\"plain wording\"},{\"from\":\"Pay $25\",\"to\":\"Pay $25\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Provide two references and pay $25.",
+              "changes": [
+                {
+                  "from": "Provide two references",
+                  "to": "Provide two references",
+                  "reason": "plain wording"
+                },
+                {
+                  "from": "Pay $25",
+                  "to": "Pay $25",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Provide two references and pay $25.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "25",
+              "$25"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "7947ccaf248a19a955c7b1d11cf16235543c2ac4e25d75ec5a752d1c030138ea",
+          "durationMs": 11030
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Provide two references and pay $25.\",\"changes\":[{\"from\":\"Provide two references\",\"to\":\"Provide two references\",\"reason\":\"plain wording\"},{\"from\":\"Pay $25\",\"to\":\"Pay $25\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Provide two references and pay $25.",
+              "changes": [
+                {
+                  "from": "Provide two references",
+                  "to": "Provide two references",
+                  "reason": "plain wording"
+                },
+                {
+                  "from": "Pay $25",
+                  "to": "Pay $25",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Provide two references and pay $25.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "25",
+              "$25"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "7947ccaf248a19a955c7b1d11cf16235543c2ac4e25d75ec5a752d1c030138ea",
+          "durationMs": 11418
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Provide two references and pay $25.\",\"changes\":[{\"from\":\"Provide two references\",\"to\":\"Provide two references\",\"reason\":\"plain wording\"},{\"from\":\"Pay $25\",\"to\":\"Pay $25\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Provide two references and pay $25.",
+              "changes": [
+                {
+                  "from": "Provide two references",
+                  "to": "Provide two references",
+                  "reason": "plain wording"
+                },
+                {
+                  "from": "Pay $25",
+                  "to": "Pay $25",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Provide two references and pay $25.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "25",
+              "$25"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "7947ccaf248a19a955c7b1d11cf16235543c2ac4e25d75ec5a752d1c030138ea",
+          "durationMs": 11205
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Provide two references and pay $25.\",\"changes\":[{\"from\":\"Provide two references\",\"to\":\"Provide two references\",\"reason\":\"plain wording\"},{\"from\":\"Pay $25\",\"to\":\"Pay $25\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Provide two references and pay $25.",
+              "changes": [
+                {
+                  "from": "Provide two references",
+                  "to": "Provide two references",
+                  "reason": "plain wording"
+                },
+                {
+                  "from": "Pay $25",
+                  "to": "Pay $25",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Provide two references and pay $25.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "25",
+              "$25"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "7947ccaf248a19a955c7b1d11cf16235543c2ac4e25d75ec5a752d1c030138ea",
+          "durationMs": 11141
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Provide two references and pay $25.\",\"changes\":[{\"from\":\"Provide two references\",\"to\":\"Provide two references\",\"reason\":\"plain wording\"},{\"from\":\"Pay $25\",\"to\":\"Pay $25\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Provide two references and pay $25.",
+              "changes": [
+                {
+                  "from": "Provide two references",
+                  "to": "Provide two references",
+                  "reason": "plain wording"
+                },
+                {
+                  "from": "Pay $25",
+                  "to": "Pay $25",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Provide two references and pay $25.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "25",
+              "$25"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "7947ccaf248a19a955c7b1d11cf16235543c2ac4e25d75ec5a752d1c030138ea",
+          "durationMs": 11577
+        }
+      ]
+    },
+    {
+      "fixtureId": "LINK-01",
+      "original": "Read the eligibility guidance before applying.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 46
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Read the eligibility guidance before applying.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the eligibility guidance before applying.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the eligibility guidance before applying.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "605230be902dfc9f96b673c275b098939424bc15c6cab067cd154b728f4cce73",
+          "durationMs": 10108
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Read the eligibility guidance before applying.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the eligibility guidance before applying.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the eligibility guidance before applying.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "605230be902dfc9f96b673c275b098939424bc15c6cab067cd154b728f4cce73",
+          "durationMs": 9022
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Read the eligibility guidance before applying.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the eligibility guidance before applying.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the eligibility guidance before applying.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "605230be902dfc9f96b673c275b098939424bc15c6cab067cd154b728f4cce73",
+          "durationMs": 9363
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Read the eligibility guidance before applying.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the eligibility guidance before applying.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the eligibility guidance before applying.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "605230be902dfc9f96b673c275b098939424bc15c6cab067cd154b728f4cce73",
+          "durationMs": 9185
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Read the eligibility guidance before applying.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the eligibility guidance before applying.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the eligibility guidance before applying.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "605230be902dfc9f96b673c275b098939424bc15c6cab067cd154b728f4cce73",
+          "durationMs": 9185
+        }
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-LINK",
+      "original": "Read the rules first.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 21
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Read the rules first.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the rules first.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the rules first.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "269d73f9afaf61a87dcef602c0572cb441b110388ff875320e0433cdc1aae714",
+          "durationMs": 9101
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Read the rules first.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the rules first.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the rules first.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "269d73f9afaf61a87dcef602c0572cb441b110388ff875320e0433cdc1aae714",
+          "durationMs": 8775
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Read the rules first.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the rules first.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the rules first.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "269d73f9afaf61a87dcef602c0572cb441b110388ff875320e0433cdc1aae714",
+          "durationMs": 8940
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Read the rules first.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the rules first.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the rules first.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "269d73f9afaf61a87dcef602c0572cb441b110388ff875320e0433cdc1aae714",
+          "durationMs": 8178
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Read the rules first.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Read the rules first.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Read the rules first.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "269d73f9afaf61a87dcef602c0572cb441b110388ff875320e0433cdc1aae714",
+          "durationMs": 8124
+        }
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-LINKS",
+      "original": "First and Second.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 17
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"First and Second.\",\"changes\":[{\"from\":\"First\",\"to\":\"First and Second\",\"reason\":\"add 'and'\"},{\"from\":\"Second\",\"to\":\"First and Second\",\"reason\":\"add 'and'}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          },
+          "errors": [
+            "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "01989eb5b1376c26b5d7715b28cfe3d7b37aa16116dc07c79ebcd9e5af0d740f",
+          "durationMs": 10409
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"First and Second.\",\"changes\":[{\"from\":\"First\",\"to\":\"First and Second\",\"reason\":\"add 'and'\"},{\"from\":\"Second\",\"to\":\"First and Second\",\"reason\":\"add 'and'}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          },
+          "errors": [
+            "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "01989eb5b1376c26b5d7715b28cfe3d7b37aa16116dc07c79ebcd9e5af0d740f",
+          "durationMs": 11102
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"First and Second.\",\"changes\":[{\"from\":\"First\",\"to\":\"First and Second\",\"reason\":\"add 'and'\"},{\"from\":\"Second\",\"to\":\"First and Second\",\"reason\":\"add 'and'}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          },
+          "errors": [
+            "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "01989eb5b1376c26b5d7715b28cfe3d7b37aa16116dc07c79ebcd9e5af0d740f",
+          "durationMs": 9984
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"First and Second.\",\"changes\":[{\"from\":\"First\",\"to\":\"First and Second\",\"reason\":\"add 'and'\"},{\"from\":\"Second\",\"to\":\"First and Second\",\"reason\":\"add 'and'}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          },
+          "errors": [
+            "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "01989eb5b1376c26b5d7715b28cfe3d7b37aa16116dc07c79ebcd9e5af0d740f",
+          "durationMs": 9661
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"First and Second.\",\"changes\":[{\"from\":\"First\",\"to\":\"First and Second\",\"reason\":\"add 'and'\"},{\"from\":\"Second\",\"to\":\"First and Second\",\"reason\":\"add 'and'}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          },
+          "errors": [
+            "invalid JSON: Expected ',' or '}' after property value in JSON at position 171 (line 1 column 172)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "01989eb5b1376c26b5d7715b28cfe3d7b37aa16116dc07c79ebcd9e5af0d740f",
+          "durationMs": 9858
+        }
+      ]
+    },
+    {
+      "fixtureId": "IMG-DECOR",
+      "original": "Decorative image above.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 23
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Apply by Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}\n\n{\"simplified\":\"Decorative image above.\",\"changes\":[{\"from\":\"\",\"to\":\"\",\"reason\":\"no changes\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          },
+          "errors": [
+            "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "45505d5e7b62a0072c8d4d9891ade40f36761f13bf9ab719366f09910d8f6f01",
+          "durationMs": 12552
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Apply by Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}\n\n{\"simplified\":\"Decorative image above.\",\"changes\":[{\"from\":\"\",\"to\":\"\",\"reason\":\"no changes\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          },
+          "errors": [
+            "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "45505d5e7b62a0072c8d4d9891ade40f36761f13bf9ab719366f09910d8f6f01",
+          "durationMs": 12827
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Apply by Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}\n\n{\"simplified\":\"Decorative image above.\",\"changes\":[{\"from\":\"\",\"to\":\"\",\"reason\":\"no changes\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          },
+          "errors": [
+            "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "45505d5e7b62a0072c8d4d9891ade40f36761f13bf9ab719366f09910d8f6f01",
+          "durationMs": 12966
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Apply by Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}\n\n{\"simplified\":\"Decorative image above.\",\"changes\":[{\"from\":\"\",\"to\":\"\",\"reason\":\"no changes\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          },
+          "errors": [
+            "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "45505d5e7b62a0072c8d4d9891ade40f36761f13bf9ab719366f09910d8f6f01",
+          "durationMs": 13425
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Apply by Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}\n\n{\"simplified\":\"Decorative image above.\",\"changes\":[{\"from\":\"\",\"to\":\"\",\"reason\":\"no changes\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": false,
+            "error": "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          },
+          "errors": [
+            "invalid JSON: Unexpected non-whitespace character after JSON at position 144 (line 3 column 1)"
+          ],
+          "valid": false,
+          "simplified": "",
+          "semantic": null,
+          "promptHash": "45505d5e7b62a0072c8d4d9891ade40f36761f13bf9ab719366f09910d8f6f01",
+          "durationMs": 13853
+        }
+      ]
+    },
+    {
+      "fixtureId": "IMG-NOALT",
+      "original": "Image without alt.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 18
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Image without alt.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Image without alt.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Image without alt.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "without"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "57cbb4560bacf3b90dccc337aad5486188248fc02f9bc451e6ee2617c4fe2876",
+          "durationMs": 8229
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Image without alt.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Image without alt.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Image without alt.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "without"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "57cbb4560bacf3b90dccc337aad5486188248fc02f9bc451e6ee2617c4fe2876",
+          "durationMs": 8171
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Image without alt.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Image without alt.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Image without alt.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "without"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "57cbb4560bacf3b90dccc337aad5486188248fc02f9bc451e6ee2617c4fe2876",
+          "durationMs": 8258
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Image without alt.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Image without alt.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Image without alt.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "without"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "57cbb4560bacf3b90dccc337aad5486188248fc02f9bc451e6ee2617c4fe2876",
+          "durationMs": 8297
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Image without alt.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Image without alt.",
+              "changes": [
+                {
+                  "from": "You must apply",
+                  "to": "Apply",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Image without alt.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "without"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "57cbb4560bacf3b90dccc337aad5486188248fc02f9bc451e6ee2617c4fe2876",
+          "durationMs": 8499
+        }
+      ]
+    },
+    {
+      "fixtureId": "QUOTE",
+      "original": "Access is a right, not a privilege.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > blockquote:nth-of-type(1)",
+          "start": 0,
+          "end": 35
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Access is a right, not a privilege.\",\"changes\":[{\"from\":\"Access is a right, not a privilege\",\"to\":\"Access is a right, not a privilege\",\"reason\":\"no change needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Access is a right, not a privilege.",
+              "changes": [
+                {
+                  "from": "Access is a right, not a privilege",
+                  "to": "Access is a right, not a privilege",
+                  "reason": "no change needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Access is a right, not a privilege.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "55d32fd249c500fef4b2a4e830afa7637165dc3e3e7a2042a32a9bd7757aecf1",
+          "durationMs": 10525
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Access is a right, not a privilege.\",\"changes\":[{\"from\":\"Access is a right, not a privilege\",\"to\":\"Access is a right, not a privilege\",\"reason\":\"no change needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Access is a right, not a privilege.",
+              "changes": [
+                {
+                  "from": "Access is a right, not a privilege",
+                  "to": "Access is a right, not a privilege",
+                  "reason": "no change needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Access is a right, not a privilege.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "55d32fd249c500fef4b2a4e830afa7637165dc3e3e7a2042a32a9bd7757aecf1",
+          "durationMs": 10568
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Access is a right, not a privilege.\",\"changes\":[{\"from\":\"Access is a right, not a privilege\",\"to\":\"Access is a right, not a privilege\",\"reason\":\"no change needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Access is a right, not a privilege.",
+              "changes": [
+                {
+                  "from": "Access is a right, not a privilege",
+                  "to": "Access is a right, not a privilege",
+                  "reason": "no change needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Access is a right, not a privilege.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "55d32fd249c500fef4b2a4e830afa7637165dc3e3e7a2042a32a9bd7757aecf1",
+          "durationMs": 10918
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Access is a right, not a privilege.\",\"changes\":[{\"from\":\"Access is a right, not a privilege\",\"to\":\"Access is a right, not a privilege\",\"reason\":\"no change needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Access is a right, not a privilege.",
+              "changes": [
+                {
+                  "from": "Access is a right, not a privilege",
+                  "to": "Access is a right, not a privilege",
+                  "reason": "no change needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Access is a right, not a privilege.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "55d32fd249c500fef4b2a4e830afa7637165dc3e3e7a2042a32a9bd7757aecf1",
+          "durationMs": 10516
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Access is a right, not a privilege.\",\"changes\":[{\"from\":\"Access is a right, not a privilege\",\"to\":\"Access is a right, not a privilege\",\"reason\":\"no change needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Access is a right, not a privilege.",
+              "changes": [
+                {
+                  "from": "Access is a right, not a privilege",
+                  "to": "Access is a right, not a privilege",
+                  "reason": "no change needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Access is a right, not a privilege.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [
+              "not"
+            ],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "55d32fd249c500fef4b2a4e830afa7637165dc3e3e7a2042a32a9bd7757aecf1",
+          "durationMs": 10688
+        }
+      ]
+    },
+    {
+      "fixtureId": "BARE-DIV",
+      "original": "Office closes at noon.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > div:nth-of-type(1)",
+          "start": 0,
+          "end": 22
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Office closes at noon.\",\"changes\":[{\"from\":\"Office closes\",\"to\":\"Closes\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Office closes at noon.",
+              "changes": [
+                {
+                  "from": "Office closes",
+                  "to": "Closes",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Office closes at noon.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ed4b8512159247907d9a80255932f3029bd0a1037bc8a906ce259cf7fd28f234",
+          "durationMs": 8407
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Office closes at noon.\",\"changes\":[{\"from\":\"Office closes\",\"to\":\"Closes\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Office closes at noon.",
+              "changes": [
+                {
+                  "from": "Office closes",
+                  "to": "Closes",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Office closes at noon.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ed4b8512159247907d9a80255932f3029bd0a1037bc8a906ce259cf7fd28f234",
+          "durationMs": 8356
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Office closes at noon.\",\"changes\":[{\"from\":\"Office closes\",\"to\":\"Closes\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Office closes at noon.",
+              "changes": [
+                {
+                  "from": "Office closes",
+                  "to": "Closes",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Office closes at noon.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ed4b8512159247907d9a80255932f3029bd0a1037bc8a906ce259cf7fd28f234",
+          "durationMs": 8416
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Office closes at noon.\",\"changes\":[{\"from\":\"Office closes\",\"to\":\"Closes\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Office closes at noon.",
+              "changes": [
+                {
+                  "from": "Office closes",
+                  "to": "Closes",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Office closes at noon.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ed4b8512159247907d9a80255932f3029bd0a1037bc8a906ce259cf7fd28f234",
+          "durationMs": 8398
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Office closes at noon.\",\"changes\":[{\"from\":\"Office closes\",\"to\":\"Closes\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Office closes at noon.",
+              "changes": [
+                {
+                  "from": "Office closes",
+                  "to": "Closes",
+                  "reason": "plain wording"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Office closes at noon.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "ed4b8512159247907d9a80255932f3029bd0a1037bc8a906ce259cf7fd28f234",
+          "durationMs": 8426
+        }
+      ]
+    },
+    {
+      "fixtureId": "HIDDEN",
+      "original": "Visible notice.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 15
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Visible notice.\",\"changes\":[{\"from\":\"Visible notice\",\"to\":\"Visible notice\",\"reason\":\"no changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Visible notice.",
+              "changes": [
+                {
+                  "from": "Visible notice",
+                  "to": "Visible notice",
+                  "reason": "no changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Visible notice.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "b8342a015d5d6a10dbbb69a2a052e87b9be1c17cdab0019c7feb3ed0b79a1030",
+          "durationMs": 8560
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Visible notice.\",\"changes\":[{\"from\":\"Visible notice\",\"to\":\"Visible notice\",\"reason\":\"no changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Visible notice.",
+              "changes": [
+                {
+                  "from": "Visible notice",
+                  "to": "Visible notice",
+                  "reason": "no changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Visible notice.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "b8342a015d5d6a10dbbb69a2a052e87b9be1c17cdab0019c7feb3ed0b79a1030",
+          "durationMs": 8638
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Visible notice.\",\"changes\":[{\"from\":\"Visible notice\",\"to\":\"Visible notice\",\"reason\":\"no changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Visible notice.",
+              "changes": [
+                {
+                  "from": "Visible notice",
+                  "to": "Visible notice",
+                  "reason": "no changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Visible notice.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "b8342a015d5d6a10dbbb69a2a052e87b9be1c17cdab0019c7feb3ed0b79a1030",
+          "durationMs": 8829
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Visible notice.\",\"changes\":[{\"from\":\"Visible notice\",\"to\":\"Visible notice\",\"reason\":\"no changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Visible notice.",
+              "changes": [
+                {
+                  "from": "Visible notice",
+                  "to": "Visible notice",
+                  "reason": "no changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Visible notice.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "b8342a015d5d6a10dbbb69a2a052e87b9be1c17cdab0019c7feb3ed0b79a1030",
+          "durationMs": 8619
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Visible notice.\",\"changes\":[{\"from\":\"Visible notice\",\"to\":\"Visible notice\",\"reason\":\"no changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Visible notice.",
+              "changes": [
+                {
+                  "from": "Visible notice",
+                  "to": "Visible notice",
+                  "reason": "no changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Visible notice.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "b8342a015d5d6a10dbbb69a2a052e87b9be1c17cdab0019c7feb3ed0b79a1030",
+          "durationMs": 8596
+        }
+      ]
+    },
+    {
+      "fixtureId": "UNICODE",
+      "original": "R\u00e9sum\u00e9 \u2014 \u65e5\u672c\u8a9e \u2014 \u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 22
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic\",\"changes\":[{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Japanese\"},{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Arabic\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+              "changes": [
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Japanese"
+                },
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Arabic"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "db0794dd2985fb1d6aae4cd0d0b7520bf51b730a3ea5eb3e64aa24e353af5de0",
+          "durationMs": 12581
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic\",\"changes\":[{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Japanese\"},{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Arabic\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+              "changes": [
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Japanese"
+                },
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Arabic"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "db0794dd2985fb1d6aae4cd0d0b7520bf51b730a3ea5eb3e64aa24e353af5de0",
+          "durationMs": 13881
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic\",\"changes\":[{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Japanese\"},{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Arabic\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+              "changes": [
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Japanese"
+                },
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Arabic"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "db0794dd2985fb1d6aae4cd0d0b7520bf51b730a3ea5eb3e64aa24e353af5de0",
+          "durationMs": 14600
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic\",\"changes\":[{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Japanese\"},{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Arabic\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+              "changes": [
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Japanese"
+                },
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Arabic"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "db0794dd2985fb1d6aae4cd0d0b7520bf51b730a3ea5eb3e64aa24e353af5de0",
+          "durationMs": 15239
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic\",\"changes\":[{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Japanese\"},{\"from\":\"R\u00e9sum\u00e9\",\"to\":\"Summary\",\"reason\":\"Translate to Arabic\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+              "changes": [
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Japanese"
+                },
+                {
+                  "from": "R\u00e9sum\u00e9",
+                  "to": "Summary",
+                  "reason": "Translate to Arabic"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "R\u00e9sum\u00e9 \u2014 Japanese \u2014 Arabic",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "db0794dd2985fb1d6aae4cd0d0b7520bf51b730a3ea5eb3e64aa24e353af5de0",
+          "durationMs": 15820
+        }
+      ]
+    },
+    {
+      "fixtureId": "INJECT",
+      "original": "Safe text.",
+      "blocks": [
+        {
+          "id": "b0001",
+          "path": "main > p:nth-of-type(1)",
+          "start": 0,
+          "end": 10
+        }
+      ],
+      "runs": [
+        {
+          "run": 1,
+          "raw": "{\"simplified\":\"Safe text.\",\"changes\":[{\"from\":\"Safe text\",\"to\":\"Safe text\",\"reason\":\"No changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Safe text.",
+              "changes": [
+                {
+                  "from": "Safe text",
+                  "to": "Safe text",
+                  "reason": "No changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Safe text.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "32cd45f545bae1033c2c6882038b03c5eb54b3887c4b8dc7945c99ce8afc49b2",
+          "durationMs": 11164
+        },
+        {
+          "run": 2,
+          "raw": "{\"simplified\":\"Safe text.\",\"changes\":[{\"from\":\"Safe text\",\"to\":\"Safe text\",\"reason\":\"No changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Safe text.",
+              "changes": [
+                {
+                  "from": "Safe text",
+                  "to": "Safe text",
+                  "reason": "No changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Safe text.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "32cd45f545bae1033c2c6882038b03c5eb54b3887c4b8dc7945c99ce8afc49b2",
+          "durationMs": 11167
+        },
+        {
+          "run": 3,
+          "raw": "{\"simplified\":\"Safe text.\",\"changes\":[{\"from\":\"Safe text\",\"to\":\"Safe text\",\"reason\":\"No changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Safe text.",
+              "changes": [
+                {
+                  "from": "Safe text",
+                  "to": "Safe text",
+                  "reason": "No changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Safe text.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "32cd45f545bae1033c2c6882038b03c5eb54b3887c4b8dc7945c99ce8afc49b2",
+          "durationMs": 11807
+        },
+        {
+          "run": 4,
+          "raw": "{\"simplified\":\"Safe text.\",\"changes\":[{\"from\":\"Safe text\",\"to\":\"Safe text\",\"reason\":\"No changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Safe text.",
+              "changes": [
+                {
+                  "from": "Safe text",
+                  "to": "Safe text",
+                  "reason": "No changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Safe text.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "32cd45f545bae1033c2c6882038b03c5eb54b3887c4b8dc7945c99ce8afc49b2",
+          "durationMs": 11093
+        },
+        {
+          "run": 5,
+          "raw": "{\"simplified\":\"Safe text.\",\"changes\":[{\"from\":\"Safe text\",\"to\":\"Safe text\",\"reason\":\"No changes needed\"}],\"uncertainty\":\"\",\"abstain\":false}",
+          "parsed": {
+            "ok": true,
+            "value": {
+              "simplified": "Safe text.",
+              "changes": [
+                {
+                  "from": "Safe text",
+                  "to": "Safe text",
+                  "reason": "No changes needed"
+                }
+              ],
+              "uncertainty": "",
+              "abstain": false
+            }
+          },
+          "errors": [],
+          "valid": true,
+          "simplified": "Safe text.",
+          "semantic": {
+            "heuristic": true,
+            "critical": [],
+            "missing": [],
+            "passed": true,
+            "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+          },
+          "promptHash": "32cd45f545bae1033c2c6882038b03c5eb54b3887c4b8dc7945c99ce8afc49b2",
+          "durationMs": 11219
+        }
+      ]
+    }
+  ],
+  "environment": {
+    "runtime": "node",
+    "device": "cpu",
+    "os": "macOS arm64",
+    "browser": null,
+    "note": "P3.2 offline runs used Node/CPU; the separate NEG-01 browser run is recorded in NEG-01-browser.json."
+  }
+}

@@ -1,6 +1,6 @@
 # P3/P4 research plan: browser simplification and direct/hybrid lexical planning
 
-Status: **P3.1 baseline implemented; P3.2/P3.3 and P4 have not run.** A pinned browser model, model card, consent page, and one browser inference are recorded. The P4.1 plan-contract validator exists. This is a research protocol, not an ASL feature and not a deployment plan.
+Status: **P3.1 and descriptive P3.2 implemented; P3.3 and P4 have not run.** A pinned browser model, model card, consent page, 80 recorded runs, and a 16-fixture comparison are recorded. The P4.1 plan-contract validator exists. This is a research protocol, not an ASL feature and not a deployment plan.
 
 P2 produced 40 partial lexical plans and a passing image-pinned reproduction. P2.4 human review is still pending. This document plans the optional P3/P4 research that follows that review; it does not authorize P5 avatar playback.
 

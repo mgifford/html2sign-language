@@ -13,7 +13,7 @@ export const MODEL = {
   libraryVersion: '4.3.2',
   dtype: 'q4f16',
   device: 'wasm',
-  source: 'https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct',
+  source: 'https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct',
 };
 
 export const MODEL_CDN = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2/dist/transformers.min.js';

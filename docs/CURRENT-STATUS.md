@@ -1,6 +1,6 @@
 # Current status
 
-Snapshot date: **2026-11-11**. Baseline commit: **`4944d3d`** (Phase A merged). This document is the authoritative current-status record; dated decision records and retrospectives remain historical.
+Snapshot date: **2026-11-11**. Baseline commit: **`10c931c`** (Phase B/P3.1 merged). This document is the authoritative current-status record; dated decision records and retrospectives remain historical.
 
 ## Current authorized phase
 
@@ -20,7 +20,7 @@ Phase C and P5 may begin only after explicit authorization and the relevant revi
 | P2.1–P2.2 lexical-plan artifacts | Implemented, **not linguistically validated** | 40 `partial` artifacts; 16 prose in scope, 24 structurally excluded |
 | P2.3 reproducibility | Implemented and exercised | Python lock, image digests, source-run tool; clean-room run [42915233893](https://github.com/mgifford/html2sign-language/actions/runs/42915233893) matched 40/40 plan contents |
 | P2.4 review | **In progress; gate not closed** | 1/16 owner source-alignment decisions; independent Deaf ASL review pending |
-| P3 browser English simplification | **P3.1 implemented; P3.2/P3.3 not run** | `p3/`, `P3-MODEL-CARD.md`, consent gate, 11 core tests, one Chrome 157 browser run |
+| P3 browser English simplification | **P3.1 and descriptive P3.2 implemented; P3.3 not run** | `p3/`, `P3-MODEL-CARD.md`, 70/80 valid runs, 16-fixture comparison, one Chrome 157 browser run |
 | P4 direct/hybrid lexical planning | Proposed; not started | `P3-P4-RESEARCH.md`; P4 contract validator only in `tools/p3/` |
 | P5/P6 3D-LEX and playback | Blocked | Requires P2.4, P3/P4 evidence, dataset licence, and independent Deaf ASL review |
 | Fixed-sentence production route | Proposed; not built | `docs/PLAN-FIXED-SENTENCES.md` |
@@ -38,7 +38,7 @@ Phase C and P5 may begin only after explicit authorization and the relevant revi
 ### Proposed, not implemented
 
 - P4 direct/hybrid lexical planning (only the P4.1 plan-contract validator exists).
-- P3.2/P3.3 rules-comparison and human analysis (P3.1 baseline only).
+- P3.3 human analysis; P3.2 descriptive comparison is implemented, not a quality evaluation.
 - P5 3D-LEX mapping/motion integration.
 - P6 avatar playback for reviewed signing.
 - The production fixed-sentence route.
@@ -86,9 +86,9 @@ Phase A and P3.1 verification executed on 2026-11-11 (macOS, Node 22, Playwright
 | Command | Result |
 |---|---|
 | `npm ci --cache /tmp/npm-cache` | 37 packages installed; default npm cache was not writable, so a temporary cache was used |
-| `npm test` | 46/46 Node experiment tests + 3/3 public-page tests; 1 existing warning about missing `models/` |
+| `npm test` | 47/47 Node experiment tests + 3/3 public-page tests; 1 existing warning about missing `models/` |
 | `npm run test:p2` | **45/45 pass** |
-| `npm run test:p3` | **6/6 pass** |
+| `npm run test:p3` | **8/8 pass** |
 | `npm run test:browser:experiment` | **pass**; P2 viewer, P3 page, review page, 320 px reflow, 0 console errors |
 | `npm run test:avatar` | **8/8 pass** |
 | Manual `p3-model.mjs` | **pass**; SmolLM2-1.7B q4f16, Chrome 157, WASM; valid `NEG-01` JSON output, critical `not` flagged for review |
@@ -100,6 +100,14 @@ Known reproducibility evidence:
 - CI workflow runs Node, P2, P3/P4 contract, and Chromium browser tests.
 - P2 review tests cover scope, missing review, attestation, and status transitions.
 - Firefox and WebKit were not run; the browser suite is Chromium-only.
+
+## P3.2 descriptive findings
+
+- **70/80** Node/CPU model runs produced valid structured output; **14/16** fixtures had five valid runs. The separate Chrome/WASM run is recorded in `data/p3/NEG-01-browser.json`.
+- **2/16** fixtures (`STRUCT-LINKS`, `IMG-DECOR`) produced zero valid runs; failures included invalid JSON and copying the prompt example. They are retained as failures.
+- `NEG-01` simplified to “No fee.”; the mechanical check flagged `not` as missing, showing why token checks are not semantic validation.
+- The comparison records original vs simplified P2 token counts and alignment. It does **not** measure ASL quality, semantic equivalence, or comprehension.
+- P3.3 human analysis has not run.
 
 ## Outstanding human reviews
 
@@ -131,7 +139,7 @@ No automated flag, model output, or coding agent substitutes for these reviews.
 
 ## Next acceptance gate
 
-**Phase B review and merge**, followed by P3.2’s rules-only vs simplification comparison. P2.4 owner review (15/16 remaining) and the independent Deaf ASL review remain open. Phase C and P5 must not start automatically.
+**Phase B/P3.2 review and merge.** P2.4 owner review (15/16 remaining) and the independent Deaf ASL review remain open. Phase C and P5 must not start automatically.
 
 ## Related records
 
