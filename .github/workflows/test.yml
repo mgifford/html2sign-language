@@ -41,6 +41,9 @@ jobs:
       - name: Run P2 tests
         run: npm run test:p2
 
+      - name: Run P3/P4 contract tests
+        run: npm run test:p3
+
       - name: Install Chromium
         run: npx playwright install chromium
 

@@ -1,6 +1,6 @@
 # P3/P4 research plan: browser simplification and direct/hybrid lexical planning
 
-Status: **planned, not started (2026-11-11).** This is a research protocol, not an ASL feature and not a deployment plan.
+Status: **planned, not started (2026-11-11). The P4.1 plan-contract validator is implemented; no model, prompt, run, or result exists.** This is a research protocol, not an ASL feature and not a deployment plan.
 
 P2 produced 40 partial lexical plans and a passing image-pinned reproduction. P2.4 human review is still pending. This document plans the optional P3/P4 research that follows that review; it does not authorize P5 avatar playback.
 
@@ -179,7 +179,7 @@ Warm-up runs are excluded and recorded. Model load time is reported separately f
 | P3.2 | Arm A/B development runs | Five runs; failures retained; schema valid |
 | P3.3 | P3 analysis and human review | H1 supported or not; no ASL claim |
 | P4.0 | P4 preregistration (arms C/D, primary outcome, stop rules) | Frozen before holdout |
-| P4.1 | Direct and hybrid implementations | Schema/alignment validators; failure paths |
+| P4.1 | Direct and hybrid implementations; plan-contract validator | Schema/alignment validators; failure paths (validator implemented) |
 | P4.2 | Five-run P4 development comparison | All arms; no dropped failures |
 | P4.3 | Holdout evaluation and decision memo | Holdout reviewed; results published |
 | P5 gate | Only if P3/P4 justify it and P2.4 review is complete | Licensed 3D-LEX/human translation and Deaf review |
