@@ -1,3 +1,5 @@
+> **Current status:** [docs/CURRENT-STATUS.md](docs/CURRENT-STATUS.md). This document is a historical build-forward sequence; it is not the current authorization. Phase A review and the P2 owner gate come first.
+
 # Agent continuation prompt
 
 You are developing https://github.com/mgifford/html2sign-language. Read `AGENTS.md`, `docs/PLAN-FIXED-SENTENCES.md`, `docs/AVATAR-ARCHITECTURE.md`, `FAILURE_REPORT.md`, `RETROSPECTIVE.md`, `docs/DECISIONS.md`, and the integrated bench at `experiments/html-to-asl/`: read its `README.md` and all four files in `experiments/html-to-asl/docs/` (`PHASES.md`, `PROTOCOL.md`, `3D-LEX.md`, `UPSTREAM.md`) before editing.

@@ -71,8 +71,18 @@ class Neg01ArtifactTests(unittest.TestCase):
         self.assertEqual(self.review["artifactCount"], 40)
         self.assertIn(self.review["owner"]["status"], {"pending", "in-review"})
         self.assertEqual(self.review["independent"]["status"], "pending")
-        self.assertTrue(all(item["linguisticStatus"] == "not-started" for item in self.review["fixtures"]))
-        self.assertFalse(any(item["linguisticStatus"] == "accepted" for item in self.review["fixtures"]))
+        in_scope = [item for item in self.review["fixtures"] if item["scope"] == "in-scope"]
+        excluded = [item for item in self.review["fixtures"] if item["scope"] == "out-of-scope"]
+        self.assertEqual(len(in_scope), 16)
+        self.assertEqual(len(excluded), 24)
+        self.assertTrue(all(item["linguisticStatus"] == "not-started" for item in in_scope))
+        self.assertTrue(all(item["linguisticStatus"] == "not-applicable" for item in excluded))
+        self.assertTrue(all(item["ownerStatus"] == "not-applicable" for item in excluded))
+        self.assertFalse(any(item["linguisticStatus"] == "accepted" for item in in_scope))
+        self.assertEqual(
+            {item["fixtureId"] for item in in_scope},
+            set(self.scope["inScope"]),
+        )
         self.assertEqual(
             [item["fixtureId"] for item in self.review["fixtures"]],
             [item["fixtureId"] for item in self.index["artifacts"]],
@@ -98,6 +108,25 @@ class Neg01ArtifactTests(unittest.TestCase):
             types = {block["type"] for block in artifact["source"]["blocks"]}
             self.assertEqual(len(artifact["source"]["blocks"]), 1)
             self.assertTrue(types <= {"paragraph", "quote", "text"}, fixture_id)
+
+    def test_review_validator_rejects_inconsistent_owner_status(self):
+        review = json.loads(json.dumps(self.review))
+        review["owner"]["status"] = "accepted"
+        errors = validate_review(review)
+        self.assertTrue(any("owner.status accepted" in error for error in errors))
+
+    def test_review_validator_rejects_complete_without_independent_review(self):
+        review = json.loads(json.dumps(self.review))
+        review["status"] = "complete"
+        errors = validate_review(review)
+        self.assertTrue(any("overall complete" in error for error in errors))
+
+    def test_scope_validator_rejects_mixed_scope_statuses(self):
+        review = json.loads(json.dumps(self.review))
+        fixture = next(item for item in review["fixtures"] if item["scope"] == "out-of-scope")
+        fixture["ownerStatus"] = "pending"
+        errors = validate_review(review)
+        self.assertTrue(any("must be not-applicable" in error for error in errors))
 
     def test_artifact_does_not_claim_asl(self):
         warnings = " ".join(self.artifact["warnings"]).lower()

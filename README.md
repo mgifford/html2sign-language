@@ -6,7 +6,7 @@ This repository is a minimal, static demonstration of a **Sign Language Sidecar*
 
 The goal is to treat sign language (LSF/ASL/IS) as a **first-class interface**, not decorative media, while remaining compatible with **GitHub Pages** (static hosting only).
 
-> **Current status:** the public demo has 24 isolated ASL word clips from WLASL. It is **not** a sentence or page translator. The HTML to ASL research bench produces lexical plans only, and the sentence/page-signing path is not built. See [the review status page](review.html) for what exists and what can be reviewed.
+> **Current status:** see [docs/CURRENT-STATUS.md](docs/CURRENT-STATUS.md) for the authoritative phase, evidence, reviews, and blockers. In short: the public demo has 24 isolated ASL word clips from WLASL, not a sentence or page translator; the research bench produces lexical plans only, and the sentence/page-signing path is not built. See [the review status page](review.html) for what can be reviewed.
 
 ---
 
@@ -17,6 +17,7 @@ The goal is to treat sign language (LSF/ASL/IS) as a **first-class interface**, 
 - `app.js` – Three.js-based "signer" engine that loads a GLB avatar, plays idle and sign animations, and wires `data-sign` triggers.
 - `signs.json` – Metadata registry for all signs/animations (file name, description for screen readers, and regional label).
 - `AGENTS.md` – Guidance for AI agents contributing to this repo (stack constraints, EN 301 549 / WCAG expectations).
+- `docs/CURRENT-STATUS.md` – Authoritative current phase, capabilities, tests, reviews, limitations, and blockers.
 - `docs/DECISIONS.md` – Current project decisions and open questions (licence, avatar format, experiment boundary).
 - `docs/SESSION-HANDOFF.md` – Durable handoff: current stage, approach assessment, corrections, and open items.
 - `review.html` – Public status and review guide; the main page links to it.
@@ -31,7 +32,7 @@ All runtime behaviour is implemented client-side, using only static files.
 ## 3. License & Credits
 
 ### 3.1 Main License
-This "Sign Language Sidecar" project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See [LICENSE.txt](LICENSE.txt) for details.
+This "Sign Language Sidecar" project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See [LICENSE.txt](LICENSE.txt) for details. The `package.json` `"license": "ISC"` value conflicts with this and is an open decision ([D3](docs/DECISIONS.md)); no licence change is made by the Phase A work.
 
 ### 3.2 Acknowledgements & Data Attribution
 This project stands on the shoulders of giants. It builds upon open research, datasets, and libraries:

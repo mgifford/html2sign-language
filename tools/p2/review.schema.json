@@ -18,12 +18,13 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["fixtureId", "ownerStatus", "ownerNotes", "linguisticStatus", "linguisticNotes"],
+        "required": ["fixtureId", "scope", "ownerStatus", "ownerNotes", "linguisticStatus", "linguisticNotes"],
         "properties": {
           "fixtureId": { "type": "string", "minLength": 1 },
-          "ownerStatus": { "enum": ["pending", "accepted", "rejected", "needs-discussion"] },
+          "scope": { "enum": ["in-scope", "out-of-scope"] },
+          "ownerStatus": { "enum": ["pending", "accepted", "rejected", "needs-discussion", "not-applicable"] },
           "ownerNotes": { "type": "string" },
-          "linguisticStatus": { "enum": ["not-started", "accepted", "rejected", "needs-discussion"] },
+          "linguisticStatus": { "enum": ["not-started", "accepted", "rejected", "needs-discussion", "not-applicable"] },
           "linguisticNotes": { "type": "string" }
         }
       }
