@@ -46,7 +46,8 @@ Record `ownerNotes` with the fixture ID, a specific concern, and whether it affe
 
 ```sh
 python3 tools/p2/qa_report.py --data-dir experiments/html-to-asl/data/p2
-python3 tools/p2/review.py --list
+python3 tools/p2/review.py
+python3 tools/p2/review.py --list --scope in-scope
 python3 tools/p2/review.py --set NEG-01 --owner-status accepted \
   --owner-notes "source mapping checked" --reviewer "Reviewer name"
 python3 tools/p2/review.py --set NEG-01 --linguistic-status accepted \
@@ -55,7 +56,7 @@ python3 tools/p2/review.py --summary
 python3 tools/p2/review.py --validate
 ```
 
-The CLI edits `data/p2/review.json`; it cannot perform the review. Do not use it to self-approve as the implementer. To mark a sampled independent review accepted, record the reviewed fixtures and set the role status with `--independent-status accepted --reviewer ...`.
+The CLI edits `data/p2/review.json`; it cannot perform the review. Do not use it to self-approve as the implementer. With no arguments it prints the pending summary and next commands. `--scope in-scope` filters to the 16 prose fixtures. An out-of-scope decision is refused unless `--allow-out-of-scope` is passed, and that flag is for notes only, not acceptance. To mark a sampled independent review accepted, record the reviewed fixtures and set the role status with `--independent-status accepted --reviewer ...`.
 
 ## 2. Independent Deaf ASL review
 

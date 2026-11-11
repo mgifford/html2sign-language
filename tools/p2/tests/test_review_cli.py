@@ -43,6 +43,32 @@ class ReviewCliTests(unittest.TestCase):
         self.assertEqual(summary["status"], "pending")
         self.assertEqual(summary["ownerStatuses"]["pending"], 40)
 
+    def test_no_args_prints_summary_and_next_steps(self):
+        result = self.run_cli()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"ownerStatuses"', result.stdout)
+        self.assertIn("--list --scope in-scope", result.stdout)
+
+    def test_list_filters_to_in_scope(self):
+        result = self.run_cli("--list", "--scope", "in-scope")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(len([line for line in result.stdout.splitlines() if "\t" in line]), 17)
+
+    def test_out_of_scope_decision_is_guarded(self):
+        result = self.run_cli(
+            "--fixture",
+            "TABLE-01",
+            "--owner-status",
+            "accepted",
+            "--reviewer",
+            "Owner Test",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("out of scope", result.stderr)
+        updated = json.loads(self.review.read_text())
+        fixture = next(item for item in updated["fixtures"] if item["fixtureId"] == "TABLE-01")
+        self.assertEqual(fixture["ownerStatus"], "pending")
+
     def test_record_owner_decision(self):
         result = self.run_cli(
             "--fixture",

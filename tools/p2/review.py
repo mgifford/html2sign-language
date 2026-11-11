@@ -37,6 +37,16 @@ def artifact_ids(directory: Path) -> list[str]:
     return [entry["fixtureId"] for entry in index["artifacts"]]
 
 
+def scope_map(directory: Path) -> dict[str, str]:
+    path = directory / "scope.json"
+    if not path.exists():
+        return {}
+    scope = load_json(path)
+    result = {fixture: "in-scope" for fixture in scope.get("inScope", [])}
+    result.update({fixture: "out-of-scope" for fixture in scope.get("outOfScope", [])})
+    return result
+
+
 def validate(review, expected_ids: list[str]) -> list[str]:
     errors = validate_review(review)
     if isinstance(review, dict) and isinstance(review.get("fixtures"), list):
@@ -91,14 +101,23 @@ def summary(review) -> dict:
     }
 
 
-def command_list(review) -> int:
-    print("fixture\towner\tlinguistic")
+def command_list(review, scopes: dict[str, str], scope_filter: str) -> int:
+    print("fixture\tscope\towner\tlinguistic")
     for item in review["fixtures"]:
-        print(f"{item['fixtureId']}\t{item['ownerStatus']}\t{item['linguisticStatus']}")
+        scope = scopes.get(item["fixtureId"], "unknown")
+        if scope_filter != "all" and scope != scope_filter:
+            continue
+        print(f"{item['fixtureId']}\t{scope}\t{item['ownerStatus']}\t{item['linguisticStatus']}")
     return 0
 
 
-def command_set(args, review, review_path: Path) -> int:
+def command_set(args, review, review_path: Path, scopes: dict[str, str]) -> int:
+    if args.fixture and scopes.get(args.fixture) == "out-of-scope" and not args.allow_out_of_scope:
+        print(
+            f"{args.fixture} is out of scope for P2/P3/P4. Use --allow-out-of-scope only to record a note; do not accept a structural lexical plan.",
+            file=sys.stderr,
+        )
+        return 2
     changed = False
     for item in review["fixtures"]:
         if item["fixtureId"] != args.fixture:
@@ -139,6 +158,8 @@ def main(argv=None) -> int:
     parser.add_argument("--review-file", type=Path, default=DEFAULT_REVIEW)
     parser.add_argument("--artifacts-dir", type=Path, default=DEFAULT_ARTIFACTS)
     parser.add_argument("--list", action="store_true")
+    parser.add_argument("--scope", choices=("all", "in-scope", "out-of-scope"), default="all")
+    parser.add_argument("--allow-out-of-scope", action="store_true")
     parser.add_argument("--summary", action="store_true")
     parser.add_argument("--validate", action="store_true")
     parser.add_argument("--fixture")
@@ -163,11 +184,15 @@ def main(argv=None) -> int:
     if args.summary:
         print(json.dumps(summary(review), indent=2))
         return 0
+    scopes = scope_map(args.artifacts_dir)
     if args.list:
-        return command_list(review)
+        return command_list(review, scopes, args.scope)
 
     if not args.fixture and not args.independent_status:
-        parser.error("provide --fixture or --independent-status, or use --list/--summary/--validate")
+        print(json.dumps(summary(review), indent=2))
+        print("\nNext: npm run review:p2 -- --list --scope in-scope")
+        print("Record: npm run review:p2 -- --fixture NEG-01 --owner-status accepted --reviewer \"Your name\"")
+        return 0
     if not args.reviewer:
         parser.error("--reviewer is required when recording a review")
     if not args.fixture and args.independent_status:
@@ -179,7 +204,7 @@ def main(argv=None) -> int:
         print(json.dumps(summary(review), indent=2))
         return 0
 
-    return command_set(args, review, args.review_file)
+    return command_set(args, review, args.review_file, scopes)
 
 
 if __name__ == "__main__":
