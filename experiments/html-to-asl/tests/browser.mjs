@@ -68,6 +68,10 @@ try {
     return anchor ? { text: anchor.textContent.trim(), href: anchor.getAttribute('href') } : null;
   });
   assert.deepEqual(link, { text: 'HTML to ASL research bench', href: 'experiments/html-to-asl/' });
+  const mainGates = (await main.textContent('.gate-panel')).replace(/\s+/g, ' ');
+  assert.match(mainGates, /Phase C/);
+  assert.match(mainGates, /P5/);
+  assert.match(mainGates, /1 of 16/);
   await Promise.all([
     main.waitForURL('**/experiments/html-to-asl/'),
     main.click('.site-footer a[href="experiments/html-to-asl/"]'),

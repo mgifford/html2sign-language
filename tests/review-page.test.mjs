@@ -17,6 +17,11 @@ test('main page states the 24-word demo limit and links the review guide', () =>
   assert.doesNotMatch(text, /Biomechanically validated/);
   assert.ok(document.querySelector('a[href="review.html"]'));
   assert.ok(document.querySelector('a[href="experiments/html-to-asl/p2/"]'));
+  const gates = document.querySelector('.gate-panel')?.textContent.replace(/\s+/g, ' ') ?? '';
+  assert.match(gates, /Phase C/);
+  assert.match(gates, /P5/);
+  assert.match(gates, /1 of 16/);
+  assert.match(gates, /Independent Deaf ASL review/);
 });
 
 test('review page names what exists, what is missing, and who may review', () => {
@@ -29,6 +34,7 @@ test('review page names what exists, what is missing, and who may review', () =>
   assert.ok(document.querySelector('a[href="experiments/html-to-asl/p2/"]'));
   assert.ok(document.querySelector('a[href="experiments/html-to-asl/"]'));
   assert.ok(document.querySelector('a[href="experiments/html-to-asl/docs/P3-P4-RESEARCH.md"]'));
+  assert.match(document.querySelector('.gate-panel')?.textContent ?? '', /not authorized/);
 });
 
 test('P3 page is optional, local, English-only, and does not auto-load a model', () => {
