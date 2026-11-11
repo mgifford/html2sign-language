@@ -260,6 +260,29 @@ try {
   assert.deepEqual(p2Errors, []);
   checks.p2Viewer = { fixtures: 40, neg01Candidates: 6, p2Reflow };
 
+  // P3 page: 16 prose fixtures, explicit model consent, no automatic download.
+  const p3 = await context.newPage();
+  const p3Errors = [];
+  p3.on('console', (message) => {
+    if (message.type() === 'error') p3Errors.push(message.text());
+  });
+  p3.on('pageerror', (error) => p3Errors.push(error.message));
+  await p3.goto(`${base}/experiments/html-to-asl/p3/`, { waitUntil: 'load' });
+  await p3.waitForFunction(() => document.querySelectorAll('#fixture option').length === 16);
+  assert.equal(await p3.isDisabled('#consent'), false);
+  assert.equal(await p3.isDisabled('#load-model'), true);
+  assert.equal(await p3.isDisabled('#run-one'), true);
+  assert.match(await p3.textContent('#model-status'), /No download has started/i);
+  await p3.setViewportSize({ width: 320, height: 640 });
+  await p3.waitForTimeout(200);
+  const p3Reflow = await p3.evaluate(() => ({
+    viewport: window.innerWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+  assert.ok(p3Reflow.scrollWidth <= p3Reflow.viewport, `P3 overflow: ${p3Reflow.scrollWidth}`);
+  assert.deepEqual(p3Errors, []);
+  checks.p3Page = { fixtures: 16, consentRequired: true, reflow: p3Reflow };
+
   console.log(JSON.stringify({ ok: true, browser: browser.version(), checks }, null, 2));
 } finally {
   await browser.close();

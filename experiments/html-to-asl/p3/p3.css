@@ -1,0 +1,98 @@
+.p3-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.model-card {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.model-card caption {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.model-card th,
+.model-card td {
+  border: 1px solid #cbd5e1;
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.model-card th {
+  width: 32%;
+  background: #f1f5f9;
+}
+
+.consent {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.4rem;
+  background: #f8fafc;
+}
+
+.consent input {
+  margin-top: 0.3rem;
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  flex: none;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+#runs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+#runs-table th,
+#runs-table td {
+  border: 1px solid #cbd5e1;
+  padding: 0.35rem 0.45rem;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+#runs-table th {
+  background: #f1f5f9;
+}
+
+#raw {
+  max-height: 18rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .p3-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .model-card th {
+    width: 40%;
+  }
+}
+
+.model-card {
+  table-layout: fixed;
+}
+
+.model-card code,
+.model-card td,
+.model-card th {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

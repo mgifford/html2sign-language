@@ -1,0 +1,81 @@
+{
+  "experiment": "P3 browser English simplification",
+  "disclaimer": "English-only research output; not ASL, not a translation, and not connected to the avatar.",
+  "model": {
+    "id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "revision": "31b70e2e869a7173562077fd711b654946d38674",
+    "license": "Apache-2.0",
+    "file": "onnx/model_q4f16.onnx",
+    "fileSha256": "d94946187fb5f27579f3db4ba21fb7f7466c7cbd18956bd420d3981f75282f9c",
+    "fileBytes": 1108730338,
+    "library": "@huggingface/transformers",
+    "libraryVersion": "4.3.2",
+    "dtype": "q4f16",
+    "device": "wasm"
+  },
+  "run": {
+    "fixtureId": "NEG-01",
+    "blocks": [
+      {
+        "id": "b0001",
+        "path": "main > p:nth-of-type(1)",
+        "start": 0,
+        "end": 29
+      }
+    ],
+    "original": "You do not need to pay a fee.",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You simplify English for accessibility. Respond in English only. Preserve meaning, negation, permission, obligation, conditions, exceptions, numbers, dates, names, and references. Return only valid JSON with keys simplified (string or array of strings), changes (always an array, [] if none), uncertainty (always a string, \"\" if none), abstain (true or false). Do not produce ASL glosses or sign instructions."
+      },
+      {
+        "role": "user",
+        "content": "Simplify this English text. Return only JSON, with no markdown or commentary. Use [] for changes if none; use \"\" for uncertainty if none. If simplified is present, abstain must be false.\n\nExample:\nText: You must apply by Friday.\nOutput: {\"simplified\":\"Apply by Friday.\",\"changes\":[{\"from\":\"You must apply\",\"to\":\"Apply\",\"reason\":\"plain wording\"}],\"uncertainty\":\"\",\"abstain\":false}\n\nText: You do not need to pay a fee."
+      }
+    ],
+    "promptHash": "612bf82b4a0bfed8409ea96e053bb83a665659a8c0e7550b6da4682dce208d57",
+    "generation": {
+      "max_new_tokens": 384,
+      "do_sample": false,
+      "return_full_text": false
+    },
+    "environment": {
+      "browser": "Chrome 157.0.8103.39",
+      "os": "macOS arm64",
+      "backend": "wasm",
+      "source": "manual Playwright p3-model.mjs"
+    },
+    "raw": "{\"simplified\":\"No fee.\",\"changes\":[{\"from\":\"You do not need to pay a fee\",\"to\":\"No fee\",\"reason\":\"clear statement\"}],\"uncertainty\":\"\",\"abstain\":false}",
+    "parsed": {
+      "ok": true,
+      "value": {
+        "simplified": "No fee.",
+        "changes": [
+          {
+            "from": "You do not need to pay a fee",
+            "to": "No fee",
+            "reason": "clear statement"
+          }
+        ],
+        "uncertainty": "",
+        "abstain": false
+      }
+    },
+    "validated": true,
+    "errors": [],
+    "semantic": {
+      "heuristic": true,
+      "critical": [
+        "not"
+      ],
+      "missing": [
+        "not"
+      ],
+      "passed": false,
+      "note": "Mechanical token check only. It does not prove that actors, conditions, or meaning are preserved."
+    },
+    "durationMs": null,
+    "note": "Load/inference timing was not captured in the manual browser run."
+  }
+}

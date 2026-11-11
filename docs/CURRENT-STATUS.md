@@ -1,16 +1,14 @@
 # Current status
 
-Snapshot date: **2026-11-11**. Baseline commit: **`623e7c2`**. This document is the authoritative current-status record; dated decision records and retrospectives remain historical.
+Snapshot date: **2026-11-11**. Baseline commit: **`4944d3d`** (Phase A merged). This document is the authoritative current-status record; dated decision records and retrospectives remain historical.
 
 ## Current authorized phase
 
-**Phase A only: documentation and review reconciliation.** No browser-AI inference, no new lexical arm, and no 3D-LEX/motion integration is authorized by this status.
+**Phase B: browser English simplification only, owner-authorized 2026-11-11.** No ASL gloss generation, no avatar feed, and no 3D-LEX/motion integration is authorized. P2.4 human review remains open and is not satisfied by Phase B.
 
-Phase B may begin only after:
+Phase B was explicitly authorized by the owner on 2026-11-11 after Phase A merged. P2.4 remains **open**: Phase B does not review or validate P2, and its output must not be presented as ASL.
 
-1. This Phase A change is reviewed and merged.
-2. The P2 owner source-alignment gate is addressed.
-3. The next phase is explicitly authorized.
+Phase C and P5 may begin only after explicit authorization and the relevant review gates.
 
 ## Baseline audit
 
@@ -22,7 +20,8 @@ Phase B may begin only after:
 | P2.1–P2.2 lexical-plan artifacts | Implemented, **not linguistically validated** | 40 `partial` artifacts; 16 prose in scope, 24 structurally excluded |
 | P2.3 reproducibility | Implemented and exercised | Python lock, image digests, source-run tool; clean-room run [42915233893](https://github.com/mgifford/html2sign-language/actions/runs/42915233893) matched 40/40 plan contents |
 | P2.4 review | **In progress; gate not closed** | 1/16 owner source-alignment decisions; independent Deaf ASL review pending |
-| P3/P4 browser-AI research | Proposed; not started | `experiments/html-to-asl/docs/P3-P4-RESEARCH.md`; P4 contract validator only in `tools/p3/` |
+| P3 browser English simplification | **P3.1 implemented; P3.2/P3.3 not run** | `p3/`, `P3-MODEL-CARD.md`, consent gate, 11 core tests, one Chrome 157 browser run |
+| P4 direct/hybrid lexical planning | Proposed; not started | `P3-P4-RESEARCH.md`; P4 contract validator only in `tools/p3/` |
 | P5/P6 3D-LEX and playback | Blocked | Requires P2.4, P3/P4 evidence, dataset licence, and independent Deaf ASL review |
 | Fixed-sentence production route | Proposed; not built | `docs/PLAN-FIXED-SENTENCES.md` |
 | Legacy 24-word public demo | Implemented; not validated | `index.html`, `app.js`, 24 WLASL word clips; no sentence/page translation |
@@ -38,8 +37,8 @@ Phase B may begin only after:
 
 ### Proposed, not implemented
 
-- P3 browser simplification (no model, prompt, or run).
 - P4 direct/hybrid lexical planning (only the P4.1 plan-contract validator exists).
+- P3.2/P3.3 rules-comparison and human analysis (P3.1 baseline only).
 - P5 3D-LEX mapping/motion integration.
 - P6 avatar playback for reviewed signing.
 - The production fixed-sentence route.
@@ -82,16 +81,17 @@ npm run test:browser:experiment
 npm run test:avatar
 ```
 
-Phase A verification executed on 2026-11-11 (macOS, Node 22, Playwright Chromium):
+Phase A and P3.1 verification executed on 2026-11-11 (macOS, Node 22, Playwright Chromium):
 
 | Command | Result |
 |---|---|
 | `npm ci --cache /tmp/npm-cache` | 37 packages installed; default npm cache was not writable, so a temporary cache was used |
-| `npm test` | 35/35 Node experiment tests + 2/2 public-page tests; 1 existing warning about missing `models/` |
+| `npm test` | 46/46 Node experiment tests + 3/3 public-page tests; 1 existing warning about missing `models/` |
 | `npm run test:p2` | **45/45 pass** |
 | `npm run test:p3` | **6/6 pass** |
-| `npm run test:browser:experiment` | **pass**; P2 viewer, review page, 320 px reflow, 0 console errors |
+| `npm run test:browser:experiment` | **pass**; P2 viewer, P3 page, review page, 320 px reflow, 0 console errors |
 | `npm run test:avatar` | **8/8 pass** |
+| Manual `p3-model.mjs` | **pass**; SmolLM2-1.7B q4f16, Chrome 157, WASM; valid `NEG-01` JSON output, critical `not` flagged for review |
 | `npm run review:p2 -- --validate` | review record valid |
 
 Known reproducibility evidence:
@@ -107,7 +107,7 @@ Known reproducibility evidence:
 |---|---|---|
 | Owner source alignment | 16 prose fixtures | **In progress: 1 accepted (`NEG-01`), 15 pending** |
 | Structural fixtures | 24 fixtures | **`not-applicable`** for the prose review; retained for future structural research |
-| Independent Deaf ASL review | Agreed sample of the 16; 100% before a public ASL claim | **Pending** |
+| Independent Deaf ASL review | Agreed sample of the 16; 100% before a public ASL claim | **Agreed; reviewer/date/decisions still pending** |
 | 24-word clip review | 24 clips | **Not performed** |
 
 No automated flag, model output, or coding agent substitutes for these reviews.
@@ -127,11 +127,11 @@ No automated flag, model output, or coding agent substitutes for these reviews.
 - **D4 — avatar architecture:** historical AGENTS guidance conflicts with the Rocketbox selection. The current architecture is documented in `docs/AVATAR-ARCHITECTURE.md`; the runtime is unchanged.
 - **D5 — third-party data:** 3D-LEX/ASL-LEX access, performer rights, and redistribution terms remain unresolved.
 - **D11 — scope:** 16 prose fixtures are in scope; 24 structural fixtures are excluded from P2/P3/P4 and retained for a separate structural study.
-- **Independent reviewer:** a fluent Deaf ASL reviewer must be engaged; the owner cannot self-attest.
+- **Independent reviewer:** agreed as a requirement; reviewer identity, date, and decisions are not recorded. The owner cannot self-attest.
 
 ## Next acceptance gate
 
-**Phase A review and merge.** After that, the next blocking gate is the complete owner source-alignment review of the 16 prose fixtures plus an independent Deaf ASL review plan. Phase B must not start automatically.
+**Phase B review and merge**, followed by P3.2’s rules-only vs simplification comparison. P2.4 owner review (15/16 remaining) and the independent Deaf ASL review remain open. Phase C and P5 must not start automatically.
 
 ## Related records
 
