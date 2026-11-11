@@ -63,6 +63,7 @@ The image-pinned clean-room run passed with 40/40 plan matches. The remaining bl
 - `source_run.py` — explicit research-only source-run reproducer; not the image-pinned path.
 - `export_p1.mjs` / `compare_plans.py` — P1 export and clean-room plan comparison used by `.github/workflows/p2-cleanroom.yml`.
 - `review.py` — records owner/independent review decisions in `review.json`; it cannot perform a review.
-- `tests/` — 27 unit tests, including all 40 artifacts, the pending review record, review CLI, plan comparison, refusal, and holdout cases.
+- `qa_report.py` — advisory technical risk flags for review; not decisions.
+- `tests/` — 29 unit tests, including all 40 artifacts, the pending review record, review CLI, QA report, plan comparison, refusal, and holdout cases.
 
 No model weights, WSD intermediates, generated glosses, or 3D-LEX assets belong in this directory.

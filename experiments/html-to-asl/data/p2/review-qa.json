@@ -1,0 +1,479 @@
+{
+  "schemaVersion": "p2.4-qa",
+  "artifactCount": 40,
+  "artifacts": [
+    {
+      "fixtureId": "NEG-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 8,
+      "planTokens": 6,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "MOD-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 9,
+      "planTokens": 11,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "COND-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 9,
+      "planTokens": 9,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "LEX-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 7,
+      "planTokens": 7,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "DOC-01",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 10,
+      "planTokens": 12,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:2"
+      ]
+    },
+    {
+      "fixtureId": "HTML-01",
+      "status": "partial",
+      "blocks": 3,
+      "sourceWords": 7,
+      "planTokens": 7,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:3"
+      ]
+    },
+    {
+      "fixtureId": "SEC-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 3,
+      "planTokens": 4,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "NAV-01",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 8,
+      "planTokens": 8,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:2"
+      ]
+    },
+    {
+      "fixtureId": "QTY-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 6,
+      "planTokens": 8,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "LINK-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 6,
+      "planTokens": 6,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "TABLE-01",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 4,
+      "planTokens": 5,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:table"
+      ]
+    },
+    {
+      "fixtureId": "FORM-01",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 9,
+      "planTokens": 12,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "multi-block:2",
+        "structure:field"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-HIER",
+      "status": "partial",
+      "blocks": 4,
+      "sourceWords": 7,
+      "planTokens": 7,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:4"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-NESTED",
+      "status": "partial",
+      "blocks": 3,
+      "sourceWords": 3,
+      "planTokens": 3,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:3"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-ORDERED",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 2,
+      "planTokens": 2,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:2"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-DL",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 3,
+      "planTokens": 3,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:2",
+        "structure:definition,term"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-LINK",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 4,
+      "planTokens": 4,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-LINKS",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 3,
+      "planTokens": 4,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-TABLE",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 5,
+      "planTokens": 6,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:table"
+      ]
+    },
+    {
+      "fixtureId": "STRUCT-TABLE-NOHEAD",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 2,
+      "planTokens": 3,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:table"
+      ]
+    },
+    {
+      "fixtureId": "FORM-REQUIRED",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 7,
+      "planTokens": 10,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "multi-block:2",
+        "structure:field"
+      ]
+    },
+    {
+      "fixtureId": "FORM-GROUP",
+      "status": "partial",
+      "blocks": 3,
+      "sourceWords": 8,
+      "planTokens": 8,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:3",
+        "structure:caption,field"
+      ]
+    },
+    {
+      "fixtureId": "FORM-SELECT",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 3,
+      "planTokens": 3,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:field"
+      ]
+    },
+    {
+      "fixtureId": "FORM-TEXTAREA",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 5,
+      "planTokens": 5,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:field"
+      ]
+    },
+    {
+      "fixtureId": "FORM-CHECK",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 3,
+      "planTokens": 5,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:field",
+        "length-ratio"
+      ]
+    },
+    {
+      "fixtureId": "ARIA-BUTTON",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 2,
+      "planTokens": 2,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:field"
+      ]
+    },
+    {
+      "fixtureId": "ARIA-SECTION",
+      "status": "partial",
+      "blocks": 3,
+      "sourceWords": 4,
+      "planTokens": 5,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:3",
+        "structure:region",
+        "duplicate-adjacent"
+      ]
+    },
+    {
+      "fixtureId": "IMG-ALT",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 10,
+      "planTokens": 6,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:2",
+        "structure:caption,image"
+      ]
+    },
+    {
+      "fixtureId": "IMG-DECOR",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 3,
+      "planTokens": 4,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "IMG-NOALT",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 3,
+      "planTokens": 4,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "QUOTE",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 7,
+      "planTokens": 6,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "CODE",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 3,
+      "planTokens": 3,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "structure:code"
+      ]
+    },
+    {
+      "fixtureId": "BARE-DIV",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 4,
+      "planTokens": 5,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "HIDDEN",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 2,
+      "planTokens": 3,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "DETAILS-CLOSED",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 2,
+      "planTokens": 2,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "structure:summary"
+      ]
+    },
+    {
+      "fixtureId": "DETAILS-OPEN",
+      "status": "partial",
+      "blocks": 2,
+      "sourceWords": 4,
+      "planTokens": 5,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:2",
+        "structure:summary"
+      ]
+    },
+    {
+      "fixtureId": "UNICODE",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 5,
+      "planTokens": 5,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "INJECT",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 2,
+      "planTokens": 3,
+      "severity": "low",
+      "flags": [
+        "partial"
+      ]
+    },
+    {
+      "fixtureId": "MIXED",
+      "status": "partial",
+      "blocks": 4,
+      "sourceWords": 6,
+      "planTokens": 6,
+      "severity": "medium",
+      "flags": [
+        "partial",
+        "multi-block:4"
+      ]
+    },
+    {
+      "fixtureId": "TABLE-LINK",
+      "status": "partial",
+      "blocks": 1,
+      "sourceWords": 6,
+      "planTokens": 6,
+      "severity": "high",
+      "flags": [
+        "partial",
+        "structure:table"
+      ]
+    }
+  ]
+}

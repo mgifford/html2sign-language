@@ -5,6 +5,7 @@ Status: **pending.** This table is a review aid, not an approval. Lexical plans 
 - 40 development fixtures; the 20-case holdout is excluded.
 - All artifacts are `partial`: upstream reports `semantic-rules-unavailable`.
 - Owner alignment and independent Deaf ASL review are pending. See [P2-REVIEW.md](../docs/P2-REVIEW.md).
+- Automated risk flags: [review-qa.md](review-qa.md) (advisory, not decisions).
 
 | Fixture | Artifact | Source | Plan (gloss/word order) | Owner | Independent |
 |---|---|---|---|---|---|

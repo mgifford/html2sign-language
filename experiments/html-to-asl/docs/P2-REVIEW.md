@@ -8,6 +8,7 @@ This packet supports P2.4. It does not itself make a linguistic, accessibility, 
 
 - Viewer: `experiments/html-to-asl/p2/`
 - One-page review table: `experiments/html-to-asl/data/p2/review.md`
+- Automated risk flags: `experiments/html-to-asl/data/p2/review-qa.md` (advisory, not decisions)
 - Artifacts: `experiments/html-to-asl/data/p2/`
 - Review record: `data/p2/review.json` (40 entries, all pending)
 - Contracts: `tools/p2/artifact.schema.json`, `tools/p2/review.schema.json`
@@ -42,6 +43,7 @@ Record `ownerNotes` with the fixture ID, a specific concern, and whether it affe
 ## 1.1 Recording decisions
 
 ```sh
+python3 tools/p2/qa_report.py --data-dir experiments/html-to-asl/data/p2
 python3 tools/p2/review.py --list
 python3 tools/p2/review.py --set NEG-01 --owner-status accepted \
   --owner-notes "source mapping checked" --reviewer "Reviewer name"
