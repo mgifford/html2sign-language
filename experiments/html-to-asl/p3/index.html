@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2310263c'/%3E%3C/svg%3E">
+  <title>Browser AI English simplification | P3 research</title>
+  <meta name="description" content="Optional local browser-AI English simplification experiment. It does not produce ASL and is not connected to the avatar.">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="p3.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the P3 experiment</a>
+  <header class="mast">
+    <div class="wrap">
+      <span class="eyebrow">OPEN RESEARCH / EXPERIMENT P3</span>
+      <h1>Browser AI English simplification</h1>
+      <p><strong>English only.</strong> This experiment may rewrite English into simpler English. It does not produce ASL glosses, signs, motion, or avatar output. The deterministic P1/P2 pages remain available without AI.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <noscript><p class="warning"><strong>JavaScript is required for the optional model panel.</strong> The research boundary, model card, and documentation links remain readable without it. No model is downloaded automatically.</p></noscript>
+
+    <section class="warning" aria-labelledby="boundary-title">
+      <h2 id="boundary-title">Research boundary</h2>
+      <p>No ASL correctness, translation, accessibility-conformance, or avatar claim is made. The model is optional, local, consent-based, and evaluated on English preservation only. A malformed or uncertain response is a recorded failure, not a successful baseline.</p>
+    </section>
+
+    <div class="p3-cols">
+      <section class="panel" aria-labelledby="model-title">
+        <h2 id="model-title">1. Pinned model</h2>
+        <p class="subtle">One small browser-compatible model via Transformers.js. No hosted commercial API and no telemetry.</p>
+        <table class="model-card">
+          <caption>Model baseline</caption>
+          <tbody>
+            <tr><th scope="row">Model</th><td>HuggingFaceTB/SmolLM2-1.7B-Instruct</td></tr>
+            <tr><th scope="row">Revision</th><td><code>31b70e2e869a7173562077fd711b654946d38674</code></td></tr>
+            <tr><th scope="row">Licence</th><td>Apache-2.0</td></tr>
+            <tr><th scope="row">Quantised file</th><td><code>onnx/model_q4f16.onnx</code> (1,108,730,338 bytes; SHA-256 <code>d9494618…</code>)</td></tr>
+            <tr><th scope="row">Tokenizer</th><td><code>tokenizer.json</code> (SHA-256 <code>9ca9acdd…</code>)</td></tr>
+            <tr><th scope="row">Runtime</th><td>Transformers.js 4.3.2, WASM/CPU, q4f16</td></tr>
+            <tr><th scope="row">Download</th><td><a href="https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/31b70e2e869a7173562077fd711b654946d38674/onnx/model_q4f16.onnx">model_q4f16.onnx</a> (~1.1 GB) plus tokenizer</td></tr>
+          </tbody>
+        </table>
+        <p id="backend-status" class="subtle">Checking browser capabilities…</p>
+        <p id="model-status" role="status" aria-live="polite">Model not loaded. No download has started.</p>
+
+        <div class="consent">
+          <input id="consent" type="checkbox" disabled>
+          <label for="consent">I consent to downloading about 1.1 GB of model weights from Hugging Face into this browser. The download is optional and can be cleared in browser storage.</label>
+        </div>
+        <p>
+          <button id="load-model" type="button" disabled>Download and load model</button>
+          <button id="unload-model" type="button" disabled>Unload model</button>
+        </p>
+        <p class="subtle">If the model cannot load, the page records the failure. It does not silently substitute a model or a server.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="fixture-title">
+        <h2 id="fixture-title">2. English source</h2>
+        <label for="fixture">Choose an in-scope prose fixture</label>
+        <select id="fixture" disabled></select>
+        <p id="fixture-notes" class="subtle">Loading the 16 prose fixtures…</p>
+        <h3 id="source-title">Original English</h3>
+        <pre id="source" tabindex="0" aria-labelledby="source-title"></pre>
+        <p class="subtle">The original is immutable. The model receives only this text; source block IDs and spans remain in the record.</p>
+      </section>
+    </div>
+
+    <section class="panel" aria-labelledby="run-title">
+      <h2 id="run-title">3. Simplification run</h2>
+      <p class="subtle">The model must return structured JSON. Malformed output, abstention, and critical-token loss are shown as results—not repaired silently.</p>
+      <p>
+        <button id="run-one" type="button" disabled>Run once</button>
+        <button id="run-five" type="button" disabled>Run 5 times</button>
+        <button id="download" type="button" disabled>Download run JSON</button>
+      </p>
+      <p id="run-status" role="status" aria-live="polite">Load the model to enable runs.</p>
+
+      <div id="results" hidden>
+        <h3>Latest validated output</h3>
+        <p><strong>Original:</strong> <span id="result-original"></span></p>
+        <p><strong>Simplified:</strong> <span id="result-simplified"></span></p>
+        <h4>Critical-token check</h4>
+        <p id="semantic-summary" class="subtle"></p>
+        <ul id="semantic-list"></ul>
+        <h4>Reported changes</h4>
+        <ul id="changes"></ul>
+        <p><strong>Uncertainty:</strong> <span id="uncertainty"></span></p>
+        <p><strong>Abstained:</strong> <span id="abstained"></span></p>
+        <h4>Raw model response</h4>
+        <pre id="raw" tabindex="0"></pre>
+      </div>
+
+      <h3>Runs</h3>
+      <p class="subtle">Each run records timing, validation, critical-token loss, prompt hash, and raw output. Five runs are for stability, not accuracy.</p>
+      <div class="table-wrap">
+        <table id="runs-table">
+          <caption>Recorded simplification runs</caption>
+          <thead><tr><th scope="col">#</th><th scope="col">Status</th><th scope="col">ms</th><th scope="col">Missing critical tokens</th><th scope="col">Prompt hash</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="limits-title">
+      <h2 id="limits-title">4. What this does not show</h2>
+      <ul>
+        <li>It does not produce ASL glosses or signs.</li>
+        <li>It does not validate whether an ASL lexical plan is grammatical or understandable.</li>
+        <li>It does not test every browser, device, or model.</li>
+        <li>It does not replace independent Deaf ASL review.</li>
+        <li>Critical-token checks are mechanical; actors, conditions, and nuance still need human review.</li>
+      </ul>
+      <p><a href="../">Back to the research bench</a> · <a href="../p2/">P2 lexical plans</a> · <a href="../docs/P3-P4-RESEARCH.md">P3/P4 research plan</a> · <a href="../docs/P3-MODEL-CARD.md">model card</a> · <a href="../data/p3/NEG-01-browser.json">recorded browser run</a> · <a href="../../">Main page</a></p>
+    </section>
+  </main>
+
+  <footer class="wrap"><p>Research prototype. English simplification only; no ASL or avatar output.</p></footer>
+  <script type="module" src="p3.js"></script>
+</body>
+</html>

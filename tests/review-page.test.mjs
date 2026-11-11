@@ -30,3 +30,22 @@ test('review page names what exists, what is missing, and who may review', () =>
   assert.ok(document.querySelector('a[href="experiments/html-to-asl/"]'));
   assert.ok(document.querySelector('a[href="experiments/html-to-asl/docs/P3-P4-RESEARCH.md"]'));
 });
+
+test('P3 page is optional, local, English-only, and does not auto-load a model', () => {
+  const document = documentFor('../experiments/html-to-asl/p3/index.html');
+  const text = document.body.textContent.replace(/\s+/g, ' ');
+  assert.match(document.title, /P3/i);
+  assert.match(text, /English only/i);
+  assert.match(text, /does not produce ASL/i);
+  assert.match(text, /HuggingFaceTB\/SmolLM2-1.7B-Instruct/);
+  assert.match(text, /Apache-2\.0/);
+  assert.match(text, /d9494618/);
+  assert.match(text, /No download has started/i);
+  const consent = document.querySelector('#consent');
+  const load = document.querySelector('#load-model');
+  assert.equal(consent.getAttribute('type'), 'checkbox');
+  assert.ok(consent.hasAttribute('disabled'));
+  assert.ok(load.hasAttribute('disabled'));
+  assert.ok(document.querySelector('script[src="p3.js"]'));
+  assert.ok(document.querySelector('a[href="../p2/"]'));
+});

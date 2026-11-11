@@ -1,6 +1,6 @@
 # P3/P4 research plan: browser simplification and direct/hybrid lexical planning
 
-Status: **planned, not started (2026-11-11). The P4.1 plan-contract validator is implemented; no model, prompt, run, or result exists.** This is a research protocol, not an ASL feature and not a deployment plan.
+Status: **P3.1 baseline implemented; P3.2/P3.3 and P4 have not run.** A pinned browser model, model card, consent page, and one browser inference are recorded. The P4.1 plan-contract validator exists. This is a research protocol, not an ASL feature and not a deployment plan.
 
 P2 produced 40 partial lexical plans and a passing image-pinned reproduction. P2.4 human review is still pending. This document plans the optional P3/P4 research that follows that review; it does not authorize P5 avatar playback.
 
@@ -67,7 +67,7 @@ Arm A is the committed P2 output. B–D are research-only and must never be pres
 
 ## 4. Model and runtime selection
 
-Selection is not final until P3.1. Criteria:
+Selection is the P3.1 baseline (`SmolLM2-1.7B-Instruct` q4f16). Changing it requires a new model card and a new P3.1 check. Criteria:
 
 - permissive licence compatible with static hosting and research publication;
 - 0.5B–3B parameters, quantised browser build;
@@ -175,7 +175,7 @@ Warm-up runs are excluded and recorded. Model load time is reported separately f
 | Milestone | Deliverable | Gate |
 |---|---|---|
 | P3.0 | This protocol; P2 scope restriction; P2.4 review of 16 prose | Owner review recorded; scope fixed |
-| P3.1 | Model/runtime benchmark and model card; browser harness | Licence/hash recorded; load/latency measured |
+| P3.1 | Model/runtime baseline and model card; browser harness | Licence/hash/model card recorded; one browser run recorded; full latency matrix not yet measured |
 | P3.2 | Arm A/B development runs | Five runs; failures retained; schema valid |
 | P3.3 | P3 analysis and human review | H1 supported or not; no ASL claim |
 | P4.0 | P4 preregistration (arms C/D, primary outcome, stop rules) | Frozen before holdout |

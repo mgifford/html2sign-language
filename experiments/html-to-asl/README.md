@@ -49,7 +49,7 @@ Do not send any generated lexical candidate to the existing public sign-language
 - `docs/PROTOCOL.md` defines evaluation metrics and conditions.
 - `docs/P2-ADAPTER.md` is the P2 design proposal and acceptance criteria.
 - `docs/P2-REVIEW.md` is the owner/independent review packet; no review is complete.
-- `docs/P3-P4-RESEARCH.md` is the planned prose-only browser-AI research protocol; P3/P4 have not started. The P4.1 model-plan validator is in `tools/p3/`.
+- `docs/P3-P4-RESEARCH.md` is the prose-only browser-AI research protocol. P3.1 has a pinned browser model, consent page, and one recorded browser run; P3.2/P3.3 and P4 have not run. The P4.1 model-plan validator is in `tools/p3/`.
 - `docs/UPSTREAM.md` credits precursor work, with licence checks.
 - `data/p2/` contains 40 partial P2.2 artifacts; `p2/index.html`, `p2/p2.js`, and `p2/p2.css` are the static viewer.
 - `../../BUILD-FORWARD-PROMPT.md` is the agent continuation prompt for this experiment.
